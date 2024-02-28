@@ -5,7 +5,7 @@ export class CriarRegistro{
         this._url = "https://avioeste.api.jestor.com/object/create"
     }
 
-  async CriarRegistro(table,dados) {
+  async CriarRegistro(tabela,dados) {
 
     const options =  {
         method: 'POST',
@@ -16,13 +16,13 @@ export class CriarRegistro{
           Authorization: `Bearer ${this._token} `
         },
         body:  JSON.stringify({ 
-            object_type: `${table}`,
+            object_type: `${tabela}`,
             data: dados})
         };
 
     fetch(this._url, options)
         .then(response => response.json())
-  .then(response =>  console.log(`Dado id_jestor = ${response.data[`id_${table}`]} Criado `))
+  .then(response =>  console.log(`Dado id_jestor = ${response.data[`id_${tabela}`]} Criado `))
   .catch(err => console.error(err))
 }
                           
