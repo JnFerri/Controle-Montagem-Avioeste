@@ -23,9 +23,9 @@ return new Promise((resolve,reject) => {
           data: dado})
       };*/
 
-  fetch(this._url,{method: 'POST', body:JSON.stringify({ 
+  fetch(this._url,{method: 'POST', data : { 
     object_type: `${tabela}`,
-    data: dado})
+    data: dado}
 })
       .then(response => {
         if (!response.ok) {
