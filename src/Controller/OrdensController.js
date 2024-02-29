@@ -2,7 +2,7 @@ import { AtualizaRegistro } from "../Services/AtualizaRegistro.js"
 import { CriarRegistro } from "../Services/CriarRegistro.js"
 import { PegaRegistroUnico } from "../Services/PegaRegistroUnico.js"
 import { PegarRegistrosTabela } from "../Services/PegaRegistrosTabela.js"
-import "../configs/dotenvconfig.js"
+
 
 export class OrdensController{
     constructor(){
