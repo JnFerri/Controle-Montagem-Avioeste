@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import Imagem from "../Imagem/Imagem"
+import Imagem from "../Imagem/Imagem.js"
 import Logo from "../../images/logo.png"
-import Titulo1 from "../Titulo1/Titulo1"
+import Titulo1 from "../Titulo1/Titulo1.js"
 
 const HeaderContainer = styled.header`
 display:flex;

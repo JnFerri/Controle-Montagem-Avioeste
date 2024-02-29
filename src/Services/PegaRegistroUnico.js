@@ -4,7 +4,7 @@ export class PegaRegistroUnico{
         this._url = `https://avioeste.api.jestor.com/object/describe`
     }
 
-    PegaRegistroUnico(table, id){
+    pegaRegistroUnico(table, id){
         return new Promise((resolve,reject) => {
         const options = {
             method: 'POST',

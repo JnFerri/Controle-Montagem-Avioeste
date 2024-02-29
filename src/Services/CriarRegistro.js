@@ -5,25 +5,39 @@ export class CriarRegistro{
         this._url = "https://avioeste.api.jestor.com/object/create"
     }
 
-  async CriarRegistro(tabela,dados) {
+  criarRegistro(tabela,dado) {
+return new Promise((resolve,reject) => {
 
-    const options =  {
-        method: 'POST',
-        headers: {
-    
-            accept: 'application/json',
-            'content-type': 'application/json',
-          Authorization: `Bearer ${this._token} `
-        },
-        body:  JSON.stringify({ 
-            object_type: `${tabela}`,
-            data: dados})
-        };
+  const options =  {
+      method: 'POST',
+      headers: {
+  
+          accept: 'application/json',
+          'content-type': 'application/json',
+        Authorization: `Bearer ${this._token} `
+      },
+      body:  JSON.stringify({ 
+          object_type: `${tabela}`,
+          data: dado})
+      };
 
-    fetch(this._url, options)
-        .then(response => response.json())
-  .then(response =>  console.log(`Dado id_jestor = ${response.data[`id_${tabela}`]} Criado `))
-  .catch(err => console.error(err))
+  fetch(this._url, options)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Erro ao fazer a requisição.');
+        }
+        return response.json();
+      
+      })
+      .then(response => resolve(response))
+.catch(err => {
+  console.error('Ocorreu um erro:', err);
+  reject(err)
 }
+)
+})
+}
+
+
                           
 }
