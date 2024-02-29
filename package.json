@@ -1,7 +1,6 @@
 {
   "name": "controle_montagem",
   "version": "0.1.0",
-  "homepage": "https://jnferri.github.io/Controle-Montagem-Avioeste/",
   "private": true,
   "type": "module",
   "dependencies": {
