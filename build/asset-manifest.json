@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Controle-Montagem-Avioeste/static/css/main.305f0422.css",
+    "main.js": "/Controle-Montagem-Avioeste/static/js/main.78bcd144.js",
+    "static/js/453.e74e90b6.chunk.js": "/Controle-Montagem-Avioeste/static/js/453.e74e90b6.chunk.js",
+    "static/media/logo.png": "/Controle-Montagem-Avioeste/static/media/logo.8f62fadd2898e5d594f6.png",
+    "index.html": "/Controle-Montagem-Avioeste/index.html",
+    "main.305f0422.css.map": "/Controle-Montagem-Avioeste/static/css/main.305f0422.css.map",
+    "main.78bcd144.js.map": "/Controle-Montagem-Avioeste/static/js/main.78bcd144.js.map",
+    "453.e74e90b6.chunk.js.map": "/Controle-Montagem-Avioeste/static/js/453.e74e90b6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.305f0422.css",
+    "static/js/main.78bcd144.js"
+  ]
+}
