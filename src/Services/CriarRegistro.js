@@ -23,7 +23,7 @@ return new Promise((resolve,reject) => {
           data: dado})
       };*/
 
-  fetch(this._url,{method: 'POST', data : { 
+  fetch(this._url,{method: 'POST', body : { 
     object_type: `${tabela}`,
     data: dado}
 })
