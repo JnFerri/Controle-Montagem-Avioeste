@@ -33,7 +33,7 @@ return new Promise((resolve,reject) => {
         }
         return response;
       
-      })
+      }).then(response => console.log(response))
       .then(response => resolve(response))
 .catch(err => {
   console.error('Ocorreu um erro:', err);
