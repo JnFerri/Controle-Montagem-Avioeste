@@ -23,7 +23,7 @@ return new Promise((resolve,reject) => {
           data: dado})
       };*/
 
-  fetch(this._url,{method: 'POST'})
+  fetch(this._url,{method: 'POST', data : dado})
       .then(response => {
         if (!response.ok) {
           throw new Error('Erro ao fazer a requisição.');
