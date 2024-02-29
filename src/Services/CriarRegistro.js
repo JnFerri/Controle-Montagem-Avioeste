@@ -23,9 +23,10 @@ return new Promise((resolve,reject) => {
           data: dado})
       };*/
 
-  fetch(this._url,{method: 'POST', body:{ 
+  fetch(this._url,{method: 'POST', body:JSON.stringify({ 
     object_type: `${tabela}`,
-    data: dado}})
+    data: dado})
+})
       .then(response => {
         if (!response.ok) {
           throw new Error('Erro ao fazer a requisição.');
