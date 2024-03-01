@@ -13,7 +13,7 @@ return new Promise((resolve,reject) => {
     headers: {
       accept: 'application/json',
       'content-type': 'application/json',
-      Authorization: 'Bearer YWRlMTU5YjIxNmY0NzJm19fbd828b4MTY3NjkxMTQ1NjA0ZWEx'
+      Authorization: `Bearer ${process.env.token} `
     },
     body : JSON.stringify({ 
       object_type: `${tabela}`,
