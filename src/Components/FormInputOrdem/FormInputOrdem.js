@@ -22,6 +22,7 @@ function FormInputOP(){
     
    async function CriaOrdemJestor(event){
         event.preventDefault()
+        console.log(process.env.token)
         const obj ={}
         obj['ordem_producao'] = NumeroOP
         const novoDado = await ordensController.criarRegistro('fk0lbipncnh3mu7u95dls', obj)
