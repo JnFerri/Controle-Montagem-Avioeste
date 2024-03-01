@@ -7,26 +7,18 @@ export class CriarRegistro{
 
   criarRegistro(tabela,dado) {
 return new Promise((resolve,reject) => {
-
-    
-  /*const options =  {
-
-      method: 'POST',
-      headers: {
-          accept: 'application/json',
-          'content-type': 'application/json',
-        Authorization: `Bearer ${this._token} `,
-
-      },
-      body:  JSON.stringify({ 
-          object_type: `${tabela}`,
-          data: dado})
-      };*/
-
-  fetch(this._url,{method: 'POST', body : { 
-    object_type: `${tabela}`,
-    data: dado}
-})
+  
+  fetch(this._url, {
+    method: 'POST',
+    headers: {
+      accept: 'application/json',
+      'content-type': 'application/json',
+      Authorization: 'Bearer YWRlMTU5YjIxNmY0NzJm19fbd828b4MTY3NjkxMTQ1NjA0ZWEx'
+    },
+    body : JSON.stringify({ 
+      object_type: `${tabela}`,
+      data: dado})
+    })
       .then(response => {
         if (!response.ok) {
           throw new Error('Erro ao fazer a requisição.');
