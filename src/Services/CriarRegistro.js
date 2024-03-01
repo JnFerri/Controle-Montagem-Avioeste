@@ -7,13 +7,13 @@ export class CriarRegistro{
 
   criarRegistro(tabela,dado) {
 return new Promise((resolve,reject) => {
-  console.log(process.env.token)
+  console.log(process.env.REACT_APP_token)
   fetch(this._url, {
     method: 'POST',
     headers: {
       accept: 'application/json',
       'content-type': 'application/json',
-      Authorization: `Bearer ${process.env.token} `
+      Authorization: `Bearer YWRlMTU5YjIxNmY0NzJm19fbd828b4MTY3NjkxMTQ1NjA0ZWEx `
     },
     body : JSON.stringify({ 
       object_type: `${tabela}`,
