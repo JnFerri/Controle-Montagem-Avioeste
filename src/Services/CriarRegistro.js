@@ -22,6 +22,7 @@ return new Promise((resolve,reject) => {
         if (!response.ok) {
           throw new Error('Erro ao fazer a requisição.');
         }
+        console.log(response)
         return response;
       
       }).then(response => console.log(response))
