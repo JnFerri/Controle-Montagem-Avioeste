@@ -24,7 +24,7 @@ function FormInputOP(){
         event.preventDefault()
         const obj ={}
         obj['ordem_producao'] = NumeroOP
-        const novoDado = await ordensController.criarRegistro('fk0lbipncnh3mu7u95dls', obj)
+        const novoDado = await ordensController.criarRegistro('fk0lbipncnh3mu7u95dls', JSON.stringify(obj))
         console.log(novoDado)
     }
     
