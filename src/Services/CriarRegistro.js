@@ -7,7 +7,7 @@ export class CriarRegistro{
 
   criarRegistro(tabela,dado) {
 return new Promise((resolve,reject) => {
-  console.log()
+  console.log(process.env.token)
   fetch(this._url, {
     method: 'POST',
     headers: {
