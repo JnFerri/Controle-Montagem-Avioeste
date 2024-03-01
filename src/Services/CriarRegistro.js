@@ -12,8 +12,7 @@ return new Promise((resolve,reject) => {
     method: 'POST',
     headers: {
       accept: 'application/json',
-      'content-type': 'application/json',
-      Authorization: `Bearer ${this._token} `
+      'content-type': 'application/json'
     },
     body : JSON.stringify({ 
       object_type: `${tabela}`,
