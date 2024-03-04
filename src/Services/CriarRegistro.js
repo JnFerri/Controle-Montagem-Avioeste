@@ -17,15 +17,14 @@ return new Promise((resolve,reject) => {
     body : JSON.stringify({ 
       object_type: `${tabela}`,
       data: dado})
-    })
+    }).then(response => resolve(response))
       .then(response => {
         if (!response.ok) {
           throw new Error('Erro ao fazer a requisição.');
         }
-        console.log(response)
-        return response;
+        console.log(response.data)
       
-      }).then(response => resolve(response))
+      })
 .catch(err => {
   console.error('Ocorreu um erro:', err);
   reject(err)
