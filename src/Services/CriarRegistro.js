@@ -25,8 +25,7 @@ return new Promise((resolve,reject) => {
         console.log(response)
         return response;
       
-      }).then(response => console.log(response))
-      .then(response => resolve(response))
+      }).then(response => resolve(response))
 .catch(err => {
   console.error('Ocorreu um erro:', err);
   reject(err)
