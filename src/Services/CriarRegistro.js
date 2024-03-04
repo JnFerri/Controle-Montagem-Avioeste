@@ -17,7 +17,7 @@ return new Promise((resolve,reject) => {
     body : JSON.stringify({ 
       object_type: `${tabela}`,
       data: dado})
-    }).then(response => resolve(response.data))
+    }).then(response => resolve(response))
   .catch(err => {
     console.error('Ocorreu um erro:', err);
     reject(err)
