@@ -21,4 +21,9 @@ export class OrdensController{
     const dado = await this._pegarRegistroUnico.pegaRegistroUnico(tabela,id)
     return dado
  }
+
+ async pegaDadosLista(tabela){
+  const dado = await this._pegarRegistrosTabela.pegarRegistrosTabela(tabela)
+  return dado
+}
 }

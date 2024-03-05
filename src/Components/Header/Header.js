@@ -9,6 +9,7 @@ align-items:center;
 justify-content:space-between;
 padding: 20px 0;
 background-color: white;
+width:100%;
 `
 
 

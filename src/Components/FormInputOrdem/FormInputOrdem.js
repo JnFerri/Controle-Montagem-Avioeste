@@ -7,6 +7,7 @@ import { OrdensController } from "../../Controller/OrdensController.js";
 import Select from "../Select/Select.js";
 import mesas from "../../BD/mesas.js";
 import Option from "../Select/Option/Option.js";
+import obterDataAtual from "../../Helpers/ObterDataAtual.js";
 
 const ordensController = new OrdensController()
 
@@ -27,15 +28,16 @@ function FormInputOP(){
         event.preventDefault()
         const obj ={}
         obj['ordem_producao'] = NumeroOP
-        const dataInicio = new Date().toLocaleString()
+        const dataInicio = obterDataAtual()
         console.log(dataInicio)
-        obj['hora_de_inicio'] = dataInicio
+        obj['horario_inicio'] = dataInicio
         obj['matricula'] = Matricula
         obj['mesa_teste'] = Mesa
         setNumeroOP('')
         setMatricula('')
         setMesa('')
-        await ordensController.criarRegistro('fk0lbipncnh3mu7u95dls', obj)
+        const dado = await ordensController.criarRegistro('fk0lbipncnh3mu7u95dls', obj)
+        console.log(dado.data)
     }
     
     const HandleNumeroOP = (event) => {
