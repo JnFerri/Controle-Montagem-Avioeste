@@ -107,7 +107,7 @@ function OrdensLista({ordens, setOrdens}){
             const ordensNaoFinalizadas = await PegarOrdensNaoFinalizadas('fk0lbipncnh3mu7u95dls')
             await setOrdens(ordensNaoFinalizadas)
             }else{
-                window.alert("Coloque a ordem  Em andamento antes de finalizar")
+                window.alert("Coloque a ordem Em andamento antes de finalizar")
             }
     }
             

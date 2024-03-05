@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="App">
      <Header></Header>
-     <FormInputOP setOrdens= {setOrdens}></FormInputOP>
+     <FormInputOP setOrdens= {setOrdens} ordens= {Ordens}></FormInputOP>
     <Botao onClick={PegarOrdens} width='30%' border='solid 0.5px black' padding='10px 5px' borderRadius='5px' margin='5px 0px'>{EscritaBotao}</Botao>
     {PostOrdens && <OrdensLista ordens={Ordens} setOrdens = {setOrdens}/>}
     </div>

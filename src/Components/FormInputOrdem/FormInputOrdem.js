@@ -21,26 +21,35 @@ const FormContainer = styled.form`
 `
 
 
-function FormInputOP({setOrdens}){
+function FormInputOP({setOrdens, ordens}){
     
     const [NumeroOP, setNumeroOP] = useState('')
     const [Matricula, setMatricula] = useState('')
     const [Mesa, setMesa] = useState('')
     async function CriaOrdemJestor(event){
-        event.preventDefault()
-        const obj ={}
-        obj['ordem_producao'] = NumeroOP
-        const dataInicio = tranformarDataEmString(new Date())
-        console.log(dataInicio)
-        obj['horario_inicio'] = dataInicio
-        obj['matricula'] = Matricula
-        obj['mesa_teste'] = Mesa
-        setNumeroOP('')
-        setMatricula('')
-        setMesa('')
-        await ordensController.criarRegistro('fk0lbipncnh3mu7u95dls', obj)
-        const ordensNaoFinalizadas = await PegarOrdensNaoFinalizadas('fk0lbipncnh3mu7u95dls')
-        setOrdens(ordensNaoFinalizadas)
+        const confereRepetido =await ordens.find(ordem => ordem.ordem_producao === NumeroOP)
+        if(!confereRepetido){
+            event.preventDefault()
+            const obj ={}
+            obj['ordem_producao'] = NumeroOP
+            const dataInicio = tranformarDataEmString(new Date())
+            obj['horario_inicio'] = dataInicio
+            obj['matricula'] = Matricula
+            obj['mesa_teste'] = Mesa
+            obj['status'] = 'Em Andamento'
+            setNumeroOP('')
+            setMatricula('')
+            setMesa('')
+            await ordensController.criarRegistro('fk0lbipncnh3mu7u95dls', obj)
+            const ordensNaoFinalizadas = await PegarOrdensNaoFinalizadas('fk0lbipncnh3mu7u95dls')
+            setOrdens(ordensNaoFinalizadas)
+        }else{
+            event.preventDefault()
+            window.alert("Esta OP ja esta na lista")
+            setNumeroOP('')
+            setMatricula('')
+            setMesa('')
+        }
     }
     
     const HandleNumeroOP = (event) => {
