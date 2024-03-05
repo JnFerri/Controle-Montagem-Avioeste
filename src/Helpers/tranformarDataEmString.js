@@ -1,5 +1,4 @@
-function obterDataAtual() {
-    const data = new Date();
+function tranformarDataEmString(data) {
     const ano = data.getFullYear();
     let mes = data.getMonth() + 1;
     let dia = data.getDate();
@@ -28,4 +27,4 @@ function obterDataAtual() {
     return dataFormatada;
 }
 
-export default obterDataAtual
+export default tranformarDataEmString

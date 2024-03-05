@@ -26,4 +26,9 @@ export class OrdensController{
   const dado = await this._pegarRegistrosTabela.pegarRegistrosTabela(tabela)
   return dado
 }
+
+async atualizarRegistro(tabela,dados){
+  const dado = await this._atualizarRegistro.atualizaRegistro(tabela,dados)
+  return dado
+}
 }

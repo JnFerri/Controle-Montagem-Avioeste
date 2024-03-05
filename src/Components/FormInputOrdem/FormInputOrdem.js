@@ -7,7 +7,8 @@ import { OrdensController } from "../../Controller/OrdensController.js";
 import Select from "../Select/Select.js";
 import mesas from "../../BD/mesas.js";
 import Option from "../Select/Option/Option.js";
-import obterDataAtual from "../../Helpers/ObterDataAtual.js";
+import { PegarOrdensNaoFinalizadas } from "../../Services/PegarOrdensNaoFinalizadas.js";
+import tranformarDataEmString from "../../Helpers/tranformarDataEmString.js";
 
 const ordensController = new OrdensController()
 
@@ -20,7 +21,8 @@ const FormContainer = styled.form`
 `
 
 
-function FormInputOP(){
+function FormInputOP({setOrdens}){
+    
     const [NumeroOP, setNumeroOP] = useState('')
     const [Matricula, setMatricula] = useState('')
     const [Mesa, setMesa] = useState('')
@@ -28,7 +30,7 @@ function FormInputOP(){
         event.preventDefault()
         const obj ={}
         obj['ordem_producao'] = NumeroOP
-        const dataInicio = obterDataAtual()
+        const dataInicio = tranformarDataEmString(new Date())
         console.log(dataInicio)
         obj['horario_inicio'] = dataInicio
         obj['matricula'] = Matricula
@@ -36,8 +38,9 @@ function FormInputOP(){
         setNumeroOP('')
         setMatricula('')
         setMesa('')
-        const dado = await ordensController.criarRegistro('fk0lbipncnh3mu7u95dls', obj)
-        console.log(dado.data)
+        await ordensController.criarRegistro('fk0lbipncnh3mu7u95dls', obj)
+        const ordensNaoFinalizadas = await PegarOrdensNaoFinalizadas('fk0lbipncnh3mu7u95dls')
+        setOrdens(ordensNaoFinalizadas)
     }
     
     const HandleNumeroOP = (event) => {
