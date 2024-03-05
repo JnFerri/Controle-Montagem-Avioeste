@@ -2,7 +2,7 @@ export class CriarRegistro{
 
     constructor(token){
         this._token = token
-        this._url = "http://localhost:3000/api/proxy"
+        this._url = "http://localhost:3000/api/ordens/post"
     }
 
   criarRegistro(tabela,dado) {
@@ -17,7 +17,18 @@ return new Promise((resolve,reject) => {
     body : JSON.stringify({ 
       object_type: `${tabela}`,
       data: dado})
-    }).then(response => resolve(response))
+    }).then(response => {
+      // Verifica se a requisição foi bem-sucedida (status 2xx)
+      if (response.ok) {
+          // Se sim, retorna os dados da resposta como JSON
+          return response.json();
+      }
+      // Se não, rejeita a Promise com o status de erro
+      return Promise.reject(new Error(`Erro: ${response.statusText}`));
+  }).then(data => {
+      // Resolve a Promise com os dados da resposta
+      resolve(data);
+  })
   .catch(err => {
     console.error('Ocorreu um erro:', err);
     reject(err)
