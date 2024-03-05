@@ -6,10 +6,10 @@ import { PegarRegistrosTabela } from "../Services/PegaRegistrosTabela.js"
 
 export class OrdensController{
     constructor(){
-        this._pegarRegistrosTabela = new PegarRegistrosTabela(process.env.token)
-        this._pegarRegistroUnico = new PegaRegistroUnico(process.env.token)
-        this._criarRegistro = new CriarRegistro(process.env.token)
-        this._atualizarRegistro = new AtualizaRegistro(process.env.token)
+        this._pegarRegistrosTabela = new PegarRegistrosTabela(process.env.REACT_APP_token)
+        this._pegarRegistroUnico = new PegaRegistroUnico(process.env.REACT_APP_token)
+        this._criarRegistro = new CriarRegistro(process.env.REACT_APP_token)
+        this._atualizarRegistro = new AtualizaRegistro(process.env.REACT_APP_token)
     }
 
  async criarRegistro(tabela,dado){

@@ -11,7 +11,7 @@ export class PegaRegistroUnico{
             headers: {
               accept: 'application/json',
               'content-type': 'application/json',
-              Authorization: `Bearer ${this._token}`
+              Authorization: `Bearer ${process.env.REACT_APP_token}`
             },
             body: JSON.stringify({object_type: `${table}`, id: id,summarized: true})
           };
