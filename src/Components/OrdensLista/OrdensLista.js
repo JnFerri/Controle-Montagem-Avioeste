@@ -33,6 +33,7 @@ const OrdensLi = styled.li`
     border:solid 0.5px black;
     border-radius:15px;
     margin:4px 0px;
+    background-color: ${props => props.backgroundcolor || 'white'};
 
 
 `
@@ -118,7 +119,7 @@ function OrdensLista({ordens, setOrdens}){
             <OrdensUl>
                 {
                     ordens.map(ordem =>  (
-                        <OrdensLi key={ordem.id_fk0lbipncnh3mu7u95dls}>
+                        <OrdensLi backgroundcolor={ordem.status === 'Em Andamento' ? '#24ab92' : '#bf6b47'} key={ordem.id_fk0lbipncnh3mu7u95dls}>
                             
                             <ItemLista>
                                 <Titulo4>Ordem Produção:</Titulo4>
@@ -137,10 +138,10 @@ function OrdensLista({ordens, setOrdens}){
                                 <span>{ordem.status}</span>
                             </ItemLista>
                             <ItemLista>
-                                <Botao border='0.1px black solid' padding='10px 5px' borderRadius='5px' fontSize='20px' backgroundcolor={ordem.status === 'Em Andamento' ? '#DAA520' : '#00FA9A'} onClick={async() => await HandlePausa(ordem)} width='50%'>{ordem.status === 'Em Andamento' ? 'Pausar' : 'Retornar'}</Botao>
+                                <Botao border='0.1px black solid' boxShadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding='10px 5px' borderRadius='5px' fontSize='20px' backgroundcolor={ordem.status === 'Em Andamento' ? '#DAA520' : '#00FA9A'} onClick={async() => await HandlePausa(ordem)} width='50%'>{ordem.status === 'Em Andamento' ? 'Pausar' : 'Retornar'}</Botao>
                             </ItemLista>
                             <ItemLista>
-                                <Botao border='0.1px black solid' padding='10px 5px' borderRadius='5px' backgroundcolor='#FF6347' color='black' fontSize='20px' width='50%' onClick={async() => await HandleFinalizar(ordem)}>Finalizar</Botao>
+                                <Botao border='0.1px black solid' boxShadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding='10px 5px' borderRadius='5px' backgroundcolor='#FF6347' color='black' fontSize='20px' width='50%' onClick={async() => await HandleFinalizar(ordem)}>Finalizar</Botao>
                             </ItemLista>
                         </OrdensLi>
                     )
