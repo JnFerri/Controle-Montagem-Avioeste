@@ -3,7 +3,7 @@ import Titulo4 from "../Titulo4/Titulo4.js";
 import Botao from "../Botao/Botao.js";
 import { OrdensController } from "../../Controller/OrdensController.js";
 import tranformarDataEmString from "../../Helpers/tranformarDataEmString.js";
-import { PegarOrdensNaoFinalizadas } from "../../Services/PegarOrdensNaoFinalizadas.js";
+//import { PegarOrdensNaoFinalizadas } from "../../Services/PegarOrdensNaoFinalizadas.js";
 import Delay from "../../Helpers/Delay.js";
 const ordensController = new OrdensController()
 
@@ -46,7 +46,7 @@ align-items:center;
 `
 
 
-function OrdensLista({ordens, setOrdens}){
+function OrdensLista({ordens, setOrdens, setLocalStorage}){
     
     async function HandlePausa(ordem){
     try{
@@ -54,7 +54,21 @@ function OrdensLista({ordens, setOrdens}){
             const horarioPausa = new Date()
             const dataPausaJestor = tranformarDataEmString(horarioPausa)
             const motivoPausa = window.prompt('Qual o motivo da pausa ?')
-            const obj = {}
+            const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];
+            const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);
+
+            if (ordemAtualIndex !== -1) {
+                const ordemAtual = ordensLocalStorage[ordemAtualIndex];
+                ordemAtual['horario_pausa'] = dataPausaJestor;
+                ordemAtual['status'] = 'Pausado';
+                ordemAtual['motivos_das_pausas'] = ordemAtual['motivos_das_pausas'] ? `${ordem.motivos_das_pausas} , ${motivoPausa}` : `${motivoPausa}`;
+                ordensLocalStorage[ordemAtualIndex] = ordemAtual;
+                localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
+                setLocalStorage(ordensLocalStorage)
+            }else {
+                throw new Error('Ordem não encontrada na localStorage.');
+            }
+            /*const obj = {}
             obj['horario_pausa'] = dataPausaJestor
             obj['id_fk0lbipncnh3mu7u95dls'] = ordem.id_fk0lbipncnh3mu7u95dls
             obj['status'] = 'Pausado' 
@@ -67,15 +81,36 @@ function OrdensLista({ordens, setOrdens}){
             await  ordensController.atualizarRegistro('fk0lbipncnh3mu7u95dls', obj)
             await Delay(1000)
             const ordensNaoFinalizadas = await PegarOrdensNaoFinalizadas('fk0lbipncnh3mu7u95dls')
-            await setOrdens(ordensNaoFinalizadas)
+            await setOrdens(ordens)*/
             
         }
         if(ordem.status === 'Pausado'){
-            const dataRecomeco = new Date()
-            const dataRecomecoString = tranformarDataEmString(dataRecomeco)
-            const dataPausa = new Date(ordem.horario_pausa)
-            const diferencaHorariosMiliSegundos = dataRecomeco - dataPausa 
-            const obj = {}
+            
+            const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];
+            const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);
+
+            if (ordemAtualIndex !== -1) {
+                const ordemAtual = ordensLocalStorage[ordemAtualIndex];
+                const dataRecomeco = new Date()
+                const dataRecomecoString = tranformarDataEmString(dataRecomeco)
+                const horarioPausa = `${ordemAtual['horario_pausa']}`
+                const dateMiliseconds = Date.parse(horarioPausa)
+                const dataPausa = new Date(dateMiliseconds + 10800000)
+                const diferencaHorariosMiliSegundos = dataRecomeco - dataPausa
+                ordemAtual['horario_recomeco'] = dataRecomecoString
+                ordemAtual['status'] = 'Em Andamento'
+                if(ordem['qnt_pausado']){
+                    ordemAtual['qnt_pausado'] = ordemAtual['qnt_pausado'] + diferencaHorariosMiliSegundos
+                }else{
+                    ordemAtual['qnt_pausado'] = diferencaHorariosMiliSegundos
+                }
+                ordensLocalStorage[ordemAtualIndex] = ordemAtual;
+                localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
+                setLocalStorage(ordensLocalStorage)
+            }else {
+                throw new Error('Ordem não encontrada na localStorage.');
+            }
+            /*const obj = {}
             obj['horario_recomeco'] = dataRecomecoString
             obj['qnt_pausado'] = ordem.qnt_pausado + diferencaHorariosMiliSegundos
             obj['id_fk0lbipncnh3mu7u95dls'] = ordem.id_fk0lbipncnh3mu7u95dls
@@ -83,7 +118,7 @@ function OrdensLista({ordens, setOrdens}){
             await ordensController.atualizarRegistro('fk0lbipncnh3mu7u95dls', obj)
             await Delay(1000)
             const ordensNaoFinalizadas = await PegarOrdensNaoFinalizadas('fk0lbipncnh3mu7u95dls')
-            await setOrdens(ordensNaoFinalizadas)
+            await setOrdens(ordens)*/
 
         }
     }catch (error) {
@@ -93,9 +128,33 @@ function OrdensLista({ordens, setOrdens}){
 
     async function HandleFinalizar(ordem){
         const horarioFinalizacao = new Date()
-        const horarioInicio = new Date(ordem.horario_inicio)
+        const horarioInicio = new Date(Date.parse(ordem.horario_inicio) + 10800000)
         const tempoTotalMilisegundos = horarioFinalizacao - horarioInicio
-        const obj = {}
+        const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];
+        const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);
+        if(ordem.status === 'Em Andamento'){
+            if (ordemAtualIndex !== -1) {
+                const ordemAtual = ordensLocalStorage[ordemAtualIndex];
+                ordemAtual['tempo_em_producao'] = tempoTotalMilisegundos - ordem.qnt_pausado
+                ordemAtual['tempo_total_producao'] = tempoTotalMilisegundos
+                ordemAtual['finalizado'] = true
+                ordemAtual['status'] = 'Finalizado'
+                ordemAtual['horario_termino'] = tranformarDataEmString(horarioFinalizacao)
+                await ordensController.criarRegistro('fk0lbipncnh3mu7u95dls', ordemAtual)
+                ordensLocalStorage[ordemAtualIndex] = ordemAtual;
+                ordensLocalStorage.splice(ordemAtualIndex, 1);
+                localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
+                await Delay(1000)
+                setLocalStorage(ordensLocalStorage)
+            }else {
+                throw new Error('Ordem não encontrada na localStorage.');
+            }
+        }else{
+            window.alert("Coloque a ordem Em andamento antes de finalizar")
+        }
+
+
+        /*const obj = {}
             if(ordem.status === 'Em Andamento'){
             obj['tempo_em_producao'] = tempoTotalMilisegundos - ordem.qnt_pausado
             obj['tempo_total_producao'] = tempoTotalMilisegundos
@@ -103,13 +162,15 @@ function OrdensLista({ordens, setOrdens}){
             obj['status'] = 'Finalizado'
             obj['finalizado'] = true
             obj['horario_termino'] = tranformarDataEmString(horarioFinalizacao)
-            await ordensController.atualizarRegistro('fk0lbipncnh3mu7u95dls', obj)
+            //await ordensController.atualizarRegistro('fk0lbipncnh3mu7u95dls', obj)
+            await ordensController.criarRegistro('fk0lbipncnh3mu7u95dls', obj)
+            
             await Delay(1000)
-            const ordensNaoFinalizadas = await PegarOrdensNaoFinalizadas('fk0lbipncnh3mu7u95dls')
-            await setOrdens(ordensNaoFinalizadas)
+            //const ordensNaoFinalizadas = await PegarOrdensNaoFinalizadas('fk0lbipncnh3mu7u95dls')
+            await setOrdens()
             }else{
                 window.alert("Coloque a ordem Em andamento antes de finalizar")
-            }
+            }*/
     }
             
         
@@ -119,7 +180,7 @@ function OrdensLista({ordens, setOrdens}){
             <OrdensUl>
                 {
                     ordens.map(ordem =>  (
-                        <OrdensLi backgroundcolor={ordem.status === 'Em Andamento' ? '#24ab92' : '#bf6b47'} key={ordem.id_fk0lbipncnh3mu7u95dls}>
+                        <OrdensLi backgroundcolor={ordem.status === 'Em Andamento' ? '#24ab92' : '#bf6b47'} key={ordem.id}>
                             
                             <ItemLista>
                                 <Titulo4>Ordem Produção:</Titulo4>

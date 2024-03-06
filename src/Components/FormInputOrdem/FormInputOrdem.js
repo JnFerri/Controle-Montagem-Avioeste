@@ -2,15 +2,14 @@ import styled from "styled-components";
 import Titulo2 from "../Titulo2/Titulo2.js";
 import Input from "../Input/Input.js";
 import Botao from "../Botao/Botao.js";
-import { useState } from "react";
-import { OrdensController } from "../../Controller/OrdensController.js";
+import {  useState } from "react";
 import Select from "../Select/Select.js";
 import mesas from "../../BD/mesas.js";
 import Option from "../Select/Option/Option.js";
-import { PegarOrdensNaoFinalizadas } from "../../Services/PegarOrdensNaoFinalizadas.js";
+//import { PegarOrdensNaoFinalizadas } from "../../Services/PegarOrdensNaoFinalizadas.js";
 import tranformarDataEmString from "../../Helpers/tranformarDataEmString.js";
-
-const ordensController = new OrdensController()
+import Delay from "../../Helpers/Delay.js";
+import { v4 as uuidv4 } from 'uuid'
 
 const FormContainer = styled.form`
     width:100%;
@@ -21,8 +20,9 @@ const FormContainer = styled.form`
 `
 
 
-function FormInputOP({setOrdens, ordens}){
+function FormInputOP({setOrdens, ordens,LocalStorage,setLocalStorage}){
     
+
     const [NumeroOP, setNumeroOP] = useState('')
     const [Matricula, setMatricula] = useState('')
     const [Mesa, setMesa] = useState('')
@@ -37,12 +37,18 @@ function FormInputOP({setOrdens, ordens}){
             obj['matricula'] = Matricula
             obj['mesa_teste'] = Mesa
             obj['status'] = 'Em Andamento'
+            obj['id'] =uuidv4()
             setNumeroOP('')
             setMatricula('')
             setMesa('')
-            await ordensController.criarRegistro('fk0lbipncnh3mu7u95dls', obj)
-            const ordensNaoFinalizadas = await PegarOrdensNaoFinalizadas('fk0lbipncnh3mu7u95dls')
-            setOrdens(ordensNaoFinalizadas)
+            const localStorageData = JSON.parse(localStorage.getItem('ordensNaoFinalizadas') || "[]");
+            localStorageData.push(obj)
+            localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(localStorageData))
+            await Delay(1000)
+            setLocalStorage(localStorageData)
+            //await ordensController.criarRegistro('fk0lbipncnh3mu7u95dls', obj)
+            //const ordensNaoFinalizadas = await PegarOrdensNaoFinalizadas('fk0lbipncnh3mu7u95dls')
+            //setOrdens(ordensNaoFinalizadas)
         }else{
             event.preventDefault()
             window.alert("Esta OP ja esta na lista")
@@ -66,19 +72,19 @@ function FormInputOP({setOrdens, ordens}){
     return(
         <FormContainer>
             <Titulo2 color="white">Coloque o numero da ordem de produção e clique em iniciar para começar uma nova ordem de produção</Titulo2>
-            <Input placeholder="Numero da OP" padding = "20px 0px" width="80%" margin ="1rem 0px" borderRadius="20px" fontSize="20px" value={NumeroOP} 
+            <Input placeholder="Numero da OP" padding = "20px 0px" width="80%" margin ="1rem 0px" border_radius="20px" font_size="20px" value={NumeroOP} 
                 onChange={HandleNumeroOP} ></Input>
-             <Input placeholder="Matricula Funcionario" padding = "20px 0px" width="30%" margin ="1rem 0px" borderRadius="20px" fontSize="20px" value={Matricula} 
+             <Input placeholder="Matricula Funcionario" padding = "20px 0px" width="30%" margin ="1rem 0px" border_radius="20px" font_size="20px" value={Matricula} 
                 onChange={HandleMatricula} ></Input>
              <Select margin='1rem 0' width='30%' padding='10px' value={Mesa} onChange={HandleMesa}>
                  <Option padding='10px 2px' fontSize='20px' value='' >Selecione Uma Mesa...</Option>
                 {
-                    mesas.map(mesa => (
-                        <Option padding='10px 2px' fontSize='20px' >{mesa}</Option>
+                    mesas.map((mesa,index) => (
+                        <Option key={index} padding='10px 2px' fontSize='20px' >{mesa}</Option>
                     ))
                 }
                 </Select>      
-            <Botao width="30%" boxShadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding="20px 0px" borderRadius = "10px" margin="1rem 0" color="black" backgroundcolor='#79b3e0' fontSize='25px' border="0.5px solid black" onClick={CriaOrdemJestor}>INICIAR ORDEM DE PRODUÇÃO</Botao>
+            <Botao width="30%" boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding="20px 0px" border_radius = "10px" margin="1rem 0" color="black" backgroundcolor='#79b3e0' font_size='25px' border="0.5px solid black" onClick={CriaOrdemJestor}>INICIAR ORDEM DE PRODUÇÃO</Botao>
         </FormContainer>
     )
 }
