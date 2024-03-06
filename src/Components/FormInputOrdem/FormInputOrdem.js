@@ -78,7 +78,7 @@ function FormInputOP({setOrdens, ordens}){
                     ))
                 }
                 </Select>      
-            <Botao width="30%" padding="20px 0px" borderRadius = "20px" margin="1rem 0" color="black" backgroundcolor='white' border="0.5px solid black" onClick={CriaOrdemJestor}>Iniciar OP</Botao>
+            <Botao width="30%" boxShadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding="20px 0px" borderRadius = "10px" margin="1rem 0" color="black" backgroundcolor='#79b3e0' fontSize='25px' border="0.5px solid black" onClick={CriaOrdemJestor}>INICIAR ORDEM DE PRODUÇÃO</Botao>
         </FormContainer>
     )
 }

@@ -15,6 +15,9 @@ const Botao = styled.button`
     &:active {
         transform: translateY(2px);
       }
+    &:hover {
+        transform: scale(1.05);
+    }
 `
 
 export default Botao
