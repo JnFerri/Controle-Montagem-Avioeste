@@ -172,6 +172,14 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                 window.alert("Coloque a ordem Em andamento antes de finalizar")
             }*/
     }
+
+    function pegaUltimoMotivoPausa(motivos){
+        if(motivos){
+            const motivosArray = motivos.split(',')
+            const ultimoMotivo = motivosArray[motivosArray.length - 1]
+            return ultimoMotivo
+        }
+    }
             
         
     return(
@@ -197,6 +205,10 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                             <ItemLista>
                                 <Titulo4>Status:</Titulo4>
                                 <span>{ordem.status}</span>
+                            </ItemLista>
+                            <ItemLista>
+                                <Titulo4>Motivo da Pausa:</Titulo4>
+                                <span>{ordem.status === "Pausado" ? pegaUltimoMotivoPausa(ordem.motivos_das_pausas) : ''}</span>
                             </ItemLista>
                             <ItemLista>
                                 <Botao border='0.1px black solid' boxShadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding='10px 5px' borderRadius='5px' fontSize='20px' backgroundcolor={ordem.status === 'Em Andamento' ? '#DAA520' : '#00FA9A'} onClick={async() => await HandlePausa(ordem)} width='50%'>{ordem.status === 'Em Andamento' ? 'Pausar' : 'Retornar'}</Botao>
