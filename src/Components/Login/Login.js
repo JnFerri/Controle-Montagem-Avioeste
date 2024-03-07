@@ -24,20 +24,26 @@ function Login({setLoginConferencia}){
     const [Usuario, setUsuario] = useState('')
     const [Senha, setSenha] = useState('')
     const LoginAtual = JSON.parse(localStorage.getItem('Login')) || []
+    if(LoginAtual.Usuario === process.env.REACT_APP_Usuario && LoginAtual.Senha === process.env.REACT_APP_Senha){
+        setLoginConferencia(true)
+    }
     function confereLogin(event){
         event.preventDefault()
-        if((Usuario === process.env.REACT_APP_Usuario && Senha === process.env.REACT_APP_Senha) || (LoginAtual.Usuario === process.env.REACT_APP_Usuario && LoginAtual.Senha === process.env.REACT_APP_Senha) ){
+        if(Usuario === `${process.env.REACT_APP_Usuario}` && Senha === `${process.env.REACT_APP_Senha}` ){
             setLoginConferencia(true)
             localStorage.setItem('Login', JSON.stringify({Usuario: Usuario, Senha: Senha}))
             
         }else{ 
             window.alert('Usuario ou senha errados !!!')
+            console.log(process.env.REACT_APP_Usuario)
             setLoginConferencia(false)
+            
         }
         
     }
     function handleUsuario(event){
         setUsuario(event.target.value)
+        
         
     }
     
