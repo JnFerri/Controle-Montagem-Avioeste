@@ -200,7 +200,7 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                             </ItemLista>
                             <ItemLista>
                                 <Titulo4>Mesa de Montagem:</Titulo4>
-                                <span>{ordem.mesa_teste}</span>
+                                <span>{ordem.mesa}</span>
                             </ItemLista>
                             <ItemLista>
                                 <Titulo4>Status:</Titulo4>
