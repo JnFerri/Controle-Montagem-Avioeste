@@ -5,6 +5,12 @@ import { OrdensController } from "../../Controller/OrdensController.js";
 import tranformarDataEmString from "../../Helpers/tranformarDataEmString.js";
 //import { PegarOrdensNaoFinalizadas } from "../../Services/PegarOrdensNaoFinalizadas.js";
 import Delay from "../../Helpers/Delay.js";
+import Modal from 'react-modal';
+import Select from "../Select/Select.js";
+import Option from "../Select/Option/Option.js";
+import motivosPausas from "../../BD/motivosPausas.js";
+import Titulo2 from "../Titulo2/Titulo2.js";
+import { useState } from "react";
 const ordensController = new OrdensController()
 
 const ContainerOrdens = styled.section`
@@ -44,30 +50,20 @@ display:flex;
 flex-direction:column;
 align-items:center; 
 `
-
+const SpanOrdem = styled.span`
+    font-size : 18px;
+    color:
+`
 
 function OrdensLista({ordens, setOrdens, setLocalStorage}){
     
+    const [ModalPausa, setModalPausa] = useState(false)
+    const [MotivoPausa, setMotivoPausa] = useState('')
+
     async function HandlePausa(ordem){
     try{
         if(ordem.status === 'Em Andamento' ){
-            const horarioPausa = new Date()
-            const dataPausaJestor = tranformarDataEmString(horarioPausa)
-            const motivoPausa = window.prompt('Qual o motivo da pausa ?')
-            const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];
-            const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);
-
-            if (ordemAtualIndex !== -1) {
-                const ordemAtual = ordensLocalStorage[ordemAtualIndex];
-                ordemAtual['horario_pausa'] = dataPausaJestor;
-                ordemAtual['status'] = 'Pausado';
-                ordemAtual['motivos_das_pausas'] = ordemAtual['motivos_das_pausas'] ? `${ordem.motivos_das_pausas} , ${motivoPausa}` : `${motivoPausa}`;
-                ordensLocalStorage[ordemAtualIndex] = ordemAtual;
-                localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
-                setLocalStorage(ordensLocalStorage)
-            }else {
-                throw new Error('Ordem não encontrada na localStorage.');
-            }
+            HandleModalPausa(ordem)
             /*const obj = {}
             obj['horario_pausa'] = dataPausaJestor
             obj['id_fk0lbipncnh3mu7u95dls'] = ordem.id_fk0lbipncnh3mu7u95dls
@@ -180,7 +176,34 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
             return ultimoMotivo
         }
     }
-            
+
+    function HandleModalPausa(ordem){
+    if(ModalPausa === false){
+        setModalPausa(true)
+    }
+    if(ModalPausa === true){
+        setModalPausa(false)
+        const horarioPausa = new Date()
+            const dataPausaJestor = tranformarDataEmString(horarioPausa)
+            const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];
+            const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);
+            if (ordemAtualIndex !== -1) {
+                const ordemAtual = ordensLocalStorage[ordemAtualIndex];
+                ordemAtual['horario_pausa'] = dataPausaJestor;
+                ordemAtual['status'] = 'Pausado';
+                ordemAtual['motivos_das_pausas'] = ordemAtual['motivos_das_pausas'] ? `${ordem.motivos_das_pausas} , ${MotivoPausa}` : `${MotivoPausa}`;
+                ordensLocalStorage[ordemAtualIndex] = ordemAtual;
+                localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
+                setLocalStorage(ordensLocalStorage)
+            }else {
+                throw new Error('Ordem não encontrada na localStorage.');
+            }
+    }
+    }
+
+function HandleMotivo(event){
+    setMotivoPausa(event.target.value)
+}
         
     return(
         <ContainerOrdens>
@@ -191,32 +214,69 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                         <OrdensLi backgroundcolor={ordem.status === 'Em Andamento' ? '#24ab92' : '#bf6b47'} key={ordem.id}>
                             
                             <ItemLista>
-                                <Titulo4>Ordem Produção:</Titulo4>
-                                <span>{ordem.ordem_producao}</span>
+                                <Titulo4 font_size='20px'>Ordem Produção:</Titulo4>
+                                <SpanOrdem>{ordem.ordem_producao}</SpanOrdem>
+                              
                             </ItemLista>
                             <ItemLista>
-                                <Titulo4>Matricula Operador:</Titulo4>
-                                <span>{ordem.matricula}</span>
+                                <Titulo4 font_size='20px'>Matricula Operador:</Titulo4>
+                                <SpanOrdem>{ordem.matricula}</SpanOrdem>
+                                
                             </ItemLista>
                             <ItemLista>
-                                <Titulo4>Mesa de Montagem:</Titulo4>
-                                <span>{ordem.mesa}</span>
+                                <Titulo4 font_size='20px'>Mesa de Montagem:</Titulo4>
+                                <SpanOrdem>{ordem.mesa}</SpanOrdem>
+                                
                             </ItemLista>
                             <ItemLista>
-                                <Titulo4>Status:</Titulo4>
-                                <span>{ordem.status}</span>
+                                <Titulo4 font_size='20px'>Status:</Titulo4>
+                                <SpanOrdem>{ordem.status}</SpanOrdem>
+                                
                             </ItemLista>
                             <ItemLista>
-                                <Titulo4>Motivo da Pausa:</Titulo4>
-                                <span>{ordem.status === "Pausado" ? pegaUltimoMotivoPausa(ordem.motivos_das_pausas) : ''}</span>
+                                <Titulo4 font_size='20px'>Motivo da Pausa:</Titulo4>
+                                <SpanOrdem>{ordem.status === "Pausado" ? pegaUltimoMotivoPausa(ordem.motivos_das_pausas) : ''}</SpanOrdem>
+                                
                             </ItemLista>
                             <ItemLista>
-                                <Botao border='0.1px black solid' boxShadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding='10px 5px' borderRadius='5px' fontSize='20px' backgroundcolor={ordem.status === 'Em Andamento' ? '#DAA520' : '#00FA9A'} onClick={async() => await HandlePausa(ordem)} width='50%'>{ordem.status === 'Em Andamento' ? 'Pausar' : 'Retornar'}</Botao>
+                                <Botao border='0.1px black solid' boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding='10px 5px' border_radius='5px' font_size='20px' backgroundcolor={ordem.status === 'Em Andamento' ? '#DAA520' : '#00FA9A'} onClick={async() => {await HandlePausa(ordem)}} width='80%'>{ordem.status === 'Em Andamento' ? 'PAUSAR' : 'RETORNAR'}</Botao>
                             </ItemLista>
                             <ItemLista>
-                                <Botao border='0.1px black solid' boxShadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding='10px 5px' borderRadius='5px' backgroundcolor='#FF6347' color='black' fontSize='20px' width='50%' onClick={async() => await HandleFinalizar(ordem)}>Finalizar</Botao>
+                                <Botao border='0.1px black solid' boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding='10px 5px' border_radius='5px' backgroundcolor='#FF6347' color='black' font_size='20px' width='80%' onClick={async() => await HandleFinalizar(ordem)}>FINALIZAR</Botao>
                             </ItemLista>
+                            <Modal 
+    isOpen={ModalPausa}
+    onRequestClose={async() => setModalPausa(false)}
+    contentLabel="Motivo da Pausa"
+    ariaHideApp={false}
+    style={{
+        overlay: {
+          backgroundColor: 'rgba(0, 0 ,0, 0.8)'
+        },
+        content: {
+          border: '1px solid black',
+          background: 'white',
+          borderRadius: '20px',
+          padding: '20px',
+          display:'flex',
+          flexDirection: "column",
+          alignItems:'center'
+        }
+      }}
+    >
+      <Titulo2>COLOQUE O MOTIVO DA PAUSA:</Titulo2>
+      <Select onChange={HandleMotivo} margin='30px 0px' padding='20px 0px' width='80%' font_size='24px'>
+      <Option width='80%' padding='20px 0px' font_size='24px' value=''>Selecione um Motivo...</Option>
+        {
+            motivosPausas.map((motivos,index) => (
+                <Option width='80%' padding='20px 0px' font_size='24px' key={index}>{motivos}</Option>
+            ))
+        }
+      </Select>
+      <Botao padding='20px 10px' width='40%' border='1px solid black' backgroundcolor='#79b3e0' border_radius='30px' onClick={async() => HandleModalPausa(ordem)}>ENVIAR</Botao>
+    </Modal>
                         </OrdensLi>
+                        
                     )
 
                     )

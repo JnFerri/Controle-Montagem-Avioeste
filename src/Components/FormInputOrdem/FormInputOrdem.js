@@ -44,6 +44,7 @@ function FormInputOP({setOrdens, ordens,LocalStorage,setLocalStorage}){
             setNumeroOP('')
             setMatricula('')
             setMesa('')
+            setTurno('')
             const localStorageData = JSON.parse(localStorage.getItem('ordensNaoFinalizadas') || "[]");
             localStorageData.push(obj)
             localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(localStorageData))
