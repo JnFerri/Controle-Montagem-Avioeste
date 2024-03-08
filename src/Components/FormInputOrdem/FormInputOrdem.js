@@ -58,6 +58,7 @@ function FormInputOP({setOrdens, ordens,LocalStorage,setLocalStorage}){
             setNumeroOP('')
             setMatricula('')
             setMesa('')
+            setTurno('')
         }
     }
     
