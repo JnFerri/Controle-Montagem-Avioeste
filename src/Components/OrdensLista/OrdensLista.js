@@ -130,7 +130,7 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
     }
     }
     async function HandleFinalizar(ordem){
-        const confirmacao = window.confirm(`Tem certeza que quer finalizar a ordem de produção código : ${ordem.ordem_producao} ? Caso não aperte ESC para sair.`)
+        const confirmacao = window.confirm(`Tem certeza que quer finalizar a ordem de produção código : ${ordem.ordem_producao} ?`)
         if(confirmacao){
         const horarioFinalizacao = new Date()
         const horarioInicio = new Date(Date.parse(ordem.horario_inicio) + 10800000)
@@ -306,7 +306,8 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
             ))
         }
       </Select>
-      <Botao padding='20px 10px' width='40%' border='1px solid black' backgroundcolor='#79b3e0' border_radius='30px' onClick={() => HandlePausa(OrdemPausada)}>ENVIAR</Botao>
+      <Botao padding='20px 10px' width='40%' margin='1rem 0' border='1px solid black' backgroundcolor='#79b3e0' border_radius='30px' onClick={() => HandlePausa(OrdemPausada)}>ENVIAR</Botao>
+      <Botao padding='20px 10px' width='40%' margin='1rem 0' border='1px solid black' backgroundcolor='#FF6347' border_radius='30px' onClick={() => setModalPausa(false)}>CANCELAR</Botao>
     </Modal>
     
     
@@ -352,8 +353,11 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                     ))
                 }
                     
-                    </Select>      
-      <Botao padding='20px 10px' width='40%' border='1px solid black' backgroundcolor='#79b3e0' border_radius='30px' onClick={() => EditaComponente(OrdemEditando, ordens)}>Atualizar</Botao>
+                    </Select>  
+    
+      <Botao padding='20px 10px' width='40%' margin='1rem 10px' border='1px solid black' backgroundcolor='#79b3e0' border_radius='30px' onClick={() => EditaComponente(OrdemEditando, ordens)}>ATUALIZAR</Botao>
+      <Botao padding='20px 10px' width='40%' margin='1rem 10px' border='1px solid black' backgroundcolor='#FF6347' border_radius='30px' onClick={() => setModalEdicao(false)}>CANCELAR</Botao>
+  
     </Modal>
 
                         </OrdensLi>
