@@ -81,11 +81,11 @@ function FormInputOP({setOrdens, ordens,LocalStorage,setLocalStorage}){
     return(
         <FormContainer>
             <Titulo2 color="white">Coloque o numero da ordem de produção e clique em iniciar para começar uma nova ordem de produção</Titulo2>
-            <Input placeholder="Numero da OP" required='true'  padding = "20px 0px" width="80%" margin ="1rem 0px" border_radius="20px" font_size="20px" value={NumeroOP} 
+            <Input placeholder="Numero da OP" required  padding = "20px 0px" width="80%" margin ="1rem 0px" border_radius="20px" font_size="20px" value={NumeroOP} 
                 onChange={HandleNumeroOP} ></Input>
-             <Input placeholder="Matricula Funcionario" required='true' padding = "20px 0px" width="30%" margin ="1rem 0px" border_radius="20px" font_size="20px" value={Matricula} 
+             <Input placeholder="Matricula Funcionario" required padding = "20px 0px" width="30%" margin ="1rem 0px" border_radius="20px" font_size="20px" value={Matricula} 
                 onChange={HandleMatricula} ></Input>
-             <Select margin='1rem 0' width='30%' required='true' padding='10px' value={Mesa} onChange={HandleMesa}>
+             <Select margin='1rem 0' width='30%' required padding='10px' value={Mesa} onChange={HandleMesa}>
                  <Option padding='10px 2px' fontSize='20px' value='' >Selecione Uma Mesa...</Option>
                 {
                     mesas.map((mesa,index) => (
@@ -93,7 +93,7 @@ function FormInputOP({setOrdens, ordens,LocalStorage,setLocalStorage}){
                     ))
                 }
                 </Select>
-                <Select margin='1rem 0' width='30%' required='true' padding='10px' value={Turno} onChange={HandleTurno}>
+                <Select margin='1rem 0' width='30%' required padding='10px' value={Turno} onChange={HandleTurno}>
                 <Option padding='10px 2px' fontSize='20px' value='' >Selecione Um Turno...</Option>
                 {
                     turnos.map((turno,index) =>(
