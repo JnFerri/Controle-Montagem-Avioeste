@@ -74,6 +74,7 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
     const [Turno, setTurno] = useState('')
     const [QuantidadeProduzida, setQuantidadeProduzida] = useState(0)
     const [ModalQuantidadeFinalizacao, setModalQuantidadeFinalizacao] = useState(false)
+    const [OrdemFinalizar, setOrdemFinalizar] = useState({})
 
     //HandlePausa, ordem é definido no botão da lista ao colocar de 'Pausado' para 'Em Andamento', mas quando de 'Em Andamento' para 'Pausado' ele abre primeiro o modal e então ao enviar o modal ele roda handlePausa com ordem passada na function do modal !
     function HandlePausa(ordem){
@@ -146,6 +147,7 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                 ordemAtual['tempo_total_producao'] = tempoTotalMilisegundos
                 ordemAtual['finalizado'] = true
                 ordemAtual['status'] = 'Finalizado'
+                ordemAtual['quantidade_produzida'] = QuantidadeProduzida
                 ordemAtual['horario_termino'] = tranformarDataEmString(horarioFinalizacao)
                 await ordensController.criarRegistro('fk0lbipncnh3mu7u95dls', ordemAtual)
                 ordensLocalStorage[ordemAtualIndex] = ordemAtual;
@@ -153,6 +155,8 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                 localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
                 await Delay(1000)
                 setLocalStorage(ordensLocalStorage)
+                setModalQuantidadeFinalizacao(false)
+                setQuantidadeProduzida(0)
             }else {
                 throw new Error('Ordem não encontrada na localStorage.');
             }
@@ -245,7 +249,7 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
             function HandleModalQuantidadeFinalizacao(ordem){
                 if(ModalQuantidadeFinalizacao === false){
                     setModalQuantidadeFinalizacao(true)
-                    setOrdemPausada(ordem)
+                    setOrdemFinalizar(ordem)
                 }
                 if(ModalQuantidadeFinalizacao === true){
                     setModalPausa(false)
@@ -289,7 +293,7 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                                 <Botao border='0.1px black solid' boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding='10px 5px' border_radius='5px' font_size='20px' backgroundcolor={ordem.status === 'Em Andamento' ? '#DAA520' : '#00FA9A'} onClick={async() => {ordem.status === 'Em Andamento' ? HandleModalPausa(ordem) : HandlePausa(ordem)}} width='80%'>{ordem.status === 'Em Andamento' ? 'PAUSAR' : 'RETORNAR'}</Botao>
                             </ItemLista>
                             <ItemLista>
-                                <Botao border='0.1px black solid' boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding='10px 5px' border_radius='5px' backgroundcolor='#FF6347' color='black' font_size='20px' width='80%' onClick={async() => await HandleFinalizar(ordem)}>FINALIZAR</Botao>
+                                <Botao border='0.1px black solid' boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding='10px 5px' border_radius='5px' backgroundcolor='#FF6347' color='black' font_size='20px' width='80%' onClick={async() => await HandleModalQuantidadeFinalizacao(ordem)}>FINALIZAR</Botao>
                             </ItemLista>
                                 <Botao   padding='2px 2px'  backgroundcolor='rgb(0,0,0,0)' color='black' font_size='20px' width='10%' onClick={async() => HandleModalEdicao(ordem)}><Imagem src={ImagemEditar} width='40%'></Imagem></Botao>
     <Modal 
@@ -376,8 +380,8 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
     </Modal>
     
     <Modal 
-    isOpen={ModalPausa}
-    onRequestClose={async() => setModalPausa(false)}
+    isOpen={ModalQuantidadeFinalizacao}
+    onRequestClose={async() => setModalQuantidadeFinalizacao(false)}
     contentLabel="Motivo da Pausa"
     ariaHideApp={false}
     style={{
@@ -396,9 +400,9 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
       }}
     >
       <Label>Quantas peças foram produzidas ?</Label>
-      <Input placeholder="Numero da OP"   padding = "20px 0px" width="60%" margin ="1rem 0px" border_radius="20px" border='0.1px black solid' font_size="20px" value={NumeroOP} onChange={HandleQuantidadeProduzida}></Input>
-      <Botao padding='20px 10px' width='40%' margin='1rem 0' border='1px solid black' backgroundcolor='#79b3e0' border_radius='30px' onClick={() => HandlePausa(OrdemPausada)}>FINALIZAR</Botao>
-      <Botao padding='20px 10px' width='40%' margin='1rem 0' border='1px solid black' backgroundcolor='#FF6347' border_radius='30px' onClick={() => setModalPausa(false)}>CANCELAR</Botao>
+      <Input placeholder="Quantidade Produzida"   padding = "20px 0px" width="40%" margin ="1rem 0px" border_radius="20px" border='0.1px black solid' font_size="20px" value={QuantidadeProduzida} onChange={HandleQuantidadeProduzida}></Input>
+      <Botao padding='20px 10px' width='40%' margin='1rem 0' border='1px solid black' backgroundcolor='#79b3e0' border_radius='30px' onClick={() => HandleFinalizar(OrdemFinalizar)}>FINALIZAR</Botao>
+      <Botao padding='20px 10px' width='40%' margin='1rem 0' border='1px solid black' backgroundcolor='#FF6347' border_radius='30px' onClick={() => setModalQuantidadeFinalizacao(false)}>CANCELAR</Botao>
     </Modal>
                         </OrdensLi>
                         
