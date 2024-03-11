@@ -32,27 +32,32 @@ function FormInputOP({setOrdens, ordens,LocalStorage,setLocalStorage}){
         const confereRepetido =await ordens.find(ordem => ordem.ordem_producao === NumeroOP)
         if(!confereRepetido){
             event.preventDefault()
-            const obj ={}
-            obj['ordem_producao'] = NumeroOP
             const dataInicio = tranformarDataEmString(new Date())
-            obj['horario_inicio'] = dataInicio
-            obj['matricula'] = Matricula
-            obj['mesa'] = Mesa
-            obj['turno'] = Turno
-            obj['status'] = 'Em Andamento'
-            obj['id'] =uuidv4()
-            setNumeroOP('')
-            setMatricula('')
-            setMesa('')
-            setTurno('')
-            const localStorageData = JSON.parse(localStorage.getItem('ordensNaoFinalizadas') || "[]");
-            localStorageData.push(obj)
-            localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(localStorageData))
-            await Delay(1000)
-            setLocalStorage(localStorageData)
-            //await ordensController.criarRegistro('fk0lbipncnh3mu7u95dls', obj)
-            //const ordensNaoFinalizadas = await PegarOrdensNaoFinalizadas('fk0lbipncnh3mu7u95dls')
-            //setOrdens(ordensNaoFinalizadas)
+            if(!NumeroOP || !dataInicio || !Matricula || !Mesa || !Turno){
+                window.alert("Preencha todos os campos antes de incluir a Ordem de Produção !!")
+                throw Error('Formulario com campos vazios')
+            }else{
+                const obj ={}
+                obj['ordem_producao'] = NumeroOP
+                obj['horario_inicio'] = dataInicio
+                obj['matricula'] = Matricula
+                obj['mesa'] = Mesa
+                obj['turno'] = Turno
+                obj['status'] = 'Em Andamento'
+                obj['id'] =uuidv4()
+                setNumeroOP('')
+                setMatricula('')
+                setMesa('')
+                setTurno('')
+                const localStorageData = JSON.parse(localStorage.getItem('ordensNaoFinalizadas') || "[]");
+                localStorageData.push(obj)
+                localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(localStorageData))
+                await Delay(1000)
+                setLocalStorage(localStorageData)
+                //await ordensController.criarRegistro('fk0lbipncnh3mu7u95dls', obj)
+                //const ordensNaoFinalizadas = await PegarOrdensNaoFinalizadas('fk0lbipncnh3mu7u95dls')
+                //setOrdens(ordensNaoFinalizadas)
+            }
         }else{
             event.preventDefault()
             window.alert("Esta OP ja esta na lista")
@@ -81,11 +86,11 @@ function FormInputOP({setOrdens, ordens,LocalStorage,setLocalStorage}){
     return(
         <FormContainer>
             <Titulo2 color="white">Coloque o numero da ordem de produção e clique em iniciar para começar uma nova ordem de produção</Titulo2>
-            <Input placeholder="Numero da OP" required  padding = "20px 0px" width="80%" margin ="1rem 0px" border_radius="20px" font_size="20px" value={NumeroOP} 
+            <Input placeholder="Numero da OP"   padding = "20px 0px" width="80%" margin ="1rem 0px" border_radius="20px" font_size="20px" value={NumeroOP} 
                 onChange={HandleNumeroOP} ></Input>
-             <Input placeholder="Matricula Funcionario" required padding = "20px 0px" width="30%" margin ="1rem 0px" border_radius="20px" font_size="20px" value={Matricula} 
+             <Input placeholder="Matricula Funcionario"  padding = "20px 0px" width="30%" margin ="1rem 0px" border_radius="20px" font_size="20px" value={Matricula} 
                 onChange={HandleMatricula} ></Input>
-             <Select margin='1rem 0' width='30%' required padding='10px' value={Mesa} onChange={HandleMesa}>
+             <Select margin='1rem 0' width='30%'  padding='10px' value={Mesa} onChange={HandleMesa}>
                  <Option padding='10px 2px' fontSize='20px' value='' >Selecione Uma Mesa...</Option>
                 {
                     mesas.map((mesa,index) => (
@@ -93,7 +98,7 @@ function FormInputOP({setOrdens, ordens,LocalStorage,setLocalStorage}){
                     ))
                 }
                 </Select>
-                <Select margin='1rem 0' width='30%' required padding='10px' value={Turno} onChange={HandleTurno}>
+                <Select margin='1rem 0' width='30%'  padding='10px' value={Turno} onChange={HandleTurno}>
                 <Option padding='10px 2px' fontSize='20px' value='' >Selecione Um Turno...</Option>
                 {
                     turnos.map((turno,index) =>(
