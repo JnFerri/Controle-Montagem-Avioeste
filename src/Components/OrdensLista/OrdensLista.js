@@ -102,7 +102,6 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
         if(ordem.status === 'Pausado'){
             const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];
             const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);
-            console.log(ordem.id)
             if (ordemAtualIndex !== -1) {
                 const ordemAtual = ordensLocalStorage[ordemAtualIndex];
                 const dataRecomeco = new Date()
@@ -132,9 +131,8 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
         console.error('Erro ao atualizar o estado das ordens:', error);
     }
     }
+
     async function HandleFinalizar(ordem){
-        const confirmacao = window.confirm(`Tem certeza que quer finalizar a ordem de produção código : ${ordem.ordem_producao} ?`)
-        if(confirmacao){
         const horarioFinalizacao = new Date()
         const horarioInicio = new Date(Date.parse(ordem.horario_inicio) + 10800000)
         const tempoTotalMilisegundos = horarioFinalizacao - horarioInicio
@@ -163,7 +161,6 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
         }else{
             window.alert("Coloque a ordem Em andamento antes de finalizar")
         }
-    }
     }
 
     function pegaUltimoMotivoPausa(motivos){
@@ -295,7 +292,9 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                             <ItemLista>
                                 <Botao border='0.1px black solid' boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding='10px 5px' border_radius='5px' backgroundcolor='#FF6347' color='black' font_size='20px' width='80%' onClick={async() => await HandleModalQuantidadeFinalizacao(ordem)}>FINALIZAR</Botao>
                             </ItemLista>
-                                <Botao   padding='2px 2px'  backgroundcolor='rgb(0,0,0,0)' color='black' font_size='20px' width='10%' onClick={async() => HandleModalEdicao(ordem)}><Imagem src={ImagemEditar} width='40%'></Imagem></Botao>
+                                <Botao   padding='2px 2px'  backgroundcolor='rgb(0,0,0,0)' color='black' font_size='20px' width='10%' onClick={async() => HandleModalEdicao(ordem)}><Imagem src={ImagemEditar} width='80%'></Imagem></Botao>
+                                
+                                
     <Modal 
     isOpen={ModalPausa}
     onRequestClose={async() => setModalPausa(false)}
