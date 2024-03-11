@@ -13,6 +13,10 @@ import Titulo2 from "../Titulo2/Titulo2.js";
 import { useState } from "react";
 import Imagem from "../Imagem/Imagem.js";
 import ImagemEditar from "../../images/caneta.png"
+import Input from "../Input/Input.js";
+import mesas from "../../BD/mesas.js";
+import turnos from "../../BD/turnos.js";
+import Label from "../Label/Label.js";
 const ordensController = new OrdensController()
 
 const ContainerOrdens = styled.section`
@@ -62,8 +66,15 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
     const [ModalPausa, setModalPausa] = useState(false)
     const [MotivoPausa, setMotivoPausa] = useState('')
     const [OrdemPausada, setOrdemPausada] = useState({})
+    const [ModalEdicao, setModalEdicao] = useState(false)
+    const [OrdemEditando, setOrdemEditando] = useState({})
+    const [NumeroOP, setNumeroOP] = useState('')
+    const [Matricula, setMatricula] = useState('')
+    const [Mesa, setMesa] = useState('')
+    const [Turno, setTurno] = useState('')
 
-     function HandlePausa(ordem){
+    //HandlePausa, ordem é definido no botão da lista ao colocar de 'Pausado' para 'Em Andamento', mas quando de 'Em Andamento' para 'Pausado' ele abre primeiro o modal e então ao enviar o modal ele roda handlePausa com ordem passada na function do modal !
+    function HandlePausa(ordem){
     try{
         if(ordem.status === 'Em Andamento' ){
          //HandleModalPausa(ordem)
@@ -118,8 +129,9 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
         console.error('Erro ao atualizar o estado das ordens:', error);
     }
     }
-
     async function HandleFinalizar(ordem){
+        const confirmacao = window.confirm(`Tem certeza que quer finalizar a ordem de produção código : ${ordem.ordem_producao} ? Caso não aperte ESC para sair.`)
+        if(confirmacao){
         const horarioFinalizacao = new Date()
         const horarioInicio = new Date(Date.parse(ordem.horario_inicio) + 10800000)
         const tempoTotalMilisegundos = horarioFinalizacao - horarioInicio
@@ -146,6 +158,7 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
             window.alert("Coloque a ordem Em andamento antes de finalizar")
         }
     }
+    }
 
     function pegaUltimoMotivoPausa(motivos){
         if(motivos){
@@ -155,20 +168,74 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
         }
     }
 
-   function HandleModalPausa(ordem){
+    function HandleModalPausa(ordem){
     if(ModalPausa === false){
         setModalPausa(true)
         setOrdemPausada(ordem)
     }
     if(ModalPausa === true){
         setModalPausa(false)
-        
     }
+    }
+    function HandleMotivo(event){
+    setMotivoPausa(event.target.value)
     }
 
-function HandleMotivo(event){
-    setMotivoPausa(event.target.value)
-}
+    function HandleModalEdicao(ordem){
+        if(ModalEdicao === false){
+            setModalEdicao(true)
+            setNumeroOP(ordem.ordem_producao)
+            setMatricula(ordem.matricula)
+            setMesa(ordem.mesa)
+            setTurno(ordem.turno)
+            setOrdemEditando(ordem)
+        }
+        if(ModalEdicao === true){
+            setModalEdicao(false)
+        }
+        }
+
+        
+        const HandleNumeroOP = (event) => {
+            setNumeroOP(event.target.value);
+        };
+        const HandleMatricula = (event) => {
+            setMatricula(event.target.value);
+        };
+        
+        const HandleMesa = (event) => {
+            setMesa(event.target.value);
+        };
+        
+        const HandleTurno = (event) => {
+            setTurno(event.target.value);
+        };
+        
+        function EditaComponente(ordemEditando, ordens){
+            const confirmacao = window.confirm(`Tem certeza que deseja editar o item ? Caso não aperte ESC para sair.`)
+            if(confirmacao){
+                const confereRepetido = ordens.find(ordem => ordem.ordem_producao === NumeroOP)
+                if(!confereRepetido){
+                    const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];
+                    const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordemEditando.id);
+                    if (ordemAtualIndex !== -1) {
+                        const ordemAtual = ordensLocalStorage[ordemAtualIndex];
+                        ordemAtual['ordem_producao'] = NumeroOP
+                        ordemAtual['matricula'] = Matricula
+                        ordemAtual['mesa'] = Mesa
+                        ordemAtual['turno'] = Turno
+                        ordensLocalStorage[ordemAtualIndex] = ordemAtual;
+                        localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
+                        setLocalStorage(ordensLocalStorage)
+                        setModalEdicao(false)
+                    }
+                }else{
+                 window.alert("Ordem de produção ja esta na lista !!")
+                 throw Error('Erro de produção ja esta presente na lista.')
+                }
+            }
+            }
+
         
     return(
         <ContainerOrdens>
@@ -209,8 +276,8 @@ function HandleMotivo(event){
                             <ItemLista>
                                 <Botao border='0.1px black solid' boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding='10px 5px' border_radius='5px' backgroundcolor='#FF6347' color='black' font_size='20px' width='80%' onClick={async() => await HandleFinalizar(ordem)}>FINALIZAR</Botao>
                             </ItemLista>
-                                <Botao   padding='2px 2px'  backgroundcolor='rgb(0,0,0,0)' color='black' font_size='20px' width='10%' onClick={async() => await HandleFinalizar(ordem)}><Imagem src={ImagemEditar} width='40%'></Imagem></Botao>
-                            <Modal 
+                                <Botao   padding='2px 2px'  backgroundcolor='rgb(0,0,0,0)' color='black' font_size='20px' width='10%' onClick={async() => HandleModalEdicao(ordem)}><Imagem src={ImagemEditar} width='40%'></Imagem></Botao>
+    <Modal 
     isOpen={ModalPausa}
     onRequestClose={async() => setModalPausa(false)}
     contentLabel="Motivo da Pausa"
@@ -241,10 +308,57 @@ function HandleMotivo(event){
       </Select>
       <Botao padding='20px 10px' width='40%' border='1px solid black' backgroundcolor='#79b3e0' border_radius='30px' onClick={() => HandlePausa(OrdemPausada)}>ENVIAR</Botao>
     </Modal>
+    
+    
+    <Modal 
+    isOpen={ModalEdicao}
+    onRequestClose={async() => setModalEdicao(false)}
+    contentLabel="Edição"
+    ariaHideApp={false}
+    style={{
+        overlay: {
+          backgroundColor: 'rgba(0, 0 ,0, 0.8)'
+        },
+        content: {
+          border: '1px solid black',
+          background: 'white',
+          borderRadius: '20px',
+          padding: '20px',
+          display:'flex',
+          flexDirection: "column",
+          alignItems:'center'
+        }
+      }}
+    >
+        <Label font_size = '26px'>Numero da Ordem de produção :</Label>
+        <Input placeholder="Numero da OP"   padding = "20px 0px" width="60%" margin ="1rem 0px" border_radius="20px" border='0.1px black solid' font_size="20px" value={NumeroOP} onChange={HandleNumeroOP} ></Input>
+        <Label font_size = '26px'>Matricula do funcionario :</Label>
+        <Input placeholder="Matricula Funcionario"  padding = "20px 0px" width="30%" margin ="1rem 0px" border_radius="20px" border='0.1px black solid' font_size="20px" value={Matricula} onChange={HandleMatricula} ></Input>
+        <Label font_size = '26px'>Mesa :</Label>
+             <Select margin='1rem 0' width='30%'  padding='10px' value={Mesa} border='0.1px black solid' onChange={HandleMesa}>
+                 <Option padding='10px 2px' fontSize='20px' value='' >Selecione Uma Mesa...</Option>
+                {
+                    mesas.map((mesa,index) => (
+                        <Option key={index} padding='10px 2px' fontSize='20px' >{mesa}</Option>
+                    ))
+                }
+                </Select>
+                <Label font_size = '26px'>Turno :</Label>
+                <Select margin='1rem 0' width='30%'  padding='10px' border='0.1px black solid' value={Turno} onChange={HandleTurno}>
+                <Option padding='10px 2px' fontSize='20px' value='' >Selecione Um Turno...</Option>
+                {
+                    turnos.map((turno,index) =>(
+                        <Option key={index} padding='10px 2px' fontSize='20px' >{turno}</Option>
+                    ))
+                }
+                    
+                    </Select>      
+      <Botao padding='20px 10px' width='40%' border='1px solid black' backgroundcolor='#79b3e0' border_radius='30px' onClick={() => EditaComponente(OrdemEditando, ordens)}>Atualizar</Botao>
+    </Modal>
+
                         </OrdensLi>
                         
                     )
-
                     )
                 }
             </OrdensUl>
