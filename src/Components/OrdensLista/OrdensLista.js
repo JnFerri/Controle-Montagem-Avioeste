@@ -11,6 +11,8 @@ import Option from "../Select/Option/Option.js";
 import motivosPausas from "../../BD/motivosPausas.js";
 import Titulo2 from "../Titulo2/Titulo2.js";
 import { useState } from "react";
+import Imagem from "../Imagem/Imagem.js";
+import ImagemEditar from "../../images/caneta.png"
 const ordensController = new OrdensController()
 
 const ContainerOrdens = styled.section`
@@ -59,32 +61,34 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
     
     const [ModalPausa, setModalPausa] = useState(false)
     const [MotivoPausa, setMotivoPausa] = useState('')
+    const [OrdemPausada, setOrdemPausada] = useState({})
 
-    async function HandlePausa(ordem){
+     function HandlePausa(ordem){
     try{
         if(ordem.status === 'Em Andamento' ){
-            HandleModalPausa(ordem)
-            /*const obj = {}
-            obj['horario_pausa'] = dataPausaJestor
-            obj['id_fk0lbipncnh3mu7u95dls'] = ordem.id_fk0lbipncnh3mu7u95dls
-            obj['status'] = 'Pausado' 
-            console.log(ordem.motivos_das_pausas)
-            if(ordem.motivos_das_pausas !== null && ordem.motivos_das_pausas !== ''){
-                obj['motivos_das_pausas'] = `${ordem.motivos_das_pausas} , ${motivoPausa}` 
-            }else{
-                obj['motivos_das_pausas'] = `${motivoPausa}` 
-            }
-            await  ordensController.atualizarRegistro('fk0lbipncnh3mu7u95dls', obj)
-            await Delay(1000)
-            const ordensNaoFinalizadas = await PegarOrdensNaoFinalizadas('fk0lbipncnh3mu7u95dls')
-            await setOrdens(ordens)*/
+         //HandleModalPausa(ordem)
+         const horarioPausa = new Date()
+         const dataPausaJestor = tranformarDataEmString(horarioPausa)
+         const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];
+         const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);
+         if (ordemAtualIndex !== -1) {
+             const ordemAtual = ordensLocalStorage[ordemAtualIndex];
+             ordemAtual['horario_pausa'] = dataPausaJestor;
+             ordemAtual['motivos_das_pausas'] = ordemAtual['motivos_das_pausas'] ? `${ordem.motivos_das_pausas} , ${MotivoPausa}` : `${MotivoPausa}`;
+             ordemAtual['status'] = 'Pausado';
+             ordensLocalStorage[ordemAtualIndex] = ordemAtual;
+             localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
+             setLocalStorage(ordensLocalStorage)
+             setModalPausa(false)
+         }else {
+             throw new Error('Ordem não encontrada na localStorage.');
+         }
             
         }
         if(ordem.status === 'Pausado'){
-            
             const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];
             const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);
-
+            console.log(ordem.id)
             if (ordemAtualIndex !== -1) {
                 const ordemAtual = ordensLocalStorage[ordemAtualIndex];
                 const dataRecomeco = new Date()
@@ -94,6 +98,7 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                 const dataPausa = new Date(dateMiliseconds + 10800000)
                 const diferencaHorariosMiliSegundos = dataRecomeco - dataPausa
                 ordemAtual['horario_recomeco'] = dataRecomecoString
+                
                 ordemAtual['status'] = 'Em Andamento'
                 if(ordem['qnt_pausado']){
                     ordemAtual['qnt_pausado'] = ordemAtual['qnt_pausado'] + diferencaHorariosMiliSegundos
@@ -103,18 +108,10 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                 ordensLocalStorage[ordemAtualIndex] = ordemAtual;
                 localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
                 setLocalStorage(ordensLocalStorage)
+                
             }else {
                 throw new Error('Ordem não encontrada na localStorage.');
             }
-            /*const obj = {}
-            obj['horario_recomeco'] = dataRecomecoString
-            obj['qnt_pausado'] = ordem.qnt_pausado + diferencaHorariosMiliSegundos
-            obj['id_fk0lbipncnh3mu7u95dls'] = ordem.id_fk0lbipncnh3mu7u95dls
-            obj['status'] = 'Em Andamento'
-            await ordensController.atualizarRegistro('fk0lbipncnh3mu7u95dls', obj)
-            await Delay(1000)
-            const ordensNaoFinalizadas = await PegarOrdensNaoFinalizadas('fk0lbipncnh3mu7u95dls')
-            await setOrdens(ordens)*/
 
         }
     }catch (error) {
@@ -148,25 +145,6 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
         }else{
             window.alert("Coloque a ordem Em andamento antes de finalizar")
         }
-
-
-        /*const obj = {}
-            if(ordem.status === 'Em Andamento'){
-            obj['tempo_em_producao'] = tempoTotalMilisegundos - ordem.qnt_pausado
-            obj['tempo_total_producao'] = tempoTotalMilisegundos
-            obj['id_fk0lbipncnh3mu7u95dls'] = ordem.id_fk0lbipncnh3mu7u95dls
-            obj['status'] = 'Finalizado'
-            obj['finalizado'] = true
-            obj['horario_termino'] = tranformarDataEmString(horarioFinalizacao)
-            //await ordensController.atualizarRegistro('fk0lbipncnh3mu7u95dls', obj)
-            await ordensController.criarRegistro('fk0lbipncnh3mu7u95dls', obj)
-            
-            await Delay(1000)
-            //const ordensNaoFinalizadas = await PegarOrdensNaoFinalizadas('fk0lbipncnh3mu7u95dls')
-            await setOrdens()
-            }else{
-                window.alert("Coloque a ordem Em andamento antes de finalizar")
-            }*/
     }
 
     function pegaUltimoMotivoPausa(motivos){
@@ -177,27 +155,14 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
         }
     }
 
-    function HandleModalPausa(ordem){
+   function HandleModalPausa(ordem){
     if(ModalPausa === false){
         setModalPausa(true)
+        setOrdemPausada(ordem)
     }
     if(ModalPausa === true){
         setModalPausa(false)
-        const horarioPausa = new Date()
-            const dataPausaJestor = tranformarDataEmString(horarioPausa)
-            const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];
-            const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);
-            if (ordemAtualIndex !== -1) {
-                const ordemAtual = ordensLocalStorage[ordemAtualIndex];
-                ordemAtual['horario_pausa'] = dataPausaJestor;
-                ordemAtual['status'] = 'Pausado';
-                ordemAtual['motivos_das_pausas'] = ordemAtual['motivos_das_pausas'] ? `${ordem.motivos_das_pausas} , ${MotivoPausa}` : `${MotivoPausa}`;
-                ordensLocalStorage[ordemAtualIndex] = ordemAtual;
-                localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
-                setLocalStorage(ordensLocalStorage)
-            }else {
-                throw new Error('Ordem não encontrada na localStorage.');
-            }
+        
     }
     }
 
@@ -239,11 +204,12 @@ function HandleMotivo(event){
                                 
                             </ItemLista>
                             <ItemLista>
-                                <Botao border='0.1px black solid' boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding='10px 5px' border_radius='5px' font_size='20px' backgroundcolor={ordem.status === 'Em Andamento' ? '#DAA520' : '#00FA9A'} onClick={async() => {await HandlePausa(ordem)}} width='80%'>{ordem.status === 'Em Andamento' ? 'PAUSAR' : 'RETORNAR'}</Botao>
+                                <Botao border='0.1px black solid' boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding='10px 5px' border_radius='5px' font_size='20px' backgroundcolor={ordem.status === 'Em Andamento' ? '#DAA520' : '#00FA9A'} onClick={async() => {ordem.status === 'Em Andamento' ? HandleModalPausa(ordem) : HandlePausa(ordem)}} width='80%'>{ordem.status === 'Em Andamento' ? 'PAUSAR' : 'RETORNAR'}</Botao>
                             </ItemLista>
                             <ItemLista>
                                 <Botao border='0.1px black solid' boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding='10px 5px' border_radius='5px' backgroundcolor='#FF6347' color='black' font_size='20px' width='80%' onClick={async() => await HandleFinalizar(ordem)}>FINALIZAR</Botao>
                             </ItemLista>
+                                <Botao   padding='2px 2px'  backgroundcolor='rgb(0,0,0,0)' color='black' font_size='20px' width='10%' onClick={async() => await HandleFinalizar(ordem)}><Imagem src={ImagemEditar} width='40%'></Imagem></Botao>
                             <Modal 
     isOpen={ModalPausa}
     onRequestClose={async() => setModalPausa(false)}
@@ -273,7 +239,7 @@ function HandleMotivo(event){
             ))
         }
       </Select>
-      <Botao padding='20px 10px' width='40%' border='1px solid black' backgroundcolor='#79b3e0' border_radius='30px' onClick={async() => HandleModalPausa(ordem)}>ENVIAR</Botao>
+      <Botao padding='20px 10px' width='40%' border='1px solid black' backgroundcolor='#79b3e0' border_radius='30px' onClick={() => HandlePausa(OrdemPausada)}>ENVIAR</Botao>
     </Modal>
                         </OrdensLi>
                         
