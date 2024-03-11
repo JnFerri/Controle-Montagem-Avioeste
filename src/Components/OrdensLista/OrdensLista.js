@@ -72,6 +72,8 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
     const [Matricula, setMatricula] = useState('')
     const [Mesa, setMesa] = useState('')
     const [Turno, setTurno] = useState('')
+    const [QuantidadeProduzida, setQuantidadeProduzida] = useState(0)
+    const [ModalQuantidadeFinalizacao, setModalQuantidadeFinalizacao] = useState(false)
 
     //HandlePausa, ordem é definido no botão da lista ao colocar de 'Pausado' para 'Em Andamento', mas quando de 'Em Andamento' para 'Pausado' ele abre primeiro o modal e então ao enviar o modal ele roda handlePausa com ordem passada na function do modal !
     function HandlePausa(ordem){
@@ -236,6 +238,20 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
             }
             }
 
+            const HandleQuantidadeProduzida = (event) => {
+                setQuantidadeProduzida(event.target.value);
+            };
+
+            function HandleModalQuantidadeFinalizacao(ordem){
+                if(ModalQuantidadeFinalizacao === false){
+                    setModalQuantidadeFinalizacao(true)
+                    setOrdemPausada(ordem)
+                }
+                if(ModalQuantidadeFinalizacao === true){
+                    setModalPausa(false)
+                }
+                }
+
         
     return(
         <ContainerOrdens>
@@ -248,27 +264,26 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                             <ItemLista>
                                 <Titulo4 font_size='20px'>Ordem Produção:</Titulo4>
                                 <SpanOrdem>{ordem.ordem_producao}</SpanOrdem>
-                              
                             </ItemLista>
                             <ItemLista>
                                 <Titulo4 font_size='20px'>Matricula Operador:</Titulo4>
                                 <SpanOrdem>{ordem.matricula}</SpanOrdem>
-                                
                             </ItemLista>
                             <ItemLista>
                                 <Titulo4 font_size='20px'>Mesa de Montagem:</Titulo4>
                                 <SpanOrdem>{ordem.mesa}</SpanOrdem>
-                                
                             </ItemLista>
                             <ItemLista>
                                 <Titulo4 font_size='20px'>Status:</Titulo4>
                                 <SpanOrdem>{ordem.status}</SpanOrdem>
-                                
+                            </ItemLista>
+                            <ItemLista>
+                                <Titulo4 font_size='20px'>Turno:</Titulo4>
+                                <SpanOrdem>{ordem.turno}</SpanOrdem>
                             </ItemLista>
                             <ItemLista>
                                 <Titulo4 font_size='20px'>Motivo da Pausa:</Titulo4>
                                 <SpanOrdem>{ordem.status === "Pausado" ? pegaUltimoMotivoPausa(ordem.motivos_das_pausas) : ''}</SpanOrdem>
-                                
                             </ItemLista>
                             <ItemLista>
                                 <Botao border='0.1px black solid' boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding='10px 5px' border_radius='5px' font_size='20px' backgroundcolor={ordem.status === 'Em Andamento' ? '#DAA520' : '#00FA9A'} onClick={async() => {ordem.status === 'Em Andamento' ? HandleModalPausa(ordem) : HandlePausa(ordem)}} width='80%'>{ordem.status === 'Em Andamento' ? 'PAUSAR' : 'RETORNAR'}</Botao>
@@ -359,7 +374,32 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
       <Botao padding='20px 10px' width='40%' margin='1rem 10px' border='1px solid black' backgroundcolor='#FF6347' border_radius='30px' onClick={() => setModalEdicao(false)}>CANCELAR</Botao>
   
     </Modal>
-
+    
+    <Modal 
+    isOpen={ModalPausa}
+    onRequestClose={async() => setModalPausa(false)}
+    contentLabel="Motivo da Pausa"
+    ariaHideApp={false}
+    style={{
+        overlay: {
+          backgroundColor: 'rgba(0, 0 ,0, 0.8)'
+        },
+        content: {
+          border: '1px solid black',
+          background: 'white',
+          borderRadius: '20px',
+          padding: '20px',
+          display:'flex',
+          flexDirection: "column",
+          alignItems:'center'
+        }
+      }}
+    >
+      <Label>Quantas peças foram produzidas ?</Label>
+      <Input placeholder="Numero da OP"   padding = "20px 0px" width="60%" margin ="1rem 0px" border_radius="20px" border='0.1px black solid' font_size="20px" value={NumeroOP} onChange={HandleQuantidadeProduzida}></Input>
+      <Botao padding='20px 10px' width='40%' margin='1rem 0' border='1px solid black' backgroundcolor='#79b3e0' border_radius='30px' onClick={() => HandlePausa(OrdemPausada)}>FINALIZAR</Botao>
+      <Botao padding='20px 10px' width='40%' margin='1rem 0' border='1px solid black' backgroundcolor='#FF6347' border_radius='30px' onClick={() => setModalPausa(false)}>CANCELAR</Botao>
+    </Modal>
                         </OrdensLi>
                         
                     )
