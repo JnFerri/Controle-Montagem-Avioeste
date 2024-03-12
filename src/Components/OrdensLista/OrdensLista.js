@@ -81,23 +81,27 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
     try{
         if(ordem.status === 'Em Andamento' ){
          //HandleModalPausa(ordem)
-         const horarioPausa = new Date()
-         const dataPausaJestor = tranformarDataEmString(horarioPausa)
-         const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];
-         const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);
-         if (ordemAtualIndex !== -1) {
-             const ordemAtual = ordensLocalStorage[ordemAtualIndex];
-             ordemAtual['horario_pausa'] = dataPausaJestor;
-             ordemAtual['motivos_das_pausas'] = ordemAtual['motivos_das_pausas'] ? `${ordem.motivos_das_pausas} , ${MotivoPausa}` : `${MotivoPausa}`;
-             ordemAtual['status'] = 'Pausado';
-             ordensLocalStorage[ordemAtualIndex] = ordemAtual;
-             localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
-             setLocalStorage(ordensLocalStorage)
-             setModalPausa(false)
-         }else {
-             throw new Error('Ordem não encontrada na localStorage.');
-         }
+         if(MotivoPausa !== ''){
+             const horarioPausa = new Date()
+             const dataPausaJestor = tranformarDataEmString(horarioPausa)
+             const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];
+             const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);
+             if (ordemAtualIndex !== -1) {
+                 const ordemAtual = ordensLocalStorage[ordemAtualIndex];
+                 ordemAtual['horario_pausa'] = dataPausaJestor;
+                 ordemAtual['motivos_das_pausas'] = ordemAtual['motivos_das_pausas'] ? `${ordem.motivos_das_pausas} , ${MotivoPausa}` : `${MotivoPausa}`;
+                 ordemAtual['status'] = 'Pausado';
+                 ordensLocalStorage[ordemAtualIndex] = ordemAtual;
+                 localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
+                 setLocalStorage(ordensLocalStorage)
+                 setModalPausa(false)
+             }else {
+                 throw new Error('Ordem não encontrada na localStorage.');
+             }
             
+         }else {
+            window.alert('Por favor preencha um motivo para a pausa !!')
+         }
         }
         if(ordem.status === 'Pausado'){
             const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];
@@ -133,33 +137,37 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
     }
 
     async function HandleFinalizar(ordem){
-        const horarioFinalizacao = new Date()
-        const horarioInicio = new Date(Date.parse(ordem.horario_inicio) + 10800000)
-        const tempoTotalMilisegundos = horarioFinalizacao - horarioInicio
-        const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];
-        const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);
-        if(ordem.status === 'Em Andamento'){
-            if (ordemAtualIndex !== -1) {
-                const ordemAtual = ordensLocalStorage[ordemAtualIndex];
-                ordemAtual['tempo_em_producao'] = tempoTotalMilisegundos - ordem.qnt_pausado
-                ordemAtual['tempo_total_producao'] = tempoTotalMilisegundos
-                ordemAtual['finalizado'] = true
-                ordemAtual['status'] = 'Finalizado'
-                ordemAtual['quantidade_produzida'] = QuantidadeProduzida
-                ordemAtual['horario_termino'] = tranformarDataEmString(horarioFinalizacao)
-                await ordensController.criarRegistro('fk0lbipncnh3mu7u95dls', ordemAtual)
-                ordensLocalStorage[ordemAtualIndex] = ordemAtual;
-                ordensLocalStorage.splice(ordemAtualIndex, 1);
-                localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
-                await Delay(1000)
-                setLocalStorage(ordensLocalStorage)
-                setModalQuantidadeFinalizacao(false)
-                setQuantidadeProduzida(0)
-            }else {
-                throw new Error('Ordem não encontrada na localStorage.');
+        if(QuantidadeProduzida > 0){
+            const horarioFinalizacao = new Date()
+            const horarioInicio = new Date(Date.parse(ordem.horario_inicio) + 10800000)
+            const tempoTotalMilisegundos = horarioFinalizacao - horarioInicio
+            const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];
+            const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);
+            if(ordem.status === 'Em Andamento'){
+                if (ordemAtualIndex !== -1) {
+                    const ordemAtual = ordensLocalStorage[ordemAtualIndex];
+                    ordemAtual['tempo_em_producao'] = tempoTotalMilisegundos - ordem.qnt_pausado
+                    ordemAtual['tempo_total_producao'] = tempoTotalMilisegundos
+                    ordemAtual['finalizado'] = true
+                    ordemAtual['status'] = 'Finalizado'
+                    ordemAtual['quantidade_produzida'] = QuantidadeProduzida
+                    ordemAtual['horario_termino'] = tranformarDataEmString(horarioFinalizacao)
+                    await ordensController.criarRegistro('fk0lbipncnh3mu7u95dls', ordemAtual)
+                    ordensLocalStorage[ordemAtualIndex] = ordemAtual;
+                    ordensLocalStorage.splice(ordemAtualIndex, 1);
+                    localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
+                    await Delay(1000)
+                    setLocalStorage(ordensLocalStorage)
+                    setModalQuantidadeFinalizacao(false)
+                    setQuantidadeProduzida(0)
+                }else {
+                    throw new Error('Ordem não encontrada na localStorage.');
+                }
+            }else{
+                window.alert("Coloque a ordem em andamento antes de finalizar")
             }
         }else{
-            window.alert("Coloque a ordem Em andamento antes de finalizar")
+            window.alert('Favor informar a quantidade produzida !!')
         }
     }
 
@@ -215,14 +223,17 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
         };
         
         function EditaComponente(ordemEditando, ordens){
-            const confirmacao = window.confirm(`Tem certeza que deseja editar o item ? Caso não aperte ESC para sair.`)
+            const confirmacao = window.confirm(`Tem certeza que deseja editar o item ?`)
             if(confirmacao){
                 const confereRepetido = ordens.find(ordem => ordem.ordem_producao === NumeroOP)
-                if(!confereRepetido){
-                    const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];
-                    const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordemEditando.id);
-                    if (ordemAtualIndex !== -1) {
-                        const ordemAtual = ordensLocalStorage[ordemAtualIndex];
+                const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];
+                const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordemEditando.id);
+                if (ordemAtualIndex !== -1) {
+                    const ordemAtual = ordensLocalStorage[ordemAtualIndex];
+                    if(ordemAtual['ordem_producao'] !== NumeroOP && confereRepetido){
+                        window.alert("Ordem de produção ja esta na lista !!")
+                    }else{
+                     if(NumeroOP.trim().length > 0 && Matricula.trim().length > 0  && Mesa.trim().length > 0  && Turno.trim().length > 0){
                         ordemAtual['ordem_producao'] = NumeroOP
                         ordemAtual['matricula'] = Matricula
                         ordemAtual['mesa'] = Mesa
@@ -231,11 +242,11 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                         localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
                         setLocalStorage(ordensLocalStorage)
                         setModalEdicao(false)
+                    }else{
+                        window.alert('Não pode haver campos vazios !!')
                     }
-                }else{
-                 window.alert("Ordem de produção ja esta na lista !!")
-                 throw Error('Erro de produção ja esta presente na lista.')
-                }
+                    }
+                    }
             }
             }
 
@@ -263,27 +274,27 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                         <OrdensLi backgroundcolor={ordem.status === 'Em Andamento' ? '#24ab92' : '#bf6b47'} key={ordem.id}>
                             
                             <ItemLista>
-                                <Titulo4 font_size='20px'>Ordem Produção:</Titulo4>
+                                <Titulo4 font_size='16px'>ORDEM PRODUÇÃO:</Titulo4>
                                 <SpanOrdem>{ordem.ordem_producao}</SpanOrdem>
                             </ItemLista>
                             <ItemLista>
-                                <Titulo4 font_size='20px'>Matricula Operador:</Titulo4>
+                                <Titulo4 font_size='16px'>FUNCIONARIO:</Titulo4>
                                 <SpanOrdem>{ordem.matricula}</SpanOrdem>
                             </ItemLista>
                             <ItemLista>
-                                <Titulo4 font_size='20px'>Mesa de Montagem:</Titulo4>
+                                <Titulo4 font_size='16px'>MESA DE MONTAGEM:</Titulo4>
                                 <SpanOrdem>{ordem.mesa}</SpanOrdem>
                             </ItemLista>
                             <ItemLista>
-                                <Titulo4 font_size='20px'>Status:</Titulo4>
+                                <Titulo4 font_size='16px'>STATUS:</Titulo4>
                                 <SpanOrdem>{ordem.status}</SpanOrdem>
                             </ItemLista>
                             <ItemLista>
-                                <Titulo4 font_size='20px'>Turno:</Titulo4>
+                                <Titulo4 font_size='16px'>TURNO:</Titulo4>
                                 <SpanOrdem>{ordem.turno}</SpanOrdem>
                             </ItemLista>
                             <ItemLista>
-                                <Titulo4 font_size='20px'>Motivo da Pausa:</Titulo4>
+                                <Titulo4 font_size='16px'>MOTIVO DA PAUSA:</Titulo4>
                                 <SpanOrdem>{ordem.status === "Pausado" ? pegaUltimoMotivoPausa(ordem.motivos_das_pausas) : ''}</SpanOrdem>
                             </ItemLista>
                             <ItemLista>
@@ -292,7 +303,7 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                             <ItemLista>
                                 <Botao border='0.1px black solid' boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding='10px 5px' border_radius='5px' backgroundcolor='#FF6347' color='black' font_size='20px' width='80%' onClick={async() => await HandleModalQuantidadeFinalizacao(ordem)}>FINALIZAR</Botao>
                             </ItemLista>
-                                <Botao   padding='2px 2px'  backgroundcolor='rgb(0,0,0,0)' color='black' font_size='20px' width='10%' onClick={async() => HandleModalEdicao(ordem)}><Imagem src={ImagemEditar} width='80%'></Imagem></Botao>
+                                <Botao   padding='2px 2px'  backgroundcolor='rgb(0,0,0,0)' color='black' font_size='20px' width='10%' onClick={async() => HandleModalEdicao(ordem)}><Imagem src={ImagemEditar} width='60%'></Imagem></Botao>
                                 
                                 
     <Modal 

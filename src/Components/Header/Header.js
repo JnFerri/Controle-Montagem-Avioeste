@@ -17,7 +17,7 @@ function Header(){
     return(
         <HeaderContainer>
             <Imagem src={Logo} width='10%' margin = "5px 50px"></Imagem>
-            <Titulo1 width = "100%" margin = "5px 20px" text_align = "center">Controle de Produção Montagem</Titulo1>
+            <Titulo1 width = "100%" margin = "5px 20px" text_align = "center"><strong>CONTROLE PRODUÇÃO MONTAGEM</strong></Titulo1>
         </HeaderContainer>
     )
 }
