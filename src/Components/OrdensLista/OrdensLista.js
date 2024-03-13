@@ -146,6 +146,7 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                 if (ordemAtualIndex !== -1) {
                     const tempoTotalMilisegundos = horarioFinalizacao - horarioInicio
                     const ordemAtual = ordensLocalStorage[ordemAtualIndex];
+                    console.log(ordem.qnt_pausado)
                     if(ordem.qnt_pausado > 0){
                         ordemAtual['tempo_em_producao'] = tempoTotalMilisegundos - ordem.qnt_pausado
                     }else{
