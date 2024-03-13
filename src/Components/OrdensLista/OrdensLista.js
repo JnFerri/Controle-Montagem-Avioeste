@@ -140,13 +140,17 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
         if(QuantidadeProduzida > 0){
             const horarioFinalizacao = new Date()
             const horarioInicio = new Date(Date.parse(ordem.horario_inicio) + 10800000)
-            const tempoTotalMilisegundos = horarioFinalizacao - horarioInicio
             const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];
             const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);
             if(ordem.status === 'Em Andamento'){
                 if (ordemAtualIndex !== -1) {
+                    const tempoTotalMilisegundos = horarioFinalizacao - horarioInicio
                     const ordemAtual = ordensLocalStorage[ordemAtualIndex];
-                    ordemAtual['tempo_em_producao'] = tempoTotalMilisegundos - ordem.qnt_pausado
+                    if(ordem.qnt_pausado < 0){
+                        ordemAtual['tempo_em_producao'] = tempoTotalMilisegundos - ordem.qnt_pausado
+                    }else{
+                        ordemAtual['tempo_em_producao'] = tempoTotalMilisegundos
+                    }
                     ordemAtual['tempo_total_producao'] = tempoTotalMilisegundos
                     ordemAtual['finalizado'] = true
                     ordemAtual['status'] = 'Finalizado'
