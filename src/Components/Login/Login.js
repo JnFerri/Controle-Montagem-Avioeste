@@ -36,7 +36,6 @@ function Login({setLoginConferencia}){
             
         }else{ 
             window.alert('Usuario ou senha errados !!!')
-            console.log(process.env.REACT_APP_Usuario)
             setLoginConferencia(false)
             
         }

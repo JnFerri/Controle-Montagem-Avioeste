@@ -41,10 +41,10 @@ const OrdensLi = styled.li`
     width: 100%;
     display:flex;
     align-items:center;
-    padding:10px 0px;
+    padding:20px 10px;
     border:solid 0.5px black;
     border-radius:15px;
-    margin:4px 0px;
+    margin:4px 4px;
     background-color: ${props => props.backgroundcolor || 'white'};
 
 
@@ -58,7 +58,12 @@ align-items:center;
 `
 const SpanOrdem = styled.span`
     font-size : 18px;
-    color:
+    color: white;
+    background-color:black;
+    width:100%;
+    border-radius: 0px 0px 5px 5px;
+
+
 `
 
 function OrdensLista({ordens, setOrdens, setLocalStorage}){
@@ -279,34 +284,34 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                         <OrdensLi backgroundcolor={ordem.status === 'Em Andamento' ? '#24ab92' : '#bf6b47'} key={ordem.id}>
                             
                             <ItemLista>
-                                <Titulo4 font_size='16px'>ORDEM PRODUÇÃO:</Titulo4>
+                                <Titulo4 backgroundcolor='white' border_radius='5px 5px 0px 0px' font_size='16px'>ORDEM PRODUÇÃO:</Titulo4>
                                 <SpanOrdem>{ordem.ordem_producao}</SpanOrdem>
                             </ItemLista>
                             <ItemLista>
-                                <Titulo4 font_size='16px'>FUNCIONARIO:</Titulo4>
+                                <Titulo4 backgroundcolor='white' border_radius='5px 5px 0px 0px' font_size='16px'>FUNCIONARIO:</Titulo4>
                                 <SpanOrdem>{ordem.matricula}</SpanOrdem>
                             </ItemLista>
                             <ItemLista>
-                                <Titulo4 font_size='16px'>MESA DE MONTAGEM:</Titulo4>
+                                <Titulo4 backgroundcolor='white' border_radius='5px 5px 0px 0px' font_size='16px'>MESA DE MONTAGEM:</Titulo4>
                                 <SpanOrdem>{ordem.mesa}</SpanOrdem>
                             </ItemLista>
                             <ItemLista>
-                                <Titulo4 font_size='16px'>STATUS:</Titulo4>
+                                <Titulo4 backgroundcolor='white' border_radius='5px 5px 0px 0px' font_size='16px'>STATUS:</Titulo4>
                                 <SpanOrdem>{ordem.status}</SpanOrdem>
                             </ItemLista>
                             <ItemLista>
-                                <Titulo4 font_size='16px'>TURNO:</Titulo4>
+                                <Titulo4 backgroundcolor='white' border_radius='5px 5px 0px 0px' font_size='16px'>TURNO:</Titulo4>
                                 <SpanOrdem>{ordem.turno}</SpanOrdem>
                             </ItemLista>
                             <ItemLista>
-                                <Titulo4 font_size='16px'>MOTIVO DA PAUSA:</Titulo4>
+                                <Titulo4 backgroundcolor='white' border_radius='5px 5px 0px 0px' font_size='16px'>MOTIVO DA PAUSA:</Titulo4>
                                 <SpanOrdem>{ordem.status === "Pausado" ? pegaUltimoMotivoPausa(ordem.motivos_das_pausas) : ''}</SpanOrdem>
                             </ItemLista>
                             <ItemLista>
-                                <Botao border='0.1px black solid' boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding='10px 5px' border_radius='5px' font_size='20px' backgroundcolor={ordem.status === 'Em Andamento' ? '#DAA520' : '#00FA9A'} onClick={async() => {ordem.status === 'Em Andamento' ? HandleModalPausa(ordem) : HandlePausa(ordem)}} width='80%'>{ordem.status === 'Em Andamento' ? 'PAUSAR' : 'RETORNAR'}</Botao>
+                                <Botao border='0.3px black solid' boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding='10px 5px' border_radius='5px' font_size='20px' backgroundcolor={ordem.status === 'Em Andamento' ? '#DAA520' : '#00FA9A'} onClick={async() => {ordem.status === 'Em Andamento' ? HandleModalPausa(ordem) : HandlePausa(ordem)}} width='80%'>{ordem.status === 'Em Andamento' ? 'PAUSAR' : 'RETORNAR'}</Botao>
                             </ItemLista>
                             <ItemLista>
-                                <Botao border='0.1px black solid' boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding='10px 5px' border_radius='5px' backgroundcolor='#FF6347' color='black' font_size='20px' width='80%' onClick={async() => await HandleModalQuantidadeFinalizacao(ordem)}>FINALIZAR</Botao>
+                                <Botao border='0.3px black solid' boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding='10px 5px' border_radius='5px' backgroundcolor='#FF6347' color='black' font_size='20px' width='80%' onClick={async() => await HandleModalQuantidadeFinalizacao(ordem)}>FINALIZAR</Botao>
                             </ItemLista>
                                 <Botao   padding='2px 2px'  backgroundcolor='rgb(0,0,0,0)' color='black' font_size='20px' width='10%' onClick={async() => HandleModalEdicao(ordem)}><Imagem src={ImagemEditar} width='60%'></Imagem></Botao>
                                 

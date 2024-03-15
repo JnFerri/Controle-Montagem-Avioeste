@@ -86,11 +86,11 @@ function FormInputOP({setOrdens, ordens,LocalStorage,setLocalStorage}){
     return(
         <FormContainer>
             <Titulo2 color="white">Coloque o numero da ordem de produção e clique em iniciar para começar uma nova ordem de produção</Titulo2>
-            <Input placeholder="Numero da OP"   padding = "20px 0px" width="80%" margin ="1rem 0px" border_radius="20px" font_size="20px" value={NumeroOP} 
+            <Input placeholder="Numero da OP"  border='2px solid black'  padding = "20px 0px" width="80%" margin ="1rem 0px" border_radius="20px" font_size="20px" value={NumeroOP} 
                 onChange={HandleNumeroOP} ></Input>
-             <Input placeholder="Matricula Funcionario"  padding = "20px 0px" width="30%" margin ="1rem 0px" border_radius="20px" font_size="20px" value={Matricula} 
+             <Input placeholder="Matricula Funcionario" border='2px solid black' padding = "20px 0px" width="30%" margin ="1rem 0px" border_radius="20px" font_size="20px" value={Matricula} 
                 onChange={HandleMatricula} ></Input>
-             <Select margin='1rem 0' width='30%'  padding='10px' value={Mesa} onChange={HandleMesa}>
+             <Select margin='1rem 0' width='30%'   padding='10px' value={Mesa} onChange={HandleMesa}>
                  <Option padding='10px 2px' fontSize='20px' value='' >Selecione Uma Mesa...</Option>
                 {
                     mesas.map((mesa,index) => (
@@ -107,7 +107,7 @@ function FormInputOP({setOrdens, ordens,LocalStorage,setLocalStorage}){
                 }
                     
                     </Select>      
-            <Botao width="30%" boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding="20px 0px" border_radius = "10px" margin="1rem 0" color="black" backgroundcolor='#79b3e0' font_size='25px' border="0.5px solid black" onClick={CriaOrdemJestor}>INICIAR ORDEM DE PRODUÇÃO</Botao>
+            <Botao width="30%" boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding="20px 0px" border_radius = "10px" margin="1rem 0" color="black" backgroundcolor='#79b3e0' font_size='25px' border='2px solid black' onClick={CriaOrdemJestor}>INICIAR ORDEM DE PRODUÇÃO</Botao>
         </FormContainer>
     )
 }
