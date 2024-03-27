@@ -1,7 +1,7 @@
 export class AtualizaRegistro{
     constructor(token){
         this._token = token
-        this._url = 'http://srv-services:3001/api/ordens/atualiza'
+        this._url = 'http://srv-services:3000/api/jestor/atualiza'
     }
     
 atualizaRegistro(tabela,dados){
