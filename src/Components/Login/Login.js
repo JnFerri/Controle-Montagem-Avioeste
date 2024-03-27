@@ -18,11 +18,6 @@ border-radius:20px;
 
 
 function Login({todosOsDadosLogin}){
-    /*const loginteste = {
-        Usuario : 'admin',
-        Senha: '123'
-    }*/
-    //localStorage.setItem('Login', JSON.stringify(loginteste))
     const [Usuario, setUsuario] = useState('')
     const [Senha, setSenha] = useState('')
     const navigate = useNavigate();
@@ -32,7 +27,6 @@ function Login({todosOsDadosLogin}){
           navigate("/controleProducao");
         }
         if(todosOsDadosLogin.LoginConferencia === true){
-            console.log(todosOsDadosLogin.LoginConferencia)
           handleRetornaLogin()
         }
       },[todosOsDadosLogin.LoginLocalStorage, todosOsDadosLogin.LoginConferencia,navigate])
