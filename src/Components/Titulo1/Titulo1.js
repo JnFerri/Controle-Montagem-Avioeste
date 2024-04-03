@@ -7,6 +7,7 @@ margin: ${props => props.margin || "0px 0px"};
 font-size: ${props => props.font_size || "42px"};
 text-align: ${props => props.text_align || "center"};
 color: ${props => props.color || "black"};
+text-shadow: ${props => props.text_shadow || "0px 0px 0px"};
 
 `
 

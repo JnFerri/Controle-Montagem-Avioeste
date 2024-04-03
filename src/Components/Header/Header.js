@@ -6,18 +6,27 @@ import Titulo1 from "../Titulo1/Titulo1.js"
 const HeaderContainer = styled.header`
 display:flex;
 align-items:center;
-justify-content:space-between;
-padding: 20px 0;
+justify-content:space-around;
+padding: 5px 0;
 background-color: white;
 width:100%;
+
+`
+
+const HeaderBox = styled.div`
+width:40%;
+display:flex;
+align-items:center;
 `
 
 
 function Header(){
     return(
         <HeaderContainer>
-            <Imagem src={Logo} width='10%' margin = "5px 50px"></Imagem>
-            <Titulo1 width = "100%" margin = "5px 20px" text_align = "center"><strong>CONTROLE PRODUÇÃO MONTAGEM</strong></Titulo1>
+            <HeaderBox>
+            <Imagem src={Logo} width='15%' margin = "2px 0px 0px 20px"></Imagem>
+            <Titulo1 width = "100%" margin = "2px 0px" text_align = "center" font_size='30px' color="#004D70" text_shadow='1px 1px 2px black'><strong>CONTROLE PRODUÇÃO MONTAGEM</strong></Titulo1>
+            </HeaderBox>
         </HeaderContainer>
     )
 }
