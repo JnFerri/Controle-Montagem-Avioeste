@@ -62,7 +62,16 @@ const SpanOrdem = styled.span`
     background-color:black;
     width:100%;
     border-radius: 0px 0px 5px 5px;
+    margin:0px 3px;
 
+
+`
+
+const DivLinha = styled.div`
+    display:flex;
+    align-items:center;
+    width:100%;
+    justify-content:center;
 
 `
 
@@ -151,7 +160,6 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                 if (ordemAtualIndex !== -1) {
                     const tempoTotalMilisegundos = horarioFinalizacao - horarioInicio
                     const ordemAtual = ordensLocalStorage[ordemAtualIndex];
-                    console.log(ordem.qnt_pausado)
                     if(ordem.qnt_pausado > 0){
                         ordemAtual['tempo_em_producao'] = tempoTotalMilisegundos - ordem.qnt_pausado
                     }else{
@@ -288,11 +296,19 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                                 <SpanOrdem>{ordem.ordem_producao}</SpanOrdem>
                             </ItemLista>
                             <ItemLista>
-                                <Titulo4 backgroundcolor='white' border_radius='5px 5px 0px 0px' font_size='16px'>FUNCIONARIO:</Titulo4>
-                                <SpanOrdem>{ordem.matricula}</SpanOrdem>
+                                <Titulo4 backgroundcolor='white' border_radius='5px 5px 0px 0px' font_size='16px'>FUNCIONARIOS:</Titulo4>
+                                 
+                                <DivLinha>
+                                {  
+                                    ordem.matriculas.map(matricula => (
+                                        <SpanOrdem>{matricula}</SpanOrdem>
+                                    ))
+                                }
+                                </DivLinha>
+                               
                             </ItemLista>
                             <ItemLista>
-                                <Titulo4 backgroundcolor='white' border_radius='5px 5px 0px 0px' font_size='16px'>MESA DE MONTAGEM:</Titulo4>
+                                <Titulo4 backgroundcolor='white' border_radius='5px 5px 0px 0px' font_size='16px'>MESA:</Titulo4>
                                 <SpanOrdem>{ordem.mesa}</SpanOrdem>
                             </ItemLista>
                             <ItemLista>
