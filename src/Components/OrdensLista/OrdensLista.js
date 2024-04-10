@@ -17,6 +17,8 @@ import Input from "../Input/Input.js";
 import mesas from "../../BD/mesas.js";
 import turnos from "../../BD/turnos.js";
 import Label from "../Label/Label.js";
+import loadingImg from "../../images/tube-spinner.svg"
+
 const ordensController = new OrdensController()
 
 const ContainerOrdens = styled.section`
@@ -89,6 +91,7 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
     const [QuantidadeProduzida, setQuantidadeProduzida] = useState(0)
     const [ModalQuantidadeFinalizacao, setModalQuantidadeFinalizacao] = useState(false)
     const [OrdemFinalizar, setOrdemFinalizar] = useState({})
+    const [LoadingFinalizacao, setLoadingFinalizacao] = useState(false)
 
     //HandlePausa, ordem é definido no botão da lista ao colocar de 'Pausado' para 'Em Andamento', mas quando de 'Em Andamento' para 'Pausado' ele abre primeiro o modal e então ao enviar o modal ele roda handlePausa com ordem passada na function do modal !
     function HandlePausa(ordem){
@@ -150,6 +153,8 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
     }
     }
 
+
+
     async function HandleFinalizar(ordem){
         if(QuantidadeProduzida > 0){
             const horarioFinalizacao = new Date()
@@ -158,6 +163,7 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
             const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);
             if(ordem.status === 'Em Andamento'){
                 if (ordemAtualIndex !== -1) {
+                    setLoadingFinalizacao(true)
                     const tempoTotalMilisegundos = horarioFinalizacao - horarioInicio
                     const ordemAtual = ordensLocalStorage[ordemAtualIndex];
                     if(ordem.qnt_pausado > 0){
@@ -178,6 +184,7 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                     setLocalStorage(ordensLocalStorage)
                     setModalQuantidadeFinalizacao(false)
                     setQuantidadeProduzida(0)
+                    setLoadingFinalizacao(false)
                 }else {
                     throw new Error('Ordem não encontrada na localStorage.');
                 }
@@ -436,9 +443,18 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
       }}
     >
       <Label>Quantas peças foram produzidas ?</Label>
+      {LoadingFinalizacao ? 
+      <>
+      <Imagem src={loadingImg} width='20%'></Imagem> 
+      <span>Finalizando...</span>
+      </>
+      :
+      <>
       <Input placeholder="Quantidade Produzida"   padding = "20px 0px" width="40%" margin ="1rem 0px" border_radius="20px" border='0.1px black solid' font_size="20px" value={QuantidadeProduzida} onChange={HandleQuantidadeProduzida}></Input>
       <Botao padding='20px 10px' width='40%' margin='1rem 0' border='1px solid black' backgroundcolor='#79b3e0' border_radius='30px' onClick={() => HandleFinalizar(OrdemFinalizar)}>FINALIZAR</Botao>
       <Botao padding='20px 10px' width='40%' margin='1rem 0' border='1px solid black' backgroundcolor='#FF6347' border_radius='30px' onClick={() => setModalQuantidadeFinalizacao(false)}>CANCELAR</Botao>
+      </>
+      }
     </Modal>
                         </OrdensLi>
                         
