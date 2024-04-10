@@ -53,7 +53,7 @@ function FormInputOP({setOrdens, ordens,LocalStorage,setLocalStorage}){
         if(!confereRepetido){
             event.preventDefault()
             const dataInicio = tranformarDataEmString(new Date())
-            if(!NumeroOP || !dataInicio || !Matriculas || !Mesa || !Turno){
+            if(!NumeroOP || !dataInicio || !Matriculas[0] || !Mesa || !Turno || Matriculas.length !== QuantidadeFuncionario){
                 window.alert("Preencha todos os campos antes de incluir a Ordem de Produção !!")
             }else{
                 const obj ={}
@@ -101,9 +101,9 @@ function FormInputOP({setOrdens, ordens,LocalStorage,setLocalStorage}){
         }
     };
     const HandleMatricula = useCallback((index, event) => {
-        const newMatriculas = [...Matriculas];
-        newMatriculas[index] = event.target.value;
-        setMatriculas(newMatriculas);
+            const newMatriculas = [...Matriculas];
+            newMatriculas[index] = event.target.value;
+            setMatriculas(newMatriculas);
       }, [Matriculas]);
     
     const HandleMesa = (event) => {
@@ -138,6 +138,7 @@ function FormInputOP({setOrdens, ordens,LocalStorage,setLocalStorage}){
                   placeholder="Matrícula do Funcionário"
                   style={{ border: '2px solid black', padding: '20px 0px', width: '70%', margin: '1rem 3px', borderRadius: '20px', fontSize: '20px' }}
                   value={Matriculas[i] || ''}
+                  required
                   onChange={(e) => HandleMatricula(i, e)}
                 />
               );
