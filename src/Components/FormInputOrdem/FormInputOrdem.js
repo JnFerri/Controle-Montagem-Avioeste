@@ -12,6 +12,7 @@ import Delay from "../../Helpers/Delay.js";
 import { v4 as uuidv4 } from 'uuid'
 import turnos from "../../BD/turnos.js";
 import imgAdicionarFuncionario from '../../images/adicionar-usuario.png'
+import imgRemoverFuncionario from '../../images/remover-usuario.png'
 import Imagem from "../Imagem/Imagem.js"
 const FormContainer = styled.form`
     width:100%;
@@ -32,6 +33,7 @@ const DivColuna = styled.div`
     display:flex;
     align-items:center;
     flex-direction:column;
+    margin:0px 5px;
 `
 
 
@@ -129,6 +131,11 @@ function FormInputOP({setOrdens, ordens,LocalStorage,setLocalStorage}){
         }
     }
 
+    const RemoverFuncionario = () => {
+        const novoValor = QuantidadeFuncionario - 1
+        setQuantidadeFuncionario(novoValor)
+    }
+
     useEffect(() => {
         const inputs = []
         for(let i = 0;i < QuantidadeFuncionario; i++){
@@ -160,6 +167,13 @@ function FormInputOP({setOrdens, ordens,LocalStorage,setLocalStorage}){
              <Imagem src={imgAdicionarFuncionario} width='30%' />
              <span style={{color:'white'}}>Adicionar Funcionario</span>
             </DivColuna>
+            {QuantidadeFuncionario > 1 ? 
+            <DivColuna style={{cursor:'pointer' , width:'10%'}} onClick={RemoverFuncionario}>
+            <Imagem src={imgRemoverFuncionario} width='30%' />
+            <span style={{color:'white'}}>Remover Funcionario</span>
+           </DivColuna>
+           : ''    
+        }
                 </DivLinha>
              <Select margin='1rem 0' width='30%'   padding='10px' value={Mesa} onChange={HandleMesa}>
                  <Option padding='10px 2px' fontSize='20px' value='' >Selecione Uma Mesa...</Option>
