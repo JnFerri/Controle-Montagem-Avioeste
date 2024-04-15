@@ -10,7 +10,7 @@ import Select from "../Select/Select.js";
 import Option from "../Select/Option/Option.js";
 import motivosPausas from "../../BD/motivosPausas.js";
 import Titulo2 from "../Titulo2/Titulo2.js";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Imagem from "../Imagem/Imagem.js";
 import ImagemEditar from "../../images/caneta.png"
 import Input from "../Input/Input.js";
@@ -18,6 +18,8 @@ import mesas from "../../BD/mesas.js";
 import turnos from "../../BD/turnos.js";
 import Label from "../Label/Label.js";
 import loadingImg from "../../images/tube-spinner.svg"
+import imgAdicionarFuncionario from '../../images/adicionar-usuario.png'
+import imgRemoverFuncionario from '../../images/remover-usuario.png'
 
 const ordensController = new OrdensController()
 
@@ -77,6 +79,13 @@ const DivLinha = styled.div`
 
 `
 
+const DivColuna = styled.div`
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    margin:0px 5px;
+    text-align:center;
+`
 function OrdensLista({ordens, setOrdens, setLocalStorage}){
     
     const [ModalPausa, setModalPausa] = useState(false)
@@ -85,13 +94,15 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
     const [ModalEdicao, setModalEdicao] = useState(false)
     const [OrdemEditando, setOrdemEditando] = useState({})
     const [NumeroOP, setNumeroOP] = useState('')
-    const [Matricula, setMatricula] = useState('')
+    const [MatriculasNovas, setMatriculasNovas] = useState([])
     const [Mesa, setMesa] = useState('')
     const [Turno, setTurno] = useState('')
     const [QuantidadeProduzida, setQuantidadeProduzida] = useState(0)
     const [ModalQuantidadeFinalizacao, setModalQuantidadeFinalizacao] = useState(false)
     const [OrdemFinalizar, setOrdemFinalizar] = useState({})
     const [LoadingFinalizacao, setLoadingFinalizacao] = useState(false)
+    const [QuantidadeFuncionarios, setQuantidadeFuncionarios] = useState('')
+    const [InputMatriculas, setInputMatriculas] = useState([])
 
     //HandlePausa, ordem é definido no botão da lista ao colocar de 'Pausado' para 'Em Andamento', mas quando de 'Em Andamento' para 'Pausado' ele abre primeiro o modal e então ao enviar o modal ele roda handlePausa com ordem passada na function do modal !
     function HandlePausa(ordem){
@@ -221,9 +232,10 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
         if(ModalEdicao === false){
             setModalEdicao(true)
             setNumeroOP(ordem.ordem_producao)
-            setMatricula(ordem.matricula)
+            setMatriculasNovas(ordem.matriculas)
             setMesa(ordem.mesa)
             setTurno(ordem.turno)
+            setQuantidadeFuncionarios(ordem.quantidade_funcionarios)
             setOrdemEditando(ordem)
         }
         if(ModalEdicao === true){
@@ -235,9 +247,11 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
         const HandleNumeroOP = (event) => {
             setNumeroOP(event.target.value);
         };
-        const HandleMatricula = (event) => {
-            setMatricula(event.target.value);
-        };
+        const HandleMatricula = useCallback((index, event) => {
+            const newMatriculas = [...MatriculasNovas];
+            newMatriculas[index] = event.target.value;
+            setMatriculasNovas(newMatriculas);
+      }, [MatriculasNovas]);
         
         const HandleMesa = (event) => {
             setMesa(event.target.value);
@@ -258,11 +272,17 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                     if(ordemAtual['ordem_producao'] !== NumeroOP && confereRepetido){
                         window.alert("Ordem de produção ja esta na lista !!")
                     }else{
-                     if(NumeroOP.trim().length > 0 && Matricula.trim().length > 0  && Mesa.trim().length > 0  && Turno.trim().length > 0){
+                     if(NumeroOP.trim().length > 0 && MatriculasNovas.length > 0  && Mesa.trim().length > 0  && Turno.trim().length > 0){
+                        console.log(ordemAtual)
                         ordemAtual['ordem_producao'] = NumeroOP
-                        ordemAtual['matricula'] = Matricula
+                        ordemAtual['matriculas'] = MatriculasNovas
+                        ordemAtual['matricula'] = MatriculasNovas[0]
+                        ordemAtual['matricula_2'] = MatriculasNovas[1]
+                        ordemAtual['matricula_3'] = MatriculasNovas[2]
+                        ordemAtual['matricula_4'] = MatriculasNovas[3]
                         ordemAtual['mesa'] = Mesa
                         ordemAtual['turno'] = Turno
+                        ordemAtual['quantidade_funcionarios'] = QuantidadeFuncionarios
                         ordensLocalStorage[ordemAtualIndex] = ordemAtual;
                         localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
                         setLocalStorage(ordensLocalStorage)
@@ -288,6 +308,42 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                     setModalPausa(false)
                 }
                 }
+
+
+                const AdicaoFuncionario = () => {
+                    console.log(ordens)
+                    if(QuantidadeFuncionarios < 4){
+                    setQuantidadeFuncionarios(QuantidadeFuncionarios + 1)
+                    }else{
+                        window.alert('Maximo 4 Funcionarios por Ordem de Produção !!')
+                    }
+                }
+            
+                const RemoverFuncionario = () => {
+                    const novoValor = [...MatriculasNovas]
+                    setQuantidadeFuncionarios(QuantidadeFuncionarios-1)
+                    novoValor.splice(-1,1)
+                    setMatriculasNovas(novoValor)
+                }
+
+                useEffect(() => {
+        
+                    const inputs = []
+                    for(let i = 0;i < QuantidadeFuncionarios; i++){
+                        inputs.push(
+                            <Input
+                              key={i}
+                              placeholder="Matrícula do Funcionário"
+                              style={{ border: '2px solid black', padding: '20px 0px', width: '50%', margin: '1rem 3px', borderRadius: '20px', fontSize: '20px' }}
+                              value={MatriculasNovas[i] || ''}
+                              required
+                              onChange={(e) => HandleMatricula(i, e)}
+                            />
+                          );
+                    }
+                    setInputMatriculas(inputs)
+                },[QuantidadeFuncionarios, HandleMatricula, MatriculasNovas])
+            
 
         
     return(
@@ -336,7 +392,7 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                             <ItemLista>
                                 <Botao border='0.3px black solid' boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding='10px 5px' border_radius='5px' backgroundcolor='#FF6347' color='black' font_size='20px' width='80%' onClick={async() => await HandleModalQuantidadeFinalizacao(ordem)}>FINALIZAR</Botao>
                             </ItemLista>
-                                <Botao   padding='2px 2px'  backgroundcolor='rgb(0,0,0,0)' color='black' font_size='20px' width='10%' onClick={async() => HandleModalEdicao(ordem)}><Imagem src={ImagemEditar} width='60%'></Imagem></Botao>
+                                <Botao   padding='2px 2px'  backgroundcolor='rgb(0,0,0,0)' color='black' font_size='20px' width='10%' onClick={() => HandleModalEdicao(ordem)}><Imagem src={ImagemEditar} width='60%'></Imagem></Botao>
                                 
                                 
     <Modal 
@@ -396,7 +452,23 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
         <Label font_size = '26px'>Numero da Ordem de produção :</Label>
         <Input placeholder="Numero da OP"   padding = "20px 0px" width="60%" margin ="1rem 0px" border_radius="20px" border='0.1px black solid' font_size="20px" value={NumeroOP} onChange={HandleNumeroOP} ></Input>
         <Label font_size = '26px'>Matricula do funcionario :</Label>
-        <Input placeholder="Matricula Funcionario"  padding = "20px 0px" width="30%" margin ="1rem 0px" border_radius="20px" border='0.1px black solid' font_size="20px" value={Matricula} onChange={HandleMatricula} ></Input>
+        <DivLinha>
+            {  
+                  InputMatriculas
+            }
+            
+            <DivColuna style={{cursor:'pointer' , width:'10%'}} onClick={AdicaoFuncionario}>
+             <Imagem src={imgAdicionarFuncionario} width='30%'/>
+             <span style={{color:'black'}}>Adicionar Funcionario</span>
+            </DivColuna>
+            { QuantidadeFuncionarios > 1 || QuantidadeFuncionarios === '' ? 
+            <DivColuna style={{cursor:'pointer' , width:'10%'}} onClick={RemoverFuncionario}>
+            <Imagem src={imgRemoverFuncionario} width='30%'/>
+            <span style={{color:'black'}}>Remover Funcionario</span>
+           </DivColuna>
+           : ''    
+        }
+                </DivLinha>
         <Label font_size = '26px'>Mesa :</Label>
              <Select margin='1rem 0' width='30%'  padding='10px' value={Mesa} border='0.1px black solid' onChange={HandleMesa}>
                  <Option padding='10px 2px' fontSize='20px' value='' >Selecione Uma Mesa...</Option>
@@ -418,7 +490,7 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                     </Select>  
     
       <Botao padding='20px 10px' width='40%' margin='1rem 10px' border='1px solid black' backgroundcolor='#79b3e0' border_radius='30px' onClick={() => EditaComponente(OrdemEditando, ordens)}>ATUALIZAR</Botao>
-      <Botao padding='20px 10px' width='40%' margin='1rem 10px' border='1px solid black' backgroundcolor='#FF6347' border_radius='30px' onClick={() => setModalEdicao(false)}>CANCELAR</Botao>
+      <Botao padding='20px 10px' width='40%' margin='1rem 10px' border='1px solid black' backgroundcolor='#FF6347' border_radius='30px' onClick={() =>{ setModalEdicao(false)}   }>CANCELAR</Botao>
   
     </Modal>
     

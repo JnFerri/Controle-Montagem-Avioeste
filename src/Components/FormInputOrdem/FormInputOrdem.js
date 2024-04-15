@@ -103,6 +103,7 @@ function FormInputOP({setOrdens, ordens,LocalStorage,setLocalStorage}){
         }
     };
     const HandleMatricula = useCallback((index, event) => {
+        
             const newMatriculas = [...Matriculas];
             newMatriculas[index] = event.target.value;
             setMatriculas(newMatriculas);
@@ -137,6 +138,7 @@ function FormInputOP({setOrdens, ordens,LocalStorage,setLocalStorage}){
     }
 
     useEffect(() => {
+        
         const inputs = []
         for(let i = 0;i < QuantidadeFuncionario; i++){
             inputs.push(
@@ -164,12 +166,12 @@ function FormInputOP({setOrdens, ordens,LocalStorage,setLocalStorage}){
             }
             
             <DivColuna style={{cursor:'pointer' , width:'10%'}} onClick={AdicaoFuncionario}>
-             <Imagem src={imgAdicionarFuncionario} width='30%' />
+             <Imagem src={imgAdicionarFuncionario} width='30%'/>
              <span style={{color:'white'}}>Adicionar Funcionario</span>
             </DivColuna>
             {QuantidadeFuncionario > 1 ? 
             <DivColuna style={{cursor:'pointer' , width:'10%'}} onClick={RemoverFuncionario}>
-            <Imagem src={imgRemoverFuncionario} width='30%' />
+            <Imagem src={imgRemoverFuncionario} width='30%'/>
             <span style={{color:'white'}}>Remover Funcionario</span>
            </DivColuna>
            : ''    
