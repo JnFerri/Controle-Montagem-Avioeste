@@ -71,7 +71,7 @@ function FormInputOP({setOrdens, ordens,LocalStorage,setLocalStorage}){
                 obj['turno'] = Turno
                 obj['status'] = 'Em Andamento'
                 obj['id'] = uuidv4()
-                console.log(obj)
+                
                 setNumeroOP('')
                 setMatriculas([])
                 setMesa('')
@@ -82,9 +82,6 @@ function FormInputOP({setOrdens, ordens,LocalStorage,setLocalStorage}){
                 localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(localStorageData))
                 await Delay(1000)
                 setLocalStorage(localStorageData)
-                //await ordensController.criarRegistro('fk0lbipncnh3mu7u95dls', obj)
-                //const ordensNaoFinalizadas = await PegarOrdensNaoFinalizadas('fk0lbipncnh3mu7u95dls')
-                //setOrdens(ordensNaoFinalizadas)
             }
         }else{
             event.preventDefault()

@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {useNavigate} from 'react-router-dom';
 
 const ProtectedRoute = ({ component: Component, isAuthenticated, ...rest }) => {
     const navigate = useNavigate();
 
 
-    const handleRetornaLogin = () => {
-            navigate('/');
-    };
+        
+    function RetornaLogin(){
+            useEffect(() => {
+                    
+                            navigate('/');
+                    
+            }, [])
+
+    }
+
     return (
-                isAuthenticated ? <Component {...rest} /> : handleRetornaLogin()
+                isAuthenticated ? <Component {...rest} /> : RetornaLogin()
         );
         
 };

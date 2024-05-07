@@ -126,7 +126,7 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
 
                  const pausasLocalStorage = JSON.parse(localStorage.getItem('pausasOrdens')) || [];
                  const pausasLocalStorageIndex = pausasLocalStorage.findIndex(element => element.id === ordem.id)
-                 console.log(pausasLocalStorageIndex)
+                 
                  if (pausasLocalStorageIndex !== -1){
                      const obj = {ordem_producao:ordensLocalStorage[ordemAtualIndex]['ordem_producao'],motivo_pausa:MotivoPausa }
                      pausasLocalStorage[pausasLocalStorageIndex].pausas.push(obj)
@@ -329,7 +329,6 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                         window.alert("Ordem de produção ja esta na lista !!")
                     }else{
                      if(NumeroOP.trim().length > 0 && MatriculasNovas.length > 0  && Mesa.trim().length > 0  && Turno.trim().length > 0){
-                        console.log(ordemAtual)
                         ordemAtual['ordem_producao'] = NumeroOP
                         ordemAtual['matriculas'] = MatriculasNovas
                         ordemAtual['matricula'] = MatriculasNovas[0]
@@ -367,7 +366,6 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
 
 
                 const AdicaoFuncionario = () => {
-                    console.log(ordens)
                     if(QuantidadeFuncionarios < 4){
                     setQuantidadeFuncionarios(QuantidadeFuncionarios + 1)
                     }else{
@@ -419,8 +417,8 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                                  
                                 <DivLinha>
                                 {  
-                                    ordem.matriculas.map(matricula => (
-                                        <SpanOrdem>{matricula}</SpanOrdem>
+                                    ordem.matriculas.map((matricula,index) => (
+                                        <SpanOrdem key={index}>{matricula}</SpanOrdem>
                                     ))
                                 }
                                 </DivLinha>
