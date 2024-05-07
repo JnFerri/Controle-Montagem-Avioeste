@@ -30,8 +30,8 @@ return new Promise((resolve,reject) => {
       resolve(data);
   })
   .catch(err => {
-    console.error('Ocorreu um erro ao criar o registro no Jestor. Possivelmente Esta ordem de produção ja existe no Jestor, contate o administrador:', err);
-    reject('Ocorreu um erro ao criar o registro no Jestor. Possivelmente Esta ordem de produção ja existe no Jestor')
+    resolve({error:`Ocorreu um erro ao criar o registro no jestor, possivelmente ordem ja foi lançada, erro : ${err}`})
+    reject('Ocorreu um erro ao criar o registro no Jestor. Possivelmente Esta ordem de produção ja existe no Jestor, contate o administrador:', err)
   })
   })
   }

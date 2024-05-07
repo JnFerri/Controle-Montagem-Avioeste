@@ -123,6 +123,20 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                  localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
                  setLocalStorage(ordensLocalStorage)
                  setModalPausa(false)
+
+                 const pausasLocalStorage = JSON.parse(localStorage.getItem('pausasOrdens')) || [];
+                 const pausasLocalStorageIndex = pausasLocalStorage.findIndex(element => element.id === ordem.id)
+                 console.log(pausasLocalStorageIndex)
+                 if (pausasLocalStorageIndex !== -1){
+                     const obj = {ordem_producao:ordensLocalStorage[ordemAtualIndex]['ordem_producao'],motivo_pausa:MotivoPausa }
+                     pausasLocalStorage[pausasLocalStorageIndex].pausas.push(obj)
+                     localStorage.setItem('pausasOrdens', JSON.stringify(pausasLocalStorage))
+                 }else{
+                    const obj = {id:ordem.id, pausas: [{ ordem_producao:ordensLocalStorage[ordemAtualIndex]['ordem_producao'],motivo_pausa:MotivoPausa }] }
+                    pausasLocalStorage.push(obj)
+                    localStorage.setItem('pausasOrdens', JSON.stringify(pausasLocalStorage))
+                 }
+
              }else {
                  throw new Error('Ordem não encontrada na localStorage.');
              }
@@ -143,7 +157,6 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                 const dataPausa = new Date(dateMiliseconds + 10800000)
                 const diferencaHorariosMiliSegundos = dataRecomeco - dataPausa
                 ordemAtual['horario_recomeco'] = dataRecomecoString
-                
                 ordemAtual['status'] = 'Em Andamento'
                 if(ordem['qnt_pausado']){
                     ordemAtual['qnt_pausado'] = ordemAtual['qnt_pausado'] + diferencaHorariosMiliSegundos
@@ -153,6 +166,14 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                 ordensLocalStorage[ordemAtualIndex] = ordemAtual;
                 localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
                 setLocalStorage(ordensLocalStorage)
+                
+                const pausasLocalStorage = JSON.parse(localStorage.getItem('pausasOrdens')) || [];
+                const pausasLocalStorageIndex = pausasLocalStorage.findIndex(element => element.id === ordem.id)
+                if (pausasLocalStorageIndex !== -1){
+                    const ultimoIndice = pausasLocalStorage[pausasLocalStorageIndex].pausas.length - 1
+                    pausasLocalStorage[pausasLocalStorageIndex].pausas[ultimoIndice]['tempo_pausado'] = diferencaHorariosMiliSegundos
+                    localStorage.setItem('pausasOrdens', JSON.stringify(pausasLocalStorage))
+                }
                 
             }else {
                 throw new Error('Ordem não encontrada na localStorage.');
@@ -171,7 +192,9 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
             const horarioFinalizacao = new Date()
             const horarioInicio = new Date(Date.parse(ordem.horario_inicio) + 10800000)
             const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];
+            const pausasLocalStorage = JSON.parse(localStorage.getItem('pausasOrdens')) || [];
             const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);
+            const pausasAtualIndex = pausasLocalStorage.findIndex(element => element.id === ordem.id);
             if(ordem.status === 'Em Andamento'){
                 if (ordemAtualIndex !== -1) {
                     setLoadingFinalizacao(true)
@@ -187,15 +210,48 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                     ordemAtual['status'] = 'Finalizado'
                     ordemAtual['quantidade_produzida'] = QuantidadeProduzida
                     ordemAtual['horario_termino'] = tranformarDataEmString(horarioFinalizacao)
-                    await ordensController.criarRegistro('fk0lbipncnh3mu7u95dls', ordemAtual)
-                    ordensLocalStorage[ordemAtualIndex] = ordemAtual;
-                    ordensLocalStorage.splice(ordemAtualIndex, 1);
-                    localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
-                    await Delay(1000)
-                    setLocalStorage(ordensLocalStorage)
-                    setModalQuantidadeFinalizacao(false)
-                    setQuantidadeProduzida(0)
-                    setLoadingFinalizacao(false)
+                    const result = await ordensController.criarRegistro('fk0lbipncnh3mu7u95dls', ordemAtual)
+                    if(result.error){
+                        window.alert(result.error)
+                        const ordemAtualIndexOrdens = ordens.findIndex(element => element.id === ordem.id)
+                        ordens.splice(ordemAtualIndexOrdens, 1);
+                        ordensLocalStorage.splice(ordemAtualIndex, 1);
+                        localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
+                        setModalQuantidadeFinalizacao(false)
+                        setQuantidadeProduzida(0)
+                        setLoadingFinalizacao(false)
+                    }else {
+                        ordensLocalStorage[ordemAtualIndex] = ordemAtual;
+                        ordensLocalStorage.splice(ordemAtualIndex, 1);
+                        localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
+                        await Delay(1000)
+                        setLocalStorage(ordensLocalStorage)
+    
+                        if(pausasLocalStorage.length > 0){
+
+                            if(pausasLocalStorage[pausasAtualIndex].pausas.length > 0){
+                                pausasLocalStorage[pausasAtualIndex].pausas.forEach( async (pausa) => {
+                                    const obj = {
+                                        conexao_apontamento:result.data.id_fk0lbipncnh3mu7u95dls,
+                                        ordem_producao:pausa.ordem_producao,
+                                        motivo_pausa:pausa.motivo_pausa,
+                                        tempo_pausado:pausa.tempo_pausado
+                                    }
+                                    await ordensController.criarRegistro('o3f0tbvxjnxj_k4odqh_0', obj)
+        
+                                pausasLocalStorage.splice(pausasAtualIndex, 1)
+                                localStorage.setItem('pausasOrdens', JSON.stringify(pausasLocalStorage))
+                                
+                                })
+                            }
+                        }
+                        
+                        
+    
+                        setModalQuantidadeFinalizacao(false)
+                        setQuantidadeProduzida(0)
+                        setLoadingFinalizacao(false)
+                    }
                 }else {
                     throw new Error('Ordem não encontrada na localStorage.');
                 }
@@ -351,8 +407,8 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
             
             <OrdensUl>
                 {
-                    ordens.map(ordem =>  (
-                        <OrdensLi backgroundcolor={ordem.status === 'Em Andamento' ? '#24ab92' : '#bf6b47'} key={ordem.id}>
+                    ordens.map((ordem, index) =>  (
+                        <OrdensLi backgroundcolor={ordem.status === 'Em Andamento' ? '#24ab92' : '#bf6b47'} key={index}>
                             
                             <ItemLista>
                                 <Titulo4 backgroundcolor='white' border_radius='5px 5px 0px 0px' font_size='16px'>ORDEM PRODUÇÃO:</Titulo4>
