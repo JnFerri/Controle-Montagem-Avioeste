@@ -46,6 +46,7 @@ function FormInputOP({setOrdens, ordens,LocalStorage,setLocalStorage}){
     const [Turno, setTurno] = useState('')
     const [QuantidadeFuncionario, setQuantidadeFuncionario] = useState(1)
     const [InputsMatricula, setInputMatriculas] = useState([])
+
     async function CriaOrdemJestor(event){
         
         const confereRepetido =await ordens.find(ordem => ordem.ordem_producao === NumeroOP)
@@ -57,7 +58,13 @@ function FormInputOP({setOrdens, ordens,LocalStorage,setLocalStorage}){
             const dataInicio = tranformarDataEmString(new Date())
             if(!NumeroOP || !dataInicio || !Matriculas[0] || !Mesa || !Turno || Matriculas.length !== QuantidadeFuncionario){
                 window.alert("Preencha todos os campos antes de incluir a Ordem de Produção !!")
-            }else{
+            }else if(NumeroOP.length < 7 || NumeroOP.length > 7){
+                window.alert("Quantidade digitos do numero da OP estão fora do normal, Verifique se esta correto !!!")
+            }else if (Matriculas[0].length < 1 || Matriculas[0].length > 6 ){
+                window.alert('Quantidade de Digitos de matricula de Funcionario Fora do Normal, Verifique, caso necessario adicionar mais de uma matricula utilize o botão "Adicionar Funcionario".')
+            }
+            else{
+                
                 const obj ={}
                 obj['ordem_producao'] = NumeroOP
                 obj['horario_inicio'] = dataInicio
@@ -94,11 +101,12 @@ function FormInputOP({setOrdens, ordens,LocalStorage,setLocalStorage}){
     }
     
     const HandleNumeroOP = (event) => {
-        setNumeroOP(event.target.value);
         if(event.key === 'Enter'){
             event.preventDefault()
         }
-    };
+            setNumeroOP(event.target.value);
+        }
+        
     const HandleMatricula = useCallback((index, event) => {
         
             const newMatriculas = [...Matriculas];

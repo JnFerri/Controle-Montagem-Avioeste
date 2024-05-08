@@ -20,6 +20,7 @@ import Label from "../Label/Label.js";
 import loadingImg from "../../images/tube-spinner.svg"
 import imgAdicionarFuncionario from '../../images/adicionar-usuario.png'
 import imgRemoverFuncionario from '../../images/remover-usuario.png'
+import motivosRetrabalho from "../../BD/motivosRetrabalho.js";
 
 const ordensController = new OrdensController()
 
@@ -103,12 +104,13 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
     const [LoadingFinalizacao, setLoadingFinalizacao] = useState(false)
     const [QuantidadeFuncionarios, setQuantidadeFuncionarios] = useState('')
     const [InputMatriculas, setInputMatriculas] = useState([])
+    const [MotivoRetrabalho, setMotivoRetrabalho] = useState('')
 
     //HandlePausa, ordem é definido no botão da lista ao colocar de 'Pausado' para 'Em Andamento', mas quando de 'Em Andamento' para 'Pausado' ele abre primeiro o modal e então ao enviar o modal ele roda handlePausa com ordem passada na function do modal !
     function HandlePausa(ordem){
     try{
         if(ordem.status === 'Em Andamento' ){
-         //HandleModalPausa(ordem)
+        //HandleModalPausa(ordem)
          if(MotivoPausa !== ''){
              const horarioPausa = new Date()
              const dataPausaJestor = tranformarDataEmString(horarioPausa)
@@ -128,14 +130,16 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                  const pausasLocalStorageIndex = pausasLocalStorage.findIndex(element => element.id === ordem.id)
                  
                  if (pausasLocalStorageIndex !== -1){
-                     const obj = {ordem_producao:ordensLocalStorage[ordemAtualIndex]['ordem_producao'],motivo_pausa:MotivoPausa }
+                     const obj = {ordem_producao:ordensLocalStorage[ordemAtualIndex]['ordem_producao'],motivo_pausa:MotivoPausa, motivo_retrabalho : MotivoRetrabalho }
                      pausasLocalStorage[pausasLocalStorageIndex].pausas.push(obj)
                      localStorage.setItem('pausasOrdens', JSON.stringify(pausasLocalStorage))
                  }else{
-                    const obj = {id:ordem.id, pausas: [{ ordem_producao:ordensLocalStorage[ordemAtualIndex]['ordem_producao'],motivo_pausa:MotivoPausa }] }
+                    const obj = {id:ordem.id, pausas: [{ ordem_producao:ordensLocalStorage[ordemAtualIndex]['ordem_producao'],motivo_pausa:MotivoPausa, motivo_retrabalho : MotivoRetrabalho }] }
                     pausasLocalStorage.push(obj)
                     localStorage.setItem('pausasOrdens', JSON.stringify(pausasLocalStorage))
                  }
+                 setMotivoPausa('')
+                 setMotivoRetrabalho('')
 
              }else {
                  throw new Error('Ordem não encontrada na localStorage.');
@@ -235,14 +239,14 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                                         conexao_apontamento:result.data.id_fk0lbipncnh3mu7u95dls,
                                         ordem_producao:pausa.ordem_producao,
                                         motivo_pausa:pausa.motivo_pausa,
-                                        tempo_pausado:pausa.tempo_pausado
+                                        tempo_pausado:pausa.tempo_pausado,
+                                        motivo_retrabalho: pausa.motivo_retrabalho
                                     }
                                     await ordensController.criarRegistro('o3f0tbvxjnxj_k4odqh_0', obj)
-        
+                                    
+                                })
                                 pausasLocalStorage.splice(pausasAtualIndex, 1)
                                 localStorage.setItem('pausasOrdens', JSON.stringify(pausasLocalStorage))
-                                
-                                })
                             }
                         }
                         
@@ -251,6 +255,7 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                         setModalQuantidadeFinalizacao(false)
                         setQuantidadeProduzida(0)
                         setLoadingFinalizacao(false)
+                        
                     }
                 }else {
                     throw new Error('Ordem não encontrada na localStorage.');
@@ -398,7 +403,9 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                     setInputMatriculas(inputs)
                 },[QuantidadeFuncionarios, HandleMatricula, MatriculasNovas])
             
-
+            const HandleMotivoRetrabalho = (e) => {
+                setMotivoRetrabalho(e.target.value)
+            }
         
     return(
         <ContainerOrdens>
@@ -478,6 +485,19 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
             ))
         }
       </Select>
+      {
+        MotivoPausa === 'Retrabalho' ? 
+        <Select onChange={HandleMotivoRetrabalho} margin='30px 0px' padding='20px 0px' width='80%' font_size='24px'>
+      <Option width='80%' padding='20px 0px' font_size='24px' value=''>Selecione um Motivo do Retrabalho...</Option>
+        {
+            motivosRetrabalho.map((motivos,index) => (
+                <Option width='80%' padding='20px 0px' font_size='24px' key={index}>{motivos}</Option>
+            ))
+        }
+      </Select>
+      :
+      ''
+      }
       <Botao padding='20px 10px' width='40%' margin='1rem 0' border='1px solid black' backgroundcolor='#79b3e0' border_radius='30px' onClick={() => HandlePausa(OrdemPausada)}>ENVIAR</Botao>
       <Botao padding='20px 10px' width='40%' margin='1rem 0' border='1px solid black' backgroundcolor='#FF6347' border_radius='30px' onClick={() => setModalPausa(false)}>CANCELAR</Botao>
     </Modal>
