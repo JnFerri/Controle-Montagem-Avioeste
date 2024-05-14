@@ -1,2 +1,2 @@
 @echo off
-start "" npm start
+start "" serve -s build -l 3001

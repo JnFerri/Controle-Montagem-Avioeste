@@ -1,4 +1,4 @@
 
-const motivosRetrabalho = ['Quebrado', 'Faltou Peças', 'Erro de Montagem', 'Componente Errado', 'Montagem de Má Qualidade','Defeito Matéria-Prima']
+const motivosRetrabalho = ['Fornecedor (Material)', 'Dobra Incorreta', 'Furação Incorreta', 'Corte Incorreto', 'Erro de Projeto (Engenharia)', 'Falha de Injeção', 'Erro de Montagem']
 
 export default motivosRetrabalho

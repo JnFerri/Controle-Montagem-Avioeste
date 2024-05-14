@@ -21,7 +21,7 @@ function App() {
     async function confereLoginLocalStorage(){
       const loginStorage = JSON.parse(localStorage.getItem('Login'))
       if(loginStorage){
-        await fetch('http://srv-services:3000/autorizacao/controleMontagem',{ method: 'POST',
+        await fetch(`${process.env.REACT_APP_API_URL}/autorizacao/controleMontagem`,{ method: 'POST',
         headers: {
           accept: 'application/json',
           'content-type': 'application/json'

@@ -112,39 +112,44 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
         if(ordem.status === 'Em Andamento' ){
         //HandleModalPausa(ordem)
          if(MotivoPausa !== ''){
-             const horarioPausa = new Date()
-             const dataPausaJestor = tranformarDataEmString(horarioPausa)
-             const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];
-             const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);
-             if (ordemAtualIndex !== -1) {
-                 const ordemAtual = ordensLocalStorage[ordemAtualIndex];
-                 ordemAtual['horario_pausa'] = dataPausaJestor;
-                 ordemAtual['motivos_das_pausas'] = ordemAtual['motivos_das_pausas'] ? `${ordem.motivos_das_pausas} , ${MotivoPausa}` : `${MotivoPausa}`;
-                 ordemAtual['status'] = 'Pausado';
-                 ordensLocalStorage[ordemAtualIndex] = ordemAtual;
-                 localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
-                 setLocalStorage(ordensLocalStorage)
-                 setModalPausa(false)
+            if(MotivoPausa === 'Retrabalho' && MotivoRetrabalho === ''){
+                window.alert('Por favor preencha um motivo para o retrabalho !!')
+            }else {
+                const horarioPausa = new Date()
+                const dataPausaJestor = tranformarDataEmString(horarioPausa)
+                const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];
+                const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);
+                if (ordemAtualIndex !== -1) {
+                    const ordemAtual = ordensLocalStorage[ordemAtualIndex];
+                    ordemAtual['horario_pausa'] = dataPausaJestor;
+                    ordemAtual['motivos_das_pausas'] = ordemAtual['motivos_das_pausas'] ? `${ordem.motivos_das_pausas} , ${MotivoPausa}` : `${MotivoPausa}`;
+                    ordemAtual['status'] = 'Pausado';
+                    ordensLocalStorage[ordemAtualIndex] = ordemAtual;
+                    localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
+                    setLocalStorage(ordensLocalStorage)
+                    setModalPausa(false)
+   
+                    const pausasLocalStorage = JSON.parse(localStorage.getItem('pausasOrdens')) || [];
+                    const pausasLocalStorageIndex = pausasLocalStorage.findIndex(element => element.id === ordem.id)
+                    
+                    if (pausasLocalStorageIndex !== -1){
+                        const obj = {ordem_producao:ordensLocalStorage[ordemAtualIndex]['ordem_producao'],motivo_pausa:MotivoPausa, motivo_retrabalho : MotivoRetrabalho }
+                        pausasLocalStorage[pausasLocalStorageIndex].pausas.push(obj)
+                        localStorage.setItem('pausasOrdens', JSON.stringify(pausasLocalStorage))
+                    }else{
+                       const obj = {id:ordem.id, pausas: [{ ordem_producao:ordensLocalStorage[ordemAtualIndex]['ordem_producao'],motivo_pausa:MotivoPausa, motivo_retrabalho : MotivoRetrabalho }] }
+                       pausasLocalStorage.push(obj)
+                       localStorage.setItem('pausasOrdens', JSON.stringify(pausasLocalStorage))
+                    }
+                    setMotivoPausa('')
+                    setMotivoRetrabalho('')
+   
+                }else {
+                    throw new Error('Ordem não encontrada na localStorage.');
+                }
 
-                 const pausasLocalStorage = JSON.parse(localStorage.getItem('pausasOrdens')) || [];
-                 const pausasLocalStorageIndex = pausasLocalStorage.findIndex(element => element.id === ordem.id)
-                 
-                 if (pausasLocalStorageIndex !== -1){
-                     const obj = {ordem_producao:ordensLocalStorage[ordemAtualIndex]['ordem_producao'],motivo_pausa:MotivoPausa, motivo_retrabalho : MotivoRetrabalho }
-                     pausasLocalStorage[pausasLocalStorageIndex].pausas.push(obj)
-                     localStorage.setItem('pausasOrdens', JSON.stringify(pausasLocalStorage))
-                 }else{
-                    const obj = {id:ordem.id, pausas: [{ ordem_producao:ordensLocalStorage[ordemAtualIndex]['ordem_producao'],motivo_pausa:MotivoPausa, motivo_retrabalho : MotivoRetrabalho }] }
-                    pausasLocalStorage.push(obj)
-                    localStorage.setItem('pausasOrdens', JSON.stringify(pausasLocalStorage))
-                 }
-                 setMotivoPausa('')
-                 setMotivoRetrabalho('')
 
-             }else {
-                 throw new Error('Ordem não encontrada na localStorage.');
-             }
-            
+            }
          }else {
             window.alert('Por favor preencha um motivo para a pausa !!')
          }
@@ -214,7 +219,8 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                     ordemAtual['status'] = 'Finalizado'
                     ordemAtual['quantidade_produzida'] = QuantidadeProduzida
                     ordemAtual['horario_termino'] = tranformarDataEmString(horarioFinalizacao)
-                    const result = await ordensController.criarRegistro('fk0lbipncnh3mu7u95dls', ordemAtual)
+                    const result = await ordensController.criarRegistro(process.env.REACT_APP_TABELA, ordemAtual)
+                    console.log(result)
                     if(result.error){
                         window.alert(result.error)
                         const ordemAtualIndexOrdens = ordens.findIndex(element => element.id === ordem.id)
@@ -236,7 +242,7 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                             if(pausasLocalStorage[pausasAtualIndex].pausas.length > 0){
                                 pausasLocalStorage[pausasAtualIndex].pausas.forEach( async (pausa) => {
                                     const obj = {
-                                        conexao_apontamento:result.data.id_fk0lbipncnh3mu7u95dls,
+                                        conexao_apontamentos_2:result.data[`id_${process.env.REACT_APP_TABELA}`],
                                         ordem_producao:pausa.ordem_producao,
                                         motivo_pausa:pausa.motivo_pausa,
                                         tempo_pausado:pausa.tempo_pausado,
@@ -406,6 +412,17 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
             const HandleMotivoRetrabalho = (e) => {
                 setMotivoRetrabalho(e.target.value)
             }
+
+            const ExcluirOrdem = (ordem) => {
+                const confirmação  = window.confirm('Tem certeza que deseja excluir esta Ordem de Produção ?')
+                if(confirmação){
+                    const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];
+                    const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);
+                    ordensLocalStorage.splice(ordemAtualIndex, 1)
+                    localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
+                    setLocalStorage(ordensLocalStorage)
+                }
+            }
         
     return(
         <ContainerOrdens>
@@ -500,6 +517,7 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
       }
       <Botao padding='20px 10px' width='40%' margin='1rem 0' border='1px solid black' backgroundcolor='#79b3e0' border_radius='30px' onClick={() => HandlePausa(OrdemPausada)}>ENVIAR</Botao>
       <Botao padding='20px 10px' width='40%' margin='1rem 0' border='1px solid black' backgroundcolor='#FF6347' border_radius='30px' onClick={() => setModalPausa(false)}>CANCELAR</Botao>
+      
     </Modal>
     
     
@@ -565,7 +583,8 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
     
       <Botao padding='20px 10px' width='40%' margin='1rem 10px' border='1px solid black' backgroundcolor='#79b3e0' border_radius='30px' onClick={() => EditaComponente(OrdemEditando, ordens)}>ATUALIZAR</Botao>
       <Botao padding='20px 10px' width='40%' margin='1rem 10px' border='1px solid black' backgroundcolor='#FF6347' border_radius='30px' onClick={() =>{ setModalEdicao(false)}   }>CANCELAR</Botao>
-  
+      <p>Houve algum problema durante o apontamento da ordem de produção ? Caso a ordem de produção tenha sido marcada de forma que não condiz com a realidade favor exclua a ordem de produção para evitar erros nos dados ! </p>
+      <Botao padding='20px 10px' width='40%' margin='1rem 0' border='1px solid black' backgroundcolor='#FF6347' border_radius='30px' onClick={() =>{ ExcluirOrdem(ordem)}   }>EXCLUIR</Botao>         
     </Modal>
     
     <Modal 

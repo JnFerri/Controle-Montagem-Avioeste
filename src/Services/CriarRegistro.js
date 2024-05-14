@@ -2,7 +2,7 @@ export class CriarRegistro{
 
     constructor(token){
         this._token = token
-        this._url = "http://srv-services:3000/api/ordens/post"
+        this._url = `${process.env.REACT_APP_API_URL}/api/ordens/post`
     }
 
   criarRegistro(tabela,dado) {

@@ -1,7 +1,7 @@
 export class PegarRegistrosTabela{
     constructor(token){
         this._token = token
-        this._url = `http://srv-services:3000/api/jestor/lista`
+        this._url = `${process.env.REACT_APP_API_URL}/api/jestor/lista`
     }
     
     async pegarRegistrosTabela(table){
