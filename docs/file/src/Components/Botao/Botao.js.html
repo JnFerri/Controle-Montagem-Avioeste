@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">src/Components/Botao/Botao.js | controle_montagem</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-App">App</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-reportWebVitals">reportWebVitals</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LoginConferencia">LoginConferencia</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LoginLocalStorage">LoginLocalStorage</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#bd">BD</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-mesas">mesas</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-motivosPausas">motivosPausas</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-motivosRetrabalho">motivosRetrabalho</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-turnos">turnos</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-botao">Components/Botao</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Botao">Botao</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-forminputop">Components/FormInputOP</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-FormInputOP">FormInputOP</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-InputsMatricula">InputsMatricula</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Matriculas">Matriculas</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Mesa">Mesa</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-NumeroOP">NumeroOP</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-QuantidadeFuncionario">QuantidadeFuncionario</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Turno">Turno</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-header">Components/Header</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Header">Header</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-imagem">Components/Imagem</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Imagem">Imagem</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-input">Components/Input</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Input">Input</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-label">Components/Label</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Label">Label</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-login">Components/Login</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Login">Login</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Senha">Senha</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Usuario">Usuario</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-protectedroute">Components/ProtectedRoute</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ProtectedRoute">ProtectedRoute</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-select">Components/Select</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Select">Select</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-select-option">Components/Select/Option</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Option">Option</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-titulo1">Components/Titulo1</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Titulo1">Titulo1</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-titulo2">Components/Titulo2</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Titulo2">Titulo2</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-titulo4">Components/Titulo4</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Titulo4">Titulo4</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#controller">Controller</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Controller/OrdensController.js~OrdensController.html">OrdensController</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#helpers">Helpers</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Delay">Delay</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tranformarDataEmString">tranformarDataEmString</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#paginas">Paginas</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ControleProducao">ControleProducao</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EscritaBotao">EscritaBotao</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EscritaBotaoForm">EscritaBotaoForm</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LocalStorage">LocalStorage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Ordens">Ordens</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-VisualizacaoForm">VisualizacaoForm</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-VisualizacaoOrdens">VisualizacaoOrdens</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services">Services</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/AtualizaRegistro.js~AtualizaRegistro.html">AtualizaRegistro</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/CriarRegistro.js~CriarRegistro.html">CriarRegistro</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela.html">PegarRegistrosTabela</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-PegarOrdensNaoFinalizadas">PegarOrdensNaoFinalizadas</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/Components/Botao/Botao.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import styled from &quot;styled-components&quot;;
+/**
+ * Componente de Bot&#xE3;o customizavel.
+ *
+ * @component
+ * @property {string} props.color Cor do texto. Valor padr&#xE3;o : &apos;black&apos;
+ * @property {string} props.backgroundcolor Cor de fundo do bot&#xE3;o. Valor padr&#xE3;o : &apos;white&apos;
+ * @property {string} props.border_radius Raio da curvatura dos cantos do componente. Valor padr&#xE3;o : &apos;0px&apos;
+ * @property {string} props.width Comprimento do componente. Valor padr&#xE3;o : &apos;100%&apos;
+ * @property {string} props.border Borda do componente. Valor padr&#xE3;o : &apos;0px&apos;
+ * @property {string} props.padding Espa&#xE7;amento interno do componente. Valor padr&#xE3;o : &apos;0px 0px&apos;
+ * @property {string} props.margin Espa&#xE7;amento externo do componente. Valor padr&#xE3;o : &apos;0px 0px&apos;
+ * @property {string} props.font_size Tamanho da fonte. Valor padr&#xE3;o : &apos;14px&apos;
+ * @property {string} props.boxshadow Sombra do componente. Valor padr&#xE3;o : &apos;0px 0px 0px&apos;
+ * 
+ * @desc
+ * Componente de Bot&#xE3;o.
+ * Este componente de bot&#xE3;o possui v&#xE1;rios estilos personaliz&#xE1;veis atrav&#xE9;s das props. 
+ * O bot&#xE3;o tamb&#xE9;m possui um comportamento de anima&#xE7;&#xE3;o ao passar o mouse e ao clicar:
+ * - Ao passar o mouse: Aumenta ligeiramente de tamanho (`scale(1.05)`).
+ * - Ao clicar: Move-se ligeiramente para baixo (`translateY(2px)`).
+ * 
+ * @example
+ * const handleClick = () =&gt; {
+ *   alert(&apos;Bot&#xE3;o Clicado !!&apos;);
+ * };
+ * return (
+ *   &lt;Botao 
+ *     color=&quot;white&quot; 
+ *     backgroundcolor=&quot;blue&quot; 
+ *     border_radius=&quot;5px&quot; 
+ *     width=&quot;200px&quot; 
+ *     border=&quot;1px solid black&quot; 
+ *     padding=&quot;10px 20px&quot; 
+ *     margin=&quot;10px&quot; 
+ *     font_size=&quot;16px&quot; 
+ *     boxshadow=&quot;2px 2px 5px rgba(0,0,0,0.3)&quot;
+ *     onClick={handleClick}
+ *   &gt;
+ *     Clique Aqui
+ *   &lt;/Botao&gt;
+ * );
+ */
+const Botao = styled.button`
+    color: ${props=&gt; props.color || &apos;black&apos;};
+    background-color: ${props=&gt; props.backgroundcolor || &apos;white&apos;};
+    border-radius: ${props=&gt; props.border_radius || &apos;0px&apos;};
+    width: ${props=&gt; props.width ||&apos;100%&apos;};
+    border: ${props=&gt; props.border || &apos;0px&apos;};
+    padding: ${props=&gt; props.padding || &apos;0px 0px&apos;};
+    margin: ${props =&gt; props.margin || &apos;0px 0px&apos;};
+    font-size: ${props =&gt; props.font_size|| &apos;14px&apos;};
+    box-shadow : ${props =&gt; props.boxshadow || &apos;0px 0px 0px&apos;};
+    cursor:pointer;
+    transition: transform 0.2s;
+    &amp;:active {
+        transform: translateY(2px);
+      }
+    &amp;:hover {
+        transform: scale(1.05);
+    }
+`
+
+  
+
+export default Botao
+
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

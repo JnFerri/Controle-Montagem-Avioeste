@@ -1,0 +1,1518 @@
+{
+  "type": "File",
+  "start": 0,
+  "end": 291,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 6,
+      "column": 28
+    }
+  },
+  "program": {
+    "type": "Program",
+    "start": 0,
+    "end": 291,
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 6,
+        "column": 28
+      }
+    },
+    "sourceType": "module",
+    "body": [
+      {
+        "type": "Identifier",
+        "start": 54,
+        "end": 259,
+        "loc": {
+          "start": {
+            "line": 4,
+            "column": 0
+          },
+          "end": {
+            "line": 4,
+            "column": 205
+          }
+        },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 60,
+            "end": 259,
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 6
+              },
+              "end": {
+                "line": 4,
+                "column": 205
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 60,
+              "end": 73,
+              "loc": {
+                "start": {
+                  "line": 4,
+                  "column": 6
+                },
+                "end": {
+                  "line": 4,
+                  "column": 19
+                },
+                "identifierName": "motivosPausas"
+              },
+              "name": "motivosPausas",
+              "leadingComments": null
+            },
+            "init": {
+              "type": "ArrayExpression",
+              "start": 76,
+              "end": 259,
+              "loc": {
+                "start": {
+                  "line": 4,
+                  "column": 22
+                },
+                "end": {
+                  "line": 4,
+                  "column": 205
+                }
+              },
+              "elements": [
+                {
+                  "type": "StringLiteral",
+                  "start": 77,
+                  "end": 93,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 23
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 39
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Falta Material",
+                    "raw": "'Falta Material'"
+                  },
+                  "value": "Falta Material"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 94,
+                  "end": 104,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 40
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 50
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Falta OP",
+                    "raw": "'Falta OP'"
+                  },
+                  "value": "Falta OP"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 105,
+                  "end": 117,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 51
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 63
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Retrabalho",
+                    "raw": "'Retrabalho'"
+                  },
+                  "value": "Retrabalho"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 118,
+                  "end": 140,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 64
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 86
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Aguardando Qualidade",
+                    "raw": "'Aguardando Qualidade'"
+                  },
+                  "value": "Aguardando Qualidade"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 141,
+                  "end": 158,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 87
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 104
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Falta Feramenta",
+                    "raw": "'Falta Feramenta'"
+                  },
+                  "value": "Falta Feramenta"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 159,
+                  "end": 168,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 105
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 114
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Limpeza",
+                    "raw": "'Limpeza'"
+                  },
+                  "value": "Limpeza"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 169,
+                  "end": 192,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 115
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 138
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Aguardando Engenharia",
+                    "raw": "'Aguardando Engenharia'"
+                  },
+                  "value": "Aguardando Engenharia"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 194,
+                  "end": 213,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 140
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 159
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Aguardando Manual",
+                    "raw": "'Aguardando Manual'"
+                  },
+                  "value": "Aguardando Manual"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 215,
+                  "end": 227,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 161
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 173
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Manutenção",
+                    "raw": "'Manutenção'"
+                  },
+                  "value": "Manutenção"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 229,
+                  "end": 240,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 175
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 186
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Intervalo",
+                    "raw": "'Intervalo'"
+                  },
+                  "value": "Intervalo"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 242,
+                  "end": 258,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 188
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 204
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Troca de Turno",
+                    "raw": "'Troca de Turno'"
+                  },
+                  "value": "Troca de Turno"
+                }
+              ]
+            },
+            "leadingComments": null
+          }
+        ],
+        "kind": "const",
+        "leadingComments": [],
+        "name": "_",
+        "trailingComments": []
+      },
+      {
+        "type": "Identifier",
+        "start": 263,
+        "end": 291,
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 0
+          },
+          "end": {
+            "line": 6,
+            "column": 28
+          }
+        },
+        "declaration": {
+          "type": "Identifier",
+          "start": 278,
+          "end": 291,
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 15
+            },
+            "end": {
+              "line": 6,
+              "column": 28
+            },
+            "identifierName": "motivosPausas"
+          },
+          "name": "motivosPausas"
+        },
+        "name": "_",
+        "leadingComments": [],
+        "trailingComments": []
+      },
+      {
+        "type": "ExportDefaultDeclaration",
+        "start": 263,
+        "end": 291,
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 0
+          },
+          "end": {
+            "line": 6,
+            "column": 28
+          }
+        },
+        "declaration": {
+          "type": "VariableDeclaration",
+          "start": 54,
+          "end": 259,
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 0
+            },
+            "end": {
+              "line": 4,
+              "column": 205
+            }
+          },
+          "declarations": [
+            {
+              "type": "VariableDeclarator",
+              "start": 60,
+              "end": 259,
+              "loc": {
+                "start": {
+                  "line": 4,
+                  "column": 6
+                },
+                "end": {
+                  "line": 4,
+                  "column": 205
+                }
+              },
+              "id": {
+                "type": "Identifier",
+                "start": 60,
+                "end": 73,
+                "loc": {
+                  "start": {
+                    "line": 4,
+                    "column": 6
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 19
+                  },
+                  "identifierName": "motivosPausas"
+                },
+                "name": "motivosPausas",
+                "leadingComments": null
+              },
+              "init": {
+                "type": "ArrayExpression",
+                "start": 76,
+                "end": 259,
+                "loc": {
+                  "start": {
+                    "line": 4,
+                    "column": 22
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 205
+                  }
+                },
+                "elements": [
+                  {
+                    "type": "StringLiteral",
+                    "start": 77,
+                    "end": 93,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 23
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 39
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Falta Material",
+                      "raw": "'Falta Material'"
+                    },
+                    "value": "Falta Material"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 94,
+                    "end": 104,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 40
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 50
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Falta OP",
+                      "raw": "'Falta OP'"
+                    },
+                    "value": "Falta OP"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 105,
+                    "end": 117,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 51
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 63
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Retrabalho",
+                      "raw": "'Retrabalho'"
+                    },
+                    "value": "Retrabalho"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 118,
+                    "end": 140,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 64
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 86
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Aguardando Qualidade",
+                      "raw": "'Aguardando Qualidade'"
+                    },
+                    "value": "Aguardando Qualidade"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 141,
+                    "end": 158,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 87
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 104
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Falta Feramenta",
+                      "raw": "'Falta Feramenta'"
+                    },
+                    "value": "Falta Feramenta"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 159,
+                    "end": 168,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 105
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 114
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Limpeza",
+                      "raw": "'Limpeza'"
+                    },
+                    "value": "Limpeza"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 169,
+                    "end": 192,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 115
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 138
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Aguardando Engenharia",
+                      "raw": "'Aguardando Engenharia'"
+                    },
+                    "value": "Aguardando Engenharia"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 194,
+                    "end": 213,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 140
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 159
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Aguardando Manual",
+                      "raw": "'Aguardando Manual'"
+                    },
+                    "value": "Aguardando Manual"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 215,
+                    "end": 227,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 161
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 173
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Manutenção",
+                      "raw": "'Manutenção'"
+                    },
+                    "value": "Manutenção"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 229,
+                    "end": 240,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 175
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 186
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Intervalo",
+                      "raw": "'Intervalo'"
+                    },
+                    "value": "Intervalo"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 242,
+                    "end": 258,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 188
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 204
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Troca de Turno",
+                      "raw": "'Troca de Turno'"
+                    },
+                    "value": "Troca de Turno"
+                  }
+                ]
+              },
+              "leadingComments": null
+            }
+          ],
+          "kind": "const",
+          "leadingComments": [
+            {
+              "type": "CommentBlock",
+              "value": "*\r\n * Array com o nome dos motivos de pausas.\r\n ",
+              "start": 0,
+              "end": 52,
+              "loc": {
+                "start": {
+                  "line": 1,
+                  "column": 0
+                },
+                "end": {
+                  "line": 3,
+                  "column": 3
+                }
+              }
+            }
+          ],
+          "trailingComments": []
+        }
+      }
+    ],
+    "directives": []
+  },
+  "comments": [
+    {
+      "type": "CommentBlock",
+      "value": "*\r\n * Array com o nome dos motivos de pausas.\r\n ",
+      "start": 0,
+      "end": 52,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 3,
+          "column": 3
+        }
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "type": "CommentBlock",
+      "value": "*\r\n * Array com o nome dos motivos de pausas.\r\n ",
+      "start": 0,
+      "end": 52,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 3,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "const",
+        "keyword": "const",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "const",
+      "start": 54,
+      "end": 59,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "motivosPausas",
+      "start": 60,
+      "end": 73,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 6
+        },
+        "end": {
+          "line": 4,
+          "column": 19
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": true,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "=",
+      "start": 74,
+      "end": 75,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 20
+        },
+        "end": {
+          "line": 4,
+          "column": 21
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "[",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 76,
+      "end": 77,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 22
+        },
+        "end": {
+          "line": 4,
+          "column": 23
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Falta Material",
+      "start": 77,
+      "end": 93,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 23
+        },
+        "end": {
+          "line": 4,
+          "column": 39
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 93,
+      "end": 94,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 39
+        },
+        "end": {
+          "line": 4,
+          "column": 40
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Falta OP",
+      "start": 94,
+      "end": 104,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 40
+        },
+        "end": {
+          "line": 4,
+          "column": 50
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 104,
+      "end": 105,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 50
+        },
+        "end": {
+          "line": 4,
+          "column": 51
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Retrabalho",
+      "start": 105,
+      "end": 117,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 51
+        },
+        "end": {
+          "line": 4,
+          "column": 63
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 117,
+      "end": 118,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 63
+        },
+        "end": {
+          "line": 4,
+          "column": 64
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Aguardando Qualidade",
+      "start": 118,
+      "end": 140,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 64
+        },
+        "end": {
+          "line": 4,
+          "column": 86
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 140,
+      "end": 141,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 86
+        },
+        "end": {
+          "line": 4,
+          "column": 87
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Falta Feramenta",
+      "start": 141,
+      "end": 158,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 87
+        },
+        "end": {
+          "line": 4,
+          "column": 104
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 158,
+      "end": 159,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 104
+        },
+        "end": {
+          "line": 4,
+          "column": 105
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Limpeza",
+      "start": 159,
+      "end": 168,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 105
+        },
+        "end": {
+          "line": 4,
+          "column": 114
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 168,
+      "end": 169,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 114
+        },
+        "end": {
+          "line": 4,
+          "column": 115
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Aguardando Engenharia",
+      "start": 169,
+      "end": 192,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 115
+        },
+        "end": {
+          "line": 4,
+          "column": 138
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 192,
+      "end": 193,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 138
+        },
+        "end": {
+          "line": 4,
+          "column": 139
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Aguardando Manual",
+      "start": 194,
+      "end": 213,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 140
+        },
+        "end": {
+          "line": 4,
+          "column": 159
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 213,
+      "end": 214,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 159
+        },
+        "end": {
+          "line": 4,
+          "column": 160
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Manutenção",
+      "start": 215,
+      "end": 227,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 161
+        },
+        "end": {
+          "line": 4,
+          "column": 173
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 227,
+      "end": 228,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 173
+        },
+        "end": {
+          "line": 4,
+          "column": 174
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Intervalo",
+      "start": 229,
+      "end": 240,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 175
+        },
+        "end": {
+          "line": 4,
+          "column": 186
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 240,
+      "end": 241,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 186
+        },
+        "end": {
+          "line": 4,
+          "column": 187
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Troca de Turno",
+      "start": 242,
+      "end": 258,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 188
+        },
+        "end": {
+          "line": 4,
+          "column": 204
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "]",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 258,
+      "end": 259,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 204
+        },
+        "end": {
+          "line": 4,
+          "column": 205
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "export",
+        "keyword": "export",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "export",
+      "start": 263,
+      "end": 269,
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 6
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "default",
+        "keyword": "default",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "default",
+      "start": 270,
+      "end": 277,
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 7
+        },
+        "end": {
+          "line": 6,
+          "column": 14
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "motivosPausas",
+      "start": 278,
+      "end": 291,
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 15
+        },
+        "end": {
+          "line": 6,
+          "column": 28
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "eof",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 291,
+      "end": 291,
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 28
+        },
+        "end": {
+          "line": 6,
+          "column": 28
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">src/Components/FormInputOP/FormInputOP.js | controle_montagem</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-App">App</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-reportWebVitals">reportWebVitals</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LoginConferencia">LoginConferencia</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LoginLocalStorage">LoginLocalStorage</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#bd">BD</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-mesas">mesas</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-motivosPausas">motivosPausas</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-motivosRetrabalho">motivosRetrabalho</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-turnos">turnos</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-botao">Components/Botao</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Botao">Botao</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-forminputop">Components/FormInputOP</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-FormInputOP">FormInputOP</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-InputsMatricula">InputsMatricula</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Matriculas">Matriculas</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Mesa">Mesa</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-NumeroOP">NumeroOP</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-QuantidadeFuncionario">QuantidadeFuncionario</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Turno">Turno</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-header">Components/Header</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Header">Header</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-imagem">Components/Imagem</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Imagem">Imagem</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-input">Components/Input</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Input">Input</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-label">Components/Label</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Label">Label</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-login">Components/Login</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Login">Login</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Senha">Senha</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Usuario">Usuario</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-protectedroute">Components/ProtectedRoute</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ProtectedRoute">ProtectedRoute</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-select">Components/Select</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Select">Select</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-select-option">Components/Select/Option</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Option">Option</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-titulo1">Components/Titulo1</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Titulo1">Titulo1</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-titulo2">Components/Titulo2</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Titulo2">Titulo2</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-titulo4">Components/Titulo4</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Titulo4">Titulo4</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#controller">Controller</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Controller/OrdensController.js~OrdensController.html">OrdensController</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#helpers">Helpers</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Delay">Delay</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tranformarDataEmString">tranformarDataEmString</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#paginas">Paginas</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ControleProducao">ControleProducao</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EscritaBotao">EscritaBotao</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EscritaBotaoForm">EscritaBotaoForm</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LocalStorage">LocalStorage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Ordens">Ordens</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-VisualizacaoForm">VisualizacaoForm</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-VisualizacaoOrdens">VisualizacaoOrdens</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services">Services</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/AtualizaRegistro.js~AtualizaRegistro.html">AtualizaRegistro</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/CriarRegistro.js~CriarRegistro.html">CriarRegistro</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela.html">PegarRegistrosTabela</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-PegarOrdensNaoFinalizadas">PegarOrdensNaoFinalizadas</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/Components/FormInputOP/FormInputOP.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import styled from &quot;styled-components&quot;;
+import Titulo2 from &quot;../Titulo2/Titulo2.js&quot;;
+import Input from &quot;../Input/Input.js&quot;;
+import Botao from &quot;../Botao/Botao.js&quot;;
+import {  useCallback, useEffect, useState } from &quot;react&quot;;
+import Select from &quot;../Select/Select.js&quot;;
+import mesas from &quot;../../BD/mesas.js&quot;;
+import Option from &quot;../Select/Option/Option.js&quot;;
+//import { PegarOrdensNaoFinalizadas } from &quot;../../Services/PegarOrdensNaoFinalizadas.js&quot;;
+import tranformarDataEmString from &quot;../../Helpers/tranformarDataEmString.js&quot;;
+import Delay from &quot;../../Helpers/Delay.js&quot;;
+import { v4 as uuidv4 } from &apos;uuid&apos;
+import turnos from &quot;../../BD/turnos.js&quot;;
+import imgAdicionarFuncionario from &apos;../../images/adicionar-usuario.png&apos;
+import imgRemoverFuncionario from &apos;../../images/remover-usuario.png&apos;
+import Imagem from &quot;../Imagem/Imagem.js&quot;
+
+/**
+ * styled-component simples de formulario.
+ */
+const FormContainer = styled.form`
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin: 1rem 0;
+`
+
+/**
+ * styled-component para deixar itens alinhados em linha na horizontal.
+ */
+const DivLinha = styled.div`
+    display:flex;
+    align-items:center;
+    width:70%;
+    justify-content:center;
+
+`
+/**
+ * styled-component para deixar itens alinhados em coluna na vertical.
+ */
+const DivColuna = styled.div`
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    margin:0px 5px;
+`
+/**
+ * Estado que guarda o valor do input de numero de ordem de produ&#xE7;&#xE3;o do formulario.
+ * @typedef {EstadoReact} NumeroOP
+ * @property {string} NumeroOP Valor do input de numero de ordem de produ&#xE7;&#xE3;o.
+ * @property {React.Dispatch&lt;React.SetStateAction&lt;string&gt;&gt;} setNumeroOP Func&#xE3;o que define novo valor para o estado NumeroOP.
+ */
+
+/**
+ * Estado que guarda as matriculas dos funcionarios adicionadas aos inputs do formulario.
+ * @typedef {EstadoReact} Matriculas
+ * @property {Array&lt;string&gt;} Matriculas Array com as matriculas dos funcionarios.
+ * @property {React.Dispatch&lt;React.SetStateAction&lt;Array&lt;string&gt;&gt;&gt;} setMatriculas Fun&#xE7;&#xE3;o que define novo valor para o estado Matriculas.
+ */
+
+/**
+ * Estado que guarda o valor selecionado de mesa no formulario.
+ * @typedef {EstadoReact} Mesa
+ * @property {string} Mesa Valor do select de mesa.
+ * @property {React.Dispatch&lt;React.SetStateAction&lt;string&gt;&gt;} setMesa Fun&#xE7;&#xE3;o que define novo valor para o estado Mesa.
+ */
+
+/**
+ * Estado que guarda o valor selecionado de turno no formulario.
+ * @typedef {EstadoReact} Turno
+ * @property {string} Turno Valor do select de turno.
+ * @property {react.Dispatch&lt;React.SetStateAction&lt;string&gt;&gt;} setTurno Fun&#xE7;&#xE3;o que define novo valor para o estado Turno.
+ */
+
+/**
+ * Estado que guarda a quantidade de matriculas adicionadas no formulario.
+ * @typedef {EstadoReact} QuantidadeFuncionario
+ * @property {number} QuantidadeFuncionario Quantidade de matriculas adicionadas ao formulario.
+ * @property {react.Dispatch&lt;React.SetStateAction&lt;number&gt;&gt;} setQuantidadeFuncionario Fun&#xE7;&#xE3;o que define novo valor para o estado Turno.
+ */
+
+/**
+ * Estado que guarda um array com os componentes de inputs de matriculas. Utilizado pois o numero de inputs &#xE9; variavel conforme quantidade de funcionarios adicionados a ordem.
+ * @typedef {EstadoReact} InputsMatricula
+ * @property {Array} InputsMatricula Array de componentes input para capturar a matricula do funcionario.
+ * @property {react.Dispatch&lt;React.SetStateAction&lt;Array&gt;&gt;} setInputMatricula Fun&#xE7;&#xE3;o que define novo valor para InputsMatricula.
+ */
+
+/**
+ * Componente de formulario utilizado para cadastrar novas ordens de produ&#xE7;&#xE3;o e salvar seus dados no localStorage de ordensNaoFinalizadas, altera o valor do estado LocalStorage com o valor de ordensNaoFinalizadas da localstorage e consequentemente alterando o estado LocalStorage o estado Ordens ser&#xE1; atualizado adicionando mais um item a lista de ordens.
+ * @param {Object} props props do componente react
+ * @param {Array} props.ordens Estado Ordens , um array com os dados das ordens que est&#xE3;o na lista de ordens n&#xE3;o finalizadas.
+ * @param {React.Dispatch&lt;React.SetStateAction&lt;Array&gt;&gt;} props.setLocalStorage Fun&#xE7;&#xE3;o que define o estado LocalStorage.
+ * @returns {JSXElement}
+ */
+function FormInputOP({ ordens,setLocalStorage}){
+
+    /**
+     * Estado que armazena valor do input de numero de ordem de produ&#xE7;&#xE3;o.
+     */
+    const [NumeroOP, setNumeroOP] = useState(&apos;&apos;)
+
+    /**
+     * Estado que armazena array contendo o valor dos inputs de matriculas dos funcionarios.
+     */
+    const [Matriculas, setMatriculas] = useState([])
+
+    /**
+     * Estado que armazena o valor do input de mesa de produ&#xE7;&#xE3;o.
+     */
+    const [Mesa, setMesa] = useState(&apos;&apos;)
+
+    /**
+     * Estado que armazena o valor do input de turno.
+     */
+    const [Turno, setTurno] = useState(&apos;&apos;)
+
+    /**
+     * Estado que armazena a quantidade de matriculas adicionados ao formulario.
+     */
+    const [QuantidadeFuncionario, setQuantidadeFuncionario] = useState(1)
+
+    /**
+     * Estado que guarda um Array dos componentes de Input de matricula.
+     */
+    const [InputsMatricula, setInputMatricula] = useState([])
+
+
+    /**
+     * Pega os dados coletados, salvos nos estados pelos inputs e salva na localStorage &apos;ordensNaoFinalizadas&apos;, altera o valor do estado LocalStorage com o novo valor do localstorage, ao atualizar LocalStorage consequentemente altera o valor de ordens com os mesmos valores de LocalStorage atualizando a visualiza&#xE7;&#xE3;o da lista.
+     * @param {Event} event Evento de submit do formulario.
+     */
+    async function CriaOrdemJestor(event){
+        
+        const confereRepetido =await ordens.find(ordem =&gt; ordem.ordem_producao === NumeroOP)
+
+        //Bloqueia envio quando lido com o leitor de c&#xF3;digo de barras.
+        if(event.key === &apos;Enter&apos;){
+            event.preventDefault()
+        }
+
+        if(!confereRepetido){
+            event.preventDefault()
+            const dataInicio = tranformarDataEmString(new Date())
+            if(!NumeroOP || !dataInicio || !Matriculas[0] || !Mesa || !Turno || Matriculas.length !== QuantidadeFuncionario){
+                window.alert(&quot;Preencha todos os campos antes de incluir a Ordem de Produ&#xE7;&#xE3;o !!&quot;)
+            }else if(NumeroOP.length &lt; 7 || NumeroOP.length &gt; 7){
+                window.alert(&quot;Quantidade digitos do numero da OP est&#xE3;o fora do normal, Verifique se esta correto !!!&quot;)
+            }else if (Matriculas[0].length &lt; 1 || Matriculas[0].length &gt; 6 ){
+                window.alert(&apos;Quantidade de Digitos de matricula de Funcionario Fora do Normal, Verifique, caso necessario adicionar mais de uma matricula utilize o bot&#xE3;o &quot;Adicionar Funcionario&quot;.&apos;)
+            }
+            else{
+                
+                const obj ={}
+                obj[&apos;ordem_producao&apos;] = NumeroOP
+                obj[&apos;horario_inicio&apos;] = dataInicio
+                obj[&apos;matricula&apos;] = Matriculas[0]
+                obj[&apos;matricula_2&apos;] = Matriculas[1]
+                obj[&apos;matricula_3&apos;] = Matriculas[2]
+                obj[&apos;matricula_4&apos;] = Matriculas[3]
+                obj[&apos;quantidade_funcionarios&apos;] = QuantidadeFuncionario
+                obj[&apos;matriculas&apos;] = Matriculas
+                obj[&apos;mesa&apos;] = Mesa
+                obj[&apos;turno&apos;] = Turno
+                obj[&apos;status&apos;] = &apos;Em Andamento&apos;
+                obj[&apos;id&apos;] = uuidv4()
+                
+                setNumeroOP(&apos;&apos;)
+                setMatriculas([])
+                setMesa(&apos;&apos;)
+                setTurno(&apos;&apos;)
+                setQuantidadeFuncionario(1)
+                const localStorageData = JSON.parse(localStorage.getItem(&apos;ordensNaoFinalizadas&apos;) || &quot;[]&quot;);
+                localStorageData.push(obj)
+                localStorage.setItem(&apos;ordensNaoFinalizadas&apos;, JSON.stringify(localStorageData))
+                await Delay(1000)
+                setLocalStorage(localStorageData)
+            }
+        }else{
+            event.preventDefault()
+            window.alert(&quot;Esta OP ja esta na lista&quot;)
+            setNumeroOP(&apos;&apos;)
+            setMatriculas([])
+            setMesa(&apos;&apos;)
+            setTurno(&apos;&apos;)
+        }
+    }
+    
+    /**
+     * Define o estado NumeroOP com o valor do input de ordem de produ&#xE7;&#xE3;o.
+     * @param {*} event  Evento onChange do input.
+     */
+    const HandleNumeroOP = (event) =&gt; {
+        //Previne enviar o formulario quando lido numero da op com leitor de c&#xF3;digo de barras.
+        if(event.key === &apos;Enter&apos;){
+            event.preventDefault()
+        }
+            setNumeroOP(event.target.value);
+        }
+        
+       /**
+        * Define o estado Matriculas, adicionando o valor conforme input.
+        */
+    const HandleMatricula = useCallback((index, event) =&gt; {
+            const newMatriculas = [...Matriculas];
+            newMatriculas[index] = event.target.value;
+            setMatriculas(newMatriculas);
+      }, [Matriculas]);
+    
+      /**
+       * Define o estado Mesa conforme valor do input.
+       * @param {*} event Evento onChange do input. 
+       */
+    const HandleMesa = (event) =&gt; {
+        setMesa(event.target.value);
+    };
+
+    /**
+     * Define o estado Turno conforme valor do input.
+     * @param {*} event Evento onChange do input.
+     */
+    const HandleTurno = (event) =&gt; {
+        setTurno(event.target.value);
+    };
+
+    /**
+     * Previne submit do formulario quando lido o numero da ordem de produ&#xE7;&#xE3;o com leitor de c&#xF3;digo de barras.
+     * @param {*} event Evento onKeyDown.
+     */
+    const HandlePrevineEnvio = (event) =&gt;{
+        if(event.key === &apos;Enter&apos;){
+            event.preventDefault()
+        }
+    }
+
+    /**
+     * Altera valor do estado QuantidadeFuncionario adicionando +1 se este for menor que 4.
+     */
+    const AdicaoFuncionario = () =&gt; {
+        if(QuantidadeFuncionario &lt; 4){
+            const novoValor = QuantidadeFuncionario + 1
+            setQuantidadeFuncionario(novoValor)
+        }else{
+            window.alert(&apos;Maximo 4 Funcionarios por OP&apos;)
+        }
+    }
+
+    /**
+     * Altera valor do estado QuantidadeFuncionario subtraindo -1 .
+     */
+    const RemoverFuncionario = () =&gt; {
+        const novoValor = QuantidadeFuncionario - 1
+        setQuantidadeFuncionario(novoValor)
+    }
+
+    /**
+     * Define a quantidade de componentes input que est&#xE3;o no estado InputMatricula conforme valor de estado QuantidadeFuncionario.
+     */
+    useEffect(() =&gt; {
+        
+        const inputs = []
+        for(let i = 0;i &lt; QuantidadeFuncionario; i++){
+            inputs.push(
+                &lt;Input
+                  key={i}
+                  placeholder=&quot;Matr&#xED;cula do Funcion&#xE1;rio&quot;
+                  style={{ border: &apos;2px solid black&apos;, padding: &apos;20px 0px&apos;, width: &apos;70%&apos;, margin: &apos;1rem 3px&apos;, borderRadius: &apos;20px&apos;, fontSize: &apos;20px&apos; }}
+                  value={Matriculas[i] || &apos;&apos;}
+                  required
+                  onChange={(e) =&gt; HandleMatricula(i, e)}
+                /&gt;
+              );
+        }
+        setInputMatricula(inputs)
+    },[QuantidadeFuncionario, HandleMatricula, Matriculas])
+
+    return(
+        &lt;FormContainer&gt;
+            &lt;Titulo2 color=&quot;white&quot;&gt;Coloque o numero da ordem de produ&#xE7;&#xE3;o e clique em iniciar para come&#xE7;ar uma nova ordem de produ&#xE7;&#xE3;o&lt;/Titulo2&gt;
+             &lt;Input placeholder=&quot;Numero da OP&quot;  border=&apos;2px solid black&apos;  padding = &quot;20px 0px&quot; width=&quot;80%&quot; margin =&quot;1rem 0px&quot; border_radius=&quot;20px&quot; font_size=&quot;20px&quot; value={NumeroOP} 
+                onChange={HandleNumeroOP} onKeyDown={HandlePrevineEnvio}&gt;&lt;/Input&gt;
+                &lt;DivLinha&gt;
+            {  
+                   InputsMatricula
+            }
+            
+            &lt;DivColuna style={{cursor:&apos;pointer&apos; , width:&apos;10%&apos;}} onClick={AdicaoFuncionario}&gt;
+             &lt;Imagem src={imgAdicionarFuncionario} width=&apos;30%&apos;/&gt;
+             &lt;span style={{color:&apos;white&apos;}}&gt;Adicionar Funcionario&lt;/span&gt;
+            &lt;/DivColuna&gt;
+            {QuantidadeFuncionario &gt; 1 ? 
+            &lt;DivColuna style={{cursor:&apos;pointer&apos; , width:&apos;10%&apos;}} onClick={RemoverFuncionario}&gt;
+            &lt;Imagem src={imgRemoverFuncionario} width=&apos;30%&apos;/&gt;
+            &lt;span style={{color:&apos;white&apos;}}&gt;Remover Funcionario&lt;/span&gt;
+           &lt;/DivColuna&gt;
+           : &apos;&apos;    
+        }
+                &lt;/DivLinha&gt;
+             &lt;Select margin=&apos;1rem 0&apos; width=&apos;30%&apos;   padding=&apos;10px&apos; value={Mesa} onChange={HandleMesa}&gt;
+                 &lt;Option padding=&apos;10px 2px&apos; fontSize=&apos;20px&apos; value=&apos;&apos; &gt;Selecione Uma Mesa...&lt;/Option&gt;
+                {
+                    mesas.map((mesa,index) =&gt; (
+                        &lt;Option key={index} padding=&apos;10px 2px&apos; fontSize=&apos;20px&apos; &gt;{mesa}&lt;/Option&gt;
+                    ))
+                }
+                &lt;/Select&gt;
+                &lt;Select margin=&apos;1rem 0&apos; width=&apos;30%&apos;  padding=&apos;10px&apos; value={Turno} onChange={HandleTurno}&gt;
+                &lt;Option padding=&apos;10px 2px&apos; fontSize=&apos;20px&apos; value=&apos;&apos; &gt;Selecione Um Turno...&lt;/Option&gt;
+                {
+                    turnos.map((turno,index) =&gt;(
+                        &lt;Option key={index} padding=&apos;10px 2px&apos; fontSize=&apos;20px&apos; &gt;{turno}&lt;/Option&gt;
+                    ))
+                }
+                    
+                    &lt;/Select&gt;      
+            &lt;Botao width=&quot;30%&quot; boxshadow=&apos;2px 2px 2px 1px rgba(0, 0, 0, 0.2);&apos; padding=&quot;20px 0px&quot; border_radius = &quot;10px&quot; margin=&quot;1rem 0&quot; color=&quot;black&quot; backgroundcolor=&apos;#79b3e0&apos; font_size=&apos;25px&apos; border=&apos;2px solid black&apos; onClick={CriaOrdemJestor}&gt;INICIAR ORDEM DE PRODU&#xC7;&#xC3;O&lt;/Botao&gt;
+        &lt;/FormContainer&gt;
+    )
+}
+
+export default FormInputOP</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

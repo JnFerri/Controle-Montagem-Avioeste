@@ -24,6 +24,9 @@ import motivosRetrabalho from "../../BD/motivosRetrabalho.js";
 
 const ordensController = new OrdensController()
 
+/**
+ * Componente section para servir de container dos outros componentes.
+ */
 const ContainerOrdens = styled.section`
     width:90%;
     background-color:white;
@@ -32,6 +35,10 @@ const ContainerOrdens = styled.section`
     flex-direction:column;
     align-items:center;
 `
+
+/**
+ * Componente de Lista.
+ */
 const OrdensUl = styled.ul`
     display:flex;
     align-items:center;
@@ -42,6 +49,10 @@ const OrdensUl = styled.ul`
     text-align:center;
 
 `
+
+/**
+ * Componente linha da lista.
+ */
 const OrdensLi = styled.li`
     width: 100%;
     display:flex;
@@ -54,6 +65,9 @@ const OrdensLi = styled.li`
 
 
 `
+/**
+ * Componente utilizado para englobar informações das ordens.
+ */
 const ItemLista = styled.div`
 width:25%;
 padding: 5px 5px;
@@ -61,6 +75,10 @@ display:flex;
 flex-direction:column;
 align-items:center; 
 `
+
+/**
+ * Componente onde o dado referente a ordem é escrito.
+ */
 const SpanOrdem = styled.span`
     font-size : 18px;
     color: white;
@@ -72,6 +90,9 @@ const SpanOrdem = styled.span`
 
 `
 
+/**
+ * Componente div para englobar componentes em linha alinhados na horizontal.
+ */
 const DivLinha = styled.div`
     display:flex;
     align-items:center;
@@ -79,7 +100,9 @@ const DivLinha = styled.div`
     justify-content:center;
 
 `
-
+/**
+ * Componente div para englobar componentes em coluna alinhados na vertical.
+ */
 const DivColuna = styled.div`
     display:flex;
     align-items:center;
@@ -417,7 +440,11 @@ function OrdensLista({ordens, setOrdens, setLocalStorage}){
                 const confirmação  = window.confirm('Tem certeza que deseja excluir esta Ordem de Produção ?')
                 if(confirmação){
                     const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];
-                    const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);
+                    var ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);
+                    console.log(ordemAtualIndex)
+                    if(!ordemAtualIndex){
+                    ordemAtualIndex = ordensLocalStorage.findIndex(element => element.ordem_producao === ordem.ordem_producao)
+                    }
                     ordensLocalStorage.splice(ordemAtualIndex, 1)
                     localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
                     setLocalStorage(ordensLocalStorage)

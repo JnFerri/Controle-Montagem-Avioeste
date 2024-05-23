@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">src/Components/Login/Login.js | controle_montagem</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-App">App</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-reportWebVitals">reportWebVitals</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LoginConferencia">LoginConferencia</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LoginLocalStorage">LoginLocalStorage</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#bd">BD</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-mesas">mesas</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-motivosPausas">motivosPausas</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-motivosRetrabalho">motivosRetrabalho</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-turnos">turnos</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-botao">Components/Botao</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Botao">Botao</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-forminputop">Components/FormInputOP</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-FormInputOP">FormInputOP</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-InputsMatricula">InputsMatricula</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Matriculas">Matriculas</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Mesa">Mesa</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-NumeroOP">NumeroOP</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-QuantidadeFuncionario">QuantidadeFuncionario</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Turno">Turno</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-header">Components/Header</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Header">Header</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-imagem">Components/Imagem</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Imagem">Imagem</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-input">Components/Input</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Input">Input</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-label">Components/Label</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Label">Label</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-login">Components/Login</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Login">Login</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Senha">Senha</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Usuario">Usuario</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-protectedroute">Components/ProtectedRoute</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ProtectedRoute">ProtectedRoute</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-select">Components/Select</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Select">Select</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-select-option">Components/Select/Option</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Option">Option</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-titulo1">Components/Titulo1</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Titulo1">Titulo1</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-titulo2">Components/Titulo2</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Titulo2">Titulo2</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-titulo4">Components/Titulo4</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Titulo4">Titulo4</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#controller">Controller</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Controller/OrdensController.js~OrdensController.html">OrdensController</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#helpers">Helpers</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Delay">Delay</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tranformarDataEmString">tranformarDataEmString</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#paginas">Paginas</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ControleProducao">ControleProducao</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EscritaBotao">EscritaBotao</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EscritaBotaoForm">EscritaBotaoForm</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LocalStorage">LocalStorage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Ordens">Ordens</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-VisualizacaoForm">VisualizacaoForm</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-VisualizacaoOrdens">VisualizacaoOrdens</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services">Services</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/AtualizaRegistro.js~AtualizaRegistro.html">AtualizaRegistro</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/CriarRegistro.js~CriarRegistro.html">CriarRegistro</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela.html">PegarRegistrosTabela</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-PegarOrdensNaoFinalizadas">PegarOrdensNaoFinalizadas</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/Components/Login/Login.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import styled from &quot;styled-components&quot;;
+import Titulo2 from &quot;../Titulo2/Titulo2.js&quot;;
+import Input from &quot;../Input/Input.js&quot;;
+import Botao from &quot;../Botao/Botao.js&quot;;
+import { useEffect, useState } from &quot;react&quot;;
+import { useNavigate } from &quot;react-router&quot;;
+
+/**
+ * Componente de section simples utilizado como container dos outros componentes.
+ */
+const LoginContainer = styled.section`
+display:flex;
+flex-direction: column;
+align-items:center;
+background-color:white;
+margin:20vh 0px;
+width:50%;
+border-radius:20px;
+`
+
+/**
+ * Estado que guarda o valor do input de Usuario do componente Login.
+ * @typedef {EstadoReact} Usuario
+ * @property {string} Usuario - Valor do input de Usuario.
+ */
+
+/**
+ * Estado que guarda o valor do input de Senha do componente Login.
+ * @typedef {EstadoReact} Senha
+ * @property {string} Senha - Valor do input de Senha.
+ */
+
+/**
+ * Elemento da Pagina de Login, Utilizado para Pegar informa&#xE7;&#xF5;es de usuario e senha atrav&#xE9;s dos inputs e salvar no banco de dados &apos;Login&apos; do localstorage, ao salvar atualiza o estado de LoginLocalStorage e consequentemente envia o usuario a rota da pagina principal /controleProducao.
+ * @function Login
+ * @param {Object} todosOsDadosLogin Objeto com os estados LoginConferencia, setLoginConferencia, LoginLocalStorage e setLoginLocalStorage 
+ * @returns {JSX.Element}
+ */
+function Login({todosOsDadosLogin}){
+    /**
+     * Estado que salva o valor do input de usuario.
+     */
+    const [Usuario, setUsuario] = useState(&apos;&apos;)
+    /**
+     * Estado que salva o valor do input de senha.
+     */
+    const [Senha, setSenha] = useState(&apos;&apos;)
+    /**
+     * React hook para ir at&#xE9; outra rota.
+     */
+    const navigate = useNavigate();
+    
+    /**
+     * Ao carregar a pagina confere se o Estado LoginConferencia for true acessa a rota principal /controleProducao.
+     */
+    useEffect(() =&gt; {
+        const handleRetornaLogin = () =&gt; {
+          navigate(&quot;/controleProducao&quot;);
+        }
+        if(todosOsDadosLogin.LoginConferencia === true){
+          handleRetornaLogin()
+        }
+      },[todosOsDadosLogin.LoginLocalStorage, todosOsDadosLogin.LoginConferencia,navigate])
+
+      /**
+       * Salva os dados de usuario e senha no banco de dados Login da localstorage e posteriormente salva as informa&#xE7;&#xF5;es de Login no estado LoginLocalStorage para que este ao ser atualizado fa&#xE7;a a conferencia de login em App.js e retone LoginConferencia como true.
+       * @param {*} event Evento de Click do mouse, utilizado para previnir carregamento da pagina.
+       */
+    function defineLogin(event){
+        event.preventDefault()
+        localStorage.setItem(&apos;Login&apos;, JSON.stringify({Usuario: Usuario, Senha: Senha}))
+        todosOsDadosLogin.setLoginLocalStorage(JSON.parse(localStorage.getItem(&apos;Login&apos;)) || [])
+    }
+    /**
+     * Pega valor do input usuario e salva no estado Usuario.
+     * @param {*} event Evento utilizado para pegar o valor do target.
+     */
+    function handleUsuario(event){
+        setUsuario(event.target.value)
+        
+    }
+    
+    /**
+     * Pega o valor do input senha e salva no estado Senha.
+     * @param {*} event Evento utilizado para pegar o valor do target.
+     */
+    function handleSenha(event){
+        setSenha(event.target.value)
+    }
+    return(
+        &lt;LoginContainer&gt;
+            &lt;Titulo2&gt;Usuario:&lt;/Titulo2&gt;
+            &lt;Input type=&quot;text&quot; value={Usuario} onChange={handleUsuario} placeholder=&quot;Coloque o nome de usuario...&quot; padding=&apos;15px 0px&apos; margin=&apos;10px 0px&apos; border=&apos;0.5px solid black&apos; font_size=&apos;20px&apos; border_radius=&apos;20px&apos; width=&apos;80%&apos;&gt;&lt;/Input&gt;
+            &lt;Titulo2&gt;Senha:&lt;/Titulo2&gt;
+            &lt;Input type=&quot;password&quot; value={Senha} onChange={handleSenha} placeholder=&quot;Coloque a senha de usuario...&quot; padding=&apos;15px 0px&apos; margin=&apos;10px 0px&apos; border=&apos;0.5px solid black&apos; font_size=&apos;20px&apos; border_radius=&apos;20px&apos; width=&apos;80%&apos;&gt;&lt;/Input&gt;
+            &lt;Botao onClick={defineLogin} width = &apos;50%&apos; padding=&apos;15px 0px&apos; margin=&apos;20px 0px&apos; backgroundcolor=&apos;#79b3e0&apos; font_size=&apos;26px&apos; border=&apos;0.5px solid black&apos; border_radius=&apos;10px&apos; boxshadow=&apos;2px 2px 5px black&apos;&gt;ENTRAR&lt;/Botao&gt;
+        &lt;/LoginContainer&gt;
+    )
+}
+
+export default Login</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

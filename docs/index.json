@@ -1,0 +1,2867 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/App.js",
+    "content": "import './App.css';\r\nimport Header from './Components/Header/Header.js';\r\n//import FormInputOP from './Components/FormInputOrdem/FormInputOrdem.js';\r\n//import OrdensLista from './Components/OrdensLista/OrdensLista.js';\r\n//import { useEffect, useState } from \"react\";\r\n//import Botao from './Components/Botao/Botao.js';\r\nimport Login from './Components/Login/Login.js';\r\nimport {BrowserRouter, Route, Routes} from 'react-router-dom';\r\nimport ControleProducao from './Paginas/ControleProducao.js';\r\nimport { useEffect, useState } from 'react';\r\nimport ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute.js';\r\nimport isPropValid from '@emotion/is-prop-valid';\r\nimport { StyleSheetManager } from 'styled-components';\r\n\r\n/**\r\n * Estado de login conferido.\r\n * @typedef {EstadoReact} LoginConferencia \r\n * @property {boolean} LoginConferencia - Indica se o login foi conferido.\r\n */\r\n\r\n/**\r\n * Estado React que guarda os dados de Login do localstorage.\r\n * @typedef {EstadoReact} LoginLocalStorage\r\n * @property {Array<Object>} LoginLocalStorage- Dados do banco de dados localstorage 'Login'\r\n */\r\n\r\n\r\n/**\r\n * Componente principal APP, utiliza react-router.\r\n * @returns {JSX.Element}\r\n * @example\r\n * \r\n */\r\n\r\nfunction App() {\r\n\r\n  /**\r\n   * Estado React que guarda informação se o usuario esta logado ou não.\r\n   * @type {[boolean, React.Dispatch<React.SetStateAction<boolean>>]}\r\n   */\r\n  const [LoginConferencia,setLoginConferencia] = useState(false)\r\n  /**\r\n   * Estado que indica se o login foi conferido.\r\n   * @type {[Array<Object>, React.Dispatch<React.SetStateAction<Array<Object>>>]}\r\n   */\r\n  const [LoginLocalStorage, setLoginLocalStorage] = useState(JSON.parse(localStorage.getItem('Login')) || [])\r\n  \r\n  /**\r\n   * Ao carregar a pagina ou alterar o valor do estado LoginLocalStorage envia as informações do login do localStorage para o servidor com metodo post, caso seja iguais as informações de login no servidor retorna true ou false e define o estado de LoginConferencia.\r\n   */\r\n  useEffect(() => {\r\n    async function confereLoginLocalStorage(){\r\n      const loginStorage = JSON.parse(localStorage.getItem('Login'))\r\n      if(loginStorage){\r\n        await fetch(`${process.env.REACT_APP_API_URL}/autorizacao/controleMontagem`,{ method: 'POST',\r\n        headers: {\r\n          accept: 'application/json',\r\n          'content-type': 'application/json'\r\n        },\r\n        body : JSON.stringify({ usuario : loginStorage.Usuario, senha: loginStorage.Senha  })\r\n        \r\n    }).then(response => response.json())\r\n    .then(data => {\r\n      if(data === true) {\r\n        setLoginConferencia(true)\r\n      }else{\r\n        setLoginConferencia(false)\r\n        window.alert('Login incorreto, caso esqueceu a senha contatar o administrador.')\r\n      }\r\n    });\r\n      }\r\n      }\r\n    confereLoginLocalStorage()\r\n  },[setLoginConferencia, LoginLocalStorage])\r\n\r\n  /**\r\n   * Props de Login\r\n   */\r\n   const todosOsDadosLogin = {\r\n    setLoginConferencia,setLoginLocalStorage,LoginConferencia,LoginLocalStorage\r\n   }\r\n\r\n   /**\r\n    * Verifica se todas as props dos componentes utilizadas no styled-components são validas para evitar avisos no console.\r\n    */\r\n   function shouldForwardProp(propName, target) {\r\n    if (typeof target === \"string\") {\r\n        // For HTML elements, forward the prop if it is a valid HTML attribute\r\n        return isPropValid(propName);\r\n    }\r\n    // For other elements, forward all props\r\n    return true;\r\n  }\r\n   \r\n  return (\r\n    <div className=\"App\">\r\n      <StyleSheetManager shouldForwardProp={shouldForwardProp}>\r\n    {\r\n      LoginConferencia === true ? <Header></Header>: ''\r\n     }\r\n     <BrowserRouter>\r\n       <Routes>\r\n         <Route path=\"/\"  element={<Login todosOsDadosLogin={{...todosOsDadosLogin}} />} />\r\n         <Route path=\"/controleProducao\" element={<ProtectedRoute component={ControleProducao} isAuthenticated={LoginConferencia} />} />\r\n       </Routes>\r\n     </BrowserRouter>\r\n     </StyleSheetManager>\r\n   </div>\r\n  );\r\n}\r\n\r\nexport default App;\r\n",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/App.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "typedef",
+    "name": "LoginConferencia",
+    "memberof": "src/App.js",
+    "static": true,
+    "longname": "src/App.js~LoginConferencia",
+    "access": "public",
+    "description": "Estado de login conferido.",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "LoginConferencia",
+        "description": "Indica se o login foi conferido."
+      }
+    ],
+    "type": {
+      "types": [
+        "EstadoReact"
+      ],
+      "optional": false,
+      "name": "LoginConferencia"
+    }
+  },
+  {
+    "__docId__": 50,
+    "kind": "typedef",
+    "name": "LoginLocalStorage",
+    "memberof": "src/App.js",
+    "static": true,
+    "longname": "src/App.js~LoginLocalStorage",
+    "access": "public",
+    "description": "Estado React que guarda os dados de Login do localstorage.",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "Array<Object>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "LoginLocalStorage-",
+        "description": "Dados do banco de dados localstorage 'Login'"
+      }
+    ],
+    "type": {
+      "types": [
+        "EstadoReact"
+      ],
+      "optional": false,
+      "name": "LoginLocalStorage"
+    }
+  },
+  {
+    "__docId__": 51,
+    "kind": "function",
+    "name": "App",
+    "memberof": "src/App.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/App.js~App",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/App.js",
+    "importStyle": "App",
+    "description": "Componente principal APP, utiliza react-router.",
+    "examples": [
+      ""
+    ],
+    "lineNumber": 35,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{JSX.Element}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "JSX.Element"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 52,
+    "kind": "file",
+    "name": "src/BD/mesas.js",
+    "content": "/**\r\n * Array com o nome das mesas. \r\n */\r\nconst mesas = ['Mesa 01','Mesa 02','Mesa 03','Mesa 04','Mesa 05','Mesa 06','Mesa 07','Célula Exaustores', 'Célula Ninho', 'Mesa 08','Mesa 09', 'Mesa 10', 'Mesa 11', 'Mesa 12']\r\n\r\nexport default mesas",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/BD/mesas.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 53,
+    "kind": "variable",
+    "name": "mesas",
+    "memberof": "src/BD/mesas.js",
+    "static": true,
+    "longname": "src/BD/mesas.js~mesas",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/BD/mesas.js",
+    "importStyle": "mesas",
+    "description": "Array com o nome das mesas. ",
+    "lineNumber": 4,
+    "type": {
+      "types": [
+        "string[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 54,
+    "kind": "file",
+    "name": "src/BD/motivosPausas.js",
+    "content": "/**\r\n * Array com o nome dos motivos de pausas.\r\n */\r\nconst motivosPausas = ['Falta Material','Falta OP','Retrabalho','Aguardando Qualidade','Falta Feramenta','Limpeza','Aguardando Engenharia', 'Aguardando Manual', 'Manutenção', 'Intervalo', 'Troca de Turno']\r\n\r\nexport default motivosPausas",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/BD/motivosPausas.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 55,
+    "kind": "variable",
+    "name": "motivosPausas",
+    "memberof": "src/BD/motivosPausas.js",
+    "static": true,
+    "longname": "src/BD/motivosPausas.js~motivosPausas",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/BD/motivosPausas.js",
+    "importStyle": "motivosPausas",
+    "description": "Array com o nome dos motivos de pausas.",
+    "lineNumber": 4,
+    "type": {
+      "types": [
+        "string[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 56,
+    "kind": "file",
+    "name": "src/BD/motivosRetrabalho.js",
+    "content": "/**\r\n * Array com os motivos de retrabalho.\r\n */\r\nconst motivosRetrabalho = ['Fornecedor (Material)', 'Dobra Incorreta', 'Furação Incorreta', 'Corte Incorreto', 'Erro de Projeto (Engenharia)', 'Falha de Injeção', 'Erro de Montagem']\r\n\r\nexport default motivosRetrabalho",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/BD/motivosRetrabalho.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 57,
+    "kind": "variable",
+    "name": "motivosRetrabalho",
+    "memberof": "src/BD/motivosRetrabalho.js",
+    "static": true,
+    "longname": "src/BD/motivosRetrabalho.js~motivosRetrabalho",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/BD/motivosRetrabalho.js",
+    "importStyle": "motivosRetrabalho",
+    "description": "Array com os motivos de retrabalho.",
+    "lineNumber": 4,
+    "type": {
+      "types": [
+        "string[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 58,
+    "kind": "file",
+    "name": "src/BD/turnos.js",
+    "content": "/**\r\n * Array com o nome dos turnos.\r\n */\r\nconst turnos = ['1° Turno','2° Turno']\r\n\r\nexport default turnos",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/BD/turnos.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 59,
+    "kind": "variable",
+    "name": "turnos",
+    "memberof": "src/BD/turnos.js",
+    "static": true,
+    "longname": "src/BD/turnos.js~turnos",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/BD/turnos.js",
+    "importStyle": "turnos",
+    "description": "Array com o nome dos turnos.",
+    "lineNumber": 4,
+    "type": {
+      "types": [
+        "string[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 60,
+    "kind": "file",
+    "name": "src/Components/Botao/Botao.js",
+    "content": "import styled from \"styled-components\";\r\n/**\r\n * Componente de Botão customizavel.\r\n *\r\n * @component\r\n * @property {string} props.color Cor do texto. Valor padrão : 'black'\r\n * @property {string} props.backgroundcolor Cor de fundo do botão. Valor padrão : 'white'\r\n * @property {string} props.border_radius Raio da curvatura dos cantos do componente. Valor padrão : '0px'\r\n * @property {string} props.width Comprimento do componente. Valor padrão : '100%'\r\n * @property {string} props.border Borda do componente. Valor padrão : '0px'\r\n * @property {string} props.padding Espaçamento interno do componente. Valor padrão : '0px 0px'\r\n * @property {string} props.margin Espaçamento externo do componente. Valor padrão : '0px 0px'\r\n * @property {string} props.font_size Tamanho da fonte. Valor padrão : '14px'\r\n * @property {string} props.boxshadow Sombra do componente. Valor padrão : '0px 0px 0px'\r\n * \r\n * @desc\r\n * Componente de Botão.\r\n * Este componente de botão possui vários estilos personalizáveis através das props. \r\n * O botão também possui um comportamento de animação ao passar o mouse e ao clicar:\r\n * - Ao passar o mouse: Aumenta ligeiramente de tamanho (`scale(1.05)`).\r\n * - Ao clicar: Move-se ligeiramente para baixo (`translateY(2px)`).\r\n * \r\n * @example\r\n * const handleClick = () => {\r\n *   alert('Botão Clicado !!');\r\n * };\r\n * return (\r\n *   <Botao \r\n *     color=\"white\" \r\n *     backgroundcolor=\"blue\" \r\n *     border_radius=\"5px\" \r\n *     width=\"200px\" \r\n *     border=\"1px solid black\" \r\n *     padding=\"10px 20px\" \r\n *     margin=\"10px\" \r\n *     font_size=\"16px\" \r\n *     boxshadow=\"2px 2px 5px rgba(0,0,0,0.3)\"\r\n *     onClick={handleClick}\r\n *   >\r\n *     Clique Aqui\r\n *   </Botao>\r\n * );\r\n */\r\nconst Botao = styled.button`\r\n    color: ${props=> props.color || 'black'};\r\n    background-color: ${props=> props.backgroundcolor || 'white'};\r\n    border-radius: ${props=> props.border_radius || '0px'};\r\n    width: ${props=> props.width ||'100%'};\r\n    border: ${props=> props.border || '0px'};\r\n    padding: ${props=> props.padding || '0px 0px'};\r\n    margin: ${props => props.margin || '0px 0px'};\r\n    font-size: ${props => props.font_size|| '14px'};\r\n    box-shadow : ${props => props.boxshadow || '0px 0px 0px'};\r\n    cursor:pointer;\r\n    transition: transform 0.2s;\r\n    &:active {\r\n        transform: translateY(2px);\r\n      }\r\n    &:hover {\r\n        transform: scale(1.05);\r\n    }\r\n`\r\n\r\n  \r\n\r\nexport default Botao\r\n\r\n",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Components/Botao/Botao.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 61,
+    "kind": "variable",
+    "name": "Botao",
+    "memberof": "src/Components/Botao/Botao.js",
+    "static": true,
+    "longname": "src/Components/Botao/Botao.js~Botao",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/Components/Botao/Botao.js",
+    "importStyle": "Botao",
+    "description": "Componente de Botão.\nEste componente de botão possui vários estilos personalizáveis através das props. \nO botão também possui um comportamento de animação ao passar o mouse e ao clicar:\n- Ao passar o mouse: Aumenta ligeiramente de tamanho (`scale(1.05)`).\n- Ao clicar: Move-se ligeiramente para baixo (`translateY(2px)`).",
+    "examples": [
+      "const handleClick = () => {\n  alert('Botão Clicado !!');\n};\nreturn (\n  <Botao \n    color=\"white\" \n    backgroundcolor=\"blue\" \n    border_radius=\"5px\" \n    width=\"200px\" \n    border=\"1px solid black\" \n    padding=\"10px 20px\" \n    margin=\"10px\" \n    font_size=\"16px\" \n    boxshadow=\"2px 2px 5px rgba(0,0,0,0.3)\"\n    onClick={handleClick}\n  >\n    Clique Aqui\n  </Botao>\n);"
+    ],
+    "lineNumber": 44,
+    "unknown": [
+      {
+        "tagName": "@component",
+        "tagValue": ""
+      }
+    ],
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.color",
+        "description": "Cor do texto. Valor padrão : 'black'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.backgroundcolor",
+        "description": "Cor de fundo do botão. Valor padrão : 'white'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.border_radius",
+        "description": "Raio da curvatura dos cantos do componente. Valor padrão : '0px'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.width",
+        "description": "Comprimento do componente. Valor padrão : '100%'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.border",
+        "description": "Borda do componente. Valor padrão : '0px'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.padding",
+        "description": "Espaçamento interno do componente. Valor padrão : '0px 0px'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.margin",
+        "description": "Espaçamento externo do componente. Valor padrão : '0px 0px'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.font_size",
+        "description": "Tamanho da fonte. Valor padrão : '14px'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.boxshadow",
+        "description": "Sombra do componente. Valor padrão : '0px 0px 0px'"
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 62,
+    "kind": "file",
+    "name": "src/Components/FormInputOP/FormInputOP.js",
+    "content": "import styled from \"styled-components\";\r\nimport Titulo2 from \"../Titulo2/Titulo2.js\";\r\nimport Input from \"../Input/Input.js\";\r\nimport Botao from \"../Botao/Botao.js\";\r\nimport {  useCallback, useEffect, useState } from \"react\";\r\nimport Select from \"../Select/Select.js\";\r\nimport mesas from \"../../BD/mesas.js\";\r\nimport Option from \"../Select/Option/Option.js\";\r\n//import { PegarOrdensNaoFinalizadas } from \"../../Services/PegarOrdensNaoFinalizadas.js\";\r\nimport tranformarDataEmString from \"../../Helpers/tranformarDataEmString.js\";\r\nimport Delay from \"../../Helpers/Delay.js\";\r\nimport { v4 as uuidv4 } from 'uuid'\r\nimport turnos from \"../../BD/turnos.js\";\r\nimport imgAdicionarFuncionario from '../../images/adicionar-usuario.png'\r\nimport imgRemoverFuncionario from '../../images/remover-usuario.png'\r\nimport Imagem from \"../Imagem/Imagem.js\"\r\n\r\n/**\r\n * styled-component simples de formulario.\r\n */\r\nconst FormContainer = styled.form`\r\n    width:100%;\r\n    display:flex;\r\n    flex-direction:column;\r\n    align-items:center;\r\n    margin: 1rem 0;\r\n`\r\n\r\n/**\r\n * styled-component para deixar itens alinhados em linha na horizontal.\r\n */\r\nconst DivLinha = styled.div`\r\n    display:flex;\r\n    align-items:center;\r\n    width:70%;\r\n    justify-content:center;\r\n\r\n`\r\n/**\r\n * styled-component para deixar itens alinhados em coluna na vertical.\r\n */\r\nconst DivColuna = styled.div`\r\n    display:flex;\r\n    align-items:center;\r\n    flex-direction:column;\r\n    margin:0px 5px;\r\n`\r\n/**\r\n * Estado que guarda o valor do input de numero de ordem de produção do formulario.\r\n * @typedef {EstadoReact} NumeroOP\r\n * @property {string} NumeroOP Valor do input de numero de ordem de produção.\r\n * @property {React.Dispatch<React.SetStateAction<string>>} setNumeroOP Funcão que define novo valor para o estado NumeroOP.\r\n */\r\n\r\n/**\r\n * Estado que guarda as matriculas dos funcionarios adicionadas aos inputs do formulario.\r\n * @typedef {EstadoReact} Matriculas\r\n * @property {Array<string>} Matriculas Array com as matriculas dos funcionarios.\r\n * @property {React.Dispatch<React.SetStateAction<Array<string>>>} setMatriculas Função que define novo valor para o estado Matriculas.\r\n */\r\n\r\n/**\r\n * Estado que guarda o valor selecionado de mesa no formulario.\r\n * @typedef {EstadoReact} Mesa\r\n * @property {string} Mesa Valor do select de mesa.\r\n * @property {React.Dispatch<React.SetStateAction<string>>} setMesa Função que define novo valor para o estado Mesa.\r\n */\r\n\r\n/**\r\n * Estado que guarda o valor selecionado de turno no formulario.\r\n * @typedef {EstadoReact} Turno\r\n * @property {string} Turno Valor do select de turno.\r\n * @property {react.Dispatch<React.SetStateAction<string>>} setTurno Função que define novo valor para o estado Turno.\r\n */\r\n\r\n/**\r\n * Estado que guarda a quantidade de matriculas adicionadas no formulario.\r\n * @typedef {EstadoReact} QuantidadeFuncionario\r\n * @property {number} QuantidadeFuncionario Quantidade de matriculas adicionadas ao formulario.\r\n * @property {react.Dispatch<React.SetStateAction<number>>} setQuantidadeFuncionario Função que define novo valor para o estado Turno.\r\n */\r\n\r\n/**\r\n * Estado que guarda um array com os componentes de inputs de matriculas. Utilizado pois o numero de inputs é variavel conforme quantidade de funcionarios adicionados a ordem.\r\n * @typedef {EstadoReact} InputsMatricula\r\n * @property {Array} InputsMatricula Array de componentes input para capturar a matricula do funcionario.\r\n * @property {react.Dispatch<React.SetStateAction<Array>>} setInputMatricula Função que define novo valor para InputsMatricula.\r\n */\r\n\r\n/**\r\n * Componente de formulario utilizado para cadastrar novas ordens de produção e salvar seus dados no localStorage de ordensNaoFinalizadas, altera o valor do estado LocalStorage com o valor de ordensNaoFinalizadas da localstorage e consequentemente alterando o estado LocalStorage o estado Ordens será atualizado adicionando mais um item a lista de ordens.\r\n * @param {Object} props props do componente react\r\n * @param {Array} props.ordens Estado Ordens , um array com os dados das ordens que estão na lista de ordens não finalizadas.\r\n * @param {React.Dispatch<React.SetStateAction<Array>>} props.setLocalStorage Função que define o estado LocalStorage.\r\n * @returns {JSXElement}\r\n */\r\nfunction FormInputOP({ ordens,setLocalStorage}){\r\n\r\n    /**\r\n     * Estado que armazena valor do input de numero de ordem de produção.\r\n     */\r\n    const [NumeroOP, setNumeroOP] = useState('')\r\n\r\n    /**\r\n     * Estado que armazena array contendo o valor dos inputs de matriculas dos funcionarios.\r\n     */\r\n    const [Matriculas, setMatriculas] = useState([])\r\n\r\n    /**\r\n     * Estado que armazena o valor do input de mesa de produção.\r\n     */\r\n    const [Mesa, setMesa] = useState('')\r\n\r\n    /**\r\n     * Estado que armazena o valor do input de turno.\r\n     */\r\n    const [Turno, setTurno] = useState('')\r\n\r\n    /**\r\n     * Estado que armazena a quantidade de matriculas adicionados ao formulario.\r\n     */\r\n    const [QuantidadeFuncionario, setQuantidadeFuncionario] = useState(1)\r\n\r\n    /**\r\n     * Estado que guarda um Array dos componentes de Input de matricula.\r\n     */\r\n    const [InputsMatricula, setInputMatricula] = useState([])\r\n\r\n\r\n    /**\r\n     * Pega os dados coletados, salvos nos estados pelos inputs e salva na localStorage 'ordensNaoFinalizadas', altera o valor do estado LocalStorage com o novo valor do localstorage, ao atualizar LocalStorage consequentemente altera o valor de ordens com os mesmos valores de LocalStorage atualizando a visualização da lista.\r\n     * @param {Event} event Evento de submit do formulario.\r\n     */\r\n    async function CriaOrdemJestor(event){\r\n        \r\n        const confereRepetido =await ordens.find(ordem => ordem.ordem_producao === NumeroOP)\r\n\r\n        //Bloqueia envio quando lido com o leitor de código de barras.\r\n        if(event.key === 'Enter'){\r\n            event.preventDefault()\r\n        }\r\n\r\n        if(!confereRepetido){\r\n            event.preventDefault()\r\n            const dataInicio = tranformarDataEmString(new Date())\r\n            if(!NumeroOP || !dataInicio || !Matriculas[0] || !Mesa || !Turno || Matriculas.length !== QuantidadeFuncionario){\r\n                window.alert(\"Preencha todos os campos antes de incluir a Ordem de Produção !!\")\r\n            }else if(NumeroOP.length < 7 || NumeroOP.length > 7){\r\n                window.alert(\"Quantidade digitos do numero da OP estão fora do normal, Verifique se esta correto !!!\")\r\n            }else if (Matriculas[0].length < 1 || Matriculas[0].length > 6 ){\r\n                window.alert('Quantidade de Digitos de matricula de Funcionario Fora do Normal, Verifique, caso necessario adicionar mais de uma matricula utilize o botão \"Adicionar Funcionario\".')\r\n            }\r\n            else{\r\n                \r\n                const obj ={}\r\n                obj['ordem_producao'] = NumeroOP\r\n                obj['horario_inicio'] = dataInicio\r\n                obj['matricula'] = Matriculas[0]\r\n                obj['matricula_2'] = Matriculas[1]\r\n                obj['matricula_3'] = Matriculas[2]\r\n                obj['matricula_4'] = Matriculas[3]\r\n                obj['quantidade_funcionarios'] = QuantidadeFuncionario\r\n                obj['matriculas'] = Matriculas\r\n                obj['mesa'] = Mesa\r\n                obj['turno'] = Turno\r\n                obj['status'] = 'Em Andamento'\r\n                obj['id'] = uuidv4()\r\n                \r\n                setNumeroOP('')\r\n                setMatriculas([])\r\n                setMesa('')\r\n                setTurno('')\r\n                setQuantidadeFuncionario(1)\r\n                const localStorageData = JSON.parse(localStorage.getItem('ordensNaoFinalizadas') || \"[]\");\r\n                localStorageData.push(obj)\r\n                localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(localStorageData))\r\n                await Delay(1000)\r\n                setLocalStorage(localStorageData)\r\n            }\r\n        }else{\r\n            event.preventDefault()\r\n            window.alert(\"Esta OP ja esta na lista\")\r\n            setNumeroOP('')\r\n            setMatriculas([])\r\n            setMesa('')\r\n            setTurno('')\r\n        }\r\n    }\r\n    \r\n    /**\r\n     * Define o estado NumeroOP com o valor do input de ordem de produção.\r\n     * @param {*} event  Evento onChange do input.\r\n     */\r\n    const HandleNumeroOP = (event) => {\r\n        //Previne enviar o formulario quando lido numero da op com leitor de código de barras.\r\n        if(event.key === 'Enter'){\r\n            event.preventDefault()\r\n        }\r\n            setNumeroOP(event.target.value);\r\n        }\r\n        \r\n       /**\r\n        * Define o estado Matriculas, adicionando o valor conforme input.\r\n        */\r\n    const HandleMatricula = useCallback((index, event) => {\r\n            const newMatriculas = [...Matriculas];\r\n            newMatriculas[index] = event.target.value;\r\n            setMatriculas(newMatriculas);\r\n      }, [Matriculas]);\r\n    \r\n      /**\r\n       * Define o estado Mesa conforme valor do input.\r\n       * @param {*} event Evento onChange do input. \r\n       */\r\n    const HandleMesa = (event) => {\r\n        setMesa(event.target.value);\r\n    };\r\n\r\n    /**\r\n     * Define o estado Turno conforme valor do input.\r\n     * @param {*} event Evento onChange do input.\r\n     */\r\n    const HandleTurno = (event) => {\r\n        setTurno(event.target.value);\r\n    };\r\n\r\n    /**\r\n     * Previne submit do formulario quando lido o numero da ordem de produção com leitor de código de barras.\r\n     * @param {*} event Evento onKeyDown.\r\n     */\r\n    const HandlePrevineEnvio = (event) =>{\r\n        if(event.key === 'Enter'){\r\n            event.preventDefault()\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Altera valor do estado QuantidadeFuncionario adicionando +1 se este for menor que 4.\r\n     */\r\n    const AdicaoFuncionario = () => {\r\n        if(QuantidadeFuncionario < 4){\r\n            const novoValor = QuantidadeFuncionario + 1\r\n            setQuantidadeFuncionario(novoValor)\r\n        }else{\r\n            window.alert('Maximo 4 Funcionarios por OP')\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Altera valor do estado QuantidadeFuncionario subtraindo -1 .\r\n     */\r\n    const RemoverFuncionario = () => {\r\n        const novoValor = QuantidadeFuncionario - 1\r\n        setQuantidadeFuncionario(novoValor)\r\n    }\r\n\r\n    /**\r\n     * Define a quantidade de componentes input que estão no estado InputMatricula conforme valor de estado QuantidadeFuncionario.\r\n     */\r\n    useEffect(() => {\r\n        \r\n        const inputs = []\r\n        for(let i = 0;i < QuantidadeFuncionario; i++){\r\n            inputs.push(\r\n                <Input\r\n                  key={i}\r\n                  placeholder=\"Matrícula do Funcionário\"\r\n                  style={{ border: '2px solid black', padding: '20px 0px', width: '70%', margin: '1rem 3px', borderRadius: '20px', fontSize: '20px' }}\r\n                  value={Matriculas[i] || ''}\r\n                  required\r\n                  onChange={(e) => HandleMatricula(i, e)}\r\n                />\r\n              );\r\n        }\r\n        setInputMatricula(inputs)\r\n    },[QuantidadeFuncionario, HandleMatricula, Matriculas])\r\n\r\n    return(\r\n        <FormContainer>\r\n            <Titulo2 color=\"white\">Coloque o numero da ordem de produção e clique em iniciar para começar uma nova ordem de produção</Titulo2>\r\n             <Input placeholder=\"Numero da OP\"  border='2px solid black'  padding = \"20px 0px\" width=\"80%\" margin =\"1rem 0px\" border_radius=\"20px\" font_size=\"20px\" value={NumeroOP} \r\n                onChange={HandleNumeroOP} onKeyDown={HandlePrevineEnvio}></Input>\r\n                <DivLinha>\r\n            {  \r\n                   InputsMatricula\r\n            }\r\n            \r\n            <DivColuna style={{cursor:'pointer' , width:'10%'}} onClick={AdicaoFuncionario}>\r\n             <Imagem src={imgAdicionarFuncionario} width='30%'/>\r\n             <span style={{color:'white'}}>Adicionar Funcionario</span>\r\n            </DivColuna>\r\n            {QuantidadeFuncionario > 1 ? \r\n            <DivColuna style={{cursor:'pointer' , width:'10%'}} onClick={RemoverFuncionario}>\r\n            <Imagem src={imgRemoverFuncionario} width='30%'/>\r\n            <span style={{color:'white'}}>Remover Funcionario</span>\r\n           </DivColuna>\r\n           : ''    \r\n        }\r\n                </DivLinha>\r\n             <Select margin='1rem 0' width='30%'   padding='10px' value={Mesa} onChange={HandleMesa}>\r\n                 <Option padding='10px 2px' fontSize='20px' value='' >Selecione Uma Mesa...</Option>\r\n                {\r\n                    mesas.map((mesa,index) => (\r\n                        <Option key={index} padding='10px 2px' fontSize='20px' >{mesa}</Option>\r\n                    ))\r\n                }\r\n                </Select>\r\n                <Select margin='1rem 0' width='30%'  padding='10px' value={Turno} onChange={HandleTurno}>\r\n                <Option padding='10px 2px' fontSize='20px' value='' >Selecione Um Turno...</Option>\r\n                {\r\n                    turnos.map((turno,index) =>(\r\n                        <Option key={index} padding='10px 2px' fontSize='20px' >{turno}</Option>\r\n                    ))\r\n                }\r\n                    \r\n                    </Select>      \r\n            <Botao width=\"30%\" boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding=\"20px 0px\" border_radius = \"10px\" margin=\"1rem 0\" color=\"black\" backgroundcolor='#79b3e0' font_size='25px' border='2px solid black' onClick={CriaOrdemJestor}>INICIAR ORDEM DE PRODUÇÃO</Botao>\r\n        </FormContainer>\r\n    )\r\n}\r\n\r\nexport default FormInputOP",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Components/FormInputOP/FormInputOP.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 63,
+    "kind": "variable",
+    "name": "FormContainer",
+    "memberof": "src/Components/FormInputOP/FormInputOP.js",
+    "static": true,
+    "longname": "src/Components/FormInputOP/FormInputOP.js~FormContainer",
+    "access": "public",
+    "export": false,
+    "importPath": "controle_montagem/src/Components/FormInputOP/FormInputOP.js",
+    "importStyle": null,
+    "description": "styled-component simples de formulario.",
+    "lineNumber": 21,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 64,
+    "kind": "variable",
+    "name": "DivLinha",
+    "memberof": "src/Components/FormInputOP/FormInputOP.js",
+    "static": true,
+    "longname": "src/Components/FormInputOP/FormInputOP.js~DivLinha",
+    "access": "public",
+    "export": false,
+    "importPath": "controle_montagem/src/Components/FormInputOP/FormInputOP.js",
+    "importStyle": null,
+    "description": "styled-component para deixar itens alinhados em linha na horizontal.",
+    "lineNumber": 32,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 65,
+    "kind": "variable",
+    "name": "DivColuna",
+    "memberof": "src/Components/FormInputOP/FormInputOP.js",
+    "static": true,
+    "longname": "src/Components/FormInputOP/FormInputOP.js~DivColuna",
+    "access": "public",
+    "export": false,
+    "importPath": "controle_montagem/src/Components/FormInputOP/FormInputOP.js",
+    "importStyle": null,
+    "description": "styled-component para deixar itens alinhados em coluna na vertical.",
+    "lineNumber": 42,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 66,
+    "kind": "typedef",
+    "name": "NumeroOP",
+    "memberof": "src/Components/FormInputOP/FormInputOP.js",
+    "static": true,
+    "longname": "src/Components/FormInputOP/FormInputOP.js~NumeroOP",
+    "access": "public",
+    "description": "Estado que guarda o valor do input de numero de ordem de produção do formulario.",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "NumeroOP",
+        "description": "Valor do input de numero de ordem de produção."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "React.Dispatch<React.SetStateAction<string>>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "setNumeroOP",
+        "description": "Funcão que define novo valor para o estado NumeroOP."
+      }
+    ],
+    "type": {
+      "types": [
+        "EstadoReact"
+      ],
+      "optional": false,
+      "name": "NumeroOP"
+    }
+  },
+  {
+    "__docId__": 67,
+    "kind": "typedef",
+    "name": "Matriculas",
+    "memberof": "src/Components/FormInputOP/FormInputOP.js",
+    "static": true,
+    "longname": "src/Components/FormInputOP/FormInputOP.js~Matriculas",
+    "access": "public",
+    "description": "Estado que guarda as matriculas dos funcionarios adicionadas aos inputs do formulario.",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "Array<string>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "Matriculas",
+        "description": "Array com as matriculas dos funcionarios."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "React.Dispatch<React.SetStateAction<Array<string>>>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "setMatriculas",
+        "description": "Função que define novo valor para o estado Matriculas."
+      }
+    ],
+    "type": {
+      "types": [
+        "EstadoReact"
+      ],
+      "optional": false,
+      "name": "Matriculas"
+    }
+  },
+  {
+    "__docId__": 68,
+    "kind": "typedef",
+    "name": "Mesa",
+    "memberof": "src/Components/FormInputOP/FormInputOP.js",
+    "static": true,
+    "longname": "src/Components/FormInputOP/FormInputOP.js~Mesa",
+    "access": "public",
+    "description": "Estado que guarda o valor selecionado de mesa no formulario.",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "Mesa",
+        "description": "Valor do select de mesa."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "React.Dispatch<React.SetStateAction<string>>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "setMesa",
+        "description": "Função que define novo valor para o estado Mesa."
+      }
+    ],
+    "type": {
+      "types": [
+        "EstadoReact"
+      ],
+      "optional": false,
+      "name": "Mesa"
+    }
+  },
+  {
+    "__docId__": 69,
+    "kind": "typedef",
+    "name": "Turno",
+    "memberof": "src/Components/FormInputOP/FormInputOP.js",
+    "static": true,
+    "longname": "src/Components/FormInputOP/FormInputOP.js~Turno",
+    "access": "public",
+    "description": "Estado que guarda o valor selecionado de turno no formulario.",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "Turno",
+        "description": "Valor do select de turno."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "react.Dispatch<React.SetStateAction<string>>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "setTurno",
+        "description": "Função que define novo valor para o estado Turno."
+      }
+    ],
+    "type": {
+      "types": [
+        "EstadoReact"
+      ],
+      "optional": false,
+      "name": "Turno"
+    }
+  },
+  {
+    "__docId__": 70,
+    "kind": "typedef",
+    "name": "QuantidadeFuncionario",
+    "memberof": "src/Components/FormInputOP/FormInputOP.js",
+    "static": true,
+    "longname": "src/Components/FormInputOP/FormInputOP.js~QuantidadeFuncionario",
+    "access": "public",
+    "description": "Estado que guarda a quantidade de matriculas adicionadas no formulario.",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "QuantidadeFuncionario",
+        "description": "Quantidade de matriculas adicionadas ao formulario."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "react.Dispatch<React.SetStateAction<number>>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "setQuantidadeFuncionario",
+        "description": "Função que define novo valor para o estado Turno."
+      }
+    ],
+    "type": {
+      "types": [
+        "EstadoReact"
+      ],
+      "optional": false,
+      "name": "QuantidadeFuncionario"
+    }
+  },
+  {
+    "__docId__": 71,
+    "kind": "typedef",
+    "name": "InputsMatricula",
+    "memberof": "src/Components/FormInputOP/FormInputOP.js",
+    "static": true,
+    "longname": "src/Components/FormInputOP/FormInputOP.js~InputsMatricula",
+    "access": "public",
+    "description": "Estado que guarda um array com os componentes de inputs de matriculas. Utilizado pois o numero de inputs é variavel conforme quantidade de funcionarios adicionados a ordem.",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "InputsMatricula",
+        "description": "Array de componentes input para capturar a matricula do funcionario."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "react.Dispatch<React.SetStateAction<Array>>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "setInputMatricula",
+        "description": "Função que define novo valor para InputsMatricula."
+      }
+    ],
+    "type": {
+      "types": [
+        "EstadoReact"
+      ],
+      "optional": false,
+      "name": "InputsMatricula"
+    }
+  },
+  {
+    "__docId__": 72,
+    "kind": "function",
+    "name": "FormInputOP",
+    "memberof": "src/Components/FormInputOP/FormInputOP.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/Components/FormInputOP/FormInputOP.js~FormInputOP",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/Components/FormInputOP/FormInputOP.js",
+    "importStyle": "FormInputOP",
+    "description": "Componente de formulario utilizado para cadastrar novas ordens de produção e salvar seus dados no localStorage de ordensNaoFinalizadas, altera o valor do estado LocalStorage com o valor de ordensNaoFinalizadas da localstorage e consequentemente alterando o estado LocalStorage o estado Ordens será atualizado adicionando mais um item a lista de ordens.",
+    "lineNumber": 97,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{JSXElement}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props",
+        "description": "props do componente react"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.ordens",
+        "description": "Estado Ordens , um array com os dados das ordens que estão na lista de ordens não finalizadas."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "React.Dispatch<React.SetStateAction<Array>>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.setLocalStorage",
+        "description": "Função que define o estado LocalStorage."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "JSXElement"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 73,
+    "kind": "file",
+    "name": "src/Components/Header/Header.js",
+    "content": "import styled from \"styled-components\"\r\nimport Imagem from \"../Imagem/Imagem.js\"\r\nimport Logo from \"../../images/logo.png\"\r\nimport Titulo1 from \"../Titulo1/Titulo1.js\"\r\n\r\n/**\r\n * styled-component de header.\r\n */\r\nconst HeaderContainer = styled.header`\r\ndisplay:flex;\r\nalign-items:center;\r\njustify-content:space-around;\r\npadding: 5px 0;\r\nbackground-color: white;\r\nwidth:100%;\r\n\r\n`\r\n/**\r\n * styled-component de div que serve de container dos outros componentes.\r\n */\r\nconst HeaderBox = styled.div`\r\nwidth:40%;\r\ndisplay:flex;\r\nalign-items:center;\r\n`\r\n\r\n/**\r\n * Componente simples de Header.\r\n * @returns {JSX.Element} Componente React Header\r\n */\r\nfunction Header(){\r\n    return(\r\n        <HeaderContainer>\r\n            <HeaderBox>\r\n            <Imagem src={Logo} width='15%' margin = \"2px 0px 0px 20px\"></Imagem>\r\n            <Titulo1 width = \"100%\" margin = \"2px 0px\" text_align = \"center\" font_size='30px' color=\"#004D70\" text_shadow='1px 1px 2px black'><strong>CONTROLE PRODUÇÃO MONTAGEM</strong></Titulo1>\r\n            </HeaderBox>\r\n        </HeaderContainer>\r\n    )\r\n}\r\n\r\nexport default Header",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Components/Header/Header.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 74,
+    "kind": "variable",
+    "name": "HeaderContainer",
+    "memberof": "src/Components/Header/Header.js",
+    "static": true,
+    "longname": "src/Components/Header/Header.js~HeaderContainer",
+    "access": "public",
+    "export": false,
+    "importPath": "controle_montagem/src/Components/Header/Header.js",
+    "importStyle": null,
+    "description": "styled-component de header.",
+    "lineNumber": 9,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 75,
+    "kind": "variable",
+    "name": "HeaderBox",
+    "memberof": "src/Components/Header/Header.js",
+    "static": true,
+    "longname": "src/Components/Header/Header.js~HeaderBox",
+    "access": "public",
+    "export": false,
+    "importPath": "controle_montagem/src/Components/Header/Header.js",
+    "importStyle": null,
+    "description": "styled-component de div que serve de container dos outros componentes.",
+    "lineNumber": 21,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 76,
+    "kind": "function",
+    "name": "Header",
+    "memberof": "src/Components/Header/Header.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/Components/Header/Header.js~Header",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/Components/Header/Header.js",
+    "importStyle": "Header",
+    "description": "Componente simples de Header.",
+    "lineNumber": 31,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{JSX.Element} Componente React Header"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "JSX.Element"
+      ],
+      "spread": false,
+      "description": "Componente React Header"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 77,
+    "kind": "file",
+    "name": "src/Components/Imagem/Imagem.js",
+    "content": "import styled from \"styled-components\"\r\n\r\n/**\r\n * Componente simples de Imagem\r\n * @property {string} width Define o comprimento do componente.\r\n * @property {string} margin Define a margem do componente.\r\n * @example\r\n * //importa alguma imagem dos arquivos.\r\n * import ImagemExemplo from \"../../imagens/imagemTeste.jpg\";\r\n * \r\n * return (\r\n * <Imagem \r\n * src={ImagemExemplo}\r\n * width='50%'\r\n * margin='10px 10px'\r\n * />\r\n * )\r\n */\r\nconst Imagem = styled.img`\r\nwidth: ${props=> props.width || \"100%\"};\r\nmargin: ${props => props.margin || \"0px 0px\"};\r\n`\r\n\r\nexport default Imagem",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Components/Imagem/Imagem.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 78,
+    "kind": "variable",
+    "name": "Imagem",
+    "memberof": "src/Components/Imagem/Imagem.js",
+    "static": true,
+    "longname": "src/Components/Imagem/Imagem.js~Imagem",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/Components/Imagem/Imagem.js",
+    "importStyle": "Imagem",
+    "description": "Componente simples de Imagem",
+    "examples": [
+      "//importa alguma imagem dos arquivos.\nimport ImagemExemplo from \"../../imagens/imagemTeste.jpg\";\n\nreturn (\n<Imagem \nsrc={ImagemExemplo}\nwidth='50%'\nmargin='10px 10px'\n/>\n)"
+    ],
+    "lineNumber": 19,
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "width",
+        "description": "Define o comprimento do componente."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "margin",
+        "description": "Define a margem do componente."
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 79,
+    "kind": "file",
+    "name": "src/Components/Input/Input.js",
+    "content": "import styled from \"styled-components\"\r\n\r\nconst Input = styled.input`\r\n    width: ${props => props.width || \"100%\"};\r\n    padding: ${props => props.padding || \"0px 0px\"};\r\n    margin: ${props => props.margin || '0px 0px'};\r\n    border: ${props => props.border || '0px'};\r\n    border-radius: ${props => props.border_radius || '0px'};\r\n    text-align:${props => props.text_align || \"center\"};\r\n    font-size: ${props => props.font_size || '14px'}\r\n`\r\n\r\nexport default Input",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Components/Input/Input.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 80,
+    "kind": "variable",
+    "name": "Input",
+    "memberof": "src/Components/Input/Input.js",
+    "static": true,
+    "longname": "src/Components/Input/Input.js~Input",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/Components/Input/Input.js",
+    "importStyle": "Input",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 81,
+    "kind": "file",
+    "name": "src/Components/Label/Label.js",
+    "content": "import styled from \"styled-components\";\r\n\r\n\r\nconst Label = styled.label`\r\n    font-size = ${props => props.font_size || '16px'};\r\n    color = ${props => props.color || 'black'};\r\n`\r\n\r\nexport default Label",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Components/Label/Label.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 82,
+    "kind": "variable",
+    "name": "Label",
+    "memberof": "src/Components/Label/Label.js",
+    "static": true,
+    "longname": "src/Components/Label/Label.js~Label",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/Components/Label/Label.js",
+    "importStyle": "Label",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 83,
+    "kind": "file",
+    "name": "src/Components/Login/Login.js",
+    "content": "import styled from \"styled-components\";\r\nimport Titulo2 from \"../Titulo2/Titulo2.js\";\r\nimport Input from \"../Input/Input.js\";\r\nimport Botao from \"../Botao/Botao.js\";\r\nimport { useEffect, useState } from \"react\";\r\nimport { useNavigate } from \"react-router\";\r\n\r\n/**\r\n * Componente de section simples utilizado como container dos outros componentes.\r\n */\r\nconst LoginContainer = styled.section`\r\ndisplay:flex;\r\nflex-direction: column;\r\nalign-items:center;\r\nbackground-color:white;\r\nmargin:20vh 0px;\r\nwidth:50%;\r\nborder-radius:20px;\r\n`\r\n\r\n/**\r\n * Estado que guarda o valor do input de Usuario do componente Login.\r\n * @typedef {EstadoReact} Usuario\r\n * @property {string} Usuario - Valor do input de Usuario.\r\n */\r\n\r\n/**\r\n * Estado que guarda o valor do input de Senha do componente Login.\r\n * @typedef {EstadoReact} Senha\r\n * @property {string} Senha - Valor do input de Senha.\r\n */\r\n\r\n/**\r\n * Elemento da Pagina de Login, Utilizado para Pegar informações de usuario e senha através dos inputs e salvar no banco de dados 'Login' do localstorage, ao salvar atualiza o estado de LoginLocalStorage e consequentemente envia o usuario a rota da pagina principal /controleProducao.\r\n * @function Login\r\n * @param {Object} todosOsDadosLogin Objeto com os estados LoginConferencia, setLoginConferencia, LoginLocalStorage e setLoginLocalStorage \r\n * @returns {JSX.Element}\r\n */\r\nfunction Login({todosOsDadosLogin}){\r\n    /**\r\n     * Estado que salva o valor do input de usuario.\r\n     */\r\n    const [Usuario, setUsuario] = useState('')\r\n    /**\r\n     * Estado que salva o valor do input de senha.\r\n     */\r\n    const [Senha, setSenha] = useState('')\r\n    /**\r\n     * React hook para ir até outra rota.\r\n     */\r\n    const navigate = useNavigate();\r\n    \r\n    /**\r\n     * Ao carregar a pagina confere se o Estado LoginConferencia for true acessa a rota principal /controleProducao.\r\n     */\r\n    useEffect(() => {\r\n        const handleRetornaLogin = () => {\r\n          navigate(\"/controleProducao\");\r\n        }\r\n        if(todosOsDadosLogin.LoginConferencia === true){\r\n          handleRetornaLogin()\r\n        }\r\n      },[todosOsDadosLogin.LoginLocalStorage, todosOsDadosLogin.LoginConferencia,navigate])\r\n\r\n      /**\r\n       * Salva os dados de usuario e senha no banco de dados Login da localstorage e posteriormente salva as informações de Login no estado LoginLocalStorage para que este ao ser atualizado faça a conferencia de login em App.js e retone LoginConferencia como true.\r\n       * @param {*} event Evento de Click do mouse, utilizado para previnir carregamento da pagina.\r\n       */\r\n    function defineLogin(event){\r\n        event.preventDefault()\r\n        localStorage.setItem('Login', JSON.stringify({Usuario: Usuario, Senha: Senha}))\r\n        todosOsDadosLogin.setLoginLocalStorage(JSON.parse(localStorage.getItem('Login')) || [])\r\n    }\r\n    /**\r\n     * Pega valor do input usuario e salva no estado Usuario.\r\n     * @param {*} event Evento utilizado para pegar o valor do target.\r\n     */\r\n    function handleUsuario(event){\r\n        setUsuario(event.target.value)\r\n        \r\n    }\r\n    \r\n    /**\r\n     * Pega o valor do input senha e salva no estado Senha.\r\n     * @param {*} event Evento utilizado para pegar o valor do target.\r\n     */\r\n    function handleSenha(event){\r\n        setSenha(event.target.value)\r\n    }\r\n    return(\r\n        <LoginContainer>\r\n            <Titulo2>Usuario:</Titulo2>\r\n            <Input type=\"text\" value={Usuario} onChange={handleUsuario} placeholder=\"Coloque o nome de usuario...\" padding='15px 0px' margin='10px 0px' border='0.5px solid black' font_size='20px' border_radius='20px' width='80%'></Input>\r\n            <Titulo2>Senha:</Titulo2>\r\n            <Input type=\"password\" value={Senha} onChange={handleSenha} placeholder=\"Coloque a senha de usuario...\" padding='15px 0px' margin='10px 0px' border='0.5px solid black' font_size='20px' border_radius='20px' width='80%'></Input>\r\n            <Botao onClick={defineLogin} width = '50%' padding='15px 0px' margin='20px 0px' backgroundcolor='#79b3e0' font_size='26px' border='0.5px solid black' border_radius='10px' boxshadow='2px 2px 5px black'>ENTRAR</Botao>\r\n        </LoginContainer>\r\n    )\r\n}\r\n\r\nexport default Login",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Components/Login/Login.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 84,
+    "kind": "variable",
+    "name": "LoginContainer",
+    "memberof": "src/Components/Login/Login.js",
+    "static": true,
+    "longname": "src/Components/Login/Login.js~LoginContainer",
+    "access": "public",
+    "export": false,
+    "importPath": "controle_montagem/src/Components/Login/Login.js",
+    "importStyle": null,
+    "description": "Componente de section simples utilizado como container dos outros componentes.",
+    "lineNumber": 11,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 85,
+    "kind": "typedef",
+    "name": "Usuario",
+    "memberof": "src/Components/Login/Login.js",
+    "static": true,
+    "longname": "src/Components/Login/Login.js~Usuario",
+    "access": "public",
+    "description": "Estado que guarda o valor do input de Usuario do componente Login.",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "Usuario",
+        "description": "Valor do input de Usuario."
+      }
+    ],
+    "type": {
+      "types": [
+        "EstadoReact"
+      ],
+      "optional": false,
+      "name": "Usuario"
+    }
+  },
+  {
+    "__docId__": 86,
+    "kind": "typedef",
+    "name": "Senha",
+    "memberof": "src/Components/Login/Login.js",
+    "static": true,
+    "longname": "src/Components/Login/Login.js~Senha",
+    "access": "public",
+    "description": "Estado que guarda o valor do input de Senha do componente Login.",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "Senha",
+        "description": "Valor do input de Senha."
+      }
+    ],
+    "type": {
+      "types": [
+        "EstadoReact"
+      ],
+      "optional": false,
+      "name": "Senha"
+    }
+  },
+  {
+    "__docId__": 87,
+    "kind": "function",
+    "name": "Login",
+    "memberof": "src/Components/Login/Login.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/Components/Login/Login.js~Login",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/Components/Login/Login.js",
+    "importStyle": "Login",
+    "description": "Elemento da Pagina de Login, Utilizado para Pegar informações de usuario e senha através dos inputs e salvar no banco de dados 'Login' do localstorage, ao salvar atualiza o estado de LoginLocalStorage e consequentemente envia o usuario a rota da pagina principal /controleProducao.",
+    "lineNumber": 39,
+    "unknown": [
+      {
+        "tagName": "@function",
+        "tagValue": "Login"
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{JSX.Element}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "todosOsDadosLogin",
+        "description": "Objeto com os estados LoginConferencia, setLoginConferencia, LoginLocalStorage e setLoginLocalStorage"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "JSX.Element"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 88,
+    "kind": "file",
+    "name": "src/Components/ProtectedRoute/ProtectedRoute.js",
+    "content": "import React, { useEffect } from 'react';\r\nimport {useNavigate} from 'react-router-dom';\r\n\r\n/**\r\n * Componente de rota protegida.\r\n * Renderiza o componente fornecido somente se o usuário estiver autenticado, caso contrário, redireciona para a página de login.\r\n *\r\n * @param {Object} props - Propriedades do componente.\r\n * @param {React.ComponentType} props.component - Componente a ser renderizado se o usuário estiver autenticado.\r\n * @param {boolean} props.isAuthenticated - Indica se o usuário está autenticado.\r\n * @param {Object} props.rest - Outras propriedades passadas para o componente.\r\n * @returns {JSX.Element} O componente a ser renderizado ou o redirecionamento para a página de login.\r\n */\r\nconst ProtectedRoute = ({ component: Component, isAuthenticated, ...rest }) => {\r\n    const navigate = useNavigate();\r\n    /**\r\n     * Chamada quando o usuario não esta logado, redireciona o usuario a pagina de login.\r\n     */\r\n    function RetornaLogin(){\r\n            useEffect(() => {\r\n                            navigate('/');\r\n            }, [])\r\n\r\n    }\r\n\r\n    return (\r\n                isAuthenticated ? <Component {...rest} /> : RetornaLogin()\r\n        );\r\n        \r\n};\r\n\r\nexport default ProtectedRoute;",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Components/ProtectedRoute/ProtectedRoute.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 89,
+    "kind": "function",
+    "name": "ProtectedRoute",
+    "memberof": "src/Components/ProtectedRoute/ProtectedRoute.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/Components/ProtectedRoute/ProtectedRoute.js~ProtectedRoute",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/Components/ProtectedRoute/ProtectedRoute.js",
+    "importStyle": "ProtectedRoute",
+    "description": "Componente de rota protegida.\nRenderiza o componente fornecido somente se o usuário estiver autenticado, caso contrário, redireciona para a página de login.",
+    "lineNumber": 14,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{JSX.Element} O componente a ser renderizado ou o redirecionamento para a página de login."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props",
+        "description": "Propriedades do componente."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "React.ComponentType"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.component",
+        "description": "Componente a ser renderizado se o usuário estiver autenticado."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.isAuthenticated",
+        "description": "Indica se o usuário está autenticado."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.rest",
+        "description": "Outras propriedades passadas para o componente."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "JSX.Element"
+      ],
+      "spread": false,
+      "description": "O componente a ser renderizado ou o redirecionamento para a página de login."
+    }
+  },
+  {
+    "__docId__": 90,
+    "kind": "file",
+    "name": "src/Components/Select/Option/Option.js",
+    "content": "import styled from \"styled-components\";\r\n\r\n\r\nconst Option = styled.option`\r\n    font-size:${props => props.font_size || '16px'};\r\n    color:${props => props.color || 'black'};\r\n    padding:${props => props.padding || '0px 0px'}\r\n`\r\n\r\nexport default Option",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Components/Select/Option/Option.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 91,
+    "kind": "variable",
+    "name": "Option",
+    "memberof": "src/Components/Select/Option/Option.js",
+    "static": true,
+    "longname": "src/Components/Select/Option/Option.js~Option",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/Components/Select/Option/Option.js",
+    "importStyle": "Option",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 92,
+    "kind": "file",
+    "name": "src/Components/Select/Select.js",
+    "content": "import styled from \"styled-components\";\r\n\r\n\r\nconst Select = styled.select`\r\n    width:${props=> props.width || '100%'};\r\n    margin:${props=>props.margin || '0px 0px'};\r\n    padding:${props => props.padding || '0px 0px'};\r\n    heigth:${props => props.heigth || '10px'};\r\n    font-size:${props => props.font_size || '16px'}\r\n`\r\n\r\nexport default Select",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Components/Select/Select.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 93,
+    "kind": "variable",
+    "name": "Select",
+    "memberof": "src/Components/Select/Select.js",
+    "static": true,
+    "longname": "src/Components/Select/Select.js~Select",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/Components/Select/Select.js",
+    "importStyle": "Select",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 94,
+    "kind": "file",
+    "name": "src/Components/Titulo1/Titulo1.js",
+    "content": "import styled from \"styled-components\";\r\n\r\n\r\nconst Titulo1 = styled.h1`\r\nwidth:${props => props.width || \"100%\"};\r\nmargin: ${props => props.margin || \"0px 0px\"};\r\nfont-size: ${props => props.font_size || \"42px\"};\r\ntext-align: ${props => props.text_align || \"center\"};\r\ncolor: ${props => props.color || \"black\"};\r\ntext-shadow: ${props => props.text_shadow || \"0px 0px 0px\"};\r\n\r\n`\r\n\r\nexport default Titulo1",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Components/Titulo1/Titulo1.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 95,
+    "kind": "variable",
+    "name": "Titulo1",
+    "memberof": "src/Components/Titulo1/Titulo1.js",
+    "static": true,
+    "longname": "src/Components/Titulo1/Titulo1.js~Titulo1",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/Components/Titulo1/Titulo1.js",
+    "importStyle": "Titulo1",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 96,
+    "kind": "file",
+    "name": "src/Components/Titulo2/Titulo2.js",
+    "content": "import styled from \"styled-components\";\r\n\r\n\r\nconst Titulo2 = styled.h2`\r\nwidth:${props => props.width || \"100%\"};\r\nmargin: ${props => props.margin || \"0px 0px\"};\r\nfont-size: ${props => props.font_size || \"32px\"};\r\ntext-align: ${props => props.text_align || \"center\"};\r\ncolor: ${props => props.color || \"black\"};\r\n`\r\n\r\nexport default Titulo2",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Components/Titulo2/Titulo2.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 97,
+    "kind": "variable",
+    "name": "Titulo2",
+    "memberof": "src/Components/Titulo2/Titulo2.js",
+    "static": true,
+    "longname": "src/Components/Titulo2/Titulo2.js~Titulo2",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/Components/Titulo2/Titulo2.js",
+    "importStyle": "Titulo2",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 98,
+    "kind": "file",
+    "name": "src/Components/Titulo4/Titulo4.js",
+    "content": "import styled from \"styled-components\";\r\n\r\n\r\nconst Titulo4 = styled.h2`\r\nwidth:${props => props.width || \"100%\"};\r\nmargin: ${props => props.margin || \"0px 0px\"};\r\nfont-size: ${props => props.font_size || \"14px\"};\r\ntext-align: ${props => props.text_align || \"center\"};\r\ncolor: ${props => props.color || \"black\"};\r\nbackground-color: ${props => props.backgroundcolor || \"\"};\r\nborder-radius: ${props => props.border_radius || \"0px\"};\r\n`\r\n\r\nexport default Titulo4",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Components/Titulo4/Titulo4.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 99,
+    "kind": "variable",
+    "name": "Titulo4",
+    "memberof": "src/Components/Titulo4/Titulo4.js",
+    "static": true,
+    "longname": "src/Components/Titulo4/Titulo4.js~Titulo4",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/Components/Titulo4/Titulo4.js",
+    "importStyle": "Titulo4",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 100,
+    "kind": "file",
+    "name": "src/Controller/OrdensController.js",
+    "content": "import { AtualizaRegistro } from \"../Services/AtualizaRegistro.js\"\r\nimport { CriarRegistro } from \"../Services/CriarRegistro.js\"\r\nimport { PegarRegistrosTabela } from \"../Services/PegaRegistrosTabela.js\"\r\n\r\n\r\nexport class OrdensController{\r\n    constructor(){\r\n        this._pegarRegistrosTabela = new PegarRegistrosTabela(process.env.REACT_APP_token)\r\n        this._criarRegistro = new CriarRegistro(process.env.REACT_APP_token)\r\n        this._atualizarRegistro = new AtualizaRegistro(process.env.REACT_APP_token)\r\n    }\r\n\r\n async criarRegistro(tabela,dado){\r\n   const dadoCriado = await this._criarRegistro.criarRegistro(tabela,dado)\r\n   return dadoCriado\r\n }\r\n\r\n async pegaDadoUnico(tabela,id){\r\n    const dado = await this._pegarRegistroUnico.pegaRegistroUnico(tabela,id)\r\n    return dado\r\n }\r\n\r\n async pegaDadosLista(tabela){\r\n  const dado = await this._pegarRegistrosTabela.pegarRegistrosTabela(tabela)\r\n  return dado\r\n}\r\n\r\nasync atualizarRegistro(tabela,dados){\r\n  const dado = await this._atualizarRegistro.atualizaRegistro(tabela,dados)\r\n  return dado\r\n}\r\n}",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Controller/OrdensController.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 101,
+    "kind": "class",
+    "name": "OrdensController",
+    "memberof": "src/Controller/OrdensController.js",
+    "static": true,
+    "longname": "src/Controller/OrdensController.js~OrdensController",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/Controller/OrdensController.js",
+    "importStyle": "{OrdensController}",
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 102,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/Controller/OrdensController.js~OrdensController",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Controller/OrdensController.js~OrdensController#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true
+  },
+  {
+    "__docId__": 103,
+    "kind": "member",
+    "name": "_pegarRegistrosTabela",
+    "memberof": "src/Controller/OrdensController.js~OrdensController",
+    "static": false,
+    "longname": "src/Controller/OrdensController.js~OrdensController#_pegarRegistrosTabela",
+    "access": "private",
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 104,
+    "kind": "member",
+    "name": "_criarRegistro",
+    "memberof": "src/Controller/OrdensController.js~OrdensController",
+    "static": false,
+    "longname": "src/Controller/OrdensController.js~OrdensController#_criarRegistro",
+    "access": "private",
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 105,
+    "kind": "member",
+    "name": "_atualizarRegistro",
+    "memberof": "src/Controller/OrdensController.js~OrdensController",
+    "static": false,
+    "longname": "src/Controller/OrdensController.js~OrdensController#_atualizarRegistro",
+    "access": "private",
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 106,
+    "kind": "method",
+    "name": "criarRegistro",
+    "memberof": "src/Controller/OrdensController.js~OrdensController",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/Controller/OrdensController.js~OrdensController#criarRegistro",
+    "access": "public",
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true,
+    "params": [
+      {
+        "name": "tabela",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "dado",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 107,
+    "kind": "method",
+    "name": "pegaDadoUnico",
+    "memberof": "src/Controller/OrdensController.js~OrdensController",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/Controller/OrdensController.js~OrdensController#pegaDadoUnico",
+    "access": "public",
+    "description": null,
+    "lineNumber": 18,
+    "undocument": true,
+    "params": [
+      {
+        "name": "tabela",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "id",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 108,
+    "kind": "method",
+    "name": "pegaDadosLista",
+    "memberof": "src/Controller/OrdensController.js~OrdensController",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/Controller/OrdensController.js~OrdensController#pegaDadosLista",
+    "access": "public",
+    "description": null,
+    "lineNumber": 23,
+    "undocument": true,
+    "params": [
+      {
+        "name": "tabela",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 109,
+    "kind": "method",
+    "name": "atualizarRegistro",
+    "memberof": "src/Controller/OrdensController.js~OrdensController",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/Controller/OrdensController.js~OrdensController#atualizarRegistro",
+    "access": "public",
+    "description": null,
+    "lineNumber": 28,
+    "undocument": true,
+    "params": [
+      {
+        "name": "tabela",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "dados",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 110,
+    "kind": "file",
+    "name": "src/Helpers/Delay.js",
+    "content": "export default function Delay(ms){\r\n    return new Promise(resolve =>setTimeout(resolve,ms))\r\n     }",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Helpers/Delay.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 111,
+    "kind": "function",
+    "name": "Delay",
+    "memberof": "src/Helpers/Delay.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/Helpers/Delay.js~Delay",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/Helpers/Delay.js",
+    "importStyle": "Delay",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [
+      {
+        "name": "ms",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 112,
+    "kind": "file",
+    "name": "src/Helpers/tranformarDataEmString.js",
+    "content": "function tranformarDataEmString(data) {\r\n    const ano = data.getFullYear();\r\n    let mes = data.getMonth() + 1;\r\n    let dia = data.getDate();\r\n    let hora = data.getHours();\r\n    let minuto = data.getMinutes();\r\n    let segundo = data.getSeconds();\r\n\r\n    // Adicionando zero à esquerda para manter o formato consistente\r\n    if (mes < 10) {\r\n        mes = '0' + mes;\r\n    }\r\n    if (dia < 10) {\r\n        dia = '0' + dia;\r\n    }\r\n    if (hora < 10) {\r\n        hora = '0' + hora;\r\n    }\r\n    if (minuto < 10) {\r\n        minuto = '0' + minuto;\r\n    }\r\n    if (segundo < 10) {\r\n        segundo = '0' + segundo;\r\n    }\r\n\r\n    const dataFormatada = `${ano}-${mes}-${dia}T${hora}:${minuto}:${segundo}+00:00`;\r\n    return dataFormatada;\r\n}\r\n\r\nexport default tranformarDataEmString",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Helpers/tranformarDataEmString.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 113,
+    "kind": "function",
+    "name": "tranformarDataEmString",
+    "memberof": "src/Helpers/tranformarDataEmString.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/Helpers/tranformarDataEmString.js~tranformarDataEmString",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/Helpers/tranformarDataEmString.js",
+    "importStyle": "tranformarDataEmString",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [
+      {
+        "name": "data",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 114,
+    "kind": "file",
+    "name": "src/index.js",
+    "content": "import React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport './index.css';\nimport App from './App.js';\nimport reportWebVitals from './reportWebVitals.js';\n\nconst root = ReactDOM.createRoot(document.getElementById('root'));\nroot.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>\n);\n\n// If you want to start measuring performance in your app, pass a function\n// to log results (for example: reportWebVitals(console.log))\n// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals\nreportWebVitals();\n",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 115,
+    "kind": "variable",
+    "name": "root",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~root",
+    "access": "public",
+    "export": false,
+    "importPath": "controle_montagem/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 116,
+    "kind": "file",
+    "name": "src/Paginas/ControleProducao.js",
+    "content": "import { useEffect, useState } from \"react\"\r\nimport OrdensLista from \"../Components/OrdensLista/OrdensLista.js\"\r\nimport Botao from \"../Components/Botao/Botao.js\"\r\nimport FormInputOP from \"../Components/FormInputOP/FormInputOP.js\"\r\nimport styled from \"styled-components\"\r\n\r\n/**\r\n * Style-Component simples de div para servir de container dos outros componentes de ControleProducao.\r\n */\r\nconst ControleContainer = styled.div`\r\ndisplay: flex;\r\nflex-direction: column;\r\nwidth:100%;\r\nalign-items:center;\r\n`\r\n\r\n/**\r\n * Estado que define o estado da visualização do componente FormInputOP no componente ControleProducao.\r\n * @typedef {EstadoReact} VisualizacaoForm \r\n * @property {boolean} VisualizacaoForm True o Formulario esta visivel, False não esta.\r\n */\r\n\r\n/**\r\n * Estado que define o que sera escrito no botão que oculta ou mostra o formulario.\r\n * @typedef {EstadoReact} EscritaBotaoForm \r\n * @property {string} EscritaBotaoForm O que será escrito no botão, utilizado 'ADICIONAR NOVA ORDEM DE PRODUÇÃO' ou 'CANCELAR'.\r\n */\r\n\r\n/**\r\n * Estado que guarda os dados do banco de dados 'ordensNaoFinalizadas' da localstorage.\r\n * @typedef {EstadoReact} LocalStorage\r\n * @property {Array<Object>} LocalStorage Array de objetos contendo as informações das ordensNãoFinalizadas do localstorage. \r\n */\r\n\r\n/**\r\n * Estado que guarda a informação das ordens que devem aparecer na lista, Sempre será o mesmo valor que o estado LocalStorage. Possui useEffect que define seu valor automaticamente quando alterado o estado LocalStorage.\r\n * @typedef {EstadoReact} Ordens\r\n * @property {Array<Object>} Ordens Dados do estado LocalStorage. \r\n */\r\n\r\n/**\r\n * Estado que guarda o estado da visualização do componente ordensLista.\r\n * @typedef {EstadoReact} VisualizacaoOrdens\r\n * @property {boolean} VisualizacaoOrdens true a lista de ordens esta visivel, false não esta.\r\n */\r\n\r\n/**\r\n * Estado que define o que será escrito no botão que oculta ou mostra a lista de ordens.\r\n * @typedef {EstadoReact} EscritaBotao\r\n * @property {string} EscritaBotao O que será escrito no botão, utilizado 'MOSTRAR TODAS AS ORDENS EM ANDAMENTO' ou 'ESCONDER AS ORDENS EM ANDAMENTO'.\r\n */\r\n\r\n/**\r\n * Componente de pagina principal, Engloba os componentes principais de FormInputOP e ordensLista com botões que definem suas vizualizações.\r\n * @returns {JSX.Element} Componente React de ControleProducao.\r\n */\r\nfunction ControleProducao(){\r\n    \r\n  /**\r\n   * Estado React que define se o formulario esta visivel ou não.\r\n   * @type {[boolean, React.Dispatch<React.SetStateAction<boolean>>]}\r\n   */\r\n    const [VisualizacaoForm, setVisualizacaoForm] = useState(false)\r\n\r\n    /**\r\n   * Estado que define o que sera escrito no botão que oculta ou mostra o formulario.\r\n   * @type {[string, React.Dispatch<React.SetStateAction<string>>]}\r\n   */\r\n    const [EscritaBotaoForm , setEscritaBotaoForm] = useState('ADICIONAR NOVA ORDEM DE PRODUÇÃO')\r\n    \r\n    /**\r\n   * Estado que guarda os valores da localstorage de ordensNaoFinalizadas\r\n   * @type {[Array, React.Dispatch<React.SetStateAction<Array>>]}\r\n   */\r\n    const [LocalStorage,setLocalStorage] = useState([])\r\n    \r\n    /**\r\n   * Estado que guarda as ordens que devem aparecer na lista.\r\n   * @type {[Array, React.Dispatch<React.SetStateAction<Array>>]}\r\n   */\r\n    const [Ordens, setOrdens] = useState(LocalStorage)\r\n    \r\n    /**\r\n   * Estado que define se a lista de ordens esta visivel ou não.\r\n   * @type {[boolean, React.Dispatch<React.SetStateAction<boolean>>]}\r\n   */\r\n    const [VisualizacaoOrdens,setVisualizacaoOrdens] = useState(false)\r\n   \r\n    /**\r\n   * Estado que define o que sera escrito no botão que oculta ou mostra a lista de ordens.\r\n   * @type {[string, React.Dispatch<React.SetStateAction<string>>]}\r\n   */\r\n    const [EscritaBotao, setEscritaBotao] = useState('MOSTRAR TODAS AS ORDENS EM ANDAMENTO')\r\n\r\n   /**\r\n    * Altera a visualização do formulário e o que será escrito no botão através dos estados VisualizacaoForm e EscritaBotaoForm.\r\n    */\r\n    async function ApareceEscondeFormNovaOrdem(){\r\n        if(VisualizacaoForm === false){\r\n          setVisualizacaoForm(true)\r\n          setEscritaBotaoForm('CANCELAR')\r\n        }else{\r\n          setVisualizacaoForm(false)\r\n          setEscritaBotaoForm('ADICIONAR NOVA ORDEM DE PRODUÇÃO')\r\n        }\r\n       }\r\n\r\n      /**\r\n       * Altera a visualização da lista de ordens e o que será escrito no botão através dos estados VisualizacaoOrdens e EscritaBotao.\r\n       */\r\n    async function PegarOrdens(){\r\n        setLocalStorage(JSON.parse(localStorage.getItem('ordensNaoFinalizadas') || \"[]\"))\r\n        if(VisualizacaoOrdens === false){\r\n          setVisualizacaoOrdens(true)\r\n          setEscritaBotao('ESCONDER AS ORDENS EM ANDAMENTO')\r\n        }else{\r\n          setVisualizacaoOrdens(false)\r\n          setEscritaBotao('MOSTRAR TODAS AS ORDENS EM ANDAMENTO')\r\n        }\r\n   }\r\n\r\n      /**\r\n        * Sempre que LocalStorage mudar define Ordens com o mesmo valor para manter a lista de ordens exibidas com os dados das ordens não finalizadas.\r\n        */\r\n    useEffect(() => {\r\n        setOrdens(LocalStorage); \r\n      },[LocalStorage])\r\n\r\n    return(\r\n    <ControleContainer>\r\n\r\n      <Botao \r\n      onClick={ApareceEscondeFormNovaOrdem} \r\n      width='30%' \r\n      border='solid 0.5px black' \r\n      boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' \r\n      padding='10px 5px' \r\n      border_radius='5px' \r\n      margin='5px 0px' \r\n      color='black' \r\n      backgroundcolor={VisualizacaoForm ? '#e3934d' :  '#468de3' }\r\n      font_size='24px'>\r\n      {EscritaBotaoForm}\r\n      </Botao> \r\n      {VisualizacaoForm === true ? \r\n      <FormInputOP LocalStorage={LocalStorage} setLocalStorage={setLocalStorage} ordens= {Ordens}></FormInputOP>\r\n      : \r\n      ''\r\n      }\r\n  <Botao \r\n  onClick={PegarOrdens} \r\n  width='30%' \r\n  border='solid 0.5px black' \r\n  boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' \r\n  padding='10px 5px' \r\n  border_radius='5px' \r\n  margin='5px 0px' \r\n  backgroundcolor='#468de3' \r\n  font_size='24px'>\r\n    {EscritaBotao}\r\n    </Botao>\r\n  {VisualizacaoOrdens && <OrdensLista ordens={Ordens}  setOrdens = {setOrdens} setLocalStorage={setLocalStorage}/>}\r\n    </ControleContainer>\r\n    \r\n    )\r\n}\r\n\r\nexport default ControleProducao",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Paginas/ControleProducao.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 117,
+    "kind": "variable",
+    "name": "ControleContainer",
+    "memberof": "src/Paginas/ControleProducao.js",
+    "static": true,
+    "longname": "src/Paginas/ControleProducao.js~ControleContainer",
+    "access": "public",
+    "export": false,
+    "importPath": "controle_montagem/src/Paginas/ControleProducao.js",
+    "importStyle": null,
+    "description": "Style-Component simples de div para servir de container dos outros componentes de ControleProducao.",
+    "lineNumber": 10,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 118,
+    "kind": "typedef",
+    "name": "VisualizacaoForm",
+    "memberof": "src/Paginas/ControleProducao.js",
+    "static": true,
+    "longname": "src/Paginas/ControleProducao.js~VisualizacaoForm",
+    "access": "public",
+    "description": "Estado que define o estado da visualização do componente FormInputOP no componente ControleProducao.",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "VisualizacaoForm",
+        "description": "True o Formulario esta visivel, False não esta."
+      }
+    ],
+    "type": {
+      "types": [
+        "EstadoReact"
+      ],
+      "optional": false,
+      "name": "VisualizacaoForm"
+    }
+  },
+  {
+    "__docId__": 119,
+    "kind": "typedef",
+    "name": "EscritaBotaoForm",
+    "memberof": "src/Paginas/ControleProducao.js",
+    "static": true,
+    "longname": "src/Paginas/ControleProducao.js~EscritaBotaoForm",
+    "access": "public",
+    "description": "Estado que define o que sera escrito no botão que oculta ou mostra o formulario.",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "EscritaBotaoForm",
+        "description": "O que será escrito no botão, utilizado 'ADICIONAR NOVA ORDEM DE PRODUÇÃO' ou 'CANCELAR'."
+      }
+    ],
+    "type": {
+      "types": [
+        "EstadoReact"
+      ],
+      "optional": false,
+      "name": "EscritaBotaoForm"
+    }
+  },
+  {
+    "__docId__": 120,
+    "kind": "typedef",
+    "name": "LocalStorage",
+    "memberof": "src/Paginas/ControleProducao.js",
+    "static": true,
+    "longname": "src/Paginas/ControleProducao.js~LocalStorage",
+    "access": "public",
+    "description": "Estado que guarda os dados do banco de dados 'ordensNaoFinalizadas' da localstorage.",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "Array<Object>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "LocalStorage",
+        "description": "Array de objetos contendo as informações das ordensNãoFinalizadas do localstorage."
+      }
+    ],
+    "type": {
+      "types": [
+        "EstadoReact"
+      ],
+      "optional": false,
+      "name": "LocalStorage"
+    }
+  },
+  {
+    "__docId__": 121,
+    "kind": "typedef",
+    "name": "Ordens",
+    "memberof": "src/Paginas/ControleProducao.js",
+    "static": true,
+    "longname": "src/Paginas/ControleProducao.js~Ordens",
+    "access": "public",
+    "description": "Estado que guarda a informação das ordens que devem aparecer na lista, Sempre será o mesmo valor que o estado LocalStorage. Possui useEffect que define seu valor automaticamente quando alterado o estado LocalStorage.",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "Array<Object>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "Ordens",
+        "description": "Dados do estado LocalStorage."
+      }
+    ],
+    "type": {
+      "types": [
+        "EstadoReact"
+      ],
+      "optional": false,
+      "name": "Ordens"
+    }
+  },
+  {
+    "__docId__": 122,
+    "kind": "typedef",
+    "name": "VisualizacaoOrdens",
+    "memberof": "src/Paginas/ControleProducao.js",
+    "static": true,
+    "longname": "src/Paginas/ControleProducao.js~VisualizacaoOrdens",
+    "access": "public",
+    "description": "Estado que guarda o estado da visualização do componente ordensLista.",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "VisualizacaoOrdens",
+        "description": "true a lista de ordens esta visivel, false não esta."
+      }
+    ],
+    "type": {
+      "types": [
+        "EstadoReact"
+      ],
+      "optional": false,
+      "name": "VisualizacaoOrdens"
+    }
+  },
+  {
+    "__docId__": 123,
+    "kind": "typedef",
+    "name": "EscritaBotao",
+    "memberof": "src/Paginas/ControleProducao.js",
+    "static": true,
+    "longname": "src/Paginas/ControleProducao.js~EscritaBotao",
+    "access": "public",
+    "description": "Estado que define o que será escrito no botão que oculta ou mostra a lista de ordens.",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "EscritaBotao",
+        "description": "O que será escrito no botão, utilizado 'MOSTRAR TODAS AS ORDENS EM ANDAMENTO' ou 'ESCONDER AS ORDENS EM ANDAMENTO'."
+      }
+    ],
+    "type": {
+      "types": [
+        "EstadoReact"
+      ],
+      "optional": false,
+      "name": "EscritaBotao"
+    }
+  },
+  {
+    "__docId__": 124,
+    "kind": "function",
+    "name": "ControleProducao",
+    "memberof": "src/Paginas/ControleProducao.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/Paginas/ControleProducao.js~ControleProducao",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/Paginas/ControleProducao.js",
+    "importStyle": "ControleProducao",
+    "description": "Componente de pagina principal, Engloba os componentes principais de FormInputOP e ordensLista com botões que definem suas vizualizações.",
+    "lineNumber": 57,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{JSX.Element} Componente React de ControleProducao."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "JSX.Element"
+      ],
+      "spread": false,
+      "description": "Componente React de ControleProducao."
+    },
+    "params": []
+  },
+  {
+    "__docId__": 125,
+    "kind": "file",
+    "name": "src/reportWebVitals.js",
+    "content": "const reportWebVitals = onPerfEntry => {\n  if (onPerfEntry && onPerfEntry instanceof Function) {\n    import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {\n      getCLS(onPerfEntry);\n      getFID(onPerfEntry);\n      getFCP(onPerfEntry);\n      getLCP(onPerfEntry);\n      getTTFB(onPerfEntry);\n    });\n  }\n};\n\nexport default reportWebVitals;\n",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/reportWebVitals.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 126,
+    "kind": "function",
+    "name": "reportWebVitals",
+    "memberof": "src/reportWebVitals.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/reportWebVitals.js~reportWebVitals",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/reportWebVitals.js",
+    "importStyle": "reportWebVitals",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [
+      {
+        "name": "onPerfEntry",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 127,
+    "kind": "file",
+    "name": "src/Services/AtualizaRegistro.js",
+    "content": "export class AtualizaRegistro{\r\n    constructor(token){\r\n        this._token = token\r\n        this._url = `${process.env.REACT_APP_API_URL}/api/jestor/atualiza`\r\n    }\r\n    \r\natualizaRegistro(tabela,dados){\r\n      \r\n      fetch(this._url, {\r\n        method: 'POST',\r\n        headers: {\r\n          accept: 'application/json',\r\n          'content-type': 'application/json',\r\n          Authorization: `Bearer ${process.env.REACT_APP_token}`\r\n        },\r\n        body: JSON.stringify({\r\n          object_type: tabela,\r\n          data: dados\r\n        })\r\n      })\r\n        .then(response => response).then(response => console.log(response))\r\n        .catch(err => console.error(err));\r\n}\r\n} ",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Services/AtualizaRegistro.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 128,
+    "kind": "class",
+    "name": "AtualizaRegistro",
+    "memberof": "src/Services/AtualizaRegistro.js",
+    "static": true,
+    "longname": "src/Services/AtualizaRegistro.js~AtualizaRegistro",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/Services/AtualizaRegistro.js",
+    "importStyle": "{AtualizaRegistro}",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 129,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/Services/AtualizaRegistro.js~AtualizaRegistro",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Services/AtualizaRegistro.js~AtualizaRegistro#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true
+  },
+  {
+    "__docId__": 130,
+    "kind": "member",
+    "name": "_token",
+    "memberof": "src/Services/AtualizaRegistro.js~AtualizaRegistro",
+    "static": false,
+    "longname": "src/Services/AtualizaRegistro.js~AtualizaRegistro#_token",
+    "access": "private",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 131,
+    "kind": "member",
+    "name": "_url",
+    "memberof": "src/Services/AtualizaRegistro.js~AtualizaRegistro",
+    "static": false,
+    "longname": "src/Services/AtualizaRegistro.js~AtualizaRegistro#_url",
+    "access": "private",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 132,
+    "kind": "method",
+    "name": "atualizaRegistro",
+    "memberof": "src/Services/AtualizaRegistro.js~AtualizaRegistro",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Services/AtualizaRegistro.js~AtualizaRegistro#atualizaRegistro",
+    "access": "public",
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "params": [
+      {
+        "name": "tabela",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "dados",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 133,
+    "kind": "file",
+    "name": "src/Services/CriarRegistro.js",
+    "content": "export class CriarRegistro{\r\n\r\n    constructor(token){\r\n        this._token = token\r\n        this._url = `${process.env.REACT_APP_API_URL}/api/ordens/post`\r\n    }\r\n\r\n  criarRegistro(tabela,dado) {\r\nreturn new Promise((resolve,reject) => {\r\n  fetch(this._url, {\r\n    method: 'POST',\r\n    headers: {\r\n      accept: 'application/json',\r\n      'content-type': 'application/json',\r\n      Authorization: `Bearer ${process.env.REACT_APP_token}`\r\n    },\r\n    body : JSON.stringify({ \r\n      object_type: `${tabela}`,\r\n      data: dado})\r\n    }).then(response => {\r\n      // Verifica se a requisição foi bem-sucedida (status 2xx)\r\n      if (response.ok) {\r\n          // Se sim, retorna os dados da resposta como JSON\r\n          return response.json();\r\n      }\r\n      // Se não, rejeita a Promise com o status de erro\r\n      return Promise.reject(new Error(`Erro: ${response.statusText}`));\r\n  }).then(data => {\r\n      // Resolve a Promise com os dados da resposta\r\n      resolve(data);\r\n  })\r\n  .catch(err => {\r\n    resolve({error:`Ocorreu um erro ao criar o registro no jestor, possivelmente ordem ja foi lançada, erro : ${err}`})\r\n    reject('Ocorreu um erro ao criar o registro no Jestor. Possivelmente Esta ordem de produção ja existe no Jestor, contate o administrador:', err)\r\n  })\r\n  })\r\n  }\r\n\r\n                          \r\n  }\r\n",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Services/CriarRegistro.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 134,
+    "kind": "class",
+    "name": "CriarRegistro",
+    "memberof": "src/Services/CriarRegistro.js",
+    "static": true,
+    "longname": "src/Services/CriarRegistro.js~CriarRegistro",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/Services/CriarRegistro.js",
+    "importStyle": "{CriarRegistro}",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 135,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/Services/CriarRegistro.js~CriarRegistro",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Services/CriarRegistro.js~CriarRegistro#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true
+  },
+  {
+    "__docId__": 136,
+    "kind": "member",
+    "name": "_token",
+    "memberof": "src/Services/CriarRegistro.js~CriarRegistro",
+    "static": false,
+    "longname": "src/Services/CriarRegistro.js~CriarRegistro#_token",
+    "access": "private",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 137,
+    "kind": "member",
+    "name": "_url",
+    "memberof": "src/Services/CriarRegistro.js~CriarRegistro",
+    "static": false,
+    "longname": "src/Services/CriarRegistro.js~CriarRegistro#_url",
+    "access": "private",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 138,
+    "kind": "method",
+    "name": "criarRegistro",
+    "memberof": "src/Services/CriarRegistro.js~CriarRegistro",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Services/CriarRegistro.js~CriarRegistro#criarRegistro",
+    "access": "public",
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "params": [
+      {
+        "name": "tabela",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "dado",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 139,
+    "kind": "file",
+    "name": "src/Services/PegaRegistrosTabela.js",
+    "content": "export class PegarRegistrosTabela{\r\n    constructor(token){\r\n        this._token = token\r\n        this._url = `${process.env.REACT_APP_API_URL}/api/jestor/lista`\r\n    }\r\n    \r\n    async pegarRegistrosTabela(table){\r\n      const delay = async (ms) => {return new Promise(resolve =>setTimeout(resolve,ms))}\r\n      const maxTentativas = 30\r\n      const dadosAcumulador = []\r\n      var tentativaAtual = 0\r\n      async function pegaDadoPaginado(token, url,page=1){\r\n           try{\r\n            const response = await fetch(url, {\r\n              method: 'POST',\r\n              headers: {\r\n                accept: 'application/json',\r\n                'content-type': 'application/json',\r\n                Authorization: `Bearer ${process.env.REACT_APP_token}` \r\n               },\r\n               body: JSON.stringify({object_type: table, sort: '',page : page, size : '20000'})\r\n             })\r\n            if(!response.ok){\r\n              throw new Error (`Response not ok, status = ${response.status}`,)\r\n            }\r\n            const dados = await response.json()\r\n            dadosAcumulador.push(...dados.data.items)\r\n            if (dados.data.has_more === true) {\r\n              console.log(`Dados capturados, pagina ${page}`)\r\n             return pegaDadoPaginado(token, url, page + 1);\r\n           } else {\r\n             return dadosAcumulador;\r\n           }\r\n          }\r\n           catch(error){\r\n             if(tentativaAtual <maxTentativas){\r\n              tentativaAtual++\r\n              console.log(`Erro ${error} ao coletar os dados !!!`)\r\n              console.log(`Tentando Novamente fazer a captura dos dados, tentativa ${tentativaAtual}, maximo de ${maxTentativas}`)\r\n              await delay(10000)\r\n            return await pegaDadoPaginado(token, url, page)}\r\n            else{\r\n              console.log(error)\r\n              throw error\r\n            }\r\n             \r\n       }\r\n     }\r\n     const todosDados = await pegaDadoPaginado(this._token, this._url)\r\n     console.log(`Captura da lista de dados jestor concluida, total de ${todosDados.length} dados`)\r\n     return todosDados\r\n     }\r\n    }",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Services/PegaRegistrosTabela.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 140,
+    "kind": "class",
+    "name": "PegarRegistrosTabela",
+    "memberof": "src/Services/PegaRegistrosTabela.js",
+    "static": true,
+    "longname": "src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/Services/PegaRegistrosTabela.js",
+    "importStyle": "{PegarRegistrosTabela}",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "__docId__": 141,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true
+  },
+  {
+    "__docId__": 142,
+    "kind": "member",
+    "name": "_token",
+    "memberof": "src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela",
+    "static": false,
+    "longname": "src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela#_token",
+    "access": "private",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 143,
+    "kind": "member",
+    "name": "_url",
+    "memberof": "src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela",
+    "static": false,
+    "longname": "src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela#_url",
+    "access": "private",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 144,
+    "kind": "method",
+    "name": "pegarRegistrosTabela",
+    "memberof": "src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela#pegarRegistrosTabela",
+    "access": "public",
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "params": [
+      {
+        "name": "table",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 145,
+    "kind": "file",
+    "name": "src/Services/PegarOrdensNaoFinalizadas.js",
+    "content": "import { OrdensController } from \"../Controller/OrdensController.js\"\r\nconst ordensController = new OrdensController()\r\nexport async function PegarOrdensNaoFinalizadas(tabela){\r\n    const ordens = await ordensController.pegaDadosLista(tabela)\r\n        const ordensNaoFinalizadas =await ordens.filter(ordem => ordem.finalizado === false)\r\n        return ordensNaoFinalizadas\r\n}",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Services/PegarOrdensNaoFinalizadas.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 146,
+    "kind": "variable",
+    "name": "ordensController",
+    "memberof": "src/Services/PegarOrdensNaoFinalizadas.js",
+    "static": true,
+    "longname": "src/Services/PegarOrdensNaoFinalizadas.js~ordensController",
+    "access": "public",
+    "export": false,
+    "importPath": "controle_montagem/src/Services/PegarOrdensNaoFinalizadas.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "src/Controller/OrdensController.js~OrdensController"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 147,
+    "kind": "function",
+    "name": "PegarOrdensNaoFinalizadas",
+    "memberof": "src/Services/PegarOrdensNaoFinalizadas.js",
+    "generator": false,
+    "async": true,
+    "static": true,
+    "longname": "src/Services/PegarOrdensNaoFinalizadas.js~PegarOrdensNaoFinalizadas",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/Services/PegarOrdensNaoFinalizadas.js",
+    "importStyle": "{PegarOrdensNaoFinalizadas}",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "params": [
+      {
+        "name": "tabela",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 148,
+    "kind": "file",
+    "name": "src/setupTests.js",
+    "content": "// jest-dom adds custom jest matchers for asserting on DOM nodes.\n// allows you to do things like:\n// expect(element).toHaveTextContent(/react/i)\n// learn more: https://github.com/testing-library/jest-dom\nimport '@testing-library/jest-dom';\n",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/setupTests.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "kind": "index",
+    "content": "# Getting Started with Create React App\n\nThis project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).\n\n## Available Scripts\n\nIn the project directory, you can run:\n\n### `npm start`\n\nRuns the app in the development mode.\\\nOpen [http://localhost:3000](http://localhost:3000) to view it in your browser.\n\nThe page will reload when you make changes.\\\nYou may also see any lint errors in the console.\n\n### `npm test`\n\nLaunches the test runner in the interactive watch mode.\\\nSee the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.\n\n### `npm run build`\n\nBuilds the app for production to the `build` folder.\\\nIt correctly bundles React in production mode and optimizes the build for the best performance.\n\nThe build is minified and the filenames include the hashes.\\\nYour app is ready to be deployed!\n\nSee the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.\n\n### `npm run eject`\n\n**Note: this is a one-way operation. Once you `eject`, you can't go back!**\n\nIf you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.\n\nInstead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.\n\nYou don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.\n\n## Learn More\n\nYou can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).\n\nTo learn React, check out the [React documentation](https://reactjs.org/).\n\n### Code Splitting\n\nThis section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)\n\n### Analyzing the Bundle Size\n\nThis section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)\n\n### Making a Progressive Web App\n\nThis section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)\n\n### Advanced Configuration\n\nThis section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)\n\n### Deployment\n\nThis section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)\n\n### `npm run build` fails to minify\n\nThis section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)\n",
+    "longname": "C:\\Users\\ferri\\Projetos\\controle_montagem_mesas\\README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\r\n  \"name\": \"controle_montagem\",\r\n  \"version\": \"0.1.0\",\r\n  \"private\": true,\r\n  \"type\": \"module\",\r\n  \"dependencies\": {\r\n    \"@babel/plugin-proposal-private-property-in-object\": \"^7.16.5\",\r\n    \"@testing-library/jest-dom\": \"^5.17.0\",\r\n    \"@testing-library/react\": \"^13.4.0\",\r\n    \"@testing-library/user-event\": \"^13.5.0\",\r\n    \"components\": \"^0.1.0\",\r\n    \"dotenv\": \"^16.4.5\",\r\n    \"esdoc\": \"^1.1.0\",\r\n    \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\r\n    \"esdoc-jsx-plugin\": \"^1.0.0\",\r\n    \"esdoc-publish-html-plugin\": \"^1.1.2\",\r\n    \"esdoc-react-plugin\": \"^1.0.1\",\r\n    \"esdoc-standard-plugin\": \"^1.0.0\",\r\n    \"moment\": \"^2.30.1\",\r\n    \"nth-check\": \"^2.1.1\",\r\n    \"react\": \"^18.2.0\",\r\n    \"react-dom\": \"^18.2.0\",\r\n    \"react-modal\": \"^3.16.1\",\r\n    \"react-router\": \"^6.22.3\",\r\n    \"react-router-dom\": \"^6.22.3\",\r\n    \"react-script\": \"^2.0.5\",\r\n    \"react-scripts\": \"5.0.1\",\r\n    \"styled\": \"^1.0.0\",\r\n    \"styled-components\": \"^6.1.8\",\r\n    \"uuid\": \"^9.0.1\",\r\n    \"vercel\": \"^33.5.3\",\r\n    \"web-vitals\": \"^2.1.4\"\r\n  },\r\n  \"scripts\": {\r\n    \"start\": \"react-scripts start\",\r\n    \"build\": \"react-scripts build\",\r\n    \"test\": \"react-scripts test\",\r\n    \"eject\": \"react-scripts eject\"\r\n  },\r\n  \"eslintConfig\": {\r\n    \"extends\": [\r\n      \"react-app\",\r\n      \"react-app/jest\"\r\n    ]\r\n  },\r\n  \"browserslist\": {\r\n    \"production\": [\r\n      \">0.2%\",\r\n      \"not dead\",\r\n      \"not op_mini all\"\r\n    ],\r\n    \"development\": [\r\n      \"last 1 chrome version\",\r\n      \"last 1 firefox version\",\r\n      \"last 1 safari version\"\r\n    ]\r\n  },\r\n  \"devDependencies\": {\r\n    \"webpack-dev-server\": \"^4.15.1\"\r\n  }\r\n}\r\n",
+    "longname": "C:\\Users\\ferri\\Projetos\\controle_montagem_mesas\\package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]

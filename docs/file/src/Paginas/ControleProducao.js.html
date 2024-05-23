@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/Paginas/ControleProducao.js | controle_montagem</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-App">App</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-reportWebVitals">reportWebVitals</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LoginConferencia">LoginConferencia</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LoginLocalStorage">LoginLocalStorage</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#bd">BD</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-mesas">mesas</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-motivosPausas">motivosPausas</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-motivosRetrabalho">motivosRetrabalho</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-turnos">turnos</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-botao">Components/Botao</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Botao">Botao</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-forminputop">Components/FormInputOP</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-FormInputOP">FormInputOP</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-InputsMatricula">InputsMatricula</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Matriculas">Matriculas</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Mesa">Mesa</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-NumeroOP">NumeroOP</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-QuantidadeFuncionario">QuantidadeFuncionario</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Turno">Turno</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-header">Components/Header</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Header">Header</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-imagem">Components/Imagem</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Imagem">Imagem</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-input">Components/Input</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Input">Input</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-label">Components/Label</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Label">Label</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-login">Components/Login</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Login">Login</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Senha">Senha</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Usuario">Usuario</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-protectedroute">Components/ProtectedRoute</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ProtectedRoute">ProtectedRoute</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-select">Components/Select</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Select">Select</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-select-option">Components/Select/Option</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Option">Option</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-titulo1">Components/Titulo1</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Titulo1">Titulo1</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-titulo2">Components/Titulo2</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Titulo2">Titulo2</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-titulo4">Components/Titulo4</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Titulo4">Titulo4</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#controller">Controller</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Controller/OrdensController.js~OrdensController.html">OrdensController</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#helpers">Helpers</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Delay">Delay</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tranformarDataEmString">tranformarDataEmString</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#paginas">Paginas</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ControleProducao">ControleProducao</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EscritaBotao">EscritaBotao</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-EscritaBotaoForm">EscritaBotaoForm</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LocalStorage">LocalStorage</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Ordens">Ordens</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-VisualizacaoForm">VisualizacaoForm</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-VisualizacaoOrdens">VisualizacaoOrdens</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services">Services</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/AtualizaRegistro.js~AtualizaRegistro.html">AtualizaRegistro</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/CriarRegistro.js~CriarRegistro.html">CriarRegistro</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela.html">PegarRegistrosTabela</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-PegarOrdensNaoFinalizadas">PegarOrdensNaoFinalizadas</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/Paginas/ControleProducao.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { useEffect, useState } from &quot;react&quot;
+import OrdensLista from &quot;../Components/OrdensLista/OrdensLista.js&quot;
+import Botao from &quot;../Components/Botao/Botao.js&quot;
+import FormInputOP from &quot;../Components/FormInputOP/FormInputOP.js&quot;
+import styled from &quot;styled-components&quot;
+
+/**
+ * Style-Component simples de div para servir de container dos outros componentes de ControleProducao.
+ */
+const ControleContainer = styled.div`
+display: flex;
+flex-direction: column;
+width:100%;
+align-items:center;
+`
+
+/**
+ * Estado que define o estado da visualiza&#xE7;&#xE3;o do componente FormInputOP no componente ControleProducao.
+ * @typedef {EstadoReact} VisualizacaoForm 
+ * @property {boolean} VisualizacaoForm True o Formulario esta visivel, False n&#xE3;o esta.
+ */
+
+/**
+ * Estado que define o que sera escrito no bot&#xE3;o que oculta ou mostra o formulario.
+ * @typedef {EstadoReact} EscritaBotaoForm 
+ * @property {string} EscritaBotaoForm O que ser&#xE1; escrito no bot&#xE3;o, utilizado &apos;ADICIONAR NOVA ORDEM DE PRODU&#xC7;&#xC3;O&apos; ou &apos;CANCELAR&apos;.
+ */
+
+/**
+ * Estado que guarda os dados do banco de dados &apos;ordensNaoFinalizadas&apos; da localstorage.
+ * @typedef {EstadoReact} LocalStorage
+ * @property {Array&lt;Object&gt;} LocalStorage Array de objetos contendo as informa&#xE7;&#xF5;es das ordensN&#xE3;oFinalizadas do localstorage. 
+ */
+
+/**
+ * Estado que guarda a informa&#xE7;&#xE3;o das ordens que devem aparecer na lista, Sempre ser&#xE1; o mesmo valor que o estado LocalStorage. Possui useEffect que define seu valor automaticamente quando alterado o estado LocalStorage.
+ * @typedef {EstadoReact} Ordens
+ * @property {Array&lt;Object&gt;} Ordens Dados do estado LocalStorage. 
+ */
+
+/**
+ * Estado que guarda o estado da visualiza&#xE7;&#xE3;o do componente ordensLista.
+ * @typedef {EstadoReact} VisualizacaoOrdens
+ * @property {boolean} VisualizacaoOrdens true a lista de ordens esta visivel, false n&#xE3;o esta.
+ */
+
+/**
+ * Estado que define o que ser&#xE1; escrito no bot&#xE3;o que oculta ou mostra a lista de ordens.
+ * @typedef {EstadoReact} EscritaBotao
+ * @property {string} EscritaBotao O que ser&#xE1; escrito no bot&#xE3;o, utilizado &apos;MOSTRAR TODAS AS ORDENS EM ANDAMENTO&apos; ou &apos;ESCONDER AS ORDENS EM ANDAMENTO&apos;.
+ */
+
+/**
+ * Componente de pagina principal, Engloba os componentes principais de FormInputOP e ordensLista com bot&#xF5;es que definem suas vizualiza&#xE7;&#xF5;es.
+ * @returns {JSX.Element} Componente React de ControleProducao.
+ */
+function ControleProducao(){
+    
+  /**
+   * Estado React que define se o formulario esta visivel ou n&#xE3;o.
+   * @type {[boolean, React.Dispatch&lt;React.SetStateAction&lt;boolean&gt;&gt;]}
+   */
+    const [VisualizacaoForm, setVisualizacaoForm] = useState(false)
+
+    /**
+   * Estado que define o que sera escrito no bot&#xE3;o que oculta ou mostra o formulario.
+   * @type {[string, React.Dispatch&lt;React.SetStateAction&lt;string&gt;&gt;]}
+   */
+    const [EscritaBotaoForm , setEscritaBotaoForm] = useState(&apos;ADICIONAR NOVA ORDEM DE PRODU&#xC7;&#xC3;O&apos;)
+    
+    /**
+   * Estado que guarda os valores da localstorage de ordensNaoFinalizadas
+   * @type {[Array, React.Dispatch&lt;React.SetStateAction&lt;Array&gt;&gt;]}
+   */
+    const [LocalStorage,setLocalStorage] = useState([])
+    
+    /**
+   * Estado que guarda as ordens que devem aparecer na lista.
+   * @type {[Array, React.Dispatch&lt;React.SetStateAction&lt;Array&gt;&gt;]}
+   */
+    const [Ordens, setOrdens] = useState(LocalStorage)
+    
+    /**
+   * Estado que define se a lista de ordens esta visivel ou n&#xE3;o.
+   * @type {[boolean, React.Dispatch&lt;React.SetStateAction&lt;boolean&gt;&gt;]}
+   */
+    const [VisualizacaoOrdens,setVisualizacaoOrdens] = useState(false)
+   
+    /**
+   * Estado que define o que sera escrito no bot&#xE3;o que oculta ou mostra a lista de ordens.
+   * @type {[string, React.Dispatch&lt;React.SetStateAction&lt;string&gt;&gt;]}
+   */
+    const [EscritaBotao, setEscritaBotao] = useState(&apos;MOSTRAR TODAS AS ORDENS EM ANDAMENTO&apos;)
+
+   /**
+    * Altera a visualiza&#xE7;&#xE3;o do formul&#xE1;rio e o que ser&#xE1; escrito no bot&#xE3;o atrav&#xE9;s dos estados VisualizacaoForm e EscritaBotaoForm.
+    */
+    async function ApareceEscondeFormNovaOrdem(){
+        if(VisualizacaoForm === false){
+          setVisualizacaoForm(true)
+          setEscritaBotaoForm(&apos;CANCELAR&apos;)
+        }else{
+          setVisualizacaoForm(false)
+          setEscritaBotaoForm(&apos;ADICIONAR NOVA ORDEM DE PRODU&#xC7;&#xC3;O&apos;)
+        }
+       }
+
+      /**
+       * Altera a visualiza&#xE7;&#xE3;o da lista de ordens e o que ser&#xE1; escrito no bot&#xE3;o atrav&#xE9;s dos estados VisualizacaoOrdens e EscritaBotao.
+       */
+    async function PegarOrdens(){
+        setLocalStorage(JSON.parse(localStorage.getItem(&apos;ordensNaoFinalizadas&apos;) || &quot;[]&quot;))
+        if(VisualizacaoOrdens === false){
+          setVisualizacaoOrdens(true)
+          setEscritaBotao(&apos;ESCONDER AS ORDENS EM ANDAMENTO&apos;)
+        }else{
+          setVisualizacaoOrdens(false)
+          setEscritaBotao(&apos;MOSTRAR TODAS AS ORDENS EM ANDAMENTO&apos;)
+        }
+   }
+
+      /**
+        * Sempre que LocalStorage mudar define Ordens com o mesmo valor para manter a lista de ordens exibidas com os dados das ordens n&#xE3;o finalizadas.
+        */
+    useEffect(() =&gt; {
+        setOrdens(LocalStorage); 
+      },[LocalStorage])
+
+    return(
+    &lt;ControleContainer&gt;
+
+      &lt;Botao 
+      onClick={ApareceEscondeFormNovaOrdem} 
+      width=&apos;30%&apos; 
+      border=&apos;solid 0.5px black&apos; 
+      boxshadow=&apos;2px 2px 2px 1px rgba(0, 0, 0, 0.2);&apos; 
+      padding=&apos;10px 5px&apos; 
+      border_radius=&apos;5px&apos; 
+      margin=&apos;5px 0px&apos; 
+      color=&apos;black&apos; 
+      backgroundcolor={VisualizacaoForm ? &apos;#e3934d&apos; :  &apos;#468de3&apos; }
+      font_size=&apos;24px&apos;&gt;
+      {EscritaBotaoForm}
+      &lt;/Botao&gt; 
+      {VisualizacaoForm === true ? 
+      &lt;FormInputOP LocalStorage={LocalStorage} setLocalStorage={setLocalStorage} ordens= {Ordens}&gt;&lt;/FormInputOP&gt;
+      : 
+      &apos;&apos;
+      }
+  &lt;Botao 
+  onClick={PegarOrdens} 
+  width=&apos;30%&apos; 
+  border=&apos;solid 0.5px black&apos; 
+  boxshadow=&apos;2px 2px 2px 1px rgba(0, 0, 0, 0.2);&apos; 
+  padding=&apos;10px 5px&apos; 
+  border_radius=&apos;5px&apos; 
+  margin=&apos;5px 0px&apos; 
+  backgroundcolor=&apos;#468de3&apos; 
+  font_size=&apos;24px&apos;&gt;
+    {EscritaBotao}
+    &lt;/Botao&gt;
+  {VisualizacaoOrdens &amp;&amp; &lt;OrdensLista ordens={Ordens}  setOrdens = {setOrdens} setLocalStorage={setLocalStorage}/&gt;}
+    &lt;/ControleContainer&gt;
+    
+    )
+}
+
+export default ControleProducao</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

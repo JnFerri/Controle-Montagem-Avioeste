@@ -12,11 +12,42 @@ import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute.js';
 import isPropValid from '@emotion/is-prop-valid';
 import { StyleSheetManager } from 'styled-components';
 
+/**
+ * Estado de login conferido.
+ * @typedef {EstadoReact} LoginConferencia 
+ * @property {boolean} LoginConferencia - Indica se o login foi conferido.
+ */
+
+/**
+ * Estado React que guarda os dados de Login do localstorage.
+ * @typedef {EstadoReact} LoginLocalStorage
+ * @property {Array<Object>} LoginLocalStorage- Dados do banco de dados localstorage 'Login'
+ */
+
+
+/**
+ * Componente principal APP, utiliza react-router.
+ * @returns {JSX.Element}
+ * @example
+ * 
+ */
 
 function App() {
-  const [LoginConferencia, setLoginConferencia] = useState(false)
+
+  /**
+   * Estado React que guarda informação se o usuario esta logado ou não.
+   * @type {[boolean, React.Dispatch<React.SetStateAction<boolean>>]}
+   */
+  const [LoginConferencia,setLoginConferencia] = useState(false)
+  /**
+   * Estado que indica se o login foi conferido.
+   * @type {[Array<Object>, React.Dispatch<React.SetStateAction<Array<Object>>>]}
+   */
   const [LoginLocalStorage, setLoginLocalStorage] = useState(JSON.parse(localStorage.getItem('Login')) || [])
   
+  /**
+   * Ao carregar a pagina ou alterar o valor do estado LoginLocalStorage envia as informações do login do localStorage para o servidor com metodo post, caso seja iguais as informações de login no servidor retorna true ou false e define o estado de LoginConferencia.
+   */
   useEffect(() => {
     async function confereLoginLocalStorage(){
       const loginStorage = JSON.parse(localStorage.getItem('Login'))
@@ -42,11 +73,16 @@ function App() {
     confereLoginLocalStorage()
   },[setLoginConferencia, LoginLocalStorage])
 
-
+  /**
+   * Props de Login
+   */
    const todosOsDadosLogin = {
     setLoginConferencia,setLoginLocalStorage,LoginConferencia,LoginLocalStorage
    }
 
+   /**
+    * Verifica se todas as props dos componentes utilizadas no styled-components são validas para evitar avisos no console.
+    */
    function shouldForwardProp(propName, target) {
     if (typeof target === "string") {
         // For HTML elements, forward the prop if it is a valid HTML attribute
@@ -66,8 +102,6 @@ function App() {
        <Routes>
          <Route path="/"  element={<Login todosOsDadosLogin={{...todosOsDadosLogin}} />} />
          <Route path="/controleProducao" element={<ProtectedRoute component={ControleProducao} isAuthenticated={LoginConferencia} />} />
-  
-         {/* Outras rotas protegidas */}
        </Routes>
      </BrowserRouter>
      </StyleSheetManager>

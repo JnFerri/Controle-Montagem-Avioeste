@@ -1,0 +1,1797 @@
+{
+  "type": "File",
+  "start": 0,
+  "end": 242,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 6,
+      "column": 20
+    }
+  },
+  "program": {
+    "type": "Program",
+    "start": 0,
+    "end": 242,
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 6,
+        "column": 20
+      }
+    },
+    "sourceType": "module",
+    "body": [
+      {
+        "type": "Identifier",
+        "start": 43,
+        "end": 218,
+        "loc": {
+          "start": {
+            "line": 4,
+            "column": 0
+          },
+          "end": {
+            "line": 4,
+            "column": 175
+          }
+        },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 49,
+            "end": 218,
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 6
+              },
+              "end": {
+                "line": 4,
+                "column": 175
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 49,
+              "end": 54,
+              "loc": {
+                "start": {
+                  "line": 4,
+                  "column": 6
+                },
+                "end": {
+                  "line": 4,
+                  "column": 11
+                },
+                "identifierName": "mesas"
+              },
+              "name": "mesas",
+              "leadingComments": null
+            },
+            "init": {
+              "type": "ArrayExpression",
+              "start": 57,
+              "end": 218,
+              "loc": {
+                "start": {
+                  "line": 4,
+                  "column": 14
+                },
+                "end": {
+                  "line": 4,
+                  "column": 175
+                }
+              },
+              "elements": [
+                {
+                  "type": "StringLiteral",
+                  "start": 58,
+                  "end": 67,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 15
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 24
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Mesa 01",
+                    "raw": "'Mesa 01'"
+                  },
+                  "value": "Mesa 01"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 68,
+                  "end": 77,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 25
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 34
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Mesa 02",
+                    "raw": "'Mesa 02'"
+                  },
+                  "value": "Mesa 02"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 78,
+                  "end": 87,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 35
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 44
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Mesa 03",
+                    "raw": "'Mesa 03'"
+                  },
+                  "value": "Mesa 03"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 88,
+                  "end": 97,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 45
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 54
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Mesa 04",
+                    "raw": "'Mesa 04'"
+                  },
+                  "value": "Mesa 04"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 98,
+                  "end": 107,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 55
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 64
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Mesa 05",
+                    "raw": "'Mesa 05'"
+                  },
+                  "value": "Mesa 05"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 108,
+                  "end": 117,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 65
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 74
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Mesa 06",
+                    "raw": "'Mesa 06'"
+                  },
+                  "value": "Mesa 06"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 118,
+                  "end": 127,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 75
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 84
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Mesa 07",
+                    "raw": "'Mesa 07'"
+                  },
+                  "value": "Mesa 07"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 128,
+                  "end": 147,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 85
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 104
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Célula Exaustores",
+                    "raw": "'Célula Exaustores'"
+                  },
+                  "value": "Célula Exaustores"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 149,
+                  "end": 163,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 106
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 120
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Célula Ninho",
+                    "raw": "'Célula Ninho'"
+                  },
+                  "value": "Célula Ninho"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 165,
+                  "end": 174,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 122
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 131
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Mesa 08",
+                    "raw": "'Mesa 08'"
+                  },
+                  "value": "Mesa 08"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 175,
+                  "end": 184,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 132
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 141
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Mesa 09",
+                    "raw": "'Mesa 09'"
+                  },
+                  "value": "Mesa 09"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 186,
+                  "end": 195,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 143
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 152
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Mesa 10",
+                    "raw": "'Mesa 10'"
+                  },
+                  "value": "Mesa 10"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 197,
+                  "end": 206,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 154
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 163
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Mesa 11",
+                    "raw": "'Mesa 11'"
+                  },
+                  "value": "Mesa 11"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 208,
+                  "end": 217,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 165
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 174
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Mesa 12",
+                    "raw": "'Mesa 12'"
+                  },
+                  "value": "Mesa 12"
+                }
+              ]
+            },
+            "leadingComments": null
+          }
+        ],
+        "kind": "const",
+        "leadingComments": [],
+        "name": "_",
+        "trailingComments": []
+      },
+      {
+        "type": "Identifier",
+        "start": 222,
+        "end": 242,
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 0
+          },
+          "end": {
+            "line": 6,
+            "column": 20
+          }
+        },
+        "declaration": {
+          "type": "Identifier",
+          "start": 237,
+          "end": 242,
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 15
+            },
+            "end": {
+              "line": 6,
+              "column": 20
+            },
+            "identifierName": "mesas"
+          },
+          "name": "mesas"
+        },
+        "name": "_",
+        "leadingComments": [],
+        "trailingComments": []
+      },
+      {
+        "type": "ExportDefaultDeclaration",
+        "start": 222,
+        "end": 242,
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 0
+          },
+          "end": {
+            "line": 6,
+            "column": 20
+          }
+        },
+        "declaration": {
+          "type": "VariableDeclaration",
+          "start": 43,
+          "end": 218,
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 0
+            },
+            "end": {
+              "line": 4,
+              "column": 175
+            }
+          },
+          "declarations": [
+            {
+              "type": "VariableDeclarator",
+              "start": 49,
+              "end": 218,
+              "loc": {
+                "start": {
+                  "line": 4,
+                  "column": 6
+                },
+                "end": {
+                  "line": 4,
+                  "column": 175
+                }
+              },
+              "id": {
+                "type": "Identifier",
+                "start": 49,
+                "end": 54,
+                "loc": {
+                  "start": {
+                    "line": 4,
+                    "column": 6
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 11
+                  },
+                  "identifierName": "mesas"
+                },
+                "name": "mesas",
+                "leadingComments": null
+              },
+              "init": {
+                "type": "ArrayExpression",
+                "start": 57,
+                "end": 218,
+                "loc": {
+                  "start": {
+                    "line": 4,
+                    "column": 14
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 175
+                  }
+                },
+                "elements": [
+                  {
+                    "type": "StringLiteral",
+                    "start": 58,
+                    "end": 67,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 15
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 24
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Mesa 01",
+                      "raw": "'Mesa 01'"
+                    },
+                    "value": "Mesa 01"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 68,
+                    "end": 77,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 25
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 34
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Mesa 02",
+                      "raw": "'Mesa 02'"
+                    },
+                    "value": "Mesa 02"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 78,
+                    "end": 87,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 35
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 44
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Mesa 03",
+                      "raw": "'Mesa 03'"
+                    },
+                    "value": "Mesa 03"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 88,
+                    "end": 97,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 45
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 54
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Mesa 04",
+                      "raw": "'Mesa 04'"
+                    },
+                    "value": "Mesa 04"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 98,
+                    "end": 107,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 55
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 64
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Mesa 05",
+                      "raw": "'Mesa 05'"
+                    },
+                    "value": "Mesa 05"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 108,
+                    "end": 117,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 65
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 74
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Mesa 06",
+                      "raw": "'Mesa 06'"
+                    },
+                    "value": "Mesa 06"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 118,
+                    "end": 127,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 75
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 84
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Mesa 07",
+                      "raw": "'Mesa 07'"
+                    },
+                    "value": "Mesa 07"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 128,
+                    "end": 147,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 85
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 104
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Célula Exaustores",
+                      "raw": "'Célula Exaustores'"
+                    },
+                    "value": "Célula Exaustores"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 149,
+                    "end": 163,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 106
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 120
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Célula Ninho",
+                      "raw": "'Célula Ninho'"
+                    },
+                    "value": "Célula Ninho"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 165,
+                    "end": 174,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 122
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 131
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Mesa 08",
+                      "raw": "'Mesa 08'"
+                    },
+                    "value": "Mesa 08"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 175,
+                    "end": 184,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 132
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 141
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Mesa 09",
+                      "raw": "'Mesa 09'"
+                    },
+                    "value": "Mesa 09"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 186,
+                    "end": 195,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 143
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 152
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Mesa 10",
+                      "raw": "'Mesa 10'"
+                    },
+                    "value": "Mesa 10"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 197,
+                    "end": 206,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 154
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 163
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Mesa 11",
+                      "raw": "'Mesa 11'"
+                    },
+                    "value": "Mesa 11"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 208,
+                    "end": 217,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 165
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 174
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Mesa 12",
+                      "raw": "'Mesa 12'"
+                    },
+                    "value": "Mesa 12"
+                  }
+                ]
+              },
+              "leadingComments": null
+            }
+          ],
+          "kind": "const",
+          "leadingComments": [
+            {
+              "type": "CommentBlock",
+              "value": "*\r\n * Array com o nome das mesas. \r\n ",
+              "start": 0,
+              "end": 41,
+              "loc": {
+                "start": {
+                  "line": 1,
+                  "column": 0
+                },
+                "end": {
+                  "line": 3,
+                  "column": 3
+                }
+              }
+            }
+          ],
+          "trailingComments": []
+        }
+      }
+    ],
+    "directives": []
+  },
+  "comments": [
+    {
+      "type": "CommentBlock",
+      "value": "*\r\n * Array com o nome das mesas. \r\n ",
+      "start": 0,
+      "end": 41,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 3,
+          "column": 3
+        }
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "type": "CommentBlock",
+      "value": "*\r\n * Array com o nome das mesas. \r\n ",
+      "start": 0,
+      "end": 41,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 3,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "const",
+        "keyword": "const",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "const",
+      "start": 43,
+      "end": 48,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "mesas",
+      "start": 49,
+      "end": 54,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 6
+        },
+        "end": {
+          "line": 4,
+          "column": 11
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": true,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "=",
+      "start": 55,
+      "end": 56,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 12
+        },
+        "end": {
+          "line": 4,
+          "column": 13
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "[",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 57,
+      "end": 58,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 14
+        },
+        "end": {
+          "line": 4,
+          "column": 15
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Mesa 01",
+      "start": 58,
+      "end": 67,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 15
+        },
+        "end": {
+          "line": 4,
+          "column": 24
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 67,
+      "end": 68,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 24
+        },
+        "end": {
+          "line": 4,
+          "column": 25
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Mesa 02",
+      "start": 68,
+      "end": 77,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 25
+        },
+        "end": {
+          "line": 4,
+          "column": 34
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 77,
+      "end": 78,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 34
+        },
+        "end": {
+          "line": 4,
+          "column": 35
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Mesa 03",
+      "start": 78,
+      "end": 87,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 35
+        },
+        "end": {
+          "line": 4,
+          "column": 44
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 87,
+      "end": 88,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 44
+        },
+        "end": {
+          "line": 4,
+          "column": 45
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Mesa 04",
+      "start": 88,
+      "end": 97,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 45
+        },
+        "end": {
+          "line": 4,
+          "column": 54
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 97,
+      "end": 98,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 54
+        },
+        "end": {
+          "line": 4,
+          "column": 55
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Mesa 05",
+      "start": 98,
+      "end": 107,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 55
+        },
+        "end": {
+          "line": 4,
+          "column": 64
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 107,
+      "end": 108,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 64
+        },
+        "end": {
+          "line": 4,
+          "column": 65
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Mesa 06",
+      "start": 108,
+      "end": 117,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 65
+        },
+        "end": {
+          "line": 4,
+          "column": 74
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 117,
+      "end": 118,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 74
+        },
+        "end": {
+          "line": 4,
+          "column": 75
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Mesa 07",
+      "start": 118,
+      "end": 127,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 75
+        },
+        "end": {
+          "line": 4,
+          "column": 84
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 127,
+      "end": 128,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 84
+        },
+        "end": {
+          "line": 4,
+          "column": 85
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Célula Exaustores",
+      "start": 128,
+      "end": 147,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 85
+        },
+        "end": {
+          "line": 4,
+          "column": 104
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 147,
+      "end": 148,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 104
+        },
+        "end": {
+          "line": 4,
+          "column": 105
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Célula Ninho",
+      "start": 149,
+      "end": 163,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 106
+        },
+        "end": {
+          "line": 4,
+          "column": 120
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 163,
+      "end": 164,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 120
+        },
+        "end": {
+          "line": 4,
+          "column": 121
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Mesa 08",
+      "start": 165,
+      "end": 174,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 122
+        },
+        "end": {
+          "line": 4,
+          "column": 131
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 174,
+      "end": 175,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 131
+        },
+        "end": {
+          "line": 4,
+          "column": 132
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Mesa 09",
+      "start": 175,
+      "end": 184,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 132
+        },
+        "end": {
+          "line": 4,
+          "column": 141
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 184,
+      "end": 185,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 141
+        },
+        "end": {
+          "line": 4,
+          "column": 142
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Mesa 10",
+      "start": 186,
+      "end": 195,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 143
+        },
+        "end": {
+          "line": 4,
+          "column": 152
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 195,
+      "end": 196,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 152
+        },
+        "end": {
+          "line": 4,
+          "column": 153
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Mesa 11",
+      "start": 197,
+      "end": 206,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 154
+        },
+        "end": {
+          "line": 4,
+          "column": 163
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 206,
+      "end": 207,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 163
+        },
+        "end": {
+          "line": 4,
+          "column": 164
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Mesa 12",
+      "start": 208,
+      "end": 217,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 165
+        },
+        "end": {
+          "line": 4,
+          "column": 174
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "]",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 217,
+      "end": 218,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 174
+        },
+        "end": {
+          "line": 4,
+          "column": 175
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "export",
+        "keyword": "export",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "export",
+      "start": 222,
+      "end": 228,
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 6
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "default",
+        "keyword": "default",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "default",
+      "start": 229,
+      "end": 236,
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 7
+        },
+        "end": {
+          "line": 6,
+          "column": 14
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "mesas",
+      "start": 237,
+      "end": 242,
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 15
+        },
+        "end": {
+          "line": 6,
+          "column": 20
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "eof",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 242,
+      "end": 242,
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 20
+        },
+        "end": {
+          "line": 6,
+          "column": 20
+        }
+      }
+    }
+  ]
+}

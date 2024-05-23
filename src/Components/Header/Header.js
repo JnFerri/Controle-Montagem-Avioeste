@@ -3,6 +3,9 @@ import Imagem from "../Imagem/Imagem.js"
 import Logo from "../../images/logo.png"
 import Titulo1 from "../Titulo1/Titulo1.js"
 
+/**
+ * styled-component de header.
+ */
 const HeaderContainer = styled.header`
 display:flex;
 align-items:center;
@@ -12,14 +15,19 @@ background-color: white;
 width:100%;
 
 `
-
+/**
+ * styled-component de div que serve de container dos outros componentes.
+ */
 const HeaderBox = styled.div`
 width:40%;
 display:flex;
 align-items:center;
 `
 
-
+/**
+ * Componente simples de Header.
+ * @returns {JSX.Element} Componente React Header
+ */
 function Header(){
     return(
         <HeaderContainer>

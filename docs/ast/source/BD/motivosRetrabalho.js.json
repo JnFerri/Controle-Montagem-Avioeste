@@ -1,0 +1,1146 @@
+{
+  "type": "File",
+  "start": 0,
+  "end": 268,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 6,
+      "column": 32
+    }
+  },
+  "program": {
+    "type": "Program",
+    "start": 0,
+    "end": 268,
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 6,
+        "column": 32
+      }
+    },
+    "sourceType": "module",
+    "body": [
+      {
+        "type": "Identifier",
+        "start": 50,
+        "end": 232,
+        "loc": {
+          "start": {
+            "line": 4,
+            "column": 0
+          },
+          "end": {
+            "line": 4,
+            "column": 182
+          }
+        },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 56,
+            "end": 232,
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 6
+              },
+              "end": {
+                "line": 4,
+                "column": 182
+              }
+            },
+            "id": {
+              "type": "Identifier",
+              "start": 56,
+              "end": 73,
+              "loc": {
+                "start": {
+                  "line": 4,
+                  "column": 6
+                },
+                "end": {
+                  "line": 4,
+                  "column": 23
+                },
+                "identifierName": "motivosRetrabalho"
+              },
+              "name": "motivosRetrabalho",
+              "leadingComments": null
+            },
+            "init": {
+              "type": "ArrayExpression",
+              "start": 76,
+              "end": 232,
+              "loc": {
+                "start": {
+                  "line": 4,
+                  "column": 26
+                },
+                "end": {
+                  "line": 4,
+                  "column": 182
+                }
+              },
+              "elements": [
+                {
+                  "type": "StringLiteral",
+                  "start": 77,
+                  "end": 100,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 27
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 50
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Fornecedor (Material)",
+                    "raw": "'Fornecedor (Material)'"
+                  },
+                  "value": "Fornecedor (Material)"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 102,
+                  "end": 119,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 52
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 69
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Dobra Incorreta",
+                    "raw": "'Dobra Incorreta'"
+                  },
+                  "value": "Dobra Incorreta"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 121,
+                  "end": 140,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 71
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 90
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Furação Incorreta",
+                    "raw": "'Furação Incorreta'"
+                  },
+                  "value": "Furação Incorreta"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 142,
+                  "end": 159,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 92
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 109
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Corte Incorreto",
+                    "raw": "'Corte Incorreto'"
+                  },
+                  "value": "Corte Incorreto"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 161,
+                  "end": 191,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 111
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 141
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Erro de Projeto (Engenharia)",
+                    "raw": "'Erro de Projeto (Engenharia)'"
+                  },
+                  "value": "Erro de Projeto (Engenharia)"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 193,
+                  "end": 211,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 143
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 161
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Falha de Injeção",
+                    "raw": "'Falha de Injeção'"
+                  },
+                  "value": "Falha de Injeção"
+                },
+                {
+                  "type": "StringLiteral",
+                  "start": 213,
+                  "end": 231,
+                  "loc": {
+                    "start": {
+                      "line": 4,
+                      "column": 163
+                    },
+                    "end": {
+                      "line": 4,
+                      "column": 181
+                    }
+                  },
+                  "extra": {
+                    "rawValue": "Erro de Montagem",
+                    "raw": "'Erro de Montagem'"
+                  },
+                  "value": "Erro de Montagem"
+                }
+              ]
+            },
+            "leadingComments": null
+          }
+        ],
+        "kind": "const",
+        "leadingComments": [],
+        "name": "_",
+        "trailingComments": []
+      },
+      {
+        "type": "Identifier",
+        "start": 236,
+        "end": 268,
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 0
+          },
+          "end": {
+            "line": 6,
+            "column": 32
+          }
+        },
+        "declaration": {
+          "type": "Identifier",
+          "start": 251,
+          "end": 268,
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 15
+            },
+            "end": {
+              "line": 6,
+              "column": 32
+            },
+            "identifierName": "motivosRetrabalho"
+          },
+          "name": "motivosRetrabalho"
+        },
+        "name": "_",
+        "leadingComments": [],
+        "trailingComments": []
+      },
+      {
+        "type": "ExportDefaultDeclaration",
+        "start": 236,
+        "end": 268,
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 0
+          },
+          "end": {
+            "line": 6,
+            "column": 32
+          }
+        },
+        "declaration": {
+          "type": "VariableDeclaration",
+          "start": 50,
+          "end": 232,
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 0
+            },
+            "end": {
+              "line": 4,
+              "column": 182
+            }
+          },
+          "declarations": [
+            {
+              "type": "VariableDeclarator",
+              "start": 56,
+              "end": 232,
+              "loc": {
+                "start": {
+                  "line": 4,
+                  "column": 6
+                },
+                "end": {
+                  "line": 4,
+                  "column": 182
+                }
+              },
+              "id": {
+                "type": "Identifier",
+                "start": 56,
+                "end": 73,
+                "loc": {
+                  "start": {
+                    "line": 4,
+                    "column": 6
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 23
+                  },
+                  "identifierName": "motivosRetrabalho"
+                },
+                "name": "motivosRetrabalho",
+                "leadingComments": null
+              },
+              "init": {
+                "type": "ArrayExpression",
+                "start": 76,
+                "end": 232,
+                "loc": {
+                  "start": {
+                    "line": 4,
+                    "column": 26
+                  },
+                  "end": {
+                    "line": 4,
+                    "column": 182
+                  }
+                },
+                "elements": [
+                  {
+                    "type": "StringLiteral",
+                    "start": 77,
+                    "end": 100,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 27
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 50
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Fornecedor (Material)",
+                      "raw": "'Fornecedor (Material)'"
+                    },
+                    "value": "Fornecedor (Material)"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 102,
+                    "end": 119,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 52
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 69
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Dobra Incorreta",
+                      "raw": "'Dobra Incorreta'"
+                    },
+                    "value": "Dobra Incorreta"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 121,
+                    "end": 140,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 71
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 90
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Furação Incorreta",
+                      "raw": "'Furação Incorreta'"
+                    },
+                    "value": "Furação Incorreta"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 142,
+                    "end": 159,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 92
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 109
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Corte Incorreto",
+                      "raw": "'Corte Incorreto'"
+                    },
+                    "value": "Corte Incorreto"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 161,
+                    "end": 191,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 111
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 141
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Erro de Projeto (Engenharia)",
+                      "raw": "'Erro de Projeto (Engenharia)'"
+                    },
+                    "value": "Erro de Projeto (Engenharia)"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 193,
+                    "end": 211,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 143
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 161
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Falha de Injeção",
+                      "raw": "'Falha de Injeção'"
+                    },
+                    "value": "Falha de Injeção"
+                  },
+                  {
+                    "type": "StringLiteral",
+                    "start": 213,
+                    "end": 231,
+                    "loc": {
+                      "start": {
+                        "line": 4,
+                        "column": 163
+                      },
+                      "end": {
+                        "line": 4,
+                        "column": 181
+                      }
+                    },
+                    "extra": {
+                      "rawValue": "Erro de Montagem",
+                      "raw": "'Erro de Montagem'"
+                    },
+                    "value": "Erro de Montagem"
+                  }
+                ]
+              },
+              "leadingComments": null
+            }
+          ],
+          "kind": "const",
+          "leadingComments": [
+            {
+              "type": "CommentBlock",
+              "value": "*\r\n * Array com os motivos de retrabalho.\r\n ",
+              "start": 0,
+              "end": 48,
+              "loc": {
+                "start": {
+                  "line": 1,
+                  "column": 0
+                },
+                "end": {
+                  "line": 3,
+                  "column": 3
+                }
+              }
+            }
+          ],
+          "trailingComments": []
+        }
+      }
+    ],
+    "directives": []
+  },
+  "comments": [
+    {
+      "type": "CommentBlock",
+      "value": "*\r\n * Array com os motivos de retrabalho.\r\n ",
+      "start": 0,
+      "end": 48,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 3,
+          "column": 3
+        }
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "type": "CommentBlock",
+      "value": "*\r\n * Array com os motivos de retrabalho.\r\n ",
+      "start": 0,
+      "end": 48,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 3,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "const",
+        "keyword": "const",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "const",
+      "start": 50,
+      "end": 55,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "motivosRetrabalho",
+      "start": 56,
+      "end": 73,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 6
+        },
+        "end": {
+          "line": 4,
+          "column": 23
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": true,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "=",
+      "start": 74,
+      "end": 75,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 24
+        },
+        "end": {
+          "line": 4,
+          "column": 25
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "[",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 76,
+      "end": 77,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 26
+        },
+        "end": {
+          "line": 4,
+          "column": 27
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Fornecedor (Material)",
+      "start": 77,
+      "end": 100,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 27
+        },
+        "end": {
+          "line": 4,
+          "column": 50
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 100,
+      "end": 101,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 50
+        },
+        "end": {
+          "line": 4,
+          "column": 51
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Dobra Incorreta",
+      "start": 102,
+      "end": 119,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 52
+        },
+        "end": {
+          "line": 4,
+          "column": 69
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 119,
+      "end": 120,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 69
+        },
+        "end": {
+          "line": 4,
+          "column": 70
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Furação Incorreta",
+      "start": 121,
+      "end": 140,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 71
+        },
+        "end": {
+          "line": 4,
+          "column": 90
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 140,
+      "end": 141,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 90
+        },
+        "end": {
+          "line": 4,
+          "column": 91
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Corte Incorreto",
+      "start": 142,
+      "end": 159,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 92
+        },
+        "end": {
+          "line": 4,
+          "column": 109
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 159,
+      "end": 160,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 109
+        },
+        "end": {
+          "line": 4,
+          "column": 110
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Erro de Projeto (Engenharia)",
+      "start": 161,
+      "end": 191,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 111
+        },
+        "end": {
+          "line": 4,
+          "column": 141
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 191,
+      "end": 192,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 141
+        },
+        "end": {
+          "line": 4,
+          "column": 142
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Falha de Injeção",
+      "start": 193,
+      "end": 211,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 143
+        },
+        "end": {
+          "line": 4,
+          "column": 161
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 211,
+      "end": 212,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 161
+        },
+        "end": {
+          "line": 4,
+          "column": 162
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "Erro de Montagem",
+      "start": 213,
+      "end": 231,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 163
+        },
+        "end": {
+          "line": 4,
+          "column": 181
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "]",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 231,
+      "end": 232,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 181
+        },
+        "end": {
+          "line": 4,
+          "column": 182
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "export",
+        "keyword": "export",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "export",
+      "start": 236,
+      "end": 242,
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 0
+        },
+        "end": {
+          "line": 6,
+          "column": 6
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "default",
+        "keyword": "default",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "default",
+      "start": 243,
+      "end": 250,
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 7
+        },
+        "end": {
+          "line": 6,
+          "column": 14
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "motivosRetrabalho",
+      "start": 251,
+      "end": 268,
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 15
+        },
+        "end": {
+          "line": 6,
+          "column": 32
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "eof",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 268,
+      "end": 268,
+      "loc": {
+        "start": {
+          "line": 6,
+          "column": 32
+        },
+        "end": {
+          "line": 6,
+          "column": 32
+        }
+      }
+    }
+  ]
+}
