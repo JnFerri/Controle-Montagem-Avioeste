@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../../../">
-  <title data-ice="title">src/Components/FormInputOP/FormInputOP.js | controle_montagem</title>
+  <base data-ice="baseUrl" href="../../../../../">
+  <title data-ice="title">src/Components/OrdensLista/ModalEditar/ModalEditar.js | controle_montagem</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -93,307 +93,316 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/Components/FormInputOP/FormInputOP.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import styled from &quot;styled-components&quot;;
-import Titulo2 from &quot;../Titulo2/Titulo2.js&quot;;
-import Input from &quot;../Input/Input.js&quot;;
-import Botao from &quot;../Botao/Botao.js&quot;;
-import {  useCallback, useEffect, useState } from &quot;react&quot;;
-import Select from &quot;../Select/Select.js&quot;;
-import mesas from &quot;../../BD/mesas.js&quot;;
-import Option from &quot;../Select/Option/Option.js&quot;;
-//import { PegarOrdensNaoFinalizadas } from &quot;../../Services/PegarOrdensNaoFinalizadas.js&quot;;
-import tranformarDataEmString from &quot;../../Helpers/tranformarDataEmString.js&quot;;
-import Delay from &quot;../../Helpers/Delay.js&quot;;
-import { v4 as uuidv4 } from &apos;uuid&apos;
-import turnos from &quot;../../BD/turnos.js&quot;;
-import imgAdicionarFuncionario from &apos;../../images/adicionar-usuario.png&apos;
-import imgRemoverFuncionario from &apos;../../images/remover-usuario.png&apos;
-import Imagem from &quot;../Imagem/Imagem.js&quot;
+<div class="content" data-ice="content"><h1 data-ice="title">src/Components/OrdensLista/ModalEditar/ModalEditar.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Modal from &apos;react-modal&apos;;
+import Botao from &apos;../../Botao/Botao.js&apos;;
+import Option from &apos;../../Select/Option/Option.js&apos;;
+import Select from &apos;../../Select/Select.js&apos;;
+import Label from &apos;../../Label/Label.js&apos;;
+import Imagem from &apos;../../Imagem/Imagem.js&apos;;
+import styled from &apos;styled-components&apos;;
+import Input from &apos;../../Input/Input.js&apos;;
+import imgAdicionarFuncionario from &apos;../../../images/adicionar-usuario.png&apos;
+import imgRemoverFuncionario from &apos;../../../images/remover-usuario.png&apos;
+import { useCallback, useEffect, useState } from &apos;react&apos;;
+import mesas from &quot;../../../BD/mesas.js&quot;;
+import turnos from &quot;../../../BD/turnos.js&quot;;
+import React from &apos;react&apos;;
 
 /**
- * styled-component simples de formulario.
- */
-const FormContainer = styled.form`
-    width:100%;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    margin: 1rem 0;
-`
-
-/**
- * styled-component para deixar itens alinhados em linha na horizontal.
+ * Componente div para englobar componentes em linha alinhados na horizontal.
  */
 const DivLinha = styled.div`
     display:flex;
     align-items:center;
-    width:70%;
+    width:100%;
     justify-content:center;
 
 `
 /**
- * styled-component para deixar itens alinhados em coluna na vertical.
+ * Componente div para englobar componentes em coluna alinhados na vertical.
  */
 const DivColuna = styled.div`
     display:flex;
     align-items:center;
     flex-direction:column;
     margin:0px 5px;
+    text-align:center;
 `
+
 /**
- * Estado que guarda o valor do input de numero de ordem de produ&#xE7;&#xE3;o do formulario.
- * @typedef {EstadoReact} NumeroOP
- * @property {string} NumeroOP Valor do input de numero de ordem de produ&#xE7;&#xE3;o.
- * @property {React.Dispatch&lt;React.SetStateAction&lt;string&gt;&gt;} setNumeroOP Func&#xE3;o que define novo valor para o estado NumeroOP.
+ * Estado que guarda um array dos componentes de input de matriculas com quantidade conforme o valor do estado QuantidadeFuncionariosEdicao.
+ * @typedef {EstadoReact} InputMatriculasEdicao
+ * @property {Array} InputMatriculasEdicao Array dos componentes de input do formulario de edi&#xE7;&#xE3;o.
+ * @property {React.Dispatch&lt;React.SetStateAction&lt;Array&gt;&gt;} setInputMatriculasEdicao Fun&#xE7;&#xE3;o que define novo valor para o estado InputMatriculasEdicao.
  */
 
 /**
- * Estado que guarda as matriculas dos funcionarios adicionadas aos inputs do formulario.
- * @typedef {EstadoReact} Matriculas
- * @property {Array&lt;string&gt;} Matriculas Array com as matriculas dos funcionarios.
- * @property {React.Dispatch&lt;React.SetStateAction&lt;Array&lt;string&gt;&gt;&gt;} setMatriculas Fun&#xE7;&#xE3;o que define novo valor para o estado Matriculas.
+ * Estado que guarda o valor do input de numero de ordem de produ&#xE7;&#xE3;o do formulario do modal de edi&#xE7;&#xE3;o.
+ * @typedef {EstadoReact} NumeroOPEdicao
+ * @property {string} NumeroOPEdicao Valor do input de ordem de produ&#xE7;&#xE3;o do modal de edi&#xE7;&#xE3;o.
+ * @property {react.Dispatch&lt;React.SetStateAction&lt;string&gt;&gt;} setNumeroOPEdicao Fun&#xE7;&#xE3;o que define novo valor para o estado NumeroOPEdicao.
  */
 
 /**
- * Estado que guarda o valor selecionado de mesa no formulario.
- * @typedef {EstadoReact} Mesa
- * @property {string} Mesa Valor do select de mesa.
- * @property {React.Dispatch&lt;React.SetStateAction&lt;string&gt;&gt;} setMesa Fun&#xE7;&#xE3;o que define novo valor para o estado Mesa.
+ * Estado que guarda um Array das matriculas dos funcionarios adicionadas ao formulario do modal de edi&#xE7;&#xE3;o.
+ * @typedef {EstadoReact} MatriculasEdicao
+ * @property {Array} MatriculasEdicao Array com as matriculas dos funcionarios.
+ * @property {React.Dispatch&lt;React.SetStateAction&lt;Array&gt;&gt;} setMatriculasEdicao Fun&#xE7;&#xE3;o que define novo valor para o estado MatriculasEdicao.
  */
 
 /**
- * Estado que guarda o valor selecionado de turno no formulario.
- * @typedef {EstadoReact} Turno
- * @property {string} Turno Valor do select de turno.
- * @property {react.Dispatch&lt;React.SetStateAction&lt;string&gt;&gt;} setTurno Fun&#xE7;&#xE3;o que define novo valor para o estado Turno.
+ * Estado que guarda a informa&#xE7;&#xE3;o do select de mesa do formulario do modal de edi&#xE7;&#xE3;o.
+ * @typedef {EstadoReact} MesaEdicao
+ * @property {string} MesaEdicao Valor do select de mesa do formulario do modal de edi&#xE7;&#xE3;o.
+ * @property {React.Dispatch&lt;React.SetStateAction&lt;string&gt;&gt;} setMesaEdicao Fun&#xE7;&#xE3;o que altera o valor do estado MesaEdicao.
  */
 
 /**
- * Estado que guarda a quantidade de matriculas adicionadas no formulario.
- * @typedef {EstadoReact} QuantidadeFuncionario
- * @property {number} QuantidadeFuncionario Quantidade de matriculas adicionadas ao formulario.
- * @property {react.Dispatch&lt;React.SetStateAction&lt;number&gt;&gt;} setQuantidadeFuncionario Fun&#xE7;&#xE3;o que define novo valor para o estado Turno.
+ * Estado que guarda a informa&#xE7;&#xE3;o do select de turno no formulario do modal de edi&#xE7;&#xE3;o.
+ * @typedef {EstadoReact} TurnoEdicao
+ * @property {string} TurnoEdicao Valor do select de turno no formulario do modal de edi&#xE7;&#xE3;o.
+ * @property {React.Dispatch&lt;React.SetStateAction&lt;string&gt;&gt;} setTurnoEdicao Fun&#xE7;&#xE3;o que define novo valor para o estado TurnoEdicao.
  */
 
 /**
- * Estado que guarda um array com os componentes de inputs de matriculas. Utilizado pois o numero de inputs &#xE9; variavel conforme quantidade de funcionarios adicionados a ordem.
- * @typedef {EstadoReact} InputsMatricula
- * @property {Array} InputsMatricula Array de componentes input para capturar a matricula do funcionario.
- * @property {react.Dispatch&lt;React.SetStateAction&lt;Array&gt;&gt;} setInputMatricula Fun&#xE7;&#xE3;o que define novo valor para InputsMatricula.
+ * Estado que guarda a informa&#xE7;&#xE3;o da quantidade de funcionarios conforme quantidade adicionado ao formulario do modal de edi&#xE7;&#xE3;o.
+ * @typedef {EstadoReact} QuantidadeFuncionariosEdicao
+ * @property {number} QuantidadeFuncionariosEdicao Quantidade de funcionarios adicionados ao formulario do modal de edi&#xE7;&#xE3;o.
+ * @property {React.Dispatch&lt;React.SetStateAction&lt;number&gt;&gt;} setQuantidadeFuncionariosEdicao Fun&#xE7;&#xE3;o 
  */
+
 
 /**
- * Componente de formulario utilizado para cadastrar novas ordens de produ&#xE7;&#xE3;o e salvar seus dados no localStorage de ordensNaoFinalizadas, altera o valor do estado LocalStorage com o valor de ordensNaoFinalizadas da localstorage e consequentemente alterando o estado LocalStorage o estado Ordens ser&#xE1; atualizado adicionando mais um item a lista de ordens.
- * @param {Object} props props do componente react
- * @param {Array} props.ordens Estado &apos;Ordens&apos; proveniente do componente ControleProdu&#xE7;&#xE3;o , um array com os dados das ordens que est&#xE3;o na lista de ordens n&#xE3;o finalizadas.
- * @param {React.Dispatch&lt;React.SetStateAction&lt;Array&gt;&gt;} props.setLocalStorage Fun&#xE7;&#xE3;o que define o estado LocalStorage.
- * @returns {JSXElement}
+ * Componente modal para editar as informa&#xE7;&#xF5;es da ordem de produ&#xE7;&#xE3;o ou exclui-la.
+ * @param {object} props Props do componente.
+ * @param {React.Dispatch&lt;React.SetStateAction&lt;boolean&gt;&gt;} props.setModalEdicao Fun&#xE7;&#xE3;o que define o estado de ModalEdicao.
+ * @param {React.Dispatch&lt;React.SetStateAction&lt;Array&lt;Object&gt;&gt;&gt;} props.setLocalStorage Fun&#xE7;&#xE3;o que define novo valor para o estado LocalStorage.
+ * @param {boolean} props.ModalEdicao Estado que define a visualiza&#xE7;&#xE3;o do modal.
+ * @param {Object} props.OrdemEditando Estado que guarda os dados da ordem que esta sendo editada.
+ * @param {Array&lt;Object&gt;} props.ordens Estado Ordens que possui os dados das ordens que aparecem na lista. 
+ * @returns {JSX.Element} Componente modal com formulario de edi&#xE7;&#xE3;o.
  */
-function FormInputOP({ ordens,setLocalStorage}){
-
+function ModalEditar({ setModalEdicao, setLocalStorage, ModalEdicao, OrdemEditando, ordens}){
     /**
-     * Estado que armazena valor do input de numero de ordem de produ&#xE7;&#xE3;o.
+     * Estado com Array dos inputs de matricula de funcionario.
      */
-    const [NumeroOP, setNumeroOP] = useState(&apos;&apos;)
-
+    const [InputMatriculasEdicao, setInputMatriculasEdicao] = useState([])
     /**
-     * Estado que armazena array contendo o valor dos inputs de matriculas dos funcionarios.
+     * Estado com o valor do input de ordem de produ&#xE7;&#xE3;o.
      */
-    const [Matriculas, setMatriculas] = useState([])
-
+    const [NumeroOPEdicao, setNumeroOPEdicao] = useState(&apos;&apos;)
     /**
-     * Estado que armazena o valor do input de mesa de produ&#xE7;&#xE3;o.
+     * Estado com um Array das matriculas colocadas nos inputs do formulario de edi&#xE7;&#xE3;o.
      */
-    const [Mesa, setMesa] = useState(&apos;&apos;)
-
+    const [MatriculasEdicao, setMatriculasEdicao] = useState([])
     /**
-     * Estado que armazena o valor do input de turno.
+     * Estado com o valor do input de Mesa do formulario de edi&#xE7;&#xE3;o.
      */
-    const [Turno, setTurno] = useState(&apos;&apos;)
-
+    const [MesaEdicao, setMesaEdicao] = useState(&apos;&apos;)
     /**
-     * Estado que armazena a quantidade de matriculas adicionados ao formulario.
+     * Estado com o valor do input de turno do formulario de edi&#xE7;&#xE3;o.
      */
-    const [QuantidadeFuncionario, setQuantidadeFuncionario] = useState(1)
-
+    const [TurnoEdicao, setTurnoEdicao] = useState(&apos;&apos;)
     /**
-     * Estado que guarda um Array dos componentes de Input de matricula.
+     * Estado com o a quantidade de matriculas adicionadas ao formulario.
      */
-    const [InputsMatricula, setInputMatricula] = useState([])
-
-
-    /**
-     * Pega os dados coletados, salvos nos estados pelos inputs e salva na localStorage &apos;ordensNaoFinalizadas&apos;, altera o valor do estado LocalStorage com o novo valor do localstorage, ao atualizar LocalStorage consequentemente altera o valor de ordens com os mesmos valores de LocalStorage atualizando a visualiza&#xE7;&#xE3;o da lista.
-     * @param {Event} event Evento de submit do formulario.
-     */
-    async function CriaOrdemJestor(event){
-        
-        const confereRepetido =await ordens.find(ordem =&gt; ordem.ordem_producao === NumeroOP)
-
-        //Bloqueia envio quando lido com o leitor de c&#xF3;digo de barras.
-        if(event.key === &apos;Enter&apos;){
-            event.preventDefault()
-        }
-
-        if(!confereRepetido){
-            event.preventDefault()
-            const dataInicio = tranformarDataEmString(new Date())
-            if(!NumeroOP || !dataInicio || !Matriculas[0] || !Mesa || !Turno || Matriculas.length !== QuantidadeFuncionario){
-                window.alert(&quot;Preencha todos os campos antes de incluir a Ordem de Produ&#xE7;&#xE3;o !!&quot;)
-            }else if(NumeroOP.length &lt; 7 || NumeroOP.length &gt; 7){
-                window.alert(&quot;Quantidade digitos do numero da OP est&#xE3;o fora do normal, Verifique se esta correto !!!&quot;)
-            }else if (Matriculas[0].length &lt; 1 || Matriculas[0].length &gt; 6 ){
-                window.alert(&apos;Quantidade de Digitos de matricula de Funcionario Fora do Normal, Verifique, caso necessario adicionar mais de uma matricula utilize o bot&#xE3;o &quot;Adicionar Funcionario&quot;.&apos;)
-            }
-            else{
-                
-                const obj ={}
-                obj[&apos;ordem_producao&apos;] = NumeroOP
-                obj[&apos;horario_inicio&apos;] = dataInicio
-                obj[&apos;matricula&apos;] = Matriculas[0]
-                obj[&apos;matricula_2&apos;] = Matriculas[1]
-                obj[&apos;matricula_3&apos;] = Matriculas[2]
-                obj[&apos;matricula_4&apos;] = Matriculas[3]
-                obj[&apos;quantidade_funcionarios&apos;] = QuantidadeFuncionario
-                obj[&apos;matriculas&apos;] = Matriculas
-                obj[&apos;mesa&apos;] = Mesa
-                obj[&apos;turno&apos;] = Turno
-                obj[&apos;status&apos;] = &apos;Em Andamento&apos;
-                obj[&apos;id&apos;] = uuidv4()
-                
-                setNumeroOP(&apos;&apos;)
-                setMatriculas([])
-                setMesa(&apos;&apos;)
-                setTurno(&apos;&apos;)
-                setQuantidadeFuncionario(1)
-                const localStorageData = JSON.parse(localStorage.getItem(&apos;ordensNaoFinalizadas&apos;) || &quot;[]&quot;);
-                localStorageData.push(obj)
-                localStorage.setItem(&apos;ordensNaoFinalizadas&apos;, JSON.stringify(localStorageData))
-                await Delay(1000)
-                setLocalStorage(localStorageData)
-            }
-        }else{
-            event.preventDefault()
-            window.alert(&quot;Esta OP ja esta na lista&quot;)
-            setNumeroOP(&apos;&apos;)
-            setMatriculas([])
-            setMesa(&apos;&apos;)
-            setTurno(&apos;&apos;)
-        }
-    }
-    
-    /**
-     * Define o estado NumeroOP com o valor do input de ordem de produ&#xE7;&#xE3;o.
-     * @param {*} event  Evento onChange do input.
-     */
-    const HandleNumeroOP = (event) =&gt; {
-        //Previne enviar o formulario quando lido numero da op com leitor de c&#xF3;digo de barras.
-        if(event.key === &apos;Enter&apos;){
-            event.preventDefault()
-        }
-            setNumeroOP(event.target.value);
-        }
-        
-       /**
-        * Define o estado Matriculas, adicionando o valor conforme input.
-        */
-    const HandleMatricula = useCallback((index, event) =&gt; {
-            const newMatriculas = [...Matriculas];
-            newMatriculas[index] = event.target.value;
-            setMatriculas(newMatriculas);
-      }, [Matriculas]);
-    
-      /**
-       * Define o estado Mesa conforme valor do input.
-       * @param {*} event Evento onChange do input. 
-       */
-    const HandleMesa = (event) =&gt; {
-        setMesa(event.target.value);
-    };
+    const [QuantidadeFuncionariosEdicao, setQuantidadeFuncionariosEdicao] = useState(0)
 
     /**
-     * Define o estado Turno conforme valor do input.
-     * @param {*} event Evento onChange do input.
-     */
-    const HandleTurno = (event) =&gt; {
-        setTurno(event.target.value);
-    };
-
-    /**
-     * Previne submit do formulario quando lido o numero da ordem de produ&#xE7;&#xE3;o com leitor de c&#xF3;digo de barras.
-     * @param {*} event Evento onKeyDown.
-     */
-    const HandlePrevineEnvio = (event) =&gt;{
-        if(event.key === &apos;Enter&apos;){
-            event.preventDefault()
-        }
-    }
-
-    /**
-     * Altera valor do estado QuantidadeFuncionario adicionando +1 se este for menor que 4.
-     */
-    const AdicaoFuncionario = () =&gt; {
-        if(QuantidadeFuncionario &lt; 4){
-            const novoValor = QuantidadeFuncionario + 1
-            setQuantidadeFuncionario(novoValor)
-        }else{
-            window.alert(&apos;Maximo 4 Funcionarios por OP&apos;)
-        }
-    }
-
-    /**
-     * Altera valor do estado QuantidadeFuncionario subtraindo -1 .
-     */
-    const RemoverFuncionario = () =&gt; {
-        const novoValor = QuantidadeFuncionario - 1
-        setQuantidadeFuncionario(novoValor)
-    }
-
-    /**
-     * Define a quantidade de componentes input que est&#xE3;o no estado InputMatricula conforme valor de estado QuantidadeFuncionario.
+     * Ao carregar a pagina define os valores dos inputs e selects com valor inicial igual aos da ordem que esta sendo editada.
      */
     useEffect(() =&gt; {
-        
-        const inputs = []
-        for(let i = 0;i &lt; QuantidadeFuncionario; i++){
-            inputs.push(
-                &lt;Input
-                  key={i}
-                  placeholder=&quot;Matr&#xED;cula do Funcion&#xE1;rio&quot;
-                  style={{ border: &apos;2px solid black&apos;, padding: &apos;20px 0px&apos;, width: &apos;70%&apos;, margin: &apos;1rem 3px&apos;, borderRadius: &apos;20px&apos;, fontSize: &apos;20px&apos; }}
-                  value={Matriculas[i] || &apos;&apos;}
-                  required
-                  onChange={(e) =&gt; HandleMatricula(i, e)}
-                /&gt;
-              );
+        setNumeroOPEdicao(OrdemEditando.ordem_producao)
+        setMatriculasEdicao(OrdemEditando.matriculas)
+        setMesaEdicao(OrdemEditando.mesa)
+        setTurnoEdicao(OrdemEditando.turno)
+        setQuantidadeFuncionariosEdicao(OrdemEditando.quantidade_funcionarios)
+    },[OrdemEditando])
+
+    /**
+     * Define o valor do estado NumeroOPEdicao com o valor do input de numero de ordem de produ&#xE7;&#xE3;o.
+     * @param {*} event Evento onchange do input.
+     */
+    const HandleNumeroOP = (event) =&gt; {
+        setNumeroOPEdicao(event.target.value);
+    };
+
+    /**
+     * Define o valor do estado MesaEdi&#xE7;&#xE3;o com o valor selecionado no select de Mesa. 
+     * @param {*} event Evento onChange do select.
+     */
+    const HandleMesa = (event) =&gt; {
+        setMesaEdicao(event.target.value);
+    };
+
+    /**
+     * Define o valor do estado Turno com o valor selecionado no select de Turno.
+     * @param {*} event Evento onChange do select.
+     */
+    const HandleTurno = (event) =&gt; {
+        setTurnoEdicao(event.target.value);
+    };
+
+    /**
+     * Edita os dados da ordem conforme os dados colocados no formulario.
+     * @param {Object} ordemEditando Estado OrdemEditando com os dados da ordem que esta sendo editada.
+     * @param {Array&lt;Object&gt;} ordens Estado Ordens que contem as ordens que aparecem na lista.
+     */
+    function EditaComponente(ordemEditando, ordens){
+        const confirmacao = window.confirm(`Tem certeza que deseja editar o item ?`)
+        if(confirmacao){
+            const confereRepetido = ordens.find(ordem =&gt; ordem.ordem_producao === NumeroOPEdicao)
+            const ordensLocalStorage = JSON.parse(localStorage.getItem(&apos;ordensNaoFinalizadas&apos;)) || [];
+            const ordemAtualIndex = ordensLocalStorage.findIndex(element =&gt; element.id === ordemEditando.id);
+            const pausasLocalStorage = JSON.parse(localStorage.getItem(&apos;pausasOrdens&apos;)) || []
+            const pausasAtualIndex = pausasLocalStorage.findIndex(element =&gt; element.id === ordemEditando.id)
+
+            
+            if (ordemAtualIndex !== -1) {
+                const ordemAtual = ordensLocalStorage[ordemAtualIndex];
+                if(ordemAtual[&apos;ordem_producao&apos;] !== NumeroOPEdicao &amp;&amp; confereRepetido){
+                    window.alert(&quot;Ordem de produ&#xE7;&#xE3;o ja esta na lista !!&quot;)
+                }else{
+                    if(NumeroOPEdicao.trim().length &gt; 0 &amp;&amp; MatriculasEdicao.length &gt; 0  &amp;&amp; MesaEdicao.trim().length &gt; 0  &amp;&amp; TurnoEdicao.trim().length &gt; 0){
+                        ordemAtual[&apos;ordem_producao&apos;] = NumeroOPEdicao
+                        ordemAtual[&apos;matriculas&apos;] = MatriculasEdicao
+                        ordemAtual[&apos;matricula&apos;] = MatriculasEdicao[0]
+                        ordemAtual[&apos;matricula_2&apos;] = MatriculasEdicao[1]
+                        ordemAtual[&apos;matricula_3&apos;] = MatriculasEdicao[2]
+                        ordemAtual[&apos;matricula_4&apos;] = MatriculasEdicao[3]
+                        ordemAtual[&apos;mesa&apos;] = MesaEdicao
+                        ordemAtual[&apos;turno&apos;] = TurnoEdicao
+                        ordemAtual[&apos;quantidade_funcionarios&apos;] = QuantidadeFuncionariosEdicao
+                        ordensLocalStorage[ordemAtualIndex] = ordemAtual;
+
+                        if(pausasAtualIndex !== -1){
+                            const pausas = pausasLocalStorage[pausasAtualIndex].pausas
+                            for(let i = 0; i&lt;pausas.length;i++ ){
+                                pausas[i].ordem_producao = ordemAtual[&apos;ordem_producao&apos;]
+                            }
+                            console.log(pausas)
+                            localStorage.setItem(&apos;pausasOrdens&apos;, JSON.stringify(pausasLocalStorage))
+                        }
+
+
+                    localStorage.setItem(&apos;ordensNaoFinalizadas&apos;, JSON.stringify(ordensLocalStorage));
+                    setLocalStorage(ordensLocalStorage)
+                    setModalEdicao(false)
+                }else{
+                    window.alert(&apos;N&#xE3;o pode haver campos vazios !!&apos;)
+                }
+                }
+                }
         }
-        setInputMatricula(inputs)
-    },[QuantidadeFuncionario, HandleMatricula, Matriculas])
+        }
+
+        const AdicaoFuncionario = () =&gt; {
+            if(QuantidadeFuncionariosEdicao &lt; 4){
+            setQuantidadeFuncionariosEdicao(QuantidadeFuncionariosEdicao + 1)
+            }else{
+                window.alert(&apos;Maximo 4 Funcionarios por Ordem de Produ&#xE7;&#xE3;o !!&apos;)
+            }
+        }
+
+        const RemoverFuncionario = () =&gt; {
+            const novoValor = [...MatriculasEdicao]
+            setQuantidadeFuncionariosEdicao(QuantidadeFuncionariosEdicao -1)
+            novoValor.splice(-1,1)
+            setMatriculasEdicao(novoValor)
+        }
+        
+        const HandleMatricula = useCallback((index, event) =&gt; {
+            const newMatriculas = [...MatriculasEdicao];
+            newMatriculas[index] = event.target.value;
+            setMatriculasEdicao(newMatriculas);
+      }, [MatriculasEdicao, setMatriculasEdicao]);
+
+        useEffect(() =&gt; {
+        
+            const inputs = []
+            for(let i = 0;i &lt; QuantidadeFuncionariosEdicao; i++){
+                inputs.push(
+                    &lt;Input
+                      key={i}
+                      placeholder=&quot;Matr&#xED;cula do Funcion&#xE1;rio&quot;
+                      style={{ border: &apos;2px solid black&apos;, padding: &apos;20px 0px&apos;, width: &apos;50%&apos;, margin: &apos;1rem 3px&apos;, borderRadius: &apos;20px&apos;, fontSize: &apos;20px&apos; }}
+                      value={MatriculasEdicao[i] || &apos;&apos;}
+                      required
+                      onChange={(e) =&gt; HandleMatricula(i, e)}
+                    /&gt;
+                  );
+            }
+            setInputMatriculasEdicao(inputs)
+        },[QuantidadeFuncionariosEdicao, HandleMatricula, MatriculasEdicao])
+
+        const ExcluirOrdem = (ordem) =&gt; {
+            const confirma&#xE7;&#xE3;o  = window.confirm(&apos;Tem certeza que deseja excluir esta Ordem de Produ&#xE7;&#xE3;o ?&apos;)
+            if(confirma&#xE7;&#xE3;o){
+                const ordensLocalStorage = JSON.parse(localStorage.getItem(&apos;ordensNaoFinalizadas&apos;)) || [];
+                var ordemAtualIndex = ordensLocalStorage.findIndex(element =&gt; element.id === ordem.id);
+                const pausasLocalStorage = JSON.parse(localStorage.getItem(&apos;pausasOrdens&apos;)) || [];
+                const pausasIndexAtual = pausasLocalStorage.findIndex(element =&gt; element.id === ordem.id)
+                if(ordemAtualIndex !== -1){
+                    if(pausasIndexAtual !== -1){
+                        pausasLocalStorage.splice(pausasIndexAtual, 1)
+                        localStorage.setItem(&apos;pausasOrdens&apos;, JSON.stringify(pausasLocalStorage))
+                    }
+                ordensLocalStorage.splice(ordemAtualIndex, 1)
+                localStorage.setItem(&apos;ordensNaoFinalizadas&apos;, JSON.stringify(ordensLocalStorage));
+                setLocalStorage(ordensLocalStorage)
+                setModalEdicao(false)
+                }else{
+                    console.log(&apos;N&#xE3;o foi possivel encontrar o id desta ordem na localStorage.&apos;)
+                }
+            }
+        }
+
+         
 
     return(
-        &lt;FormContainer&gt;
-            &lt;Titulo2 color=&quot;white&quot;&gt;Coloque o numero da ordem de produ&#xE7;&#xE3;o e clique em iniciar para come&#xE7;ar uma nova ordem de produ&#xE7;&#xE3;o&lt;/Titulo2&gt;
-             &lt;Input placeholder=&quot;Numero da OP&quot;  border=&apos;2px solid black&apos;  padding = &quot;20px 0px&quot; width=&quot;80%&quot; margin =&quot;1rem 0px&quot; border_radius=&quot;20px&quot; font_size=&quot;20px&quot; value={NumeroOP} 
-                onChange={HandleNumeroOP} onKeyDown={HandlePrevineEnvio}&gt;&lt;/Input&gt;
-                &lt;DivLinha&gt;
+        &lt;Modal 
+    isOpen={ModalEdicao}
+    onRequestClose={async() =&gt; setModalEdicao(false)}
+    contentLabel=&quot;Edi&#xE7;&#xE3;o&quot;
+    ariaHideApp={false}
+    style={{
+        overlay: {
+          backgroundColor: &apos;rgba(0, 0 ,0, 0.8)&apos;
+        },
+        content: {
+          border: &apos;1px solid black&apos;,
+          background: &apos;white&apos;,
+          borderRadius: &apos;20px&apos;,
+          padding: &apos;20px&apos;,
+          display:&apos;flex&apos;,
+          flexDirection: &quot;column&quot;,
+          alignItems:&apos;center&apos;
+        }
+      }}
+    &gt;
+        &lt;Label font_size = &apos;26px&apos;&gt;Numero da Ordem de produ&#xE7;&#xE3;o :&lt;/Label&gt;
+        &lt;Input placeholder=&quot;Numero da OP&quot;   padding = &quot;20px 0px&quot; width=&quot;60%&quot; margin =&quot;1rem 0px&quot; border_radius=&quot;20px&quot; border=&apos;0.1px black solid&apos; font_size=&quot;20px&quot; value={NumeroOPEdicao} onChange={HandleNumeroOP} &gt;&lt;/Input&gt;
+        &lt;Label font_size = &apos;26px&apos;&gt;Matricula do funcionario :&lt;/Label&gt;
+        &lt;DivLinha&gt;
             {  
-                   InputsMatricula
+                  InputMatriculasEdicao
             }
             
             &lt;DivColuna style={{cursor:&apos;pointer&apos; , width:&apos;10%&apos;}} onClick={AdicaoFuncionario}&gt;
              &lt;Imagem src={imgAdicionarFuncionario} width=&apos;30%&apos;/&gt;
-             &lt;span style={{color:&apos;white&apos;}}&gt;Adicionar Funcionario&lt;/span&gt;
+             &lt;span style={{color:&apos;black&apos;}}&gt;Adicionar Funcionario&lt;/span&gt;
             &lt;/DivColuna&gt;
-            {QuantidadeFuncionario &gt; 1 ? 
+            { QuantidadeFuncionariosEdicao &gt; 1 || QuantidadeFuncionariosEdicao === &apos;&apos; ? 
             &lt;DivColuna style={{cursor:&apos;pointer&apos; , width:&apos;10%&apos;}} onClick={RemoverFuncionario}&gt;
             &lt;Imagem src={imgRemoverFuncionario} width=&apos;30%&apos;/&gt;
-            &lt;span style={{color:&apos;white&apos;}}&gt;Remover Funcionario&lt;/span&gt;
+            &lt;span style={{color:&apos;black&apos;}}&gt;Remover Funcionario&lt;/span&gt;
            &lt;/DivColuna&gt;
            : &apos;&apos;    
         }
                 &lt;/DivLinha&gt;
-             &lt;Select margin=&apos;1rem 0&apos; width=&apos;30%&apos;   padding=&apos;10px&apos; value={Mesa} onChange={HandleMesa}&gt;
+        &lt;Label font_size = &apos;26px&apos;&gt;Mesa :&lt;/Label&gt;
+             &lt;Select margin=&apos;1rem 0&apos; width=&apos;30%&apos;  padding=&apos;10px&apos; value={MesaEdicao} border=&apos;0.1px black solid&apos; onChange={HandleMesa}&gt;
                  &lt;Option padding=&apos;10px 2px&apos; fontSize=&apos;20px&apos; value=&apos;&apos; &gt;Selecione Uma Mesa...&lt;/Option&gt;
                 {
                     mesas.map((mesa,index) =&gt; (
@@ -401,7 +410,8 @@ function FormInputOP({ ordens,setLocalStorage}){
                     ))
                 }
                 &lt;/Select&gt;
-                &lt;Select margin=&apos;1rem 0&apos; width=&apos;30%&apos;  padding=&apos;10px&apos; value={Turno} onChange={HandleTurno}&gt;
+                &lt;Label font_size = &apos;26px&apos;&gt;Turno :&lt;/Label&gt;
+                &lt;Select margin=&apos;1rem 0&apos; width=&apos;30%&apos;  padding=&apos;10px&apos; border=&apos;0.1px black solid&apos; value={TurnoEdicao} onChange={HandleTurno}&gt;
                 &lt;Option padding=&apos;10px 2px&apos; fontSize=&apos;20px&apos; value=&apos;&apos; &gt;Selecione Um Turno...&lt;/Option&gt;
                 {
                     turnos.map((turno,index) =&gt;(
@@ -409,13 +419,18 @@ function FormInputOP({ ordens,setLocalStorage}){
                     ))
                 }
                     
-                    &lt;/Select&gt;      
-            &lt;Botao width=&quot;30%&quot; boxshadow=&apos;2px 2px 2px 1px rgba(0, 0, 0, 0.2);&apos; padding=&quot;20px 0px&quot; border_radius = &quot;10px&quot; margin=&quot;1rem 0&quot; color=&quot;black&quot; backgroundcolor=&apos;#79b3e0&apos; font_size=&apos;25px&apos; border=&apos;2px solid black&apos; onClick={CriaOrdemJestor}&gt;INICIAR ORDEM DE PRODU&#xC7;&#xC3;O&lt;/Botao&gt;
-        &lt;/FormContainer&gt;
+                    &lt;/Select&gt;  
+    
+      &lt;Botao padding=&apos;20px 10px&apos; width=&apos;40%&apos; margin=&apos;1rem 10px&apos; border=&apos;1px solid black&apos; backgroundcolor=&apos;#79b3e0&apos; border_radius=&apos;30px&apos; onClick={() =&gt; EditaComponente(OrdemEditando, ordens)}&gt;ATUALIZAR&lt;/Botao&gt;
+      &lt;Botao padding=&apos;20px 10px&apos; width=&apos;40%&apos; margin=&apos;1rem 10px&apos; border=&apos;1px solid black&apos; backgroundcolor=&apos;#FF6347&apos; border_radius=&apos;30px&apos; onClick={() =&gt;{ setModalEdicao(false)}   }&gt;CANCELAR&lt;/Botao&gt;
+      &lt;p&gt;Houve algum problema durante o apontamento da ordem de produ&#xE7;&#xE3;o ? Caso a ordem de produ&#xE7;&#xE3;o tenha sido marcada de forma que n&#xE3;o condiz com a realidade favor exclua a ordem de produ&#xE7;&#xE3;o para evitar erros nos dados ! &lt;/p&gt;
+      &lt;Botao padding=&apos;20px 10px&apos; width=&apos;40%&apos; margin=&apos;1rem 0&apos; border=&apos;1px solid black&apos; backgroundcolor=&apos;#FF6347&apos; border_radius=&apos;30px&apos; onClick={() =&gt;{ ExcluirOrdem(OrdemEditando)}   }&gt;EXCLUIR&lt;/Botao&gt;         
+    &lt;/Modal&gt;
+
     )
 }
 
-export default FormInputOP</code></pre>
+export default ModalEditar</code></pre>
 
 </div>
 

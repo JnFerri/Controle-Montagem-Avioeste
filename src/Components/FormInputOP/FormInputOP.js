@@ -90,7 +90,7 @@ const DivColuna = styled.div`
 /**
  * Componente de formulario utilizado para cadastrar novas ordens de produção e salvar seus dados no localStorage de ordensNaoFinalizadas, altera o valor do estado LocalStorage com o valor de ordensNaoFinalizadas da localstorage e consequentemente alterando o estado LocalStorage o estado Ordens será atualizado adicionando mais um item a lista de ordens.
  * @param {Object} props props do componente react
- * @param {Array} props.ordens Estado Ordens , um array com os dados das ordens que estão na lista de ordens não finalizadas.
+ * @param {Array} props.ordens Estado 'Ordens' proveniente do componente ControleProdução , um array com os dados das ordens que estão na lista de ordens não finalizadas.
  * @param {React.Dispatch<React.SetStateAction<Array>>} props.setLocalStorage Função que define o estado LocalStorage.
  * @returns {JSXElement}
  */

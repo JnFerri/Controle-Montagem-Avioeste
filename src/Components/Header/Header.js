@@ -14,14 +14,16 @@ padding: 5px 0;
 background-color: white;
 width:100%;
 
+
 `
 /**
  * styled-component de div que serve de container dos outros componentes.
  */
 const HeaderBox = styled.div`
-width:40%;
+width:100%;
 display:flex;
 align-items:center;
+justify-content:center;
 `
 
 /**
@@ -32,8 +34,8 @@ function Header(){
     return(
         <HeaderContainer>
             <HeaderBox>
-            <Imagem src={Logo} width='15%' margin = "2px 0px 0px 20px"></Imagem>
-            <Titulo1 width = "100%" margin = "2px 0px" text_align = "center" font_size='30px' color="#004D70" text_shadow='1px 1px 2px black'><strong>CONTROLE PRODUÇÃO MONTAGEM</strong></Titulo1>
+            <Imagem src={Logo} width='5%' margin = "2px 0px 0px 20px"></Imagem>
+            <Titulo1 width = "auto" margin = "2px 10px" text_align = "center" font_size='30px' color="#004D70" text_shadow='1px 1px 2px black'><strong>CONTROLE PRODUÇÃO MONTAGEM</strong></Titulo1>
             </HeaderBox>
         </HeaderContainer>
     )

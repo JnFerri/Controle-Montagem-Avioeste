@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">PegarRegistrosTabela | controle_montagem</title>
+  <base data-ice="baseUrl" href="../../../../../">
+  <title data-ice="title">src/Components/OrdensLista/ModalPausaComponent/ModalPausaComponent.js | controle_montagem</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -93,394 +93,179 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {PegarRegistrosTabela} from &apos;<span><a href="file/src/Services/PegaRegistrosTabela.js.html#lineNumber1">controle_montagem/src/Services/PegaRegistrosTabela.js</a></span>&apos;</code></pre></div>
-  <span data-ice="access">public</span>
-  <span data-ice="kind">class</span>
-  
-  
-  
-  <span data-ice="source">| <span><a href="file/src/Services/PegaRegistrosTabela.js.html#lineNumber1">source</a></span></span>
-</div>
+<div class="content" data-ice="content"><h1 data-ice="title">src/Components/OrdensLista/ModalPausaComponent/ModalPausaComponent.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">
+import Modal from &apos;react-modal&apos;;
+import Botao from &apos;../../Botao/Botao.js&apos;;
+import Select from &apos;../../Select/Select.js&apos;;
+import Option from &apos;../../Select/Option/Option.js&apos;;
+import Titulo2 from &apos;../../Titulo2/Titulo2.js&apos;;
+import motivosRetrabalho from &quot;../../../BD/motivosRetrabalho.js&quot;;
+import motivosPausas from &quot;../../../BD/motivosPausas.js&quot;;
+import React, { useState } from &apos;react&apos;;
+import tranformarDataEmString from &apos;../../../Helpers/tranformarDataEmString.js&apos;;
 
-<div class="self-detail detail">
-  <h1 data-ice="name">PegarRegistrosTabela</h1>
+/**
+ * Estado que guarda o motivo da pausa.
+ * @typedef {EstadoReact} MotivoPausa
+ * @property {string} MotivoPausa Guarda o valor do select de motivo da pausa.
+ * @property {React.Dispatch&lt;React.SetStateAction&lt;string&gt;&gt;} setMotivoPausa Fun&#xE7;&#xE3;o que define novo valor para o estado MotivoPausa.
+ */
 
-  
+/**
+ * Estado que guarda o motivo do retrabalho quando este for o motivo de pausa.
+ * @typedef {EstadoReact} MotivoRetrabalho
+ * @property {string} MotivoRetrabalho Guarda o valor do select de motivo de retrabalho.
+ * @property {React.Dispatch&lt;React.SetStateAction&lt;string&gt;&gt;} setMotivoRetrabalho Fun&#xE7;&#xE3;o que define novo valor para o estado MotivoRetrabalho.
+ */
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
+/**
+ * Componente modal visualizado quando clicado para pausar um componente, utilizado para pegar o motivo da pausa e motivo do retrabalho.
+ * @param {Object} props Props do componente.
+ * @param {boolean} props.ModalPausa Estado que define a visualiza&#xE7;&#xE3;o do modal, proveniente do componente OrdensLista.
+ * @param {React.Dispatch&lt;React.SetStateAction&lt;boolean&gt;&gt;} props.setModalPausa Fun&#xE7;&#xE3;o que define novo valor para o estado ModalPausa.
+ * @param {Object} props.OrdemPausada Ordem a qual o modal se refere.
+ * @param {React.Dispatch&lt;React.SetStateAction&lt;Array&lt;Object&gt;&gt;&gt;} props.setLocalStorage Fun&#xE7;&#xE3;o que define novo valor para o estado LocalStorage.
+ * @returns {JSX.Element} 
+ */
+function ModalPausaComponent({ModalPausa, setModalPausa, OrdemPausada, setLocalStorage}){
+  /**
+   * Estado que guarda o valor do select de motivo da pausa.
+   */
+  const [MotivoPausa, setMotivoPausa] = useState(&apos;&apos;)
 
-  
-  
-  
-  
+  /**
+   * Estado que guarda o valor do select de motivo de retrabalho.
+   */
+  const [MotivoRetrabalho, setMotivoRetrabalho] = useState(&apos;&apos;)
 
-  
+  /**
+   * Define estado MotivoPausa com o valor do select de motivo pausa.
+   * @param {*} event Evento onChange do componente.
+   */
+  function HandleMotivo(event){
+    setMotivoPausa(event.target.value)
+    }
+    
+    /**
+     * Define estado MotivoRetrabalho com o valor do select de motivo retranalho.
+     * @param {*} e Evento onChange do componente 
+     */
+    const HandleMotivoRetrabalho = (e) =&gt; {
+      setMotivoRetrabalho(e.target.value)
+  }
 
-  
-
-  
-
-  
-</div>
-
-
-
-<div data-ice="constructorSummary"><h2>Constructor Summary</h2><table class="summary" data-ice="summary">
-  <thead><tr><td data-ice="title" colspan="3">Public Constructor</td></tr></thead>
-  <tbody>
-  
-  <tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">()</span>
-        </p>
-      </div>
-      <div>
+  /**
+   * Adiciona os valores de horario_pausa e altera os valores de motivos_das_pausas adicionando o motivo da pausa atual e altera o status para pausado da ordem na localstorage de &apos;ordensNaoFinalizadas&apos;.
+   * Adiciona os dados da pausa no localstorage de pausasOrdens.
+   * @param {Object} ordem Estado OrdemPausada que possui os dados da ordem a qual ser&#xE1; feito a pausa. 
+   * @throws {Error} Erro quando a ordem n&#xE3;o &#xE9; encontrada na localstorage.
+   */
+  function HandlePausa(ordem){
+    try{
+      // Define e altera os valores da ordem na localstorage ordensNaoFinalizadas adicionando os dados da pausa.
+        if(ordem.status === &apos;Em Andamento&apos; ){
+         if(MotivoPausa !== &apos;&apos;){
+            if(MotivoPausa === &apos;Retrabalho&apos; &amp;&amp; MotivoRetrabalho === &apos;&apos;){
+                window.alert(&apos;Por favor preencha um motivo para o retrabalho !!&apos;)
+            }else {
+                const horarioPausa = new Date()
+                const dataPausaJestor = tranformarDataEmString(horarioPausa)
+                const ordensLocalStorage = JSON.parse(localStorage.getItem(&apos;ordensNaoFinalizadas&apos;)) || [];
+                const ordemAtualIndex = ordensLocalStorage.findIndex(element =&gt; element.id === ordem.id);
+                if (ordemAtualIndex !== -1) {
+                    const ordemAtual = ordensLocalStorage[ordemAtualIndex];
+                    ordemAtual[&apos;horario_pausa&apos;] = dataPausaJestor;
+                    ordemAtual[&apos;motivos_das_pausas&apos;] = ordemAtual[&apos;motivos_das_pausas&apos;] ? `${ordem.motivos_das_pausas} , ${MotivoPausa}` : `${MotivoPausa}`;
+                    ordemAtual[&apos;status&apos;] = &apos;Pausado&apos;;
+                    ordensLocalStorage[ordemAtualIndex] = ordemAtual;
+                    localStorage.setItem(&apos;ordensNaoFinalizadas&apos;, JSON.stringify(ordensLocalStorage));
+                    setLocalStorage(ordensLocalStorage)
+                    setModalPausa(false)
+   
+                    // Adiciona os valores da pausa referente a ordem na localstorage de pausasOrdens.
+                    const pausasLocalStorage = JSON.parse(localStorage.getItem(&apos;pausasOrdens&apos;)) || [];
+                    const pausasLocalStorageIndex = pausasLocalStorage.findIndex(element =&gt; element.id === ordem.id)
+                    
+                    if (pausasLocalStorageIndex !== -1){
+                        const obj = {ordem_producao:ordensLocalStorage[ordemAtualIndex][&apos;ordem_producao&apos;],motivo_pausa:MotivoPausa, motivo_retrabalho : MotivoRetrabalho }
+                        pausasLocalStorage[pausasLocalStorageIndex].pausas.push(obj)
+                        localStorage.setItem(&apos;pausasOrdens&apos;, JSON.stringify(pausasLocalStorage))
+                    }else{
+                       const obj = {id:ordem.id, pausas: [{ ordem_producao:ordensLocalStorage[ordemAtualIndex][&apos;ordem_producao&apos;],motivo_pausa:MotivoPausa, motivo_retrabalho : MotivoRetrabalho }] }
+                       pausasLocalStorage.push(obj)
+                       localStorage.setItem(&apos;pausasOrdens&apos;, JSON.stringify(pausasLocalStorage))
+                    }
+                    setMotivoPausa(&apos;&apos;)
+                    setMotivoRetrabalho(&apos;&apos;)
+   
+                }else {
+                    throw new Error(&apos;Ordem n&#xE3;o encontrada na localStorage.&apos;);
+                }
+            }
+         }else {
+            window.alert(&apos;Por favor preencha um motivo para a pausa !!&apos;)
+         }
+        }
         
-        
-        
-      </div>
-    </td>
-    <td>
+    }catch (error) {
+        console.error(&apos;Erro ao atualizar o estado das ordens:&apos;, error);
+    }
+    }
+
+    return(
+
+&lt;Modal 
+    isOpen={ModalPausa}
+    onRequestClose={async() =&gt; setModalPausa(false)}
+    contentLabel=&quot;Motivo da Pausa&quot;
+    ariaHideApp={false}
+    style={{
+        overlay: {
+          backgroundColor: &apos;rgba(0, 0 ,0, 0.8)&apos;
+        },
+        content: {
+          border: &apos;1px solid black&apos;,
+          background: &apos;white&apos;,
+          borderRadius: &apos;20px&apos;,
+          padding: &apos;20px&apos;,
+          display:&apos;flex&apos;,
+          flexDirection: &quot;column&quot;,
+          alignItems:&apos;center&apos;
+        }
+      }}
+    &gt;
+      &lt;Titulo2&gt;COLOQUE O MOTIVO DA PAUSA:&lt;/Titulo2&gt;
+      &lt;Select onChange={HandleMotivo} margin=&apos;30px 0px&apos; padding=&apos;20px 0px&apos; width=&apos;80%&apos; font_size=&apos;24px&apos;&gt;
+      &lt;Option width=&apos;80%&apos; padding=&apos;20px 0px&apos; font_size=&apos;24px&apos; value=&apos;&apos;&gt;Selecione um Motivo...&lt;/Option&gt;
+        {
+            motivosPausas.map((motivos,index) =&gt; (
+                &lt;Option width=&apos;80%&apos; padding=&apos;20px 0px&apos; font_size=&apos;24px&apos; key={index}&gt;{motivos}&lt;/Option&gt;
+            ))
+        }
+      &lt;/Select&gt;
+      {
+        MotivoPausa === &apos;Retrabalho&apos; ? 
+        &lt;Select onChange={HandleMotivoRetrabalho} margin=&apos;30px 0px&apos; padding=&apos;20px 0px&apos; width=&apos;80%&apos; font_size=&apos;24px&apos;&gt;
+      &lt;Option width=&apos;80%&apos; padding=&apos;20px 0px&apos; font_size=&apos;24px&apos; value=&apos;&apos;&gt;Selecione um Motivo do Retrabalho...&lt;/Option&gt;
+        {
+            motivosRetrabalho.map((motivos,index) =&gt; (
+                &lt;Option width=&apos;80%&apos; padding=&apos;20px 0px&apos; font_size=&apos;24px&apos; key={index}&gt;{motivos}&lt;/Option&gt;
+            ))
+        }
+      &lt;/Select&gt;
+      :
+      &apos;&apos;
+      }
+      &lt;Botao padding=&apos;20px 10px&apos; width=&apos;40%&apos; margin=&apos;1rem 0&apos; border=&apos;1px solid black&apos; backgroundcolor=&apos;#79b3e0&apos; border_radius=&apos;30px&apos; onClick={() =&gt; HandlePausa(OrdemPausada)}&gt;ENVIAR&lt;/Botao&gt;
+      &lt;Botao padding=&apos;20px 10px&apos; width=&apos;40%&apos; margin=&apos;1rem 0&apos; border=&apos;1px solid black&apos; backgroundcolor=&apos;#FF6347&apos; border_radius=&apos;30px&apos; onClick={() =&gt; setModalPausa(false)}&gt;CANCELAR&lt;/Botao&gt;
       
-      
-    </td>
-  </tr>
-</tbody>
-</table>
-</div>
-<div data-ice="memberSummary"><h2>Member Summary</h2><table class="summary" data-ice="summary">
-  <thead><tr><td data-ice="title" colspan="3">Private Members</td></tr></thead>
-  <tbody>
-  
-  <tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">private</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela.html#instance-member-_token">_token</a></span></span><span class="code" data-ice="signature">: <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">private</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela.html#instance-member-_url">_url</a></span></span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-</tbody>
-</table>
-</div>
-<div data-ice="methodSummary"><h2>Method Summary</h2><table class="summary" data-ice="summary">
-  <thead><tr><td data-ice="title" colspan="3">Public Methods</td></tr></thead>
-  <tbody>
-  
-  <tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          <span data-ice="async">async</span>
-          
-          <span class="code" data-ice="name"><span><a href="class/src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela.html#instance-method-pegarRegistrosTabela">pegarRegistrosTabela</a></span></span><span class="code" data-ice="signature">(table: <span>*</span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-</tbody>
-</table>
-</div>
+    &lt;/Modal&gt;
+    )
+}
 
+export default ModalPausaComponent</code></pre>
 
-
-
-
-<div data-ice="constructorDetails"><h2 data-ice="title">Public Constructors</h2>
-
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-constructor-constructor">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">constructor</span><span class="code" data-ice="signature">()</span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/Services/PegaRegistrosTabela.js.html#lineNumber2">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-</div>
-<div data-ice="memberDetails"><h2 data-ice="title">Private Members</h2>
-
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-_token">
-    <span class="access" data-ice="access">private</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">_token</span><span class="code" data-ice="signature">: <span>*</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/Services/PegaRegistrosTabela.js.html#lineNumber3">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-_url">
-    <span class="access" data-ice="access">private</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">_url</span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/Services/PegaRegistrosTabela.js.html#lineNumber4">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-</div>
-<div data-ice="methodDetails"><h2 data-ice="title">Public Methods</h2>
-
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-pegarRegistrosTabela">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    <span data-ice="async">async</span>
-    
-    <span class="code" data-ice="name">pegarRegistrosTabela</span><span class="code" data-ice="signature">(table: <span>*</span>): <span>*</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/Services/PegaRegistrosTabela.js.html#lineNumber7">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  
-
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">table</td>
-      <td data-ice="type" class="code"><span>*</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
-    </tr>
-</tbody>
-  </table>
-</div>
-</div>
-
-  <div class="return-params" data-ice="returnParams">
-    <h4>Return:</h4>
-    <table>
-      <tbody>
-        <tr>
-          <td class="return-type code" data-ice="returnType"><span>*</span></td>
-          
-        </tr>
-      </tbody>
-    </table>
-    <div data-ice="returnProperties">
-</div>
-  </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-</div>
 </div>
 
 <footer class="footer">

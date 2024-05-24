@@ -1,7 +1,7 @@
 {
-  "coverage": "33.92%",
-  "expectCount": 56,
-  "actualCount": 19,
+  "coverage": "44.77%",
+  "expectCount": 67,
+  "actualCount": 30,
   "files": {
     "src/App.js": {
       "expectCount": 1,
@@ -65,6 +65,21 @@
     "src/Components/Login/Login.js": {
       "expectCount": 2,
       "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/Components/OrdensLista/ModalEditar/ModalEditar.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/Components/OrdensLista/ModalPausaComponent/ModalPausaComponent.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/Components/OrdensLista/OrdensLista.js": {
+      "expectCount": 7,
+      "actualCount": 7,
       "undocumentLines": []
     },
     "src/Components/ProtectedRoute/ProtectedRoute.js": {
