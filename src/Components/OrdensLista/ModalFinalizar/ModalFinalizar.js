@@ -166,7 +166,7 @@ function ModalFinalizar({ModalQuantidadeFinalizacao, setModalQuantidadeFinalizac
     >
       <Label>Quantas peças foram produzidas ?</Label>
       {LoadingFinalizacao ? (
-      <div>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', width:'100%'}}>
       <Imagem src={loadingImg} width='20%'></Imagem> 
       <span>Finalizando...</span>
       </div>
