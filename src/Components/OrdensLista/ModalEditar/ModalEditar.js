@@ -149,7 +149,7 @@ function ModalEditar({ setModalEdicao, setLocalStorage, ModalEdicao, OrdemEditan
     };
 
     /**
-     * Edita os dados da ordem conforme os dados colocados no formulario.
+     * Edita os dados da ordem na localstorage conforme os dados colocados no formulario.
      * @param {Object} ordemEditando Estado OrdemEditando com os dados da ordem que esta sendo editada.
      * @param {Array<Object>} ordens Estado Ordens que contem as ordens que aparecem na lista.
      */
@@ -162,7 +162,7 @@ function ModalEditar({ setModalEdicao, setLocalStorage, ModalEdicao, OrdemEditan
             const pausasLocalStorage = JSON.parse(localStorage.getItem('pausasOrdens')) || []
             const pausasAtualIndex = pausasLocalStorage.findIndex(element => element.id === ordemEditando.id)
 
-            
+            // Faz as alterações na ordem.
             if (ordemAtualIndex !== -1) {
                 const ordemAtual = ordensLocalStorage[ordemAtualIndex];
                 if(ordemAtual['ordem_producao'] !== NumeroOPEdicao && confereRepetido){
@@ -180,6 +180,7 @@ function ModalEditar({ setModalEdicao, setLocalStorage, ModalEdicao, OrdemEditan
                         ordemAtual['quantidade_funcionarios'] = QuantidadeFuncionariosEdicao
                         ordensLocalStorage[ordemAtualIndex] = ordemAtual;
 
+                        //Altera o valor de ordem_producao da localstorage de 'pausasOrdens' caso exista pausas para esta ordem.
                         if(pausasAtualIndex !== -1){
                             const pausas = pausasLocalStorage[pausasAtualIndex].pausas
                             for(let i = 0; i<pausas.length;i++ ){
@@ -189,7 +190,7 @@ function ModalEditar({ setModalEdicao, setLocalStorage, ModalEdicao, OrdemEditan
                             localStorage.setItem('pausasOrdens', JSON.stringify(pausasLocalStorage))
                         }
 
-
+                    
                     localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));
                     setLocalStorage(ordensLocalStorage)
                     setModalEdicao(false)
@@ -201,6 +202,9 @@ function ModalEditar({ setModalEdicao, setLocalStorage, ModalEdicao, OrdemEditan
         }
         }
 
+        /**
+         * Acrescenta + 1 ao valor do estado QuantidadeFuncionariosEdicao maximo de 4 funcionarios.
+         */
         const AdicaoFuncionario = () => {
             if(QuantidadeFuncionariosEdicao < 4){
             setQuantidadeFuncionariosEdicao(QuantidadeFuncionariosEdicao + 1)
@@ -209,6 +213,9 @@ function ModalEditar({ setModalEdicao, setLocalStorage, ModalEdicao, OrdemEditan
             }
         }
 
+        /**
+         * Subtrai -1 ao valor do estado QuantidadeFuncionariosEdicao e retira o ultimo valor do estado MatriculasEdicao.
+         */
         const RemoverFuncionario = () => {
             const novoValor = [...MatriculasEdicao]
             setQuantidadeFuncionariosEdicao(QuantidadeFuncionariosEdicao -1)
@@ -216,14 +223,19 @@ function ModalEditar({ setModalEdicao, setLocalStorage, ModalEdicao, OrdemEditan
             setMatriculasEdicao(novoValor)
         }
         
+        /**
+         * Adiciona mais uma matricula conforme o valor do input do formulario.
+         */
         const HandleMatricula = useCallback((index, event) => {
             const newMatriculas = [...MatriculasEdicao];
             newMatriculas[index] = event.target.value;
             setMatriculasEdicao(newMatriculas);
       }, [MatriculasEdicao, setMatriculasEdicao]);
 
+      /** 
+       * Coloca componente input no estado de InputMatriculasEdicao conforme valor do estado QuantidadeFuncionariosEdicao.
+       * */ 
         useEffect(() => {
-        
             const inputs = []
             for(let i = 0;i < QuantidadeFuncionariosEdicao; i++){
                 inputs.push(
@@ -239,7 +251,12 @@ function ModalEditar({ setModalEdicao, setLocalStorage, ModalEdicao, OrdemEditan
             }
             setInputMatriculasEdicao(inputs)
         },[QuantidadeFuncionariosEdicao, HandleMatricula, MatriculasEdicao])
+        
 
+        /**
+         * Exlui a ordem da localstorage ordensNaoFinalizadas e também seus dados de pausasOrdens.
+         * @param {Object} ordem Estado OrdemEditando com os dados da ordem que esta sendo editada. 
+         */
         const ExcluirOrdem = (ordem) => {
             const confirmação  = window.confirm('Tem certeza que deseja excluir esta Ordem de Produção ?')
             if(confirmação){

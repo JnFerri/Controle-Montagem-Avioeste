@@ -22,18 +22,20 @@ border-radius:20px;
  * Estado que guarda o valor do input de Usuario do componente Login.
  * @typedef {EstadoReact} Usuario
  * @property {string} Usuario - Valor do input de Usuario.
+ * @property {react.Dispatch<React.SetStateAction<string>>} setUsuario Função que define novo valor para o estado Usuario.
  */
 
 /**
  * Estado que guarda o valor do input de Senha do componente Login.
  * @typedef {EstadoReact} Senha
  * @property {string} Senha - Valor do input de Senha.
+ * @property {React.Dispatch<React.SetStateAction<string>>} setSenha Função que define novo valor par ao estado Senha.
  */
 
 /**
  * Elemento da Pagina de Login, Utilizado para Pegar informações de usuario e senha através dos inputs e salvar no banco de dados 'Login' do localstorage, ao salvar atualiza o estado de LoginLocalStorage e consequentemente envia o usuario a rota da pagina principal /controleProducao.
- * @function Login
- * @param {Object} todosOsDadosLogin Objeto com os estados LoginConferencia, setLoginConferencia, LoginLocalStorage e setLoginLocalStorage 
+ * @param {Object} props Props do componente.
+ * @param {Object} props.todosOsDadosLogin Objeto com os estados LoginConferencia, setLoginConferencia, LoginLocalStorage e setLoginLocalStorage 
  * @returns {JSX.Element}
  */
 function Login({todosOsDadosLogin}){

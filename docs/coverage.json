@@ -1,7 +1,7 @@
 {
-  "coverage": "44.77%",
-  "expectCount": 67,
-  "actualCount": 30,
+  "coverage": "96.77%",
+  "expectCount": 62,
+  "actualCount": 60,
   "files": {
     "src/App.js": {
       "expectCount": 1,
@@ -50,17 +50,13 @@
     },
     "src/Components/Input/Input.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        3
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "src/Components/Label/Label.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        4
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "src/Components/Login/Login.js": {
       "expectCount": 2,
@@ -70,6 +66,11 @@
     "src/Components/OrdensLista/ModalEditar/ModalEditar.js": {
       "expectCount": 3,
       "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/Components/OrdensLista/ModalFinalizar/ModalFinalizar.js": {
+      "expectCount": 2,
+      "actualCount": 2,
       "undocumentLines": []
     },
     "src/Components/OrdensLista/ModalPausaComponent/ModalPausaComponent.js": {
@@ -89,67 +90,43 @@
     },
     "src/Components/Select/Option/Option.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        4
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "src/Components/Select/Select.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        4
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "src/Components/Titulo1/Titulo1.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        4
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "src/Components/Titulo2/Titulo2.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        4
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "src/Components/Titulo4/Titulo4.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        4
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "src/Controller/OrdensController.js": {
-      "expectCount": 9,
-      "actualCount": 0,
-      "undocumentLines": [
-        6,
-        7,
-        8,
-        9,
-        10,
-        13,
-        18,
-        23,
-        28
-      ]
+      "expectCount": 7,
+      "actualCount": 7,
+      "undocumentLines": []
     },
     "src/Helpers/Delay.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        1
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "src/Helpers/tranformarDataEmString.js": {
       "expectCount": 1,
-      "actualCount": 0,
-      "undocumentLines": [
-        1
-      ]
+      "actualCount": 1,
+      "undocumentLines": []
     },
     "src/index.js": {
       "expectCount": 1,
@@ -171,45 +148,19 @@
       ]
     },
     "src/Services/AtualizaRegistro.js": {
-      "expectCount": 5,
-      "actualCount": 0,
-      "undocumentLines": [
-        1,
-        2,
-        3,
-        4,
-        7
-      ]
+      "expectCount": 4,
+      "actualCount": 4,
+      "undocumentLines": []
     },
     "src/Services/CriarRegistro.js": {
-      "expectCount": 5,
-      "actualCount": 0,
-      "undocumentLines": [
-        1,
-        3,
-        4,
-        5,
-        8
-      ]
+      "expectCount": 4,
+      "actualCount": 4,
+      "undocumentLines": []
     },
     "src/Services/PegaRegistrosTabela.js": {
-      "expectCount": 5,
-      "actualCount": 0,
-      "undocumentLines": [
-        1,
-        2,
-        3,
-        4,
-        7
-      ]
-    },
-    "src/Services/PegarOrdensNaoFinalizadas.js": {
-      "expectCount": 2,
-      "actualCount": 0,
-      "undocumentLines": [
-        2,
-        3
-      ]
+      "expectCount": 4,
+      "actualCount": 4,
+      "undocumentLines": []
     }
   }
 }

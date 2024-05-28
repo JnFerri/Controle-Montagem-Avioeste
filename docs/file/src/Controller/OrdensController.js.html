@@ -66,6 +66,9 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-NumeroOPEdicao">NumeroOPEdicao</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-QuantidadeFuncionariosEdicao">QuantidadeFuncionariosEdicao</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TurnoEdicao">TurnoEdicao</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-ordenslista-modalfinalizar">Components/OrdensLista/ModalFinalizar</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModalFinalizar">ModalFinalizar</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LoadingFinalizacao">LoadingFinalizacao</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-QuantidadeProduzida">QuantidadeProduzida</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-ordenslista-modalpausacomponent">Components/OrdensLista/ModalPausaComponent</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModalPausaComponent">ModalPausaComponent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MotivoPausa">MotivoPausa</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MotivoRetrabalho">MotivoRetrabalho</a></span></span></li>
@@ -88,7 +91,6 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services">Services</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/AtualizaRegistro.js~AtualizaRegistro.html">AtualizaRegistro</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/CriarRegistro.js~CriarRegistro.html">CriarRegistro</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela.html">PegarRegistrosTabela</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-PegarOrdensNaoFinalizadas">PegarOrdensNaoFinalizadas</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -98,33 +100,59 @@
 import { CriarRegistro } from &quot;../Services/CriarRegistro.js&quot;
 import { PegarRegistrosTabela } from &quot;../Services/PegaRegistrosTabela.js&quot;
 
-
+/**
+ * Classe Responsavel por manter os metodos que interagem com o servidor atrav&#xE9;s dos services.
+ *
+ */
 export class OrdensController{
-    constructor(){
+
+  /**
+   * @constructor
+   */
+  constructor(){
+      /**
+       * Instancia da classe PegarRegistrosTabela.
+       * @type {PegarRegistrosTabela}
+       * @private
+       */
         this._pegarRegistrosTabela = new PegarRegistrosTabela(process.env.REACT_APP_token)
+
+        /**
+         * Instancia da classe CriarRegistro.
+         * @type {CriarRegistro}
+         * @private
+         */
         this._criarRegistro = new CriarRegistro(process.env.REACT_APP_token)
+
+        /**
+         * Instancia da classe AtualizaRegistro.
+         * @type {AtualizaRegistro}
+         * @private
+         */
         this._atualizarRegistro = new AtualizaRegistro(process.env.REACT_APP_token)
     }
 
+    /**
+     * Utiliza a o metodo criarRegistro da classe CriarRegistro para enviar os dados para o servidor local fazer a cria&#xE7;&#xE3;o do registro na tabela e com os dados especificados no parametro.
+     * @param {string} tabela Tabela jestor. Por exemplo em https://avioeste.jestor.com/object/9c6of6gvyn34owum60ty3 seria o &apos;9c6of6gvyn34owum60ty3&apos;;
+     * @param {object} dado Dados da ordem que ser&#xE1; criado o registro.
+     * @returns {Object} Retorna Objeto contendo os dados do registro criado e metadados da resposta da requisi&#xE7;&#xE3;o a API do jestor.
+     */
  async criarRegistro(tabela,dado){
    const dadoCriado = await this._criarRegistro.criarRegistro(tabela,dado)
    return dadoCriado
  }
 
- async pegaDadoUnico(tabela,id){
-    const dado = await this._pegarRegistroUnico.pegaRegistroUnico(tabela,id)
-    return dado
- }
-
+    /**
+     * Utiliza o metodo pegarRegistrosTabela da classe PegarRegistrosTabela para pegar todos os dados de uma tabela do jestor.
+     * @param {string} tabela Tabela Jestor. Por exemplo em https://avioeste.jestor.com/object/9c6of6gvyn34owum60ty3 seria o &apos;9c6of6gvyn34owum60ty3&apos;;
+     * @returns {Array&lt;Object&gt;} Array com todos os dados da tabela.
+     */
  async pegaDadosLista(tabela){
   const dado = await this._pegarRegistrosTabela.pegarRegistrosTabela(tabela)
   return dado
 }
 
-async atualizarRegistro(tabela,dados){
-  const dado = await this._atualizarRegistro.atualizaRegistro(tabela,dados)
-  return dado
-}
 }</code></pre>
 
 </div>

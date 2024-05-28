@@ -27,7 +27,7 @@ justify-content:center;
 `
 
 /**
- * Componente simples de Header.
+ * Componente simples de Header com Componentes de Imagem e Titulo.
  * @returns {JSX.Element} Componente React Header
  */
 function Header(){

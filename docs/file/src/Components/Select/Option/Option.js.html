@@ -66,6 +66,9 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-NumeroOPEdicao">NumeroOPEdicao</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-QuantidadeFuncionariosEdicao">QuantidadeFuncionariosEdicao</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TurnoEdicao">TurnoEdicao</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-ordenslista-modalfinalizar">Components/OrdensLista/ModalFinalizar</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModalFinalizar">ModalFinalizar</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LoadingFinalizacao">LoadingFinalizacao</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-QuantidadeProduzida">QuantidadeProduzida</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-ordenslista-modalpausacomponent">Components/OrdensLista/ModalPausaComponent</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModalPausaComponent">ModalPausaComponent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MotivoPausa">MotivoPausa</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MotivoRetrabalho">MotivoRetrabalho</a></span></span></li>
@@ -88,7 +91,6 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services">Services</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/AtualizaRegistro.js~AtualizaRegistro.html">AtualizaRegistro</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/CriarRegistro.js~CriarRegistro.html">CriarRegistro</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela.html">PegarRegistrosTabela</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-PegarOrdensNaoFinalizadas">PegarOrdensNaoFinalizadas</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -96,11 +98,16 @@
 <div class="content" data-ice="content"><h1 data-ice="title">src/Components/Select/Option/Option.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import styled from &quot;styled-components&quot;;
 
-
+/**
+ * Componente Option customiz&#xE1;vel.
+ * @component
+ * @property {string} font_size Define o tamanho da fonte. Valor padr&#xE3;o : &apos;16px&apos;
+ * @property {string} color Define a cor da fonte. 
+ */
 const Option = styled.option`
     font-size:${props =&gt; props.font_size || &apos;16px&apos;};
     color:${props =&gt; props.color || &apos;black&apos;};
-    padding:${props =&gt; props.padding || &apos;0px 0px&apos;}
+    
 `
 
 export default Option</code></pre>

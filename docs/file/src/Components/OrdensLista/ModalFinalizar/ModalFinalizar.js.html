@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../../../">
-  <title data-ice="title">src/Components/Login/Login.js | controle_montagem</title>
+  <base data-ice="baseUrl" href="../../../../../">
+  <title data-ice="title">src/Components/OrdensLista/ModalFinalizar/ModalFinalizar.js | controle_montagem</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -95,110 +95,194 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/Components/Login/Login.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import styled from &quot;styled-components&quot;;
-import Titulo2 from &quot;../Titulo2/Titulo2.js&quot;;
-import Input from &quot;../Input/Input.js&quot;;
-import Botao from &quot;../Botao/Botao.js&quot;;
-import { useEffect, useState } from &quot;react&quot;;
-import { useNavigate } from &quot;react-router&quot;;
+<div class="content" data-ice="content"><h1 data-ice="title">src/Components/OrdensLista/ModalFinalizar/ModalFinalizar.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Modal from &apos;react-modal&apos;;
+import Label from &apos;../../Label/Label.js&apos;;
+import Imagem from &apos;../../Imagem/Imagem.js&apos;;
+import Input from &apos;../../Input/Input.js&apos;;
+import Botao from &apos;../../Botao/Botao.js&apos;;
+import loadingImg from &quot;../../../images/tube-spinner.svg&quot;;
+import { OrdensController } from &apos;../../../Controller/OrdensController.js&apos;;
+import tranformarDataEmString from &apos;../../../Helpers/tranformarDataEmString.js&apos;;
+import Delay from &apos;../../../Helpers/Delay.js&apos;;
+import { useState } from &apos;react&apos;;
 
 /**
- * Componente de section simples utilizado como container dos outros componentes.
+ * Instancia de OrdensController.
+ * @instance
  */
-const LoginContainer = styled.section`
-display:flex;
-flex-direction: column;
-align-items:center;
-background-color:white;
-margin:20vh 0px;
-width:50%;
-border-radius:20px;
-`
+const ordensController = new OrdensController()
 
 /**
- * Estado que guarda o valor do input de Usuario do componente Login.
- * @typedef {EstadoReact} Usuario
- * @property {string} Usuario - Valor do input de Usuario.
- * @property {react.Dispatch&lt;React.SetStateAction&lt;string&gt;&gt;} setUsuario Fun&#xE7;&#xE3;o que define novo valor para o estado Usuario.
- */
+ * Estado que guarda informa&#xE7;&#xE3;o da quantidade produzida.
+ * @typedef {EstadoReact} QuantidadeProduzida
+ * @property {number} QuantidadeProduzida Estado que guarda o valor do input de quantidade produzida.
+ * @property  {React.Dispatch&lt;React.SetStateAction&lt;number&gt;&gt;} setQuantidadeProduzida Fun&#xE7;&#xE3;o que define novo valor para o estado QuantidadeProduzida.
+  */
 
 /**
- * Estado que guarda o valor do input de Senha do componente Login.
- * @typedef {EstadoReact} Senha
- * @property {string} Senha - Valor do input de Senha.
- * @property {React.Dispatch&lt;React.SetStateAction&lt;string&gt;&gt;} setSenha Fun&#xE7;&#xE3;o que define novo valor par ao estado Senha.
+ * Estado que define a visualiza&#xE7;&#xE3;o do componente de loading.
+ * @typedef {EstadoReact} LoadingFinalizacao
+ * @property {boolean} LoadingFinalizacao True define o loading como visivel, false oculta ele.
+ * @property {React.Dispatch&lt;React.SetStateAction&lt;boolean&gt;&gt;} setLoadingFinalizacao Fun&#xE7;&#xE3;o que define o estado de LoadingFinalizacao.
  */
 
 /**
- * Elemento da Pagina de Login, Utilizado para Pegar informa&#xE7;&#xF5;es de usuario e senha atrav&#xE9;s dos inputs e salvar no banco de dados &apos;Login&apos; do localstorage, ao salvar atualiza o estado de LoginLocalStorage e consequentemente envia o usuario a rota da pagina principal /controleProducao.
+ * Componente modal para finalizar a ordem e capturar algumas informa&#xE7;&#xF5;es referentes a finaliza&#xE7;&#xE3;o.
  * @param {Object} props Props do componente.
- * @param {Object} props.todosOsDadosLogin Objeto com os estados LoginConferencia, setLoginConferencia, LoginLocalStorage e setLoginLocalStorage 
- * @returns {JSX.Element}
+ * @param {boolean} props.ModalQuantidadeFinalizacao Estado que define a visualiza&#xE7;&#xE3;o do modal.
+ * @param {React.Dispatch&lt;React.SetStateAction&lt;boolean&gt;&gt;} props.setModalQuantidadeFinalizacao Fun&#xE7;&#xE3;o que define o valor do estado ModalQuantidadeFinalizacao.
+ * @param {React.Dispatch&lt;React.SetStateAction&lt;Array&lt;Object&gt;&gt;&gt;} props.setLocalStorage Fun&#xE7;&#xE3;o que define novo valor para o estado LocalStorage.
+ * @param {Object} props.Ordemfinalizar Estado que guarda a informa&#xE7;&#xE3;o da ordem a qual esta sendo finalizada.
+ * @returns {JSX.Element} Componente de modal para pegar informa&#xE7;&#xF5;es referentes a finaliza&#xE7;&#xE3;o de ordem da lista.
  */
-function Login({todosOsDadosLogin}){
-    /**
-     * Estado que salva o valor do input de usuario.
-     */
-    const [Usuario, setUsuario] = useState(&apos;&apos;)
-    /**
-     * Estado que salva o valor do input de senha.
-     */
-    const [Senha, setSenha] = useState(&apos;&apos;)
-    /**
-     * React hook para ir at&#xE9; outra rota.
-     */
-    const navigate = useNavigate();
-    
-    /**
-     * Ao carregar a pagina confere se o Estado LoginConferencia for true acessa a rota principal /controleProducao.
-     */
-    useEffect(() =&gt; {
-        const handleRetornaLogin = () =&gt; {
-          navigate(&quot;/controleProducao&quot;);
-        }
-        if(todosOsDadosLogin.LoginConferencia === true){
-          handleRetornaLogin()
-        }
-      },[todosOsDadosLogin.LoginLocalStorage, todosOsDadosLogin.LoginConferencia,navigate])
+function ModalFinalizar({ModalQuantidadeFinalizacao, setModalQuantidadeFinalizacao, setLocalStorage, OrdemFinalizar }){
 
-      /**
-       * Salva os dados de usuario e senha no banco de dados Login da localstorage e posteriormente salva as informa&#xE7;&#xF5;es de Login no estado LoginLocalStorage para que este ao ser atualizado fa&#xE7;a a conferencia de login em App.js e retone LoginConferencia como true.
-       * @param {*} event Evento de Click do mouse, utilizado para previnir carregamento da pagina.
-       */
-    function defineLogin(event){
-        event.preventDefault()
-        localStorage.setItem(&apos;Login&apos;, JSON.stringify({Usuario: Usuario, Senha: Senha}))
-        todosOsDadosLogin.setLoginLocalStorage(JSON.parse(localStorage.getItem(&apos;Login&apos;)) || [])
-    }
     /**
-     * Pega valor do input usuario e salva no estado Usuario.
-     * @param {*} event Evento utilizado para pegar o valor do target.
+     * Estado que guarda o valor de quantidade produzida.
      */
-    function handleUsuario(event){
-        setUsuario(event.target.value)
-        
-    }
-    
+  const [QuantidadeProduzida, setQuantidadeProduzida] = useState(0)
     /**
-     * Pega o valor do input senha e salva no estado Senha.
-     * @param {*} event Evento utilizado para pegar o valor do target.
+     * Estado que define a visualiza&#xE7;&#xE3;o do componente loading ao finalizar a ordem.
      */
-    function handleSenha(event){
-        setSenha(event.target.value)
+  const [LoadingFinalizacao, setLoadingFinalizacao] = useState(false)
+
+  /**
+   * Fun&#xE7;&#xE3;o que finaliza a ordem, Pega as informa&#xE7;&#xF5;es da ordem da localstorage de ordensNaoFinalizadas e pausasOrdens, adiciona alguns dados a elas e envia ao servidor para ser salvado todos os dados no jestor.
+   * @param {Object} ordem Estado OrdemFinalizar que possui os dados da ordem que esta sendo finalizada.
+   * @throws {Error} Erro quando n&#xE3;o encontrado a ordem na localstorage.
+   * @throws {Error} Erro quando n&#xE3;o &#xE9; possivel salvar os dados das pausas no jestor. N&#xE3;o impede de salvar os dados da ordem. 
+   */
+  async function HandleFinalizar(ordem){
+    if(QuantidadeProduzida &gt; 0){
+        const horarioFinalizacao = new Date()
+        const horarioInicio = new Date(Date.parse(ordem.horario_inicio) + 10800000)
+        const ordensLocalStorage = await JSON.parse(localStorage.getItem(&apos;ordensNaoFinalizadas&apos;)) || [];
+        const pausasLocalStorage = await  JSON.parse(localStorage.getItem(&apos;pausasOrdens&apos;)) || [];
+        const ordemAtualIndex = ordensLocalStorage.findIndex(element =&gt; element.id === ordem.id);
+        const pausasAtualIndex = pausasLocalStorage.findIndex(element =&gt; element.id === ordem.id);
+
+        // Define ou altera os valores de tempo_em_producao , tempo_total_producao , status , quantidade_produzida e horario_termino da ordem e depois atrav&#xE9;s da fun&#xE7;&#xE3;o criarRegistro do controller envia os dados ao servidor para serem salvos no jestor.
+        if(ordem.status === &apos;Em Andamento&apos;){
+            if (ordemAtualIndex !== -1) {
+                setLoadingFinalizacao(true)
+                const tempoTotalMilisegundos = horarioFinalizacao - horarioInicio
+                const ordemAtual = ordensLocalStorage[ordemAtualIndex];
+                if(ordem.qnt_pausado &gt; 0){
+                    ordemAtual[&apos;tempo_em_producao&apos;] = tempoTotalMilisegundos - ordem.qnt_pausado
+                }else{
+                    ordemAtual[&apos;tempo_em_producao&apos;] = tempoTotalMilisegundos
+                }
+                ordemAtual[&apos;tempo_total_producao&apos;] = tempoTotalMilisegundos
+                ordemAtual[&apos;finalizado&apos;] = true
+                ordemAtual[&apos;status&apos;] = &apos;Finalizado&apos;
+                ordemAtual[&apos;quantidade_produzida&apos;] = QuantidadeProduzida
+                ordemAtual[&apos;horario_termino&apos;] = tranformarDataEmString(horarioFinalizacao)
+                const result = await ordensController.criarRegistro(process.env.REACT_APP_TABELA, ordemAtual)
+                if(result.error){
+                    window.alert(`${result.error}  , Contate o administrador do sistema para saber o real motivo e pedir confirma&#xE7;&#xE3;o para excluir a ordem.`)
+                    console.log(result)
+                    setModalQuantidadeFinalizacao(false)
+                    setQuantidadeProduzida(0)
+                    setLoadingFinalizacao(false)
+                }else {
+                    ordensLocalStorage[ordemAtualIndex] = ordemAtual;
+                    ordensLocalStorage.splice(ordemAtualIndex, 1);
+                    localStorage.setItem(&apos;ordensNaoFinalizadas&apos;, JSON.stringify(ordensLocalStorage));
+                    await Delay(1000)
+                    setLocalStorage(ordensLocalStorage)
+                    
+                    // Salva no jestor os dados das pausas da localstorage &apos;pausasOrdens&apos; referentes a ordem que esta sendo finalizada.
+                    if(pausasLocalStorage){
+                    if(pausasLocalStorage.length &gt; 0){
+
+                        if(pausasLocalStorage[pausasAtualIndex].pausas.length &gt; 0){
+                            pausasLocalStorage[pausasAtualIndex].pausas.forEach( async (pausa) =&gt; {
+                                const obj = {
+                                    conexao_apontamentos_2:result.data[`id_${process.env.REACT_APP_TABELA}`],
+                                    ordem_producao:pausa.ordem_producao,
+                                    motivo_pausa:pausa.motivo_pausa,
+                                    tempo_pausado:pausa.tempo_pausado,
+                                    motivo_retrabalho: pausa.motivo_retrabalho
+                                }
+                                const resultado = await ordensController.criarRegistro(process.env.REACT_APP_TABELA_PAUSAS, obj)
+                                if(resultado.error){
+                                    throw new Error(&apos;Aten&#xE7;&#xE3;o n&#xE3;o foi possivel Salvar os dados das pausas, contate o administrador do sistema.&apos;, resultado.error)
+                                }
+                            })
+                            pausasLocalStorage.splice(pausasAtualIndex, 1)
+                            localStorage.setItem(&apos;pausasOrdens&apos;, JSON.stringify(pausasLocalStorage))
+                        }
+                    }
+                  }
+                    
+
+                    setModalQuantidadeFinalizacao(false)
+                    setQuantidadeProduzida(0)
+                    setLoadingFinalizacao(false)
+                    
+                }
+            }else {
+                throw new Error(&apos;Ordem n&#xE3;o encontrada na localStorage.&apos;);
+            }
+        }else{
+            window.alert(&quot;Coloque a ordem em andamento antes de finalizar&quot;)
+        }
+    }else{
+        window.alert(&apos;Favor informar a quantidade produzida !!&apos;)
     }
+}
+
+/**
+ * Define o estado QuantidadeProduzida conforme o valor que est&#xE1; no input.
+ * @param {*} event Evento onChange do input.
+ */
+  const HandleQuantidadeProduzida = (event) =&gt; {
+    setQuantidadeProduzida(event.target.value);
+  };
+
     return(
-        &lt;LoginContainer&gt;
-            &lt;Titulo2&gt;Usuario:&lt;/Titulo2&gt;
-            &lt;Input type=&quot;text&quot; value={Usuario} onChange={handleUsuario} placeholder=&quot;Coloque o nome de usuario...&quot; padding=&apos;15px 0px&apos; margin=&apos;10px 0px&apos; border=&apos;0.5px solid black&apos; font_size=&apos;20px&apos; border_radius=&apos;20px&apos; width=&apos;80%&apos;&gt;&lt;/Input&gt;
-            &lt;Titulo2&gt;Senha:&lt;/Titulo2&gt;
-            &lt;Input type=&quot;password&quot; value={Senha} onChange={handleSenha} placeholder=&quot;Coloque a senha de usuario...&quot; padding=&apos;15px 0px&apos; margin=&apos;10px 0px&apos; border=&apos;0.5px solid black&apos; font_size=&apos;20px&apos; border_radius=&apos;20px&apos; width=&apos;80%&apos;&gt;&lt;/Input&gt;
-            &lt;Botao onClick={defineLogin} width = &apos;50%&apos; padding=&apos;15px 0px&apos; margin=&apos;20px 0px&apos; backgroundcolor=&apos;#79b3e0&apos; font_size=&apos;26px&apos; border=&apos;0.5px solid black&apos; border_radius=&apos;10px&apos; boxshadow=&apos;2px 2px 5px black&apos;&gt;ENTRAR&lt;/Botao&gt;
-        &lt;/LoginContainer&gt;
+        &lt;Modal
+    isOpen={ModalQuantidadeFinalizacao}
+    onRequestClose={async() =&gt; setModalQuantidadeFinalizacao(false)}
+    contentLabel=&quot;Motivo da Pausa&quot;
+    ariaHideApp={false}
+    style={{
+        overlay: {
+          backgroundColor: &apos;rgba(0, 0 ,0, 0.8)&apos;
+        },
+        content: {
+          border: &apos;1px solid black&apos;,
+          background: &apos;white&apos;,
+          borderRadius: &apos;20px&apos;,
+          padding: &apos;20px&apos;,
+          display:&apos;flex&apos;,
+          flexDirection: &quot;column&quot;,
+          alignItems:&apos;center&apos;
+        }
+      }}
+    &gt;
+      &lt;Label&gt;Quantas pe&#xE7;as foram produzidas ?&lt;/Label&gt;
+      {LoadingFinalizacao ? (
+      &lt;div&gt;
+      &lt;Imagem src={loadingImg} width=&apos;20%&apos;&gt;&lt;/Imagem&gt; 
+      &lt;span&gt;Finalizando...&lt;/span&gt;
+      &lt;/div&gt;
+      )
+      : 
+      (
+      &lt;div style={{display:&apos;flex&apos;, flexDirection:&apos;column&apos;, alignItems:&apos;center&apos;, width:&apos;100%&apos;}}&gt;
+      &lt;Input placeholder=&quot;Quantidade Produzida&quot;   padding = &quot;20px 0px&quot; width=&quot;40%&quot; margin =&quot;1rem 0px&quot; border_radius=&quot;20px&quot; border=&apos;0.1px black solid&apos; font_size=&quot;20px&quot; value={QuantidadeProduzida} onChange={HandleQuantidadeProduzida}&gt;&lt;/Input&gt;
+      &lt;Botao padding=&apos;20px 10px&apos; width=&apos;40%&apos; margin=&apos;1rem 0&apos; border=&apos;1px solid black&apos; backgroundcolor=&apos;#79b3e0&apos; border_radius=&apos;30px&apos; onClick={() =&gt; HandleFinalizar(OrdemFinalizar)}&gt;FINALIZAR&lt;/Botao&gt;
+      &lt;Botao padding=&apos;20px 10px&apos; width=&apos;40%&apos; margin=&apos;1rem 0&apos; border=&apos;1px solid black&apos; backgroundcolor=&apos;#FF6347&apos; border_radius=&apos;30px&apos; onClick={() =&gt; setModalQuantidadeFinalizacao(false)}&gt;CANCELAR&lt;/Botao&gt;
+      &lt;/div&gt;
+      )
+      }
+    &lt;/Modal&gt;
     )
 }
 
-export default Login</code></pre>
+export default ModalFinalizar</code></pre>
 
 </div>
 

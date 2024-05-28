@@ -8,6 +8,11 @@ import { OrdensController } from '../../../Controller/OrdensController.js';
 import tranformarDataEmString from '../../../Helpers/tranformarDataEmString.js';
 import Delay from '../../../Helpers/Delay.js';
 import { useState } from 'react';
+
+/**
+ * Instancia de OrdensController.
+ * @instance
+ */
 const ordensController = new OrdensController()
 
 /**
@@ -102,7 +107,7 @@ function ModalFinalizar({ModalQuantidadeFinalizacao, setModalQuantidadeFinalizac
                                     tempo_pausado:pausa.tempo_pausado,
                                     motivo_retrabalho: pausa.motivo_retrabalho
                                 }
-                                const resultado = await ordensController.criarRegistro('o3f0tbvxjnxj_k4odqh_0', obj)
+                                const resultado = await ordensController.criarRegistro(process.env.REACT_APP_TABELA_PAUSAS, obj)
                                 if(resultado.error){
                                     throw new Error('Atenção não foi possivel Salvar os dados das pausas, contate o administrador do sistema.', resultado.error)
                                 }
@@ -161,17 +166,18 @@ function ModalFinalizar({ModalQuantidadeFinalizacao, setModalQuantidadeFinalizac
     >
       <Label>Quantas peças foram produzidas ?</Label>
       {LoadingFinalizacao ? (
-      <>
+      <div>
       <Imagem src={loadingImg} width='20%'></Imagem> 
       <span>Finalizando...</span>
-      </>
+      </div>
       )
-      :(
-      <>
+      : 
+      (
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center', width:'100%'}}>
       <Input placeholder="Quantidade Produzida"   padding = "20px 0px" width="40%" margin ="1rem 0px" border_radius="20px" border='0.1px black solid' font_size="20px" value={QuantidadeProduzida} onChange={HandleQuantidadeProduzida}></Input>
       <Botao padding='20px 10px' width='40%' margin='1rem 0' border='1px solid black' backgroundcolor='#79b3e0' border_radius='30px' onClick={() => HandleFinalizar(OrdemFinalizar)}>FINALIZAR</Botao>
       <Botao padding='20px 10px' width='40%' margin='1rem 0' border='1px solid black' backgroundcolor='#FF6347' border_radius='30px' onClick={() => setModalQuantidadeFinalizacao(false)}>CANCELAR</Botao>
-      </>
+      </div>
       )
       }
     </Modal>

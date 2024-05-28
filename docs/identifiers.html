@@ -66,6 +66,9 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-NumeroOPEdicao">NumeroOPEdicao</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-QuantidadeFuncionariosEdicao">QuantidadeFuncionariosEdicao</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TurnoEdicao">TurnoEdicao</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-ordenslista-modalfinalizar">Components/OrdensLista/ModalFinalizar</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModalFinalizar">ModalFinalizar</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LoadingFinalizacao">LoadingFinalizacao</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-QuantidadeProduzida">QuantidadeProduzida</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-ordenslista-modalpausacomponent">Components/OrdensLista/ModalPausaComponent</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModalPausaComponent">ModalPausaComponent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MotivoPausa">MotivoPausa</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MotivoRetrabalho">MotivoRetrabalho</a></span></span></li>
@@ -88,7 +91,6 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services">Services</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/AtualizaRegistro.js~AtualizaRegistro.html">AtualizaRegistro</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/CriarRegistro.js~CriarRegistro.html">CriarRegistro</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela.html">PegarRegistrosTabela</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-PegarOrdensNaoFinalizadas">PegarOrdensNaoFinalizadas</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -307,7 +309,7 @@
       <div>
         
         
-        <div data-ice="description"><p>Array com os motivos de retrabalho.</p>
+        <div data-ice="description"><p>Array com o nome dos motivos de retrabalho.</p>
 </div>
       </div>
     </td>
@@ -627,7 +629,7 @@
       <div>
         
         
-        <div data-ice="description"><p>Componente simples de Header.</p>
+        <div data-ice="description"><p>Componente simples de Header com Componentes de Imagem e Titulo.</p>
 </div>
       </div>
     </td>
@@ -705,7 +707,8 @@
       <div>
         
         
-        
+        <div data-ice="description"><p>Componente Input customizavel.</p>
+</div>
       </div>
     </td>
     <td>
@@ -743,7 +746,8 @@
       <div>
         
         
-        
+        <div data-ice="description"><p>Componente simples de Label.</p>
+</div>
       </div>
     </td>
     <td>
@@ -775,7 +779,7 @@
           <span data-ice="kind-icon" class="kind-function">F</span>
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-Login">Login</a></span></span><span class="code" data-ice="signature">(todosOsDadosLogin: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span>JSX.Element</span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-Login">Login</a></span></span><span class="code" data-ice="signature">(props: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span>JSX.Element</span></span>
         </p>
       </div>
       <div>
@@ -1278,6 +1282,103 @@
 </div>
     </div>
 <div data-ice="dirSummaryWrap">
+      <h2 data-ice="dirPath" id="components-ordenslista-modalfinalizar">Components/OrdensLista/ModalFinalizar</h2>
+      <div data-ice="dirSummary"><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">summary</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          <span data-ice="kind-icon" class="kind-function">F</span>
+          
+          
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-ModalFinalizar">ModalFinalizar</a></span></span><span class="code" data-ice="signature">(props: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span>JSX.Element</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Componente modal para finalizar a ordem e capturar algumas informa&#xE7;&#xF5;es referentes a finaliza&#xE7;&#xE3;o.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          <span data-ice="kind-icon" class="kind-typedef">T</span>
+          
+          
+          <span class="code" data-ice="name"><span><a href="typedef/index.html#static-typedef-LoadingFinalizacao">LoadingFinalizacao</a></span></span><span class="code" data-ice="signature">: <span>EstadoReact</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Estado que define a visualiza&#xE7;&#xE3;o do componente de loading.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          <span data-ice="kind-icon" class="kind-typedef">T</span>
+          
+          
+          <span class="code" data-ice="name"><span><a href="typedef/index.html#static-typedef-QuantidadeProduzida">QuantidadeProduzida</a></span></span><span class="code" data-ice="signature">: <span>EstadoReact</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Estado que guarda informa&#xE7;&#xE3;o da quantidade produzida.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+    </div>
+<div data-ice="dirSummaryWrap">
       <h2 data-ice="dirPath" id="components-ordenslista-modalpausacomponent">Components/OrdensLista/ModalPausaComponent</h2>
       <div data-ice="dirSummary"><table class="summary" data-ice="summary">
   <thead><tr><td data-ice="title" colspan="3">summary</td></tr></thead>
@@ -1439,7 +1540,8 @@
       <div>
         
         
-        
+        <div data-ice="description"><p>Componente de Select customiz&#xE1;vel.</p>
+</div>
       </div>
     </td>
     <td>
@@ -1477,7 +1579,8 @@
       <div>
         
         
-        
+        <div data-ice="description"><p>Componente Option customiz&#xE1;vel.</p>
+</div>
       </div>
     </td>
     <td>
@@ -1515,7 +1618,8 @@
       <div>
         
         
-        
+        <div data-ice="description"><p>Componente de titulo h1 customiz&#xE1;vel</p>
+</div>
       </div>
     </td>
     <td>
@@ -1553,7 +1657,8 @@
       <div>
         
         
-        
+        <div data-ice="description"><p>Componente de titulo h2 customiz&#xE1;vel</p>
+</div>
       </div>
     </td>
     <td>
@@ -1591,7 +1696,8 @@
       <div>
         
         
-        
+        <div data-ice="description"><p>Componente de titulo h4 customiz&#xE1;vel</p>
+</div>
       </div>
     </td>
     <td>
@@ -1629,7 +1735,8 @@
       <div>
         
         
-        
+        <div data-ice="description"><p>Classe Responsavel por manter os metodos que interagem com o servidor atrav&#xE9;s dos services.</p>
+</div>
       </div>
     </td>
     <td>
@@ -1661,13 +1768,14 @@
           <span data-ice="kind-icon" class="kind-function">F</span>
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-Delay">Delay</a></span></span><span class="code" data-ice="signature">(ms: <span>*</span>): <span>*</span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-Delay">Delay</a></span></span><span class="code" data-ice="signature">(ms: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span>*</span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>Fun&#xE7;&#xE3;o utilizada em fun&#xE7;&#xF5;es assincronas para esperar um tempo.</p>
+</div>
       </div>
     </td>
     <td>
@@ -1689,13 +1797,14 @@
           <span data-ice="kind-icon" class="kind-function">F</span>
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-tranformarDataEmString">tranformarDataEmString</a></span></span><span class="code" data-ice="signature">(data: <span>*</span>): <span>*</span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-tranformarDataEmString">tranformarDataEmString</a></span></span><span class="code" data-ice="signature">(data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span>*</span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>Tranforma uma data em String no formato &apos;ano-mes-diaThora:minutos:segundos+00:00&apos;</p>
+</div>
       </div>
     </td>
     <td>
@@ -1944,9 +2053,10 @@
         </p>
       </div>
       <div>
+        <div class="deprecated" data-ice="deprecated">this class was deprecated. N&#xE3;o &#xE9; utilizado no momento, mantido na aplica&#xE7;&#xE3;o caso necessario uso futuro.</div>
         
-        
-        
+        <div data-ice="description"><p>Classe responsavel por fazer as requisi&#xE7;&#xF5;es ao servidor que tem conex&#xE3;o com a API do jestor para atualizar um registro.</p>
+</div>
       </div>
     </td>
     <td>
@@ -1974,7 +2084,8 @@
       <div>
         
         
-        
+        <div data-ice="description"><p>Classe responsavel por fazer as requisi&#xE7;&#xF5;es ao servidor que tem conex&#xE3;o com a API do jestor para criar um registro.</p>
+</div>
       </div>
     </td>
     <td>
@@ -2002,35 +2113,8 @@
       <div>
         
         
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          <span data-ice="kind-icon" class="kind-function">F</span>
-          <span data-ice="async">async</span>
-          
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-PegarOrdensNaoFinalizadas">PegarOrdensNaoFinalizadas</a></span></span><span class="code" data-ice="signature">(tabela: <span>*</span>): <span>*</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
+        <div data-ice="description"><p>Classe responsavel por fazer as requisi&#xE7;&#xF5;es ao servidor que tem conex&#xE3;o com a API do jestor para pegar registros.</p>
+</div>
       </div>
     </td>
     <td>
@@ -2056,6 +2140,7 @@
 <div style="padding-left: 1em"><a href="#components-login">Login</a></div>
 <div style="padding-left: 1em"><a href="#components-ordenslista">OrdensLista</a></div>
 <div style="padding-left: 2em"><a href="#components-ordenslista-modaleditar">ModalEditar</a></div>
+<div style="padding-left: 2em"><a href="#components-ordenslista-modalfinalizar">ModalFinalizar</a></div>
 <div style="padding-left: 2em"><a href="#components-ordenslista-modalpausacomponent">ModalPausaComponent</a></div>
 <div style="padding-left: 1em"><a href="#components-protectedroute">ProtectedRoute</a></div>
 <div style="padding-left: 1em"><a href="#components-select">Select</a></div>

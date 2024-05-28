@@ -66,6 +66,9 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-NumeroOPEdicao">NumeroOPEdicao</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-QuantidadeFuncionariosEdicao">QuantidadeFuncionariosEdicao</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TurnoEdicao">TurnoEdicao</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-ordenslista-modalfinalizar">Components/OrdensLista/ModalFinalizar</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModalFinalizar">ModalFinalizar</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LoadingFinalizacao">LoadingFinalizacao</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-QuantidadeProduzida">QuantidadeProduzida</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-ordenslista-modalpausacomponent">Components/OrdensLista/ModalPausaComponent</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModalPausaComponent">ModalPausaComponent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MotivoPausa">MotivoPausa</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MotivoRetrabalho">MotivoRetrabalho</a></span></span></li>
@@ -88,24 +91,41 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services">Services</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/AtualizaRegistro.js~AtualizaRegistro.html">AtualizaRegistro</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/CriarRegistro.js~CriarRegistro.html">CriarRegistro</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela.html">PegarRegistrosTabela</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-PegarOrdensNaoFinalizadas">PegarOrdensNaoFinalizadas</a></span></span></li>
 </ul>
 </div>
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/Services/PegaRegistrosTabela.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export class PegarRegistrosTabela{
-    constructor(token){
-        this._token = token
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">
+/**
+ * Classe responsavel por fazer as requisi&#xE7;&#xF5;es ao servidor que tem conex&#xE3;o com a API do jestor para pegar registros.
+ */
+export class PegarRegistrosTabela{
+   /**
+     * @constructor
+     */
+    constructor(){
+      /**
+     * Rota do para o servidor nodejs que interaje com o jestor para pegar os registros.
+     * @type {string}
+     * @private
+     */
         this._url = `${process.env.REACT_APP_API_URL}/api/jestor/lista`
     }
     
+    /**
+     * Solicita ao servidor que ele retorne a lista de todos os dados dos registros de uma tabela do jestor.
+     * @param {string} table Tabela jestor 
+     * @returns Array com os dados dos registros da tabela jestor.
+     * @throws Retorna erro caso algum erro aconte&#xE7;a na fun&#xE7;&#xE3;o ap&#xF3;s o numero maximo de tentativas.
+     */
     async pegarRegistrosTabela(table){
       const delay = async (ms) =&gt; {return new Promise(resolve =&gt;setTimeout(resolve,ms))}
       const maxTentativas = 30
       const dadosAcumulador = []
       var tentativaAtual = 0
-      async function pegaDadoPaginado(token, url,page=1){
+      // Pega os dados paginados para n&#xE3;o dar timeout no servidor do jestor.
+      async function pegaDadoPaginado(url,page=1){
            try{
             const response = await fetch(url, {
               method: &apos;POST&apos;,
@@ -121,20 +141,22 @@
             }
             const dados = await response.json()
             dadosAcumulador.push(...dados.data.items)
+            //Se ainda possui dados ativa denovo a fun&#xE7;&#xE3;o adicionando + 1 a pagina.
             if (dados.data.has_more === true) {
               console.log(`Dados capturados, pagina ${page}`)
-             return pegaDadoPaginado(token, url, page + 1);
+             return pegaDadoPaginado(url, page + 1);
            } else {
              return dadosAcumulador;
            }
           }
            catch(error){
+            //Caso erro tenta repetir a fun&#xE7;&#xE3;o para tentar corrigir enquanto tentativa atual &#xE9; menor que o maxTentativas.
              if(tentativaAtual &lt;maxTentativas){
               tentativaAtual++
               console.log(`Erro ${error} ao coletar os dados !!!`)
               console.log(`Tentando Novamente fazer a captura dos dados, tentativa ${tentativaAtual}, maximo de ${maxTentativas}`)
               await delay(10000)
-            return await pegaDadoPaginado(token, url, page)}
+            return await pegaDadoPaginado(url, page)}
             else{
               console.log(error)
               throw error
@@ -142,7 +164,7 @@
              
        }
      }
-     const todosDados = await pegaDadoPaginado(this._token, this._url)
+     const todosDados = await pegaDadoPaginado(this._url)
      console.log(`Captura da lista de dados jestor concluida, total de ${todosDados.length} dados`)
      return todosDados
      }

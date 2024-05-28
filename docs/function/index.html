@@ -66,6 +66,9 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-NumeroOPEdicao">NumeroOPEdicao</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-QuantidadeFuncionariosEdicao">QuantidadeFuncionariosEdicao</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TurnoEdicao">TurnoEdicao</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-ordenslista-modalfinalizar">Components/OrdensLista/ModalFinalizar</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModalFinalizar">ModalFinalizar</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LoadingFinalizacao">LoadingFinalizacao</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-QuantidadeProduzida">QuantidadeProduzida</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-ordenslista-modalpausacomponent">Components/OrdensLista/ModalPausaComponent</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModalPausaComponent">ModalPausaComponent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MotivoPausa">MotivoPausa</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MotivoRetrabalho">MotivoRetrabalho</a></span></span></li>
@@ -88,7 +91,6 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services">Services</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/AtualizaRegistro.js~AtualizaRegistro.html">AtualizaRegistro</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/CriarRegistro.js~CriarRegistro.html">CriarRegistro</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela.html">PegarRegistrosTabela</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-PegarOrdensNaoFinalizadas">PegarOrdensNaoFinalizadas</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -170,13 +172,14 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-Delay">Delay</a></span></span><span class="code" data-ice="signature">(ms: <span>*</span>): <span>*</span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-Delay">Delay</a></span></span><span class="code" data-ice="signature">(ms: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span>*</span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>Fun&#xE7;&#xE3;o utilizada em fun&#xE7;&#xF5;es assincronas para esperar um tempo.</p>
+</div>
       </div>
     </td>
     <td>
@@ -233,7 +236,7 @@
       <div>
         
         
-        <div data-ice="description"><p>Componente simples de Header.</p>
+        <div data-ice="description"><p>Componente simples de Header com Componentes de Imagem e Titulo.</p>
 </div>
       </div>
     </td>
@@ -256,7 +259,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-Login">Login</a></span></span><span class="code" data-ice="signature">(todosOsDadosLogin: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span>JSX.Element</span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-Login">Login</a></span></span><span class="code" data-ice="signature">(props: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span>JSX.Element</span></span>
         </p>
       </div>
       <div>
@@ -314,6 +317,35 @@
           
           
           
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-ModalFinalizar">ModalFinalizar</a></span></span><span class="code" data-ice="signature">(props: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span>JSX.Element</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Componente modal para finalizar a ordem e capturar algumas informa&#xE7;&#xF5;es referentes a finaliza&#xE7;&#xE3;o.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
           <span class="code" data-ice="name"><span><a href="function/index.html#static-function-ModalPausaComponent">ModalPausaComponent</a></span></span><span class="code" data-ice="signature">(props: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span>JSX.Element</span></span>
         </p>
       </div>
@@ -344,34 +376,6 @@
           
           
           <span class="code" data-ice="name"><span><a href="function/index.html#static-function-OrdensLista">OrdensLista</a></span></span><span class="code" data-ice="signature">(props: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span>JSX.Element</span></span>
-        </p>
-      </div>
-      <div>
-        
-        
-        
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          <span data-ice="async">async</span>
-          
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-PegarOrdensNaoFinalizadas">PegarOrdensNaoFinalizadas</a></span></span><span class="code" data-ice="signature">(tabela: <span>*</span>): <span>*</span></span>
         </p>
       </div>
       <div>
@@ -456,13 +460,14 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-tranformarDataEmString">tranformarDataEmString</a></span></span><span class="code" data-ice="signature">(data: <span>*</span>): <span>*</span></span>
+          <span class="code" data-ice="name"><span><a href="function/index.html#static-function-tranformarDataEmString">tranformarDataEmString</a></span></span><span class="code" data-ice="signature">(data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span>*</span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>Tranforma uma data em String no formato &apos;ano-mes-diaThora:minutos:segundos+00:00&apos;</p>
+</div>
       </div>
     </td>
     <td>
@@ -603,18 +608,19 @@
     
     
     
-    <span class="code" data-ice="name">Delay</span><span class="code" data-ice="signature">(ms: <span>*</span>): <span>*</span></span>
+    <span class="code" data-ice="name">Delay</span><span class="code" data-ice="signature">(ms: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span>*</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Helpers/Delay.js.html#lineNumber1">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Helpers/Delay.js.html#lineNumber7">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Delay from &apos;<span><a href="file/src/Helpers/Delay.js.html#lineNumber1">controle_montagem/src/Helpers/Delay.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Delay from &apos;<span><a href="file/src/Helpers/Delay.js.html#lineNumber7">controle_montagem/src/Helpers/Delay.js</a></span>&apos;</code></pre></div>
   
   
-  
+  <div data-ice="description"><p>Fun&#xE7;&#xE3;o utilizada em fun&#xE7;&#xF5;es assincronas para esperar um tempo. Utilizada principalmente antes de fazer requisi&#xE7;&#xF5;es a API&apos;s para evitar sobrecarga.</p>
+</div>
 
   
 
@@ -628,9 +634,10 @@
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">ms</td>
-      <td data-ice="type" class="code"><span>*</span></td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Quantidade de milisegundos que a fun&#xE7;&#xE3;o rodar&#xE1;.</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -643,7 +650,8 @@
       <tbody>
         <tr>
           <td class="return-type code" data-ice="returnType"><span>*</span></td>
-          
+          <td class="return-desc" data-ice="returnDescription"><p>Promisse vazia.</p>
+</td>
         </tr>
       </tbody>
     </table>
@@ -772,7 +780,7 @@
   <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Header from &apos;<span><a href="file/src/Components/Header/Header.js.html#lineNumber33">controle_montagem/src/Components/Header/Header.js</a></span>&apos;</code></pre></div>
   
   
-  <div data-ice="description"><p>Componente simples de Header.</p>
+  <div data-ice="description"><p>Componente simples de Header com Componentes de Imagem e Titulo.</p>
 </div>
 
   
@@ -818,15 +826,15 @@
     
     
     
-    <span class="code" data-ice="name">Login</span><span class="code" data-ice="signature">(todosOsDadosLogin: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span>JSX.Element</span></span>
+    <span class="code" data-ice="name">Login</span><span class="code" data-ice="signature">(props: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span>JSX.Element</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Components/Login/Login.js.html#lineNumber39">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Components/Login/Login.js.html#lineNumber41">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Login from &apos;<span><a href="file/src/Components/Login/Login.js.html#lineNumber39">controle_montagem/src/Components/Login/Login.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Login from &apos;<span><a href="file/src/Components/Login/Login.js.html#lineNumber41">controle_montagem/src/Components/Login/Login.js</a></span>&apos;</code></pre></div>
   
   
   <div data-ice="description"><p>Elemento da Pagina de Login, Utilizado para Pegar informa&#xE7;&#xF5;es de usuario e senha atrav&#xE9;s dos inputs e salvar no banco de dados &apos;Login&apos; do localstorage, ao salvar atualiza o estado de LoginLocalStorage e consequentemente envia o usuario a rota da pagina principal /controleProducao.</p>
@@ -843,7 +851,14 @@
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">todosOsDadosLogin</td>
+      <td data-ice="name" class="code" data-depth="0">props</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Props do componente.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" class="code" data-depth="1">props.todosOsDadosLogin</td>
       <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>Objeto com os estados LoginConferencia, setLoginConferencia, LoginLocalStorage e setLoginLocalStorage</p>
@@ -969,6 +984,108 @@
         <tr>
           <td class="return-type code" data-ice="returnType"><span>JSX.Element</span></td>
           <td class="return-desc" data-ice="returnDescription"><p>Componente modal com formulario de edi&#xE7;&#xE3;o.</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-function-ModalFinalizar">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">ModalFinalizar</span><span class="code" data-ice="signature">(props: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>): <span>JSX.Element</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/Components/OrdensLista/ModalFinalizar/ModalFinalizar.js.html#lineNumber41">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import ModalFinalizar from &apos;<span><a href="file/src/Components/OrdensLista/ModalFinalizar/ModalFinalizar.js.html#lineNumber41">controle_montagem/src/Components/OrdensLista/ModalFinalizar/ModalFinalizar.js</a></span>&apos;</code></pre></div>
+  
+  
+  <div data-ice="description"><p>Componente modal para finalizar a ordem e capturar algumas informa&#xE7;&#xF5;es referentes a finaliza&#xE7;&#xE3;o.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">props</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Props do componente.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" class="code" data-depth="1">props.ModalQuantidadeFinalizacao</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Estado que define a visualiza&#xE7;&#xE3;o do modal.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" class="code" data-depth="1">props.setModalQuantidadeFinalizacao</td>
+      <td data-ice="type" class="code"><span>React.Dispatch</span>&lt;<span>React.SetStateAction</span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>&gt;&gt;</td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Fun&#xE7;&#xE3;o que define o valor do estado ModalQuantidadeFinalizacao.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" class="code" data-depth="1">props.setLocalStorage</td>
+      <td data-ice="type" class="code"><span>React.Dispatch</span>&lt;<span>React.SetStateAction</span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></span>&lt;<span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>&gt;&gt;&gt;</td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Fun&#xE7;&#xE3;o que define novo valor para o estado LocalStorage.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="1">
+      <td data-ice="name" class="code" data-depth="1">props.Ordemfinalizar</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Estado que guarda a informa&#xE7;&#xE3;o da ordem a qual esta sendo finalizada.</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span>JSX.Element</span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Componente de modal para pegar informa&#xE7;&#xF5;es referentes a finaliza&#xE7;&#xE3;o de ordem da lista.</p>
 </td>
         </tr>
       </tbody>
@@ -1181,77 +1298,6 @@
   
 </div>
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="static-function-PegarOrdensNaoFinalizadas">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    <span data-ice="async">async</span>
-    
-    <span class="code" data-ice="name">PegarOrdensNaoFinalizadas</span><span class="code" data-ice="signature">(tabela: <span>*</span>): <span>*</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/Services/PegarOrdensNaoFinalizadas.js.html#lineNumber3">source</a></span></span>
-    </span>
-  </h3>
-
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {PegarOrdensNaoFinalizadas} from &apos;<span><a href="file/src/Services/PegarOrdensNaoFinalizadas.js.html#lineNumber3">controle_montagem/src/Services/PegarOrdensNaoFinalizadas.js</a></span>&apos;</code></pre></div>
-  
-  
-  
-
-  
-
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" class="code" data-depth="0">tabela</td>
-      <td data-ice="type" class="code"><span>*</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
-    </tr>
-</tbody>
-  </table>
-</div>
-</div>
-
-  <div class="return-params" data-ice="returnParams">
-    <h4>Return:</h4>
-    <table>
-      <tbody>
-        <tr>
-          <td class="return-type code" data-ice="returnType"><span>*</span></td>
-          
-        </tr>
-      </tbody>
-    </table>
-    <div data-ice="returnProperties">
-</div>
-  </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="static-function-ProtectedRoute">
     <span class="access" data-ice="access">public</span>
     
@@ -1414,18 +1460,19 @@ Renderiza o componente fornecido somente se o usu&#xE1;rio estiver autenticado, 
     
     
     
-    <span class="code" data-ice="name">tranformarDataEmString</span><span class="code" data-ice="signature">(data: <span>*</span>): <span>*</span></span>
+    <span class="code" data-ice="name">tranformarDataEmString</span><span class="code" data-ice="signature">(data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span>*</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/Helpers/tranformarDataEmString.js.html#lineNumber1">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/Helpers/tranformarDataEmString.js.html#lineNumber7">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import tranformarDataEmString from &apos;<span><a href="file/src/Helpers/tranformarDataEmString.js.html#lineNumber1">controle_montagem/src/Helpers/tranformarDataEmString.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import tranformarDataEmString from &apos;<span><a href="file/src/Helpers/tranformarDataEmString.js.html#lineNumber7">controle_montagem/src/Helpers/tranformarDataEmString.js</a></span>&apos;</code></pre></div>
   
   
-  
+  <div data-ice="description"><p>Tranforma uma data em String no formato &apos;ano-mes-diaThora:minutos:segundos+00:00&apos;</p>
+</div>
 
   
 
@@ -1439,9 +1486,10 @@ Renderiza o componente fornecido somente se o usu&#xE1;rio estiver autenticado, 
     
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">data</td>
-      <td data-ice="type" class="code"><span>*</span></td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
+      <td data-ice="description"><p>Objeto de data , new Date()</p>
+</td>
     </tr>
 </tbody>
   </table>
@@ -1454,7 +1502,8 @@ Renderiza o componente fornecido somente se o usu&#xE1;rio estiver autenticado, 
       <tbody>
         <tr>
           <td class="return-type code" data-ice="returnType"><span>*</span></td>
-          
+          <td class="return-desc" data-ice="returnDescription"><p>Data formatada como string.</p>
+</td>
         </tr>
       </tbody>
     </table>

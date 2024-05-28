@@ -1,70 +1,106 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Controle Produção Montagem
 
-## Available Scripts
+O aplicativo de controle de montagem é utilizado no setor produtivo da avioeste para captar informações importantes das ordens de produção que estão na montagem.
 
-In the project directory, you can run:
+### Quais informações e onde são utilizadas ?
 
-### `npm start`
+Quando uma ordem é finalizada na aplicação ela irá enviar e salvar no jestor algumas informações que serão uteis como :
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Tempo em produção
+2. Tempo pausado
+3. Motivos das pausas
+4. Motivos de retrabalho quando este for motivo da pausa
+5. Matricula dos Funcionarios Responsaveis
+6. Mesa de produção
+7. Turno
+8. Horario de inicio
+9. Horario de término
+10. Quantidade produzida
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Onde as informações são utilizadas ?
 
-### `npm test`
+São utilizadas no BI que esta no caminho : 'Y:\Documentos\BI\BI Controle produção' e também nos dashboards do jestor criados para os supervisores da produção.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Stack utilizada
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Front-end:** React , Styled-Components , react-router-dom
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Back-end:** Node, Express
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Variáveis de Ambiente
 
-## Learn More
+Para rodar esse projeto, você vai precisar adicionar as seguintes variáveis de ambiente no seu .env
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`PORT` representa a porta que o servidor rodara no desenvolvimento.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`REACT_APP_token` token da api do jestor.
 
-### Code Splitting
+`REACT_APP_TABELA` tabela jestor onde é salvo os dados.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+`REACT_APP_TABELA_PAUSAS` tabela jestor onde é salvo os dados das pausas.
 
-### Analyzing the Bundle Size
+`REACT_APP_API_URL` url para o servidor, em produção 'http://srv-services:3000'. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Instalação
 
-### Advanced Configuration
+ Primeiramente é necessario que esteja instalado em seu computador o nodejs, https://nodejs.org/.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+ - Instale as dependencias do projeto. Acesse a pasta do arquivo através do console e utilize o comando ' npm install ' para instalar.
 
-### Deployment
+ - Crie um arquivo chamado .env na raiz do projeto e nele configure as variaveis de ambiente descritas acima.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Rodando localmente para desenvolvimento
 
-### `npm run build` fails to minify
+- Inicie o servidor localmente na porta 3000.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Altere a variavel de ambiente `REACT_APP_API_URL` para 'http://localhost:3000'.
+
+Instale as dependencias caso ainda não tenham sido instaladas :
+
+```
+npm install
+```
+
+Inicie a aplicação localmente :
+
+```
+npm start
+```
+
+
+## Criando build e fazendo deploy
+
+Para criar o o arquivo build que é o projeto otimizado para rodar : 
+
+```
+npm run build
+```
+
+Para iniciar o projeto e colocar ele em produção, após criar o build utilize o comando,  sendo o ' -l 3001 ' a porta que rodará :
+
+```
+serve -s build -l 3001
+```
+## Funcionamento
+
+A aplicação funciona da seguinte forma: 
+- O usuario ao entrar na aplicação ira para a pagina de login http://srv-services:3001/, ao colocar usuario e senha, enviara estas informações até o servidor pelo body da requisição e caso condiz com o que esta no servidor ira retornar 'true', definir o estado react de login para true e salvar as informações de login no localstorage para logins futuros. 
+
+- Ao entrar na aplicação há dois botões, um para visualizar o formulario e outro para visualizar a lista de ordens.
+
+- Formulario ao ser preenchido e enviado adiciona as informações na localstorage chamada 'ordensNaoFinalizadas' no estado react 'LocalStorage' e também ao salvar neste estado, salva as mesmas informações no estado 'Ordens'.
+
+- Sempre que atualizar o localstorage de 'ordensNaoFinalizadas' é necessario adicionar todos os dados da localstorage ao estado 'LocalStorage' e automaticamente atualizara o valor do estado 'Ordens' com todos os dados das ordens não finalizadas. 
+
+- Ao pausar uma ordem pede um motivo. Para cada ordem que possui pausas, os dados destas pausas ficam salvos na localstorage de 'pausasOrdens'.
+
+- Ao finalizar alguma ordem todos os dados desta ordem da localstorage 'ordensNaoFinalizadas' e das pausas 'pausasOrdens' juntamente com os horarios de finalização e dados de finalização são enviados ao servidor para que este salve os dados nas tabelas do jestor.

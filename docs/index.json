@@ -730,7 +730,7 @@
     "__docId__": 56,
     "kind": "file",
     "name": "src/BD/motivosRetrabalho.js",
-    "content": "/**\r\n * Array com os motivos de retrabalho.\r\n */\r\nconst motivosRetrabalho = ['Fornecedor (Material)', 'Dobra Incorreta', 'Furação Incorreta', 'Corte Incorreto', 'Erro de Projeto (Engenharia)', 'Falha de Injeção', 'Erro de Montagem']\r\n\r\nexport default motivosRetrabalho",
+    "content": "/**\r\n * Array com o nome dos motivos de retrabalho.\r\n */\r\nconst motivosRetrabalho = ['Fornecedor (Material)', 'Dobra Incorreta', 'Furação Incorreta', 'Corte Incorreto', 'Erro de Projeto (Engenharia)', 'Falha de Injeção', 'Erro de Montagem']\r\n\r\nexport default motivosRetrabalho",
     "static": true,
     "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/BD/motivosRetrabalho.js",
     "access": "public",
@@ -748,7 +748,7 @@
     "export": true,
     "importPath": "controle_montagem/src/BD/motivosRetrabalho.js",
     "importStyle": "motivosRetrabalho",
-    "description": "Array com os motivos de retrabalho.",
+    "description": "Array com o nome dos motivos de retrabalho.",
     "lineNumber": 4,
     "type": {
       "types": [
@@ -1288,7 +1288,7 @@
     "__docId__": 73,
     "kind": "file",
     "name": "src/Components/Header/Header.js",
-    "content": "import styled from \"styled-components\"\r\nimport Imagem from \"../Imagem/Imagem.js\"\r\nimport Logo from \"../../images/logo.png\"\r\nimport Titulo1 from \"../Titulo1/Titulo1.js\"\r\n\r\n/**\r\n * styled-component de header.\r\n */\r\nconst HeaderContainer = styled.header`\r\ndisplay:flex;\r\nalign-items:center;\r\njustify-content:space-around;\r\npadding: 5px 0;\r\nbackground-color: white;\r\nwidth:100%;\r\n\r\n\r\n`\r\n/**\r\n * styled-component de div que serve de container dos outros componentes.\r\n */\r\nconst HeaderBox = styled.div`\r\nwidth:100%;\r\ndisplay:flex;\r\nalign-items:center;\r\njustify-content:center;\r\n`\r\n\r\n/**\r\n * Componente simples de Header.\r\n * @returns {JSX.Element} Componente React Header\r\n */\r\nfunction Header(){\r\n    return(\r\n        <HeaderContainer>\r\n            <HeaderBox>\r\n            <Imagem src={Logo} width='5%' margin = \"2px 0px 0px 20px\"></Imagem>\r\n            <Titulo1 width = \"auto\" margin = \"2px 10px\" text_align = \"center\" font_size='30px' color=\"#004D70\" text_shadow='1px 1px 2px black'><strong>CONTROLE PRODUÇÃO MONTAGEM</strong></Titulo1>\r\n            </HeaderBox>\r\n        </HeaderContainer>\r\n    )\r\n}\r\n\r\nexport default Header",
+    "content": "import styled from \"styled-components\"\r\nimport Imagem from \"../Imagem/Imagem.js\"\r\nimport Logo from \"../../images/logo.png\"\r\nimport Titulo1 from \"../Titulo1/Titulo1.js\"\r\n\r\n/**\r\n * styled-component de header.\r\n */\r\nconst HeaderContainer = styled.header`\r\ndisplay:flex;\r\nalign-items:center;\r\njustify-content:space-around;\r\npadding: 5px 0;\r\nbackground-color: white;\r\nwidth:100%;\r\n\r\n\r\n`\r\n/**\r\n * styled-component de div que serve de container dos outros componentes.\r\n */\r\nconst HeaderBox = styled.div`\r\nwidth:100%;\r\ndisplay:flex;\r\nalign-items:center;\r\njustify-content:center;\r\n`\r\n\r\n/**\r\n * Componente simples de Header com Componentes de Imagem e Titulo.\r\n * @returns {JSX.Element} Componente React Header\r\n */\r\nfunction Header(){\r\n    return(\r\n        <HeaderContainer>\r\n            <HeaderBox>\r\n            <Imagem src={Logo} width='5%' margin = \"2px 0px 0px 20px\"></Imagem>\r\n            <Titulo1 width = \"auto\" margin = \"2px 10px\" text_align = \"center\" font_size='30px' color=\"#004D70\" text_shadow='1px 1px 2px black'><strong>CONTROLE PRODUÇÃO MONTAGEM</strong></Titulo1>\r\n            </HeaderBox>\r\n        </HeaderContainer>\r\n    )\r\n}\r\n\r\nexport default Header",
     "static": true,
     "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Components/Header/Header.js",
     "access": "public",
@@ -1348,7 +1348,7 @@
     "export": true,
     "importPath": "controle_montagem/src/Components/Header/Header.js",
     "importStyle": "Header",
-    "description": "Componente simples de Header.",
+    "description": "Componente simples de Header com Componentes de Imagem e Titulo.",
     "lineNumber": 33,
     "unknown": [
       {
@@ -1425,7 +1425,7 @@
     "__docId__": 79,
     "kind": "file",
     "name": "src/Components/Input/Input.js",
-    "content": "import styled from \"styled-components\"\r\n\r\nconst Input = styled.input`\r\n    width: ${props => props.width || \"100%\"};\r\n    padding: ${props => props.padding || \"0px 0px\"};\r\n    margin: ${props => props.margin || '0px 0px'};\r\n    border: ${props => props.border || '0px'};\r\n    border-radius: ${props => props.border_radius || '0px'};\r\n    text-align:${props => props.text_align || \"center\"};\r\n    font-size: ${props => props.font_size || '14px'}\r\n`\r\n\r\nexport default Input",
+    "content": "import styled from \"styled-components\"\r\n\r\n/**\r\n * Componente Input customizavel.\r\n * @component\r\n * @property {string} width Define comprimento do componente. Valor padrão : '100%'\r\n * @property {string} padding Define o espaçamento interno do elemento. Valor padrão : '0px 0px'\r\n * @property {string} margin Define o expaçamento externo do elemento.Valor padrão : '0px 0px'\r\n * @property {string} border Define opções de borda.Valor padrão : '0px'\r\n * @property {string} border_radius Define o angulo da borda do canto do componente. Valor padrão : '0px'\r\n * @property {string} text_align Define o alinhamento do texto. Valor padrão 'center'\r\n * @property {string} font_size Define o tamanho da fonte. Valor padrão : '14px'\r\n * @exemple\r\n * \r\n * <Input\r\n * \r\n */\r\nconst Input = styled.input`\r\n    width: ${props => props.width || \"100%\"};\r\n    padding: ${props => props.padding || \"0px 0px\"};\r\n    margin: ${props => props.margin || '0px 0px'};\r\n    border: ${props => props.border || '0px'};\r\n    border-radius: ${props => props.border_radius || '0px'};\r\n    text-align:${props => props.text_align || \"center\"};\r\n    font-size: ${props => props.font_size || '14px'}\r\n`\r\n\r\nexport default Input",
     "static": true,
     "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Components/Input/Input.js",
     "access": "public",
@@ -1443,9 +1443,90 @@
     "export": true,
     "importPath": "controle_montagem/src/Components/Input/Input.js",
     "importStyle": "Input",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
+    "description": "Componente Input customizavel.",
+    "lineNumber": 18,
+    "unknown": [
+      {
+        "tagName": "@component",
+        "tagValue": ""
+      },
+      {
+        "tagName": "@exemple",
+        "tagValue": "\n<Input"
+      }
+    ],
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "width",
+        "description": "Define comprimento do componente. Valor padrão : '100%'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "padding",
+        "description": "Define o espaçamento interno do elemento. Valor padrão : '0px 0px'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "margin",
+        "description": "Define o expaçamento externo do elemento.Valor padrão : '0px 0px'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "border",
+        "description": "Define opções de borda.Valor padrão : '0px'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "border_radius",
+        "description": "Define o angulo da borda do canto do componente. Valor padrão : '0px'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "text_align",
+        "description": "Define o alinhamento do texto. Valor padrão 'center'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "font_size",
+        "description": "Define o tamanho da fonte. Valor padrão : '14px'"
+      }
+    ],
     "type": {
       "types": [
         "*"
@@ -1456,7 +1537,7 @@
     "__docId__": 81,
     "kind": "file",
     "name": "src/Components/Label/Label.js",
-    "content": "import styled from \"styled-components\";\r\n\r\n\r\nconst Label = styled.label`\r\n    font-size = ${props => props.font_size || '16px'};\r\n    color = ${props => props.color || 'black'};\r\n`\r\n\r\nexport default Label",
+    "content": "import styled from \"styled-components\";\r\n\r\n/**\r\n * Componente simples de Label.\r\n * @component\r\n * @property {string} font_size Define o tamanho da fonte. Valor padrão : '16px'\r\n * @property {string} color Define a cor da fonte. Valor padrão : 'black'\r\n * @example\r\n * return (\r\n * <Label\r\n * font_size = '14px'\r\n * color = 'orange'\r\n * >\r\n * alguma coisa escrita aqui\r\n * </Label>\r\n * )\r\n */\r\nconst Label = styled.label`\r\n    font-size : ${props => props.font_size || '16px'};\r\n    color : ${props => props.color || 'black'};\r\n`\r\n\r\nexport default Label",
     "static": true,
     "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Components/Label/Label.js",
     "access": "public",
@@ -1474,9 +1555,39 @@
     "export": true,
     "importPath": "controle_montagem/src/Components/Label/Label.js",
     "importStyle": "Label",
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true,
+    "description": "Componente simples de Label.",
+    "examples": [
+      "return (\n<Label\nfont_size = '14px'\ncolor = 'orange'\n>\nalguma coisa escrita aqui\n</Label>\n)"
+    ],
+    "lineNumber": 18,
+    "unknown": [
+      {
+        "tagName": "@component",
+        "tagValue": ""
+      }
+    ],
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "font_size",
+        "description": "Define o tamanho da fonte. Valor padrão : '16px'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "color",
+        "description": "Define a cor da fonte. Valor padrão : 'black'"
+      }
+    ],
     "type": {
       "types": [
         "*"
@@ -1487,7 +1598,7 @@
     "__docId__": 83,
     "kind": "file",
     "name": "src/Components/Login/Login.js",
-    "content": "import styled from \"styled-components\";\r\nimport Titulo2 from \"../Titulo2/Titulo2.js\";\r\nimport Input from \"../Input/Input.js\";\r\nimport Botao from \"../Botao/Botao.js\";\r\nimport { useEffect, useState } from \"react\";\r\nimport { useNavigate } from \"react-router\";\r\n\r\n/**\r\n * Componente de section simples utilizado como container dos outros componentes.\r\n */\r\nconst LoginContainer = styled.section`\r\ndisplay:flex;\r\nflex-direction: column;\r\nalign-items:center;\r\nbackground-color:white;\r\nmargin:20vh 0px;\r\nwidth:50%;\r\nborder-radius:20px;\r\n`\r\n\r\n/**\r\n * Estado que guarda o valor do input de Usuario do componente Login.\r\n * @typedef {EstadoReact} Usuario\r\n * @property {string} Usuario - Valor do input de Usuario.\r\n */\r\n\r\n/**\r\n * Estado que guarda o valor do input de Senha do componente Login.\r\n * @typedef {EstadoReact} Senha\r\n * @property {string} Senha - Valor do input de Senha.\r\n */\r\n\r\n/**\r\n * Elemento da Pagina de Login, Utilizado para Pegar informações de usuario e senha através dos inputs e salvar no banco de dados 'Login' do localstorage, ao salvar atualiza o estado de LoginLocalStorage e consequentemente envia o usuario a rota da pagina principal /controleProducao.\r\n * @function Login\r\n * @param {Object} todosOsDadosLogin Objeto com os estados LoginConferencia, setLoginConferencia, LoginLocalStorage e setLoginLocalStorage \r\n * @returns {JSX.Element}\r\n */\r\nfunction Login({todosOsDadosLogin}){\r\n    /**\r\n     * Estado que salva o valor do input de usuario.\r\n     */\r\n    const [Usuario, setUsuario] = useState('')\r\n    /**\r\n     * Estado que salva o valor do input de senha.\r\n     */\r\n    const [Senha, setSenha] = useState('')\r\n    /**\r\n     * React hook para ir até outra rota.\r\n     */\r\n    const navigate = useNavigate();\r\n    \r\n    /**\r\n     * Ao carregar a pagina confere se o Estado LoginConferencia for true acessa a rota principal /controleProducao.\r\n     */\r\n    useEffect(() => {\r\n        const handleRetornaLogin = () => {\r\n          navigate(\"/controleProducao\");\r\n        }\r\n        if(todosOsDadosLogin.LoginConferencia === true){\r\n          handleRetornaLogin()\r\n        }\r\n      },[todosOsDadosLogin.LoginLocalStorage, todosOsDadosLogin.LoginConferencia,navigate])\r\n\r\n      /**\r\n       * Salva os dados de usuario e senha no banco de dados Login da localstorage e posteriormente salva as informações de Login no estado LoginLocalStorage para que este ao ser atualizado faça a conferencia de login em App.js e retone LoginConferencia como true.\r\n       * @param {*} event Evento de Click do mouse, utilizado para previnir carregamento da pagina.\r\n       */\r\n    function defineLogin(event){\r\n        event.preventDefault()\r\n        localStorage.setItem('Login', JSON.stringify({Usuario: Usuario, Senha: Senha}))\r\n        todosOsDadosLogin.setLoginLocalStorage(JSON.parse(localStorage.getItem('Login')) || [])\r\n    }\r\n    /**\r\n     * Pega valor do input usuario e salva no estado Usuario.\r\n     * @param {*} event Evento utilizado para pegar o valor do target.\r\n     */\r\n    function handleUsuario(event){\r\n        setUsuario(event.target.value)\r\n        \r\n    }\r\n    \r\n    /**\r\n     * Pega o valor do input senha e salva no estado Senha.\r\n     * @param {*} event Evento utilizado para pegar o valor do target.\r\n     */\r\n    function handleSenha(event){\r\n        setSenha(event.target.value)\r\n    }\r\n    return(\r\n        <LoginContainer>\r\n            <Titulo2>Usuario:</Titulo2>\r\n            <Input type=\"text\" value={Usuario} onChange={handleUsuario} placeholder=\"Coloque o nome de usuario...\" padding='15px 0px' margin='10px 0px' border='0.5px solid black' font_size='20px' border_radius='20px' width='80%'></Input>\r\n            <Titulo2>Senha:</Titulo2>\r\n            <Input type=\"password\" value={Senha} onChange={handleSenha} placeholder=\"Coloque a senha de usuario...\" padding='15px 0px' margin='10px 0px' border='0.5px solid black' font_size='20px' border_radius='20px' width='80%'></Input>\r\n            <Botao onClick={defineLogin} width = '50%' padding='15px 0px' margin='20px 0px' backgroundcolor='#79b3e0' font_size='26px' border='0.5px solid black' border_radius='10px' boxshadow='2px 2px 5px black'>ENTRAR</Botao>\r\n        </LoginContainer>\r\n    )\r\n}\r\n\r\nexport default Login",
+    "content": "import styled from \"styled-components\";\r\nimport Titulo2 from \"../Titulo2/Titulo2.js\";\r\nimport Input from \"../Input/Input.js\";\r\nimport Botao from \"../Botao/Botao.js\";\r\nimport { useEffect, useState } from \"react\";\r\nimport { useNavigate } from \"react-router\";\r\n\r\n/**\r\n * Componente de section simples utilizado como container dos outros componentes.\r\n */\r\nconst LoginContainer = styled.section`\r\ndisplay:flex;\r\nflex-direction: column;\r\nalign-items:center;\r\nbackground-color:white;\r\nmargin:20vh 0px;\r\nwidth:50%;\r\nborder-radius:20px;\r\n`\r\n\r\n/**\r\n * Estado que guarda o valor do input de Usuario do componente Login.\r\n * @typedef {EstadoReact} Usuario\r\n * @property {string} Usuario - Valor do input de Usuario.\r\n * @property {react.Dispatch<React.SetStateAction<string>>} setUsuario Função que define novo valor para o estado Usuario.\r\n */\r\n\r\n/**\r\n * Estado que guarda o valor do input de Senha do componente Login.\r\n * @typedef {EstadoReact} Senha\r\n * @property {string} Senha - Valor do input de Senha.\r\n * @property {React.Dispatch<React.SetStateAction<string>>} setSenha Função que define novo valor par ao estado Senha.\r\n */\r\n\r\n/**\r\n * Elemento da Pagina de Login, Utilizado para Pegar informações de usuario e senha através dos inputs e salvar no banco de dados 'Login' do localstorage, ao salvar atualiza o estado de LoginLocalStorage e consequentemente envia o usuario a rota da pagina principal /controleProducao.\r\n * @param {Object} props Props do componente.\r\n * @param {Object} props.todosOsDadosLogin Objeto com os estados LoginConferencia, setLoginConferencia, LoginLocalStorage e setLoginLocalStorage \r\n * @returns {JSX.Element}\r\n */\r\nfunction Login({todosOsDadosLogin}){\r\n    /**\r\n     * Estado que salva o valor do input de usuario.\r\n     */\r\n    const [Usuario, setUsuario] = useState('')\r\n    /**\r\n     * Estado que salva o valor do input de senha.\r\n     */\r\n    const [Senha, setSenha] = useState('')\r\n    /**\r\n     * React hook para ir até outra rota.\r\n     */\r\n    const navigate = useNavigate();\r\n    \r\n    /**\r\n     * Ao carregar a pagina confere se o Estado LoginConferencia for true acessa a rota principal /controleProducao.\r\n     */\r\n    useEffect(() => {\r\n        const handleRetornaLogin = () => {\r\n          navigate(\"/controleProducao\");\r\n        }\r\n        if(todosOsDadosLogin.LoginConferencia === true){\r\n          handleRetornaLogin()\r\n        }\r\n      },[todosOsDadosLogin.LoginLocalStorage, todosOsDadosLogin.LoginConferencia,navigate])\r\n\r\n      /**\r\n       * Salva os dados de usuario e senha no banco de dados Login da localstorage e posteriormente salva as informações de Login no estado LoginLocalStorage para que este ao ser atualizado faça a conferencia de login em App.js e retone LoginConferencia como true.\r\n       * @param {*} event Evento de Click do mouse, utilizado para previnir carregamento da pagina.\r\n       */\r\n    function defineLogin(event){\r\n        event.preventDefault()\r\n        localStorage.setItem('Login', JSON.stringify({Usuario: Usuario, Senha: Senha}))\r\n        todosOsDadosLogin.setLoginLocalStorage(JSON.parse(localStorage.getItem('Login')) || [])\r\n    }\r\n    /**\r\n     * Pega valor do input usuario e salva no estado Usuario.\r\n     * @param {*} event Evento utilizado para pegar o valor do target.\r\n     */\r\n    function handleUsuario(event){\r\n        setUsuario(event.target.value)\r\n        \r\n    }\r\n    \r\n    /**\r\n     * Pega o valor do input senha e salva no estado Senha.\r\n     * @param {*} event Evento utilizado para pegar o valor do target.\r\n     */\r\n    function handleSenha(event){\r\n        setSenha(event.target.value)\r\n    }\r\n    return(\r\n        <LoginContainer>\r\n            <Titulo2>Usuario:</Titulo2>\r\n            <Input type=\"text\" value={Usuario} onChange={handleUsuario} placeholder=\"Coloque o nome de usuario...\" padding='15px 0px' margin='10px 0px' border='0.5px solid black' font_size='20px' border_radius='20px' width='80%'></Input>\r\n            <Titulo2>Senha:</Titulo2>\r\n            <Input type=\"password\" value={Senha} onChange={handleSenha} placeholder=\"Coloque a senha de usuario...\" padding='15px 0px' margin='10px 0px' border='0.5px solid black' font_size='20px' border_radius='20px' width='80%'></Input>\r\n            <Botao onClick={defineLogin} width = '50%' padding='15px 0px' margin='20px 0px' backgroundcolor='#79b3e0' font_size='26px' border='0.5px solid black' border_radius='10px' boxshadow='2px 2px 5px black'>ENTRAR</Botao>\r\n        </LoginContainer>\r\n    )\r\n}\r\n\r\nexport default Login",
     "static": true,
     "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Components/Login/Login.js",
     "access": "public",
@@ -1533,6 +1644,16 @@
         "optional": false,
         "name": "Usuario",
         "description": "Valor do input de Usuario."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "react.Dispatch<React.SetStateAction<string>>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "setUsuario",
+        "description": "Função que define novo valor para o estado Usuario."
       }
     ],
     "type": {
@@ -1562,6 +1683,16 @@
         "optional": false,
         "name": "Senha",
         "description": "Valor do input de Senha."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "React.Dispatch<React.SetStateAction<string>>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "setSenha",
+        "description": "Função que define novo valor par ao estado Senha."
       }
     ],
     "type": {
@@ -1586,12 +1717,8 @@
     "importPath": "controle_montagem/src/Components/Login/Login.js",
     "importStyle": "Login",
     "description": "Elemento da Pagina de Login, Utilizado para Pegar informações de usuario e senha através dos inputs e salvar no banco de dados 'Login' do localstorage, ao salvar atualiza o estado de LoginLocalStorage e consequentemente envia o usuario a rota da pagina principal /controleProducao.",
-    "lineNumber": 39,
+    "lineNumber": 41,
     "unknown": [
-      {
-        "tagName": "@function",
-        "tagValue": "Login"
-      },
       {
         "tagName": "@returns",
         "tagValue": "{JSX.Element}"
@@ -1605,7 +1732,17 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "todosOsDadosLogin",
+        "name": "props",
+        "description": "Props do componente."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.todosOsDadosLogin",
         "description": "Objeto com os estados LoginConferencia, setLoginConferencia, LoginLocalStorage e setLoginLocalStorage"
       }
     ],
@@ -1622,7 +1759,7 @@
     "__docId__": 88,
     "kind": "file",
     "name": "src/Components/OrdensLista/ModalEditar/ModalEditar.js",
-    "content": "import Modal from 'react-modal';\r\nimport Botao from '../../Botao/Botao.js';\r\nimport Option from '../../Select/Option/Option.js';\r\nimport Select from '../../Select/Select.js';\r\nimport Label from '../../Label/Label.js';\r\nimport Imagem from '../../Imagem/Imagem.js';\r\nimport styled from 'styled-components';\r\nimport Input from '../../Input/Input.js';\r\nimport imgAdicionarFuncionario from '../../../images/adicionar-usuario.png'\r\nimport imgRemoverFuncionario from '../../../images/remover-usuario.png'\r\nimport { useCallback, useEffect, useState } from 'react';\r\nimport mesas from \"../../../BD/mesas.js\";\r\nimport turnos from \"../../../BD/turnos.js\";\r\nimport React from 'react';\r\n\r\n/**\r\n * Componente div para englobar componentes em linha alinhados na horizontal.\r\n */\r\nconst DivLinha = styled.div`\r\n    display:flex;\r\n    align-items:center;\r\n    width:100%;\r\n    justify-content:center;\r\n\r\n`\r\n/**\r\n * Componente div para englobar componentes em coluna alinhados na vertical.\r\n */\r\nconst DivColuna = styled.div`\r\n    display:flex;\r\n    align-items:center;\r\n    flex-direction:column;\r\n    margin:0px 5px;\r\n    text-align:center;\r\n`\r\n\r\n/**\r\n * Estado que guarda um array dos componentes de input de matriculas com quantidade conforme o valor do estado QuantidadeFuncionariosEdicao.\r\n * @typedef {EstadoReact} InputMatriculasEdicao\r\n * @property {Array} InputMatriculasEdicao Array dos componentes de input do formulario de edição.\r\n * @property {React.Dispatch<React.SetStateAction<Array>>} setInputMatriculasEdicao Função que define novo valor para o estado InputMatriculasEdicao.\r\n */\r\n\r\n/**\r\n * Estado que guarda o valor do input de numero de ordem de produção do formulario do modal de edição.\r\n * @typedef {EstadoReact} NumeroOPEdicao\r\n * @property {string} NumeroOPEdicao Valor do input de ordem de produção do modal de edição.\r\n * @property {react.Dispatch<React.SetStateAction<string>>} setNumeroOPEdicao Função que define novo valor para o estado NumeroOPEdicao.\r\n */\r\n\r\n/**\r\n * Estado que guarda um Array das matriculas dos funcionarios adicionadas ao formulario do modal de edição.\r\n * @typedef {EstadoReact} MatriculasEdicao\r\n * @property {Array} MatriculasEdicao Array com as matriculas dos funcionarios.\r\n * @property {React.Dispatch<React.SetStateAction<Array>>} setMatriculasEdicao Função que define novo valor para o estado MatriculasEdicao.\r\n */\r\n\r\n/**\r\n * Estado que guarda a informação do select de mesa do formulario do modal de edição.\r\n * @typedef {EstadoReact} MesaEdicao\r\n * @property {string} MesaEdicao Valor do select de mesa do formulario do modal de edição.\r\n * @property {React.Dispatch<React.SetStateAction<string>>} setMesaEdicao Função que altera o valor do estado MesaEdicao.\r\n */\r\n\r\n/**\r\n * Estado que guarda a informação do select de turno no formulario do modal de edição.\r\n * @typedef {EstadoReact} TurnoEdicao\r\n * @property {string} TurnoEdicao Valor do select de turno no formulario do modal de edição.\r\n * @property {React.Dispatch<React.SetStateAction<string>>} setTurnoEdicao Função que define novo valor para o estado TurnoEdicao.\r\n */\r\n\r\n/**\r\n * Estado que guarda a informação da quantidade de funcionarios conforme quantidade adicionado ao formulario do modal de edição.\r\n * @typedef {EstadoReact} QuantidadeFuncionariosEdicao\r\n * @property {number} QuantidadeFuncionariosEdicao Quantidade de funcionarios adicionados ao formulario do modal de edição.\r\n * @property {React.Dispatch<React.SetStateAction<number>>} setQuantidadeFuncionariosEdicao Função \r\n */\r\n\r\n\r\n/**\r\n * Componente modal para editar as informações da ordem de produção ou exclui-la.\r\n * @param {object} props Props do componente.\r\n * @param {React.Dispatch<React.SetStateAction<boolean>>} props.setModalEdicao Função que define o estado de ModalEdicao.\r\n * @param {React.Dispatch<React.SetStateAction<Array<Object>>>} props.setLocalStorage Função que define novo valor para o estado LocalStorage.\r\n * @param {boolean} props.ModalEdicao Estado que define a visualização do modal.\r\n * @param {Object} props.OrdemEditando Estado que guarda os dados da ordem que esta sendo editada.\r\n * @param {Array<Object>} props.ordens Estado Ordens que possui os dados das ordens que aparecem na lista. \r\n * @returns {JSX.Element} Componente modal com formulario de edição.\r\n */\r\nfunction ModalEditar({ setModalEdicao, setLocalStorage, ModalEdicao, OrdemEditando, ordens}){\r\n    /**\r\n     * Estado com Array dos inputs de matricula de funcionario.\r\n     */\r\n    const [InputMatriculasEdicao, setInputMatriculasEdicao] = useState([])\r\n    /**\r\n     * Estado com o valor do input de ordem de produção.\r\n     */\r\n    const [NumeroOPEdicao, setNumeroOPEdicao] = useState('')\r\n    /**\r\n     * Estado com um Array das matriculas colocadas nos inputs do formulario de edição.\r\n     */\r\n    const [MatriculasEdicao, setMatriculasEdicao] = useState([])\r\n    /**\r\n     * Estado com o valor do input de Mesa do formulario de edição.\r\n     */\r\n    const [MesaEdicao, setMesaEdicao] = useState('')\r\n    /**\r\n     * Estado com o valor do input de turno do formulario de edição.\r\n     */\r\n    const [TurnoEdicao, setTurnoEdicao] = useState('')\r\n    /**\r\n     * Estado com o a quantidade de matriculas adicionadas ao formulario.\r\n     */\r\n    const [QuantidadeFuncionariosEdicao, setQuantidadeFuncionariosEdicao] = useState(0)\r\n\r\n    /**\r\n     * Ao carregar a pagina define os valores dos inputs e selects com valor inicial igual aos da ordem que esta sendo editada.\r\n     */\r\n    useEffect(() => {\r\n        setNumeroOPEdicao(OrdemEditando.ordem_producao)\r\n        setMatriculasEdicao(OrdemEditando.matriculas)\r\n        setMesaEdicao(OrdemEditando.mesa)\r\n        setTurnoEdicao(OrdemEditando.turno)\r\n        setQuantidadeFuncionariosEdicao(OrdemEditando.quantidade_funcionarios)\r\n    },[OrdemEditando])\r\n\r\n    /**\r\n     * Define o valor do estado NumeroOPEdicao com o valor do input de numero de ordem de produção.\r\n     * @param {*} event Evento onchange do input.\r\n     */\r\n    const HandleNumeroOP = (event) => {\r\n        setNumeroOPEdicao(event.target.value);\r\n    };\r\n\r\n    /**\r\n     * Define o valor do estado MesaEdição com o valor selecionado no select de Mesa. \r\n     * @param {*} event Evento onChange do select.\r\n     */\r\n    const HandleMesa = (event) => {\r\n        setMesaEdicao(event.target.value);\r\n    };\r\n\r\n    /**\r\n     * Define o valor do estado Turno com o valor selecionado no select de Turno.\r\n     * @param {*} event Evento onChange do select.\r\n     */\r\n    const HandleTurno = (event) => {\r\n        setTurnoEdicao(event.target.value);\r\n    };\r\n\r\n    /**\r\n     * Edita os dados da ordem conforme os dados colocados no formulario.\r\n     * @param {Object} ordemEditando Estado OrdemEditando com os dados da ordem que esta sendo editada.\r\n     * @param {Array<Object>} ordens Estado Ordens que contem as ordens que aparecem na lista.\r\n     */\r\n    function EditaComponente(ordemEditando, ordens){\r\n        const confirmacao = window.confirm(`Tem certeza que deseja editar o item ?`)\r\n        if(confirmacao){\r\n            const confereRepetido = ordens.find(ordem => ordem.ordem_producao === NumeroOPEdicao)\r\n            const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];\r\n            const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordemEditando.id);\r\n            const pausasLocalStorage = JSON.parse(localStorage.getItem('pausasOrdens')) || []\r\n            const pausasAtualIndex = pausasLocalStorage.findIndex(element => element.id === ordemEditando.id)\r\n\r\n            \r\n            if (ordemAtualIndex !== -1) {\r\n                const ordemAtual = ordensLocalStorage[ordemAtualIndex];\r\n                if(ordemAtual['ordem_producao'] !== NumeroOPEdicao && confereRepetido){\r\n                    window.alert(\"Ordem de produção ja esta na lista !!\")\r\n                }else{\r\n                    if(NumeroOPEdicao.trim().length > 0 && MatriculasEdicao.length > 0  && MesaEdicao.trim().length > 0  && TurnoEdicao.trim().length > 0){\r\n                        ordemAtual['ordem_producao'] = NumeroOPEdicao\r\n                        ordemAtual['matriculas'] = MatriculasEdicao\r\n                        ordemAtual['matricula'] = MatriculasEdicao[0]\r\n                        ordemAtual['matricula_2'] = MatriculasEdicao[1]\r\n                        ordemAtual['matricula_3'] = MatriculasEdicao[2]\r\n                        ordemAtual['matricula_4'] = MatriculasEdicao[3]\r\n                        ordemAtual['mesa'] = MesaEdicao\r\n                        ordemAtual['turno'] = TurnoEdicao\r\n                        ordemAtual['quantidade_funcionarios'] = QuantidadeFuncionariosEdicao\r\n                        ordensLocalStorage[ordemAtualIndex] = ordemAtual;\r\n\r\n                        if(pausasAtualIndex !== -1){\r\n                            const pausas = pausasLocalStorage[pausasAtualIndex].pausas\r\n                            for(let i = 0; i<pausas.length;i++ ){\r\n                                pausas[i].ordem_producao = ordemAtual['ordem_producao']\r\n                            }\r\n                            console.log(pausas)\r\n                            localStorage.setItem('pausasOrdens', JSON.stringify(pausasLocalStorage))\r\n                        }\r\n\r\n\r\n                    localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));\r\n                    setLocalStorage(ordensLocalStorage)\r\n                    setModalEdicao(false)\r\n                }else{\r\n                    window.alert('Não pode haver campos vazios !!')\r\n                }\r\n                }\r\n                }\r\n        }\r\n        }\r\n\r\n        const AdicaoFuncionario = () => {\r\n            if(QuantidadeFuncionariosEdicao < 4){\r\n            setQuantidadeFuncionariosEdicao(QuantidadeFuncionariosEdicao + 1)\r\n            }else{\r\n                window.alert('Maximo 4 Funcionarios por Ordem de Produção !!')\r\n            }\r\n        }\r\n\r\n        const RemoverFuncionario = () => {\r\n            const novoValor = [...MatriculasEdicao]\r\n            setQuantidadeFuncionariosEdicao(QuantidadeFuncionariosEdicao -1)\r\n            novoValor.splice(-1,1)\r\n            setMatriculasEdicao(novoValor)\r\n        }\r\n        \r\n        const HandleMatricula = useCallback((index, event) => {\r\n            const newMatriculas = [...MatriculasEdicao];\r\n            newMatriculas[index] = event.target.value;\r\n            setMatriculasEdicao(newMatriculas);\r\n      }, [MatriculasEdicao, setMatriculasEdicao]);\r\n\r\n        useEffect(() => {\r\n        \r\n            const inputs = []\r\n            for(let i = 0;i < QuantidadeFuncionariosEdicao; i++){\r\n                inputs.push(\r\n                    <Input\r\n                      key={i}\r\n                      placeholder=\"Matrícula do Funcionário\"\r\n                      style={{ border: '2px solid black', padding: '20px 0px', width: '50%', margin: '1rem 3px', borderRadius: '20px', fontSize: '20px' }}\r\n                      value={MatriculasEdicao[i] || ''}\r\n                      required\r\n                      onChange={(e) => HandleMatricula(i, e)}\r\n                    />\r\n                  );\r\n            }\r\n            setInputMatriculasEdicao(inputs)\r\n        },[QuantidadeFuncionariosEdicao, HandleMatricula, MatriculasEdicao])\r\n\r\n        const ExcluirOrdem = (ordem) => {\r\n            const confirmação  = window.confirm('Tem certeza que deseja excluir esta Ordem de Produção ?')\r\n            if(confirmação){\r\n                const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];\r\n                var ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);\r\n                const pausasLocalStorage = JSON.parse(localStorage.getItem('pausasOrdens')) || [];\r\n                const pausasIndexAtual = pausasLocalStorage.findIndex(element => element.id === ordem.id)\r\n                if(ordemAtualIndex !== -1){\r\n                    if(pausasIndexAtual !== -1){\r\n                        pausasLocalStorage.splice(pausasIndexAtual, 1)\r\n                        localStorage.setItem('pausasOrdens', JSON.stringify(pausasLocalStorage))\r\n                    }\r\n                ordensLocalStorage.splice(ordemAtualIndex, 1)\r\n                localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));\r\n                setLocalStorage(ordensLocalStorage)\r\n                setModalEdicao(false)\r\n                }else{\r\n                    console.log('Não foi possivel encontrar o id desta ordem na localStorage.')\r\n                }\r\n            }\r\n        }\r\n\r\n         \r\n\r\n    return(\r\n        <Modal \r\n    isOpen={ModalEdicao}\r\n    onRequestClose={async() => setModalEdicao(false)}\r\n    contentLabel=\"Edição\"\r\n    ariaHideApp={false}\r\n    style={{\r\n        overlay: {\r\n          backgroundColor: 'rgba(0, 0 ,0, 0.8)'\r\n        },\r\n        content: {\r\n          border: '1px solid black',\r\n          background: 'white',\r\n          borderRadius: '20px',\r\n          padding: '20px',\r\n          display:'flex',\r\n          flexDirection: \"column\",\r\n          alignItems:'center'\r\n        }\r\n      }}\r\n    >\r\n        <Label font_size = '26px'>Numero da Ordem de produção :</Label>\r\n        <Input placeholder=\"Numero da OP\"   padding = \"20px 0px\" width=\"60%\" margin =\"1rem 0px\" border_radius=\"20px\" border='0.1px black solid' font_size=\"20px\" value={NumeroOPEdicao} onChange={HandleNumeroOP} ></Input>\r\n        <Label font_size = '26px'>Matricula do funcionario :</Label>\r\n        <DivLinha>\r\n            {  \r\n                  InputMatriculasEdicao\r\n            }\r\n            \r\n            <DivColuna style={{cursor:'pointer' , width:'10%'}} onClick={AdicaoFuncionario}>\r\n             <Imagem src={imgAdicionarFuncionario} width='30%'/>\r\n             <span style={{color:'black'}}>Adicionar Funcionario</span>\r\n            </DivColuna>\r\n            { QuantidadeFuncionariosEdicao > 1 || QuantidadeFuncionariosEdicao === '' ? \r\n            <DivColuna style={{cursor:'pointer' , width:'10%'}} onClick={RemoverFuncionario}>\r\n            <Imagem src={imgRemoverFuncionario} width='30%'/>\r\n            <span style={{color:'black'}}>Remover Funcionario</span>\r\n           </DivColuna>\r\n           : ''    \r\n        }\r\n                </DivLinha>\r\n        <Label font_size = '26px'>Mesa :</Label>\r\n             <Select margin='1rem 0' width='30%'  padding='10px' value={MesaEdicao} border='0.1px black solid' onChange={HandleMesa}>\r\n                 <Option padding='10px 2px' fontSize='20px' value='' >Selecione Uma Mesa...</Option>\r\n                {\r\n                    mesas.map((mesa,index) => (\r\n                        <Option key={index} padding='10px 2px' fontSize='20px' >{mesa}</Option>\r\n                    ))\r\n                }\r\n                </Select>\r\n                <Label font_size = '26px'>Turno :</Label>\r\n                <Select margin='1rem 0' width='30%'  padding='10px' border='0.1px black solid' value={TurnoEdicao} onChange={HandleTurno}>\r\n                <Option padding='10px 2px' fontSize='20px' value='' >Selecione Um Turno...</Option>\r\n                {\r\n                    turnos.map((turno,index) =>(\r\n                        <Option key={index} padding='10px 2px' fontSize='20px' >{turno}</Option>\r\n                    ))\r\n                }\r\n                    \r\n                    </Select>  \r\n    \r\n      <Botao padding='20px 10px' width='40%' margin='1rem 10px' border='1px solid black' backgroundcolor='#79b3e0' border_radius='30px' onClick={() => EditaComponente(OrdemEditando, ordens)}>ATUALIZAR</Botao>\r\n      <Botao padding='20px 10px' width='40%' margin='1rem 10px' border='1px solid black' backgroundcolor='#FF6347' border_radius='30px' onClick={() =>{ setModalEdicao(false)}   }>CANCELAR</Botao>\r\n      <p>Houve algum problema durante o apontamento da ordem de produção ? Caso a ordem de produção tenha sido marcada de forma que não condiz com a realidade favor exclua a ordem de produção para evitar erros nos dados ! </p>\r\n      <Botao padding='20px 10px' width='40%' margin='1rem 0' border='1px solid black' backgroundcolor='#FF6347' border_radius='30px' onClick={() =>{ ExcluirOrdem(OrdemEditando)}   }>EXCLUIR</Botao>         \r\n    </Modal>\r\n\r\n    )\r\n}\r\n\r\nexport default ModalEditar",
+    "content": "import Modal from 'react-modal';\r\nimport Botao from '../../Botao/Botao.js';\r\nimport Option from '../../Select/Option/Option.js';\r\nimport Select from '../../Select/Select.js';\r\nimport Label from '../../Label/Label.js';\r\nimport Imagem from '../../Imagem/Imagem.js';\r\nimport styled from 'styled-components';\r\nimport Input from '../../Input/Input.js';\r\nimport imgAdicionarFuncionario from '../../../images/adicionar-usuario.png'\r\nimport imgRemoverFuncionario from '../../../images/remover-usuario.png'\r\nimport { useCallback, useEffect, useState } from 'react';\r\nimport mesas from \"../../../BD/mesas.js\";\r\nimport turnos from \"../../../BD/turnos.js\";\r\nimport React from 'react';\r\n\r\n/**\r\n * Componente div para englobar componentes em linha alinhados na horizontal.\r\n */\r\nconst DivLinha = styled.div`\r\n    display:flex;\r\n    align-items:center;\r\n    width:100%;\r\n    justify-content:center;\r\n\r\n`\r\n/**\r\n * Componente div para englobar componentes em coluna alinhados na vertical.\r\n */\r\nconst DivColuna = styled.div`\r\n    display:flex;\r\n    align-items:center;\r\n    flex-direction:column;\r\n    margin:0px 5px;\r\n    text-align:center;\r\n`\r\n\r\n/**\r\n * Estado que guarda um array dos componentes de input de matriculas com quantidade conforme o valor do estado QuantidadeFuncionariosEdicao.\r\n * @typedef {EstadoReact} InputMatriculasEdicao\r\n * @property {Array} InputMatriculasEdicao Array dos componentes de input do formulario de edição.\r\n * @property {React.Dispatch<React.SetStateAction<Array>>} setInputMatriculasEdicao Função que define novo valor para o estado InputMatriculasEdicao.\r\n */\r\n\r\n/**\r\n * Estado que guarda o valor do input de numero de ordem de produção do formulario do modal de edição.\r\n * @typedef {EstadoReact} NumeroOPEdicao\r\n * @property {string} NumeroOPEdicao Valor do input de ordem de produção do modal de edição.\r\n * @property {react.Dispatch<React.SetStateAction<string>>} setNumeroOPEdicao Função que define novo valor para o estado NumeroOPEdicao.\r\n */\r\n\r\n/**\r\n * Estado que guarda um Array das matriculas dos funcionarios adicionadas ao formulario do modal de edição.\r\n * @typedef {EstadoReact} MatriculasEdicao\r\n * @property {Array} MatriculasEdicao Array com as matriculas dos funcionarios.\r\n * @property {React.Dispatch<React.SetStateAction<Array>>} setMatriculasEdicao Função que define novo valor para o estado MatriculasEdicao.\r\n */\r\n\r\n/**\r\n * Estado que guarda a informação do select de mesa do formulario do modal de edição.\r\n * @typedef {EstadoReact} MesaEdicao\r\n * @property {string} MesaEdicao Valor do select de mesa do formulario do modal de edição.\r\n * @property {React.Dispatch<React.SetStateAction<string>>} setMesaEdicao Função que altera o valor do estado MesaEdicao.\r\n */\r\n\r\n/**\r\n * Estado que guarda a informação do select de turno no formulario do modal de edição.\r\n * @typedef {EstadoReact} TurnoEdicao\r\n * @property {string} TurnoEdicao Valor do select de turno no formulario do modal de edição.\r\n * @property {React.Dispatch<React.SetStateAction<string>>} setTurnoEdicao Função que define novo valor para o estado TurnoEdicao.\r\n */\r\n\r\n/**\r\n * Estado que guarda a informação da quantidade de funcionarios conforme quantidade adicionado ao formulario do modal de edição.\r\n * @typedef {EstadoReact} QuantidadeFuncionariosEdicao\r\n * @property {number} QuantidadeFuncionariosEdicao Quantidade de funcionarios adicionados ao formulario do modal de edição.\r\n * @property {React.Dispatch<React.SetStateAction<number>>} setQuantidadeFuncionariosEdicao Função \r\n */\r\n\r\n\r\n/**\r\n * Componente modal para editar as informações da ordem de produção ou exclui-la.\r\n * @param {object} props Props do componente.\r\n * @param {React.Dispatch<React.SetStateAction<boolean>>} props.setModalEdicao Função que define o estado de ModalEdicao.\r\n * @param {React.Dispatch<React.SetStateAction<Array<Object>>>} props.setLocalStorage Função que define novo valor para o estado LocalStorage.\r\n * @param {boolean} props.ModalEdicao Estado que define a visualização do modal.\r\n * @param {Object} props.OrdemEditando Estado que guarda os dados da ordem que esta sendo editada.\r\n * @param {Array<Object>} props.ordens Estado Ordens que possui os dados das ordens que aparecem na lista. \r\n * @returns {JSX.Element} Componente modal com formulario de edição.\r\n */\r\nfunction ModalEditar({ setModalEdicao, setLocalStorage, ModalEdicao, OrdemEditando, ordens}){\r\n    /**\r\n     * Estado com Array dos inputs de matricula de funcionario.\r\n     */\r\n    const [InputMatriculasEdicao, setInputMatriculasEdicao] = useState([])\r\n    /**\r\n     * Estado com o valor do input de ordem de produção.\r\n     */\r\n    const [NumeroOPEdicao, setNumeroOPEdicao] = useState('')\r\n    /**\r\n     * Estado com um Array das matriculas colocadas nos inputs do formulario de edição.\r\n     */\r\n    const [MatriculasEdicao, setMatriculasEdicao] = useState([])\r\n    /**\r\n     * Estado com o valor do input de Mesa do formulario de edição.\r\n     */\r\n    const [MesaEdicao, setMesaEdicao] = useState('')\r\n    /**\r\n     * Estado com o valor do input de turno do formulario de edição.\r\n     */\r\n    const [TurnoEdicao, setTurnoEdicao] = useState('')\r\n    /**\r\n     * Estado com o a quantidade de matriculas adicionadas ao formulario.\r\n     */\r\n    const [QuantidadeFuncionariosEdicao, setQuantidadeFuncionariosEdicao] = useState(0)\r\n\r\n    /**\r\n     * Ao carregar a pagina define os valores dos inputs e selects com valor inicial igual aos da ordem que esta sendo editada.\r\n     */\r\n    useEffect(() => {\r\n        setNumeroOPEdicao(OrdemEditando.ordem_producao)\r\n        setMatriculasEdicao(OrdemEditando.matriculas)\r\n        setMesaEdicao(OrdemEditando.mesa)\r\n        setTurnoEdicao(OrdemEditando.turno)\r\n        setQuantidadeFuncionariosEdicao(OrdemEditando.quantidade_funcionarios)\r\n    },[OrdemEditando])\r\n\r\n    /**\r\n     * Define o valor do estado NumeroOPEdicao com o valor do input de numero de ordem de produção.\r\n     * @param {*} event Evento onchange do input.\r\n     */\r\n    const HandleNumeroOP = (event) => {\r\n        setNumeroOPEdicao(event.target.value);\r\n    };\r\n\r\n    /**\r\n     * Define o valor do estado MesaEdição com o valor selecionado no select de Mesa. \r\n     * @param {*} event Evento onChange do select.\r\n     */\r\n    const HandleMesa = (event) => {\r\n        setMesaEdicao(event.target.value);\r\n    };\r\n\r\n    /**\r\n     * Define o valor do estado Turno com o valor selecionado no select de Turno.\r\n     * @param {*} event Evento onChange do select.\r\n     */\r\n    const HandleTurno = (event) => {\r\n        setTurnoEdicao(event.target.value);\r\n    };\r\n\r\n    /**\r\n     * Edita os dados da ordem na localstorage conforme os dados colocados no formulario.\r\n     * @param {Object} ordemEditando Estado OrdemEditando com os dados da ordem que esta sendo editada.\r\n     * @param {Array<Object>} ordens Estado Ordens que contem as ordens que aparecem na lista.\r\n     */\r\n    function EditaComponente(ordemEditando, ordens){\r\n        const confirmacao = window.confirm(`Tem certeza que deseja editar o item ?`)\r\n        if(confirmacao){\r\n            const confereRepetido = ordens.find(ordem => ordem.ordem_producao === NumeroOPEdicao)\r\n            const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];\r\n            const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordemEditando.id);\r\n            const pausasLocalStorage = JSON.parse(localStorage.getItem('pausasOrdens')) || []\r\n            const pausasAtualIndex = pausasLocalStorage.findIndex(element => element.id === ordemEditando.id)\r\n\r\n            // Faz as alterações na ordem.\r\n            if (ordemAtualIndex !== -1) {\r\n                const ordemAtual = ordensLocalStorage[ordemAtualIndex];\r\n                if(ordemAtual['ordem_producao'] !== NumeroOPEdicao && confereRepetido){\r\n                    window.alert(\"Ordem de produção ja esta na lista !!\")\r\n                }else{\r\n                    if(NumeroOPEdicao.trim().length > 0 && MatriculasEdicao.length > 0  && MesaEdicao.trim().length > 0  && TurnoEdicao.trim().length > 0){\r\n                        ordemAtual['ordem_producao'] = NumeroOPEdicao\r\n                        ordemAtual['matriculas'] = MatriculasEdicao\r\n                        ordemAtual['matricula'] = MatriculasEdicao[0]\r\n                        ordemAtual['matricula_2'] = MatriculasEdicao[1]\r\n                        ordemAtual['matricula_3'] = MatriculasEdicao[2]\r\n                        ordemAtual['matricula_4'] = MatriculasEdicao[3]\r\n                        ordemAtual['mesa'] = MesaEdicao\r\n                        ordemAtual['turno'] = TurnoEdicao\r\n                        ordemAtual['quantidade_funcionarios'] = QuantidadeFuncionariosEdicao\r\n                        ordensLocalStorage[ordemAtualIndex] = ordemAtual;\r\n\r\n                        //Altera o valor de ordem_producao da localstorage de 'pausasOrdens' caso exista pausas para esta ordem.\r\n                        if(pausasAtualIndex !== -1){\r\n                            const pausas = pausasLocalStorage[pausasAtualIndex].pausas\r\n                            for(let i = 0; i<pausas.length;i++ ){\r\n                                pausas[i].ordem_producao = ordemAtual['ordem_producao']\r\n                            }\r\n                            console.log(pausas)\r\n                            localStorage.setItem('pausasOrdens', JSON.stringify(pausasLocalStorage))\r\n                        }\r\n\r\n                    \r\n                    localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));\r\n                    setLocalStorage(ordensLocalStorage)\r\n                    setModalEdicao(false)\r\n                }else{\r\n                    window.alert('Não pode haver campos vazios !!')\r\n                }\r\n                }\r\n                }\r\n        }\r\n        }\r\n\r\n        /**\r\n         * Acrescenta + 1 ao valor do estado QuantidadeFuncionariosEdicao maximo de 4 funcionarios.\r\n         */\r\n        const AdicaoFuncionario = () => {\r\n            if(QuantidadeFuncionariosEdicao < 4){\r\n            setQuantidadeFuncionariosEdicao(QuantidadeFuncionariosEdicao + 1)\r\n            }else{\r\n                window.alert('Maximo 4 Funcionarios por Ordem de Produção !!')\r\n            }\r\n        }\r\n\r\n        /**\r\n         * Subtrai -1 ao valor do estado QuantidadeFuncionariosEdicao e retira o ultimo valor do estado MatriculasEdicao.\r\n         */\r\n        const RemoverFuncionario = () => {\r\n            const novoValor = [...MatriculasEdicao]\r\n            setQuantidadeFuncionariosEdicao(QuantidadeFuncionariosEdicao -1)\r\n            novoValor.splice(-1,1)\r\n            setMatriculasEdicao(novoValor)\r\n        }\r\n        \r\n        /**\r\n         * Adiciona mais uma matricula conforme o valor do input do formulario.\r\n         */\r\n        const HandleMatricula = useCallback((index, event) => {\r\n            const newMatriculas = [...MatriculasEdicao];\r\n            newMatriculas[index] = event.target.value;\r\n            setMatriculasEdicao(newMatriculas);\r\n      }, [MatriculasEdicao, setMatriculasEdicao]);\r\n\r\n      /** \r\n       * Coloca componente input no estado de InputMatriculasEdicao conforme valor do estado QuantidadeFuncionariosEdicao.\r\n       * */ \r\n        useEffect(() => {\r\n            const inputs = []\r\n            for(let i = 0;i < QuantidadeFuncionariosEdicao; i++){\r\n                inputs.push(\r\n                    <Input\r\n                      key={i}\r\n                      placeholder=\"Matrícula do Funcionário\"\r\n                      style={{ border: '2px solid black', padding: '20px 0px', width: '50%', margin: '1rem 3px', borderRadius: '20px', fontSize: '20px' }}\r\n                      value={MatriculasEdicao[i] || ''}\r\n                      required\r\n                      onChange={(e) => HandleMatricula(i, e)}\r\n                    />\r\n                  );\r\n            }\r\n            setInputMatriculasEdicao(inputs)\r\n        },[QuantidadeFuncionariosEdicao, HandleMatricula, MatriculasEdicao])\r\n        \r\n\r\n        /**\r\n         * Exlui a ordem da localstorage ordensNaoFinalizadas e também seus dados de pausasOrdens.\r\n         * @param {Object} ordem Estado OrdemEditando com os dados da ordem que esta sendo editada. \r\n         */\r\n        const ExcluirOrdem = (ordem) => {\r\n            const confirmação  = window.confirm('Tem certeza que deseja excluir esta Ordem de Produção ?')\r\n            if(confirmação){\r\n                const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];\r\n                var ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);\r\n                const pausasLocalStorage = JSON.parse(localStorage.getItem('pausasOrdens')) || [];\r\n                const pausasIndexAtual = pausasLocalStorage.findIndex(element => element.id === ordem.id)\r\n                if(ordemAtualIndex !== -1){\r\n                    if(pausasIndexAtual !== -1){\r\n                        pausasLocalStorage.splice(pausasIndexAtual, 1)\r\n                        localStorage.setItem('pausasOrdens', JSON.stringify(pausasLocalStorage))\r\n                    }\r\n                ordensLocalStorage.splice(ordemAtualIndex, 1)\r\n                localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));\r\n                setLocalStorage(ordensLocalStorage)\r\n                setModalEdicao(false)\r\n                }else{\r\n                    console.log('Não foi possivel encontrar o id desta ordem na localStorage.')\r\n                }\r\n            }\r\n        }\r\n\r\n         \r\n\r\n    return(\r\n        <Modal \r\n    isOpen={ModalEdicao}\r\n    onRequestClose={async() => setModalEdicao(false)}\r\n    contentLabel=\"Edição\"\r\n    ariaHideApp={false}\r\n    style={{\r\n        overlay: {\r\n          backgroundColor: 'rgba(0, 0 ,0, 0.8)'\r\n        },\r\n        content: {\r\n          border: '1px solid black',\r\n          background: 'white',\r\n          borderRadius: '20px',\r\n          padding: '20px',\r\n          display:'flex',\r\n          flexDirection: \"column\",\r\n          alignItems:'center'\r\n        }\r\n      }}\r\n    >\r\n        <Label font_size = '26px'>Numero da Ordem de produção :</Label>\r\n        <Input placeholder=\"Numero da OP\"   padding = \"20px 0px\" width=\"60%\" margin =\"1rem 0px\" border_radius=\"20px\" border='0.1px black solid' font_size=\"20px\" value={NumeroOPEdicao} onChange={HandleNumeroOP} ></Input>\r\n        <Label font_size = '26px'>Matricula do funcionario :</Label>\r\n        <DivLinha>\r\n            {  \r\n                  InputMatriculasEdicao\r\n            }\r\n            \r\n            <DivColuna style={{cursor:'pointer' , width:'10%'}} onClick={AdicaoFuncionario}>\r\n             <Imagem src={imgAdicionarFuncionario} width='30%'/>\r\n             <span style={{color:'black'}}>Adicionar Funcionario</span>\r\n            </DivColuna>\r\n            { QuantidadeFuncionariosEdicao > 1 || QuantidadeFuncionariosEdicao === '' ? \r\n            <DivColuna style={{cursor:'pointer' , width:'10%'}} onClick={RemoverFuncionario}>\r\n            <Imagem src={imgRemoverFuncionario} width='30%'/>\r\n            <span style={{color:'black'}}>Remover Funcionario</span>\r\n           </DivColuna>\r\n           : ''    \r\n        }\r\n                </DivLinha>\r\n        <Label font_size = '26px'>Mesa :</Label>\r\n             <Select margin='1rem 0' width='30%'  padding='10px' value={MesaEdicao} border='0.1px black solid' onChange={HandleMesa}>\r\n                 <Option padding='10px 2px' fontSize='20px' value='' >Selecione Uma Mesa...</Option>\r\n                {\r\n                    mesas.map((mesa,index) => (\r\n                        <Option key={index} padding='10px 2px' fontSize='20px' >{mesa}</Option>\r\n                    ))\r\n                }\r\n                </Select>\r\n                <Label font_size = '26px'>Turno :</Label>\r\n                <Select margin='1rem 0' width='30%'  padding='10px' border='0.1px black solid' value={TurnoEdicao} onChange={HandleTurno}>\r\n                <Option padding='10px 2px' fontSize='20px' value='' >Selecione Um Turno...</Option>\r\n                {\r\n                    turnos.map((turno,index) =>(\r\n                        <Option key={index} padding='10px 2px' fontSize='20px' >{turno}</Option>\r\n                    ))\r\n                }\r\n                    \r\n                    </Select>  \r\n    \r\n      <Botao padding='20px 10px' width='40%' margin='1rem 10px' border='1px solid black' backgroundcolor='#79b3e0' border_radius='30px' onClick={() => EditaComponente(OrdemEditando, ordens)}>ATUALIZAR</Botao>\r\n      <Botao padding='20px 10px' width='40%' margin='1rem 10px' border='1px solid black' backgroundcolor='#FF6347' border_radius='30px' onClick={() =>{ setModalEdicao(false)}   }>CANCELAR</Botao>\r\n      <p>Houve algum problema durante o apontamento da ordem de produção ? Caso a ordem de produção tenha sido marcada de forma que não condiz com a realidade favor exclua a ordem de produção para evitar erros nos dados ! </p>\r\n      <Botao padding='20px 10px' width='40%' margin='1rem 0' border='1px solid black' backgroundcolor='#FF6347' border_radius='30px' onClick={() =>{ ExcluirOrdem(OrdemEditando)}   }>EXCLUIR</Botao>         \r\n    </Modal>\r\n\r\n    )\r\n}\r\n\r\nexport default ModalEditar",
     "static": true,
     "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Components/OrdensLista/ModalEditar/ModalEditar.js",
     "access": "public",
@@ -1998,6 +2135,203 @@
   {
     "__docId__": 98,
     "kind": "file",
+    "name": "src/Components/OrdensLista/ModalFinalizar/ModalFinalizar.js",
+    "content": "import Modal from 'react-modal';\r\nimport Label from '../../Label/Label.js';\r\nimport Imagem from '../../Imagem/Imagem.js';\r\nimport Input from '../../Input/Input.js';\r\nimport Botao from '../../Botao/Botao.js';\r\nimport loadingImg from \"../../../images/tube-spinner.svg\";\r\nimport { OrdensController } from '../../../Controller/OrdensController.js';\r\nimport tranformarDataEmString from '../../../Helpers/tranformarDataEmString.js';\r\nimport Delay from '../../../Helpers/Delay.js';\r\nimport { useState } from 'react';\r\n\r\n/**\r\n * Instancia de OrdensController.\r\n * @instance\r\n */\r\nconst ordensController = new OrdensController()\r\n\r\n/**\r\n * Estado que guarda informação da quantidade produzida.\r\n * @typedef {EstadoReact} QuantidadeProduzida\r\n * @property {number} QuantidadeProduzida Estado que guarda o valor do input de quantidade produzida.\r\n * @property  {React.Dispatch<React.SetStateAction<number>>} setQuantidadeProduzida Função que define novo valor para o estado QuantidadeProduzida.\r\n  */\r\n\r\n/**\r\n * Estado que define a visualização do componente de loading.\r\n * @typedef {EstadoReact} LoadingFinalizacao\r\n * @property {boolean} LoadingFinalizacao True define o loading como visivel, false oculta ele.\r\n * @property {React.Dispatch<React.SetStateAction<boolean>>} setLoadingFinalizacao Função que define o estado de LoadingFinalizacao.\r\n */\r\n\r\n/**\r\n * Componente modal para finalizar a ordem e capturar algumas informações referentes a finalização.\r\n * @param {Object} props Props do componente.\r\n * @param {boolean} props.ModalQuantidadeFinalizacao Estado que define a visualização do modal.\r\n * @param {React.Dispatch<React.SetStateAction<boolean>>} props.setModalQuantidadeFinalizacao Função que define o valor do estado ModalQuantidadeFinalizacao.\r\n * @param {React.Dispatch<React.SetStateAction<Array<Object>>>} props.setLocalStorage Função que define novo valor para o estado LocalStorage.\r\n * @param {Object} props.Ordemfinalizar Estado que guarda a informação da ordem a qual esta sendo finalizada.\r\n * @returns {JSX.Element} Componente de modal para pegar informações referentes a finalização de ordem da lista.\r\n */\r\nfunction ModalFinalizar({ModalQuantidadeFinalizacao, setModalQuantidadeFinalizacao, setLocalStorage, OrdemFinalizar }){\r\n\r\n    /**\r\n     * Estado que guarda o valor de quantidade produzida.\r\n     */\r\n  const [QuantidadeProduzida, setQuantidadeProduzida] = useState(0)\r\n    /**\r\n     * Estado que define a visualização do componente loading ao finalizar a ordem.\r\n     */\r\n  const [LoadingFinalizacao, setLoadingFinalizacao] = useState(false)\r\n\r\n  /**\r\n   * Função que finaliza a ordem, Pega as informações da ordem da localstorage de ordensNaoFinalizadas e pausasOrdens, adiciona alguns dados a elas e envia ao servidor para ser salvado todos os dados no jestor.\r\n   * @param {Object} ordem Estado OrdemFinalizar que possui os dados da ordem que esta sendo finalizada.\r\n   * @throws {Error} Erro quando não encontrado a ordem na localstorage.\r\n   * @throws {Error} Erro quando não é possivel salvar os dados das pausas no jestor. Não impede de salvar os dados da ordem. \r\n   */\r\n  async function HandleFinalizar(ordem){\r\n    if(QuantidadeProduzida > 0){\r\n        const horarioFinalizacao = new Date()\r\n        const horarioInicio = new Date(Date.parse(ordem.horario_inicio) + 10800000)\r\n        const ordensLocalStorage = await JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];\r\n        const pausasLocalStorage = await  JSON.parse(localStorage.getItem('pausasOrdens')) || [];\r\n        const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);\r\n        const pausasAtualIndex = pausasLocalStorage.findIndex(element => element.id === ordem.id);\r\n\r\n        // Define ou altera os valores de tempo_em_producao , tempo_total_producao , status , quantidade_produzida e horario_termino da ordem e depois através da função criarRegistro do controller envia os dados ao servidor para serem salvos no jestor.\r\n        if(ordem.status === 'Em Andamento'){\r\n            if (ordemAtualIndex !== -1) {\r\n                setLoadingFinalizacao(true)\r\n                const tempoTotalMilisegundos = horarioFinalizacao - horarioInicio\r\n                const ordemAtual = ordensLocalStorage[ordemAtualIndex];\r\n                if(ordem.qnt_pausado > 0){\r\n                    ordemAtual['tempo_em_producao'] = tempoTotalMilisegundos - ordem.qnt_pausado\r\n                }else{\r\n                    ordemAtual['tempo_em_producao'] = tempoTotalMilisegundos\r\n                }\r\n                ordemAtual['tempo_total_producao'] = tempoTotalMilisegundos\r\n                ordemAtual['finalizado'] = true\r\n                ordemAtual['status'] = 'Finalizado'\r\n                ordemAtual['quantidade_produzida'] = QuantidadeProduzida\r\n                ordemAtual['horario_termino'] = tranformarDataEmString(horarioFinalizacao)\r\n                const result = await ordensController.criarRegistro(process.env.REACT_APP_TABELA, ordemAtual)\r\n                if(result.error){\r\n                    window.alert(`${result.error}  , Contate o administrador do sistema para saber o real motivo e pedir confirmação para excluir a ordem.`)\r\n                    console.log(result)\r\n                    setModalQuantidadeFinalizacao(false)\r\n                    setQuantidadeProduzida(0)\r\n                    setLoadingFinalizacao(false)\r\n                }else {\r\n                    ordensLocalStorage[ordemAtualIndex] = ordemAtual;\r\n                    ordensLocalStorage.splice(ordemAtualIndex, 1);\r\n                    localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));\r\n                    await Delay(1000)\r\n                    setLocalStorage(ordensLocalStorage)\r\n                    \r\n                    // Salva no jestor os dados das pausas da localstorage 'pausasOrdens' referentes a ordem que esta sendo finalizada.\r\n                    if(pausasLocalStorage){\r\n                    if(pausasLocalStorage.length > 0){\r\n\r\n                        if(pausasLocalStorage[pausasAtualIndex].pausas.length > 0){\r\n                            pausasLocalStorage[pausasAtualIndex].pausas.forEach( async (pausa) => {\r\n                                const obj = {\r\n                                    conexao_apontamentos_2:result.data[`id_${process.env.REACT_APP_TABELA}`],\r\n                                    ordem_producao:pausa.ordem_producao,\r\n                                    motivo_pausa:pausa.motivo_pausa,\r\n                                    tempo_pausado:pausa.tempo_pausado,\r\n                                    motivo_retrabalho: pausa.motivo_retrabalho\r\n                                }\r\n                                const resultado = await ordensController.criarRegistro(process.env.REACT_APP_TABELA_PAUSAS, obj)\r\n                                if(resultado.error){\r\n                                    throw new Error('Atenção não foi possivel Salvar os dados das pausas, contate o administrador do sistema.', resultado.error)\r\n                                }\r\n                            })\r\n                            pausasLocalStorage.splice(pausasAtualIndex, 1)\r\n                            localStorage.setItem('pausasOrdens', JSON.stringify(pausasLocalStorage))\r\n                        }\r\n                    }\r\n                  }\r\n                    \r\n\r\n                    setModalQuantidadeFinalizacao(false)\r\n                    setQuantidadeProduzida(0)\r\n                    setLoadingFinalizacao(false)\r\n                    \r\n                }\r\n            }else {\r\n                throw new Error('Ordem não encontrada na localStorage.');\r\n            }\r\n        }else{\r\n            window.alert(\"Coloque a ordem em andamento antes de finalizar\")\r\n        }\r\n    }else{\r\n        window.alert('Favor informar a quantidade produzida !!')\r\n    }\r\n}\r\n\r\n/**\r\n * Define o estado QuantidadeProduzida conforme o valor que está no input.\r\n * @param {*} event Evento onChange do input.\r\n */\r\n  const HandleQuantidadeProduzida = (event) => {\r\n    setQuantidadeProduzida(event.target.value);\r\n  };\r\n\r\n    return(\r\n        <Modal\r\n    isOpen={ModalQuantidadeFinalizacao}\r\n    onRequestClose={async() => setModalQuantidadeFinalizacao(false)}\r\n    contentLabel=\"Motivo da Pausa\"\r\n    ariaHideApp={false}\r\n    style={{\r\n        overlay: {\r\n          backgroundColor: 'rgba(0, 0 ,0, 0.8)'\r\n        },\r\n        content: {\r\n          border: '1px solid black',\r\n          background: 'white',\r\n          borderRadius: '20px',\r\n          padding: '20px',\r\n          display:'flex',\r\n          flexDirection: \"column\",\r\n          alignItems:'center'\r\n        }\r\n      }}\r\n    >\r\n      <Label>Quantas peças foram produzidas ?</Label>\r\n      {LoadingFinalizacao ? (\r\n      <div>\r\n      <Imagem src={loadingImg} width='20%'></Imagem> \r\n      <span>Finalizando...</span>\r\n      </div>\r\n      )\r\n      : \r\n      (\r\n      <div style={{display:'flex', flexDirection:'column', alignItems:'center', width:'100%'}}>\r\n      <Input placeholder=\"Quantidade Produzida\"   padding = \"20px 0px\" width=\"40%\" margin =\"1rem 0px\" border_radius=\"20px\" border='0.1px black solid' font_size=\"20px\" value={QuantidadeProduzida} onChange={HandleQuantidadeProduzida}></Input>\r\n      <Botao padding='20px 10px' width='40%' margin='1rem 0' border='1px solid black' backgroundcolor='#79b3e0' border_radius='30px' onClick={() => HandleFinalizar(OrdemFinalizar)}>FINALIZAR</Botao>\r\n      <Botao padding='20px 10px' width='40%' margin='1rem 0' border='1px solid black' backgroundcolor='#FF6347' border_radius='30px' onClick={() => setModalQuantidadeFinalizacao(false)}>CANCELAR</Botao>\r\n      </div>\r\n      )\r\n      }\r\n    </Modal>\r\n    )\r\n}\r\n\r\nexport default ModalFinalizar",
+    "static": true,
+    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Components/OrdensLista/ModalFinalizar/ModalFinalizar.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 99,
+    "kind": "variable",
+    "name": "ordensController",
+    "memberof": "src/Components/OrdensLista/ModalFinalizar/ModalFinalizar.js",
+    "static": true,
+    "longname": "src/Components/OrdensLista/ModalFinalizar/ModalFinalizar.js~ordensController",
+    "access": "public",
+    "export": false,
+    "importPath": "controle_montagem/src/Components/OrdensLista/ModalFinalizar/ModalFinalizar.js",
+    "importStyle": null,
+    "description": "Instancia de OrdensController.",
+    "lineNumber": 16,
+    "unknown": [
+      {
+        "tagName": "@instance",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "src/Controller/OrdensController.js~OrdensController"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 100,
+    "kind": "typedef",
+    "name": "QuantidadeProduzida",
+    "memberof": "src/Components/OrdensLista/ModalFinalizar/ModalFinalizar.js",
+    "static": true,
+    "longname": "src/Components/OrdensLista/ModalFinalizar/ModalFinalizar.js~QuantidadeProduzida",
+    "access": "public",
+    "description": "Estado que guarda informação da quantidade produzida.",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "QuantidadeProduzida",
+        "description": "Estado que guarda o valor do input de quantidade produzida."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "React.Dispatch<React.SetStateAction<number>>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "setQuantidadeProduzida",
+        "description": "Função que define novo valor para o estado QuantidadeProduzida."
+      }
+    ],
+    "type": {
+      "types": [
+        "EstadoReact"
+      ],
+      "optional": false,
+      "name": "QuantidadeProduzida"
+    }
+  },
+  {
+    "__docId__": 101,
+    "kind": "typedef",
+    "name": "LoadingFinalizacao",
+    "memberof": "src/Components/OrdensLista/ModalFinalizar/ModalFinalizar.js",
+    "static": true,
+    "longname": "src/Components/OrdensLista/ModalFinalizar/ModalFinalizar.js~LoadingFinalizacao",
+    "access": "public",
+    "description": "Estado que define a visualização do componente de loading.",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "LoadingFinalizacao",
+        "description": "True define o loading como visivel, false oculta ele."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "React.Dispatch<React.SetStateAction<boolean>>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "setLoadingFinalizacao",
+        "description": "Função que define o estado de LoadingFinalizacao."
+      }
+    ],
+    "type": {
+      "types": [
+        "EstadoReact"
+      ],
+      "optional": false,
+      "name": "LoadingFinalizacao"
+    }
+  },
+  {
+    "__docId__": 102,
+    "kind": "function",
+    "name": "ModalFinalizar",
+    "memberof": "src/Components/OrdensLista/ModalFinalizar/ModalFinalizar.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/Components/OrdensLista/ModalFinalizar/ModalFinalizar.js~ModalFinalizar",
+    "access": "public",
+    "export": true,
+    "importPath": "controle_montagem/src/Components/OrdensLista/ModalFinalizar/ModalFinalizar.js",
+    "importStyle": "ModalFinalizar",
+    "description": "Componente modal para finalizar a ordem e capturar algumas informações referentes a finalização.",
+    "lineNumber": 41,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{JSX.Element} Componente de modal para pegar informações referentes a finalização de ordem da lista."
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props",
+        "description": "Props do componente."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.ModalQuantidadeFinalizacao",
+        "description": "Estado que define a visualização do modal."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "React.Dispatch<React.SetStateAction<boolean>>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.setModalQuantidadeFinalizacao",
+        "description": "Função que define o valor do estado ModalQuantidadeFinalizacao."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "React.Dispatch<React.SetStateAction<Array<Object>>>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.setLocalStorage",
+        "description": "Função que define novo valor para o estado LocalStorage."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "props.Ordemfinalizar",
+        "description": "Estado que guarda a informação da ordem a qual esta sendo finalizada."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "JSX.Element"
+      ],
+      "spread": false,
+      "description": "Componente de modal para pegar informações referentes a finalização de ordem da lista."
+    }
+  },
+  {
+    "__docId__": 103,
+    "kind": "file",
     "name": "src/Components/OrdensLista/ModalPausaComponent/ModalPausaComponent.js",
     "content": "\r\nimport Modal from 'react-modal';\r\nimport Botao from '../../Botao/Botao.js';\r\nimport Select from '../../Select/Select.js';\r\nimport Option from '../../Select/Option/Option.js';\r\nimport Titulo2 from '../../Titulo2/Titulo2.js';\r\nimport motivosRetrabalho from \"../../../BD/motivosRetrabalho.js\";\r\nimport motivosPausas from \"../../../BD/motivosPausas.js\";\r\nimport React, { useState } from 'react';\r\nimport tranformarDataEmString from '../../../Helpers/tranformarDataEmString.js';\r\n\r\n/**\r\n * Estado que guarda o motivo da pausa.\r\n * @typedef {EstadoReact} MotivoPausa\r\n * @property {string} MotivoPausa Guarda o valor do select de motivo da pausa.\r\n * @property {React.Dispatch<React.SetStateAction<string>>} setMotivoPausa Função que define novo valor para o estado MotivoPausa.\r\n */\r\n\r\n/**\r\n * Estado que guarda o motivo do retrabalho quando este for o motivo de pausa.\r\n * @typedef {EstadoReact} MotivoRetrabalho\r\n * @property {string} MotivoRetrabalho Guarda o valor do select de motivo de retrabalho.\r\n * @property {React.Dispatch<React.SetStateAction<string>>} setMotivoRetrabalho Função que define novo valor para o estado MotivoRetrabalho.\r\n */\r\n\r\n/**\r\n * Componente modal visualizado quando clicado para pausar um componente, utilizado para pegar o motivo da pausa e motivo do retrabalho.\r\n * @param {Object} props Props do componente.\r\n * @param {boolean} props.ModalPausa Estado que define a visualização do modal, proveniente do componente OrdensLista.\r\n * @param {React.Dispatch<React.SetStateAction<boolean>>} props.setModalPausa Função que define novo valor para o estado ModalPausa.\r\n * @param {Object} props.OrdemPausada Ordem a qual o modal se refere.\r\n * @param {React.Dispatch<React.SetStateAction<Array<Object>>>} props.setLocalStorage Função que define novo valor para o estado LocalStorage.\r\n * @returns {JSX.Element} \r\n */\r\nfunction ModalPausaComponent({ModalPausa, setModalPausa, OrdemPausada, setLocalStorage}){\r\n  /**\r\n   * Estado que guarda o valor do select de motivo da pausa.\r\n   */\r\n  const [MotivoPausa, setMotivoPausa] = useState('')\r\n\r\n  /**\r\n   * Estado que guarda o valor do select de motivo de retrabalho.\r\n   */\r\n  const [MotivoRetrabalho, setMotivoRetrabalho] = useState('')\r\n\r\n  /**\r\n   * Define estado MotivoPausa com o valor do select de motivo pausa.\r\n   * @param {*} event Evento onChange do componente.\r\n   */\r\n  function HandleMotivo(event){\r\n    setMotivoPausa(event.target.value)\r\n    }\r\n    \r\n    /**\r\n     * Define estado MotivoRetrabalho com o valor do select de motivo retranalho.\r\n     * @param {*} e Evento onChange do componente \r\n     */\r\n    const HandleMotivoRetrabalho = (e) => {\r\n      setMotivoRetrabalho(e.target.value)\r\n  }\r\n\r\n  /**\r\n   * Adiciona os valores de horario_pausa e altera os valores de motivos_das_pausas adicionando o motivo da pausa atual e altera o status para pausado da ordem na localstorage de 'ordensNaoFinalizadas'.\r\n   * Adiciona os dados da pausa no localstorage de pausasOrdens.\r\n   * @param {Object} ordem Estado OrdemPausada que possui os dados da ordem a qual será feito a pausa. \r\n   * @throws {Error} Erro quando a ordem não é encontrada na localstorage.\r\n   */\r\n  function HandlePausa(ordem){\r\n    try{\r\n      // Define e altera os valores da ordem na localstorage ordensNaoFinalizadas adicionando os dados da pausa.\r\n        if(ordem.status === 'Em Andamento' ){\r\n         if(MotivoPausa !== ''){\r\n            if(MotivoPausa === 'Retrabalho' && MotivoRetrabalho === ''){\r\n                window.alert('Por favor preencha um motivo para o retrabalho !!')\r\n            }else {\r\n                const horarioPausa = new Date()\r\n                const dataPausaJestor = tranformarDataEmString(horarioPausa)\r\n                const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];\r\n                const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);\r\n                if (ordemAtualIndex !== -1) {\r\n                    const ordemAtual = ordensLocalStorage[ordemAtualIndex];\r\n                    ordemAtual['horario_pausa'] = dataPausaJestor;\r\n                    ordemAtual['motivos_das_pausas'] = ordemAtual['motivos_das_pausas'] ? `${ordem.motivos_das_pausas} , ${MotivoPausa}` : `${MotivoPausa}`;\r\n                    ordemAtual['status'] = 'Pausado';\r\n                    ordensLocalStorage[ordemAtualIndex] = ordemAtual;\r\n                    localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));\r\n                    setLocalStorage(ordensLocalStorage)\r\n                    setModalPausa(false)\r\n   \r\n                    // Adiciona os valores da pausa referente a ordem na localstorage de pausasOrdens.\r\n                    const pausasLocalStorage = JSON.parse(localStorage.getItem('pausasOrdens')) || [];\r\n                    const pausasLocalStorageIndex = pausasLocalStorage.findIndex(element => element.id === ordem.id)\r\n                    \r\n                    if (pausasLocalStorageIndex !== -1){\r\n                        const obj = {ordem_producao:ordensLocalStorage[ordemAtualIndex]['ordem_producao'],motivo_pausa:MotivoPausa, motivo_retrabalho : MotivoRetrabalho }\r\n                        pausasLocalStorage[pausasLocalStorageIndex].pausas.push(obj)\r\n                        localStorage.setItem('pausasOrdens', JSON.stringify(pausasLocalStorage))\r\n                    }else{\r\n                       const obj = {id:ordem.id, pausas: [{ ordem_producao:ordensLocalStorage[ordemAtualIndex]['ordem_producao'],motivo_pausa:MotivoPausa, motivo_retrabalho : MotivoRetrabalho }] }\r\n                       pausasLocalStorage.push(obj)\r\n                       localStorage.setItem('pausasOrdens', JSON.stringify(pausasLocalStorage))\r\n                    }\r\n                    setMotivoPausa('')\r\n                    setMotivoRetrabalho('')\r\n   \r\n                }else {\r\n                    throw new Error('Ordem não encontrada na localStorage.');\r\n                }\r\n            }\r\n         }else {\r\n            window.alert('Por favor preencha um motivo para a pausa !!')\r\n         }\r\n        }\r\n        \r\n    }catch (error) {\r\n        console.error('Erro ao atualizar o estado das ordens:', error);\r\n    }\r\n    }\r\n\r\n    return(\r\n\r\n<Modal \r\n    isOpen={ModalPausa}\r\n    onRequestClose={async() => setModalPausa(false)}\r\n    contentLabel=\"Motivo da Pausa\"\r\n    ariaHideApp={false}\r\n    style={{\r\n        overlay: {\r\n          backgroundColor: 'rgba(0, 0 ,0, 0.8)'\r\n        },\r\n        content: {\r\n          border: '1px solid black',\r\n          background: 'white',\r\n          borderRadius: '20px',\r\n          padding: '20px',\r\n          display:'flex',\r\n          flexDirection: \"column\",\r\n          alignItems:'center'\r\n        }\r\n      }}\r\n    >\r\n      <Titulo2>COLOQUE O MOTIVO DA PAUSA:</Titulo2>\r\n      <Select onChange={HandleMotivo} margin='30px 0px' padding='20px 0px' width='80%' font_size='24px'>\r\n      <Option width='80%' padding='20px 0px' font_size='24px' value=''>Selecione um Motivo...</Option>\r\n        {\r\n            motivosPausas.map((motivos,index) => (\r\n                <Option width='80%' padding='20px 0px' font_size='24px' key={index}>{motivos}</Option>\r\n            ))\r\n        }\r\n      </Select>\r\n      {\r\n        MotivoPausa === 'Retrabalho' ? \r\n        <Select onChange={HandleMotivoRetrabalho} margin='30px 0px' padding='20px 0px' width='80%' font_size='24px'>\r\n      <Option width='80%' padding='20px 0px' font_size='24px' value=''>Selecione um Motivo do Retrabalho...</Option>\r\n        {\r\n            motivosRetrabalho.map((motivos,index) => (\r\n                <Option width='80%' padding='20px 0px' font_size='24px' key={index}>{motivos}</Option>\r\n            ))\r\n        }\r\n      </Select>\r\n      :\r\n      ''\r\n      }\r\n      <Botao padding='20px 10px' width='40%' margin='1rem 0' border='1px solid black' backgroundcolor='#79b3e0' border_radius='30px' onClick={() => HandlePausa(OrdemPausada)}>ENVIAR</Botao>\r\n      <Botao padding='20px 10px' width='40%' margin='1rem 0' border='1px solid black' backgroundcolor='#FF6347' border_radius='30px' onClick={() => setModalPausa(false)}>CANCELAR</Botao>\r\n      \r\n    </Modal>\r\n    )\r\n}\r\n\r\nexport default ModalPausaComponent",
     "static": true,
@@ -2007,7 +2341,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 99,
+    "__docId__": 104,
     "kind": "typedef",
     "name": "MotivoPausa",
     "memberof": "src/Components/OrdensLista/ModalPausaComponent/ModalPausaComponent.js",
@@ -2046,7 +2380,7 @@
     }
   },
   {
-    "__docId__": 100,
+    "__docId__": 105,
     "kind": "typedef",
     "name": "MotivoRetrabalho",
     "memberof": "src/Components/OrdensLista/ModalPausaComponent/ModalPausaComponent.js",
@@ -2085,7 +2419,7 @@
     }
   },
   {
-    "__docId__": 101,
+    "__docId__": 106,
     "kind": "function",
     "name": "ModalPausaComponent",
     "memberof": "src/Components/OrdensLista/ModalPausaComponent/ModalPausaComponent.js",
@@ -2167,7 +2501,7 @@
     }
   },
   {
-    "__docId__": 102,
+    "__docId__": 107,
     "kind": "file",
     "name": "src/Components/OrdensLista/OrdensLista.js",
     "content": "import styled from \"styled-components\";\r\nimport Titulo4 from \"../Titulo4/Titulo4.js\";\r\nimport Botao from \"../Botao/Botao.js\";\r\n//import { PegarOrdensNaoFinalizadas } from \"../../Services/PegarOrdensNaoFinalizadas.js\";\r\nimport { useState } from \"react\";\r\nimport Imagem from \"../Imagem/Imagem.js\";\r\nimport ImagemEditar from \"../../images/caneta.png\"\r\nimport ModalFinalizar from \"./ModalFinalizar/ModalFinalizar.js\";\r\nimport ModalPausaComponent from \"./ModalPausaComponent/ModalPausaComponent.js\";\r\nimport ModalEditar from \"./ModalEditar/ModalEditar.js\";\r\nimport tranformarDataEmString from \"../../Helpers/tranformarDataEmString.js\";\r\n\r\n\r\n/**\r\n * Componente section para servir de container dos outros componentes.\r\n */\r\nconst ContainerOrdens = styled.section`\r\n    width:90%;\r\n    background-color:white;\r\n    border-radius:30px;\r\n    display: flex;\r\n    flex-direction:column;\r\n    align-items:center;\r\n`\r\n\r\n/**\r\n * Componente de Lista.\r\n */\r\nconst OrdensUl = styled.ul`\r\n    display:flex;\r\n    align-items:center;\r\n    justify-content:center;\r\n    width: 95%;\r\n    flex-direction:column;\r\n    padding-inline-start: 0px;\r\n    text-align:center;\r\n\r\n`\r\n\r\n/**\r\n * Componente linha da lista.\r\n */\r\nconst OrdensLi = styled.li`\r\n    width: 100%;\r\n    display:flex;\r\n    align-items:center;\r\n    padding:20px 10px;\r\n    border:solid 0.5px black;\r\n    border-radius:15px;\r\n    margin:4px 4px;\r\n    background-color: ${props => props.backgroundcolor || 'white'};\r\n\r\n\r\n`\r\n/**\r\n * Componente utilizado para englobar informações das ordens.\r\n */\r\nconst ItemLista = styled.div`\r\n    width:25%;\r\n    padding: 5px 5px;\r\n    display:flex;\r\n    flex-direction:column;\r\n    align-items:center; \r\n    `\r\n\r\n/**\r\n * Componente onde o dado referente a ordem é escrito.\r\n */\r\nconst SpanOrdem = styled.span`\r\n    font-size : 18px;\r\n    color: white;\r\n    background-color:black;\r\n    width:100%;\r\n    border-radius: 0px 0px 5px 5px;\r\n    margin:0px 3px;\r\n\r\n\r\n`\r\n\r\n/**\r\n * Componente div para englobar componentes em linha alinhados na horizontal.\r\n */\r\nconst DivLinha = styled.div`\r\n    display:flex;\r\n    align-items:center;\r\n    width:100%;\r\n    justify-content:center;\r\n\r\n`\r\n\r\n/**\r\n * Estado que define a visualização do Componente ModalPausaComponent. \r\n * @typedef {EstadoReact} ModalPausa\r\n * @property {boolean} ModalPausa True aparecerá o modal de Pausa, false ocultará ele.\r\n * @property {React.Dispatch<React.SetStateAction<boolean>>} setModalPausa Função que define novo valor para o estado ModalPausa.\r\n */\r\n\r\n/**\r\n * Estado que ao clicar para abrir modal de pausa, guarda informações da ordem clicada para utilizar no modal.\r\n * @typedef {EstadoReact} OrdemPausada\r\n * @property {Object} OrdemPausada Objeto contendo os dados da ordem clicada para pausar.\r\n * @property {React.Dispatch<React.SetStateAction<Object>>} setOrdemPausada Função que define novo valor para OrdemPausada.\r\n */\r\n\r\n/**\r\n * Estado que define a visualização do Componente ModalEditar. \r\n * @typedef {EstadoReact} ModalEdicao\r\n * @property {boolean} ModalEdicao True aparecerá o modal de Edição, false ocultará ele.\r\n * @property {React.Dispatch<React.SetStateAction<boolean>>} setModalEdicao Função que define novo valor para o estado ModalEdicao.\r\n */\r\n\r\n/**\r\n * Estado que ao clicar para abrir modal de edição, guarda informações da ordem clicada para utilizar no modal.\r\n * @typedef {EstadoReact} OrdemEditando\r\n * @property {Object} OrdemEditando Objeto contendo os dados da ordem clicada para editar.\r\n * @property {React.Dispatch<React.SetStateAction<Object>>} setOrdemEditando Função que define novo valor para OrdemEditando.\r\n */\r\n\r\n/**\r\n * Estado que define a visualização do componente ModalFinalizar.\r\n * @typedef {EstadoReact} ModalQuantidadeFinalizacao\r\n * @property {boolean} ModalQuantidadeFinalizacao True aparecerá o modal de Finalização da ordem, false ocultará ele.\r\n * @property {React.Dispatch<React.SetStateAction<boolean>>} setModalQuantidadeFinalizacao Função que define novo valor para o estado ModalQuantidadeFinalizacao.  \r\n*/\r\n\r\n/**\r\n * Estado que ao clicar para abrir modal de finalização, guarda informações da ordem clicada para utilizar no modal.\r\n * @typedef {EstadoReact} OrdemFinalizar\r\n * @property {Object} OrdemFinalizar Objeto contendo os dados da ordem clicada para finalizar.\r\n * @property {React.Dispatch<React.SetStateAction<Object>>} setOrdemFinalizar Função que define novo valor para OrdemFinalizar.\r\n */\r\n\r\n/**\r\n * \r\n * @param {Object} props Props do componente.\r\n * @param {Array<Object>} props.ordens Estado 'Ordens' proveninte do componente ControleProducao com as ordens que devem aparecer na lista com seus respectivos dados.\r\n * @param {React.Dispatch<React.SetStateAction<Array<Object>>>} props.setLocalStorage Função que define novo valor para o estado LocalStorage.\r\n * @returns {JSX.Element} Componente com uma lista mostrando os dados das ordens não finalizadas.\r\n */\r\nfunction OrdensLista({ ordens, setLocalStorage }) {\r\n\r\n    /**\r\n     * Estado que Define a visualização do modal de pausa.\r\n     */\r\n    const [ModalPausa, setModalPausa] = useState(false)\r\n    /**\r\n     * Estado que guarda os dados da ordem clicada para pausar.\r\n     */\r\n    const [OrdemPausada, setOrdemPausada] = useState({})\r\n    /**\r\n     * Estado que define a visualização do modal de edição.\r\n     */\r\n    const [ModalEdicao, setModalEdicao] = useState(false)\r\n    /**\r\n     * Estado que guarda os dados da ordem clicada para editar.\r\n     */\r\n    const [OrdemEditando, setOrdemEditando] = useState({})\r\n    /**\r\n     * Estado que define a visualização do modal de finalização.\r\n     */\r\n    const [ModalQuantidadeFinalizacao, setModalQuantidadeFinalizacao] = useState(false)\r\n    /**\r\n     * Estado que guarda os dados da ordem clicada para Finalizar.\r\n     */\r\n    const [OrdemFinalizar, setOrdemFinalizar] = useState({})\r\n    \r\n    /**\r\n     * Quando a ordem estiver pausada pega o ultimo motivo de pausa para mostrar escrito.\r\n     * @param {string} motivos String com os motivos das pausas separados por ' , ' . \r\n     * @returns Retorna o ultimo motivo descrito na string.\r\n     */\r\n    function pegaUltimoMotivoPausa(motivos) {\r\n        if (motivos) {\r\n            const motivosArray = motivos.split(',')\r\n            const ultimoMotivo = motivosArray[motivosArray.length - 1]\r\n            return ultimoMotivo\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Define o Estado ModalPausa como true ou false, quando definido para true define também o estado OrdemPausada com os dados da ordem.\r\n     * @param {Object} ordem Dados da ordem que ativou a função.\r\n     */\r\n    function HandleModalPausa(ordem) {\r\n        if (ModalPausa === false) {\r\n            setModalPausa(true)\r\n            setOrdemPausada(ordem)\r\n        }\r\n        if (ModalPausa === true) {\r\n            setModalPausa(false)\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Define o Estado ModalEdicao como true ou false, quando definido para true define também o estado OrdemEditando com os dados da ordem.\r\n     * @param {Object} ordem Dados da ordem que ativou a função.\r\n     */\r\n    function HandleModalEdicao(ordem) {\r\n        if (ModalEdicao === false) {\r\n            setModalEdicao(true)\r\n            setOrdemEditando(ordem)\r\n        }\r\n        if (ModalEdicao === true) {\r\n            setModalEdicao(false)\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Define o Estado ModalQuantidadeFinalizacao como true ou false, quando definido para true define também o estado OrdemFinalizar com os dados da ordem.\r\n     * @param {Object} ordem Dados da ordem que ativou a função.\r\n     */\r\n    function HandleModalQuantidadeFinalizacao(ordem) {\r\n        if (ModalQuantidadeFinalizacao === false) {\r\n            setModalQuantidadeFinalizacao(true)\r\n            setOrdemFinalizar(ordem)\r\n        }\r\n        if (ModalQuantidadeFinalizacao === true) {\r\n            setModalPausa(false)\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Função ativada quando a ordem esta pausada e voltará para em andamento.\r\n     * Funcionamento: \r\n     * Altera algumas informações da ordem, status para 'Em Andamento', define horario_recomeco para data e hora atual, soma o tempo pausado a qnt_pausado e salva na localstorage.\r\n     * Define o tempo pausado da ordem nos dados de pausasOrdens do localstorage.\r\n     * @param {Object} ordem Dados da ordem que ativou a função.\r\n     * @throws {Error} Quando não encontra a ordem na localstorage.\r\n     */\r\n    function HandleRetornaPausa(ordem) {\r\n        if (ordem.status === 'Pausado') {\r\n            const ordensLocalStorage = JSON.parse(localStorage.getItem('ordensNaoFinalizadas')) || [];\r\n            const ordemAtualIndex = ordensLocalStorage.findIndex(element => element.id === ordem.id);\r\n\r\n            if (ordemAtualIndex !== -1) {\r\n                //Atualiza os valores de horario_recomeço, qnt_pausado e status da ordem.\r\n                const ordemAtual = ordensLocalStorage[ordemAtualIndex];\r\n                const dataRecomeco = new Date()\r\n                const dataRecomecoString = tranformarDataEmString(dataRecomeco)\r\n                const horarioPausa = `${ordemAtual['horario_pausa']}`\r\n                const dateMiliseconds = Date.parse(horarioPausa)\r\n                const dataPausa = new Date(dateMiliseconds + 10800000)\r\n                const diferencaHorariosMiliSegundos = dataRecomeco - dataPausa\r\n                ordemAtual['horario_recomeco'] = dataRecomecoString\r\n                ordemAtual['status'] = 'Em Andamento'\r\n                if (ordem['qnt_pausado']) {\r\n                    ordemAtual['qnt_pausado'] = ordemAtual['qnt_pausado'] + diferencaHorariosMiliSegundos\r\n                } else {\r\n                    ordemAtual['qnt_pausado'] = diferencaHorariosMiliSegundos\r\n                }\r\n                ordensLocalStorage[ordemAtualIndex] = ordemAtual;\r\n                localStorage.setItem('ordensNaoFinalizadas', JSON.stringify(ordensLocalStorage));\r\n                setLocalStorage(ordensLocalStorage) \r\n\r\n                //Define o tempo pausado da ultima pausa desta ordem nos dados da localstorage pausasOrdens.\r\n                const pausasLocalStorage = JSON.parse(localStorage.getItem('pausasOrdens')) || [];\r\n                const pausasLocalStorageIndex = pausasLocalStorage.findIndex(element => element.id === ordem.id)\r\n                if (pausasLocalStorageIndex !== -1) {\r\n                    const ultimoIndice = pausasLocalStorage[pausasLocalStorageIndex].pausas.length - 1\r\n                    pausasLocalStorage[pausasLocalStorageIndex].pausas[ultimoIndice]['tempo_pausado'] = diferencaHorariosMiliSegundos\r\n                    localStorage.setItem('pausasOrdens', JSON.stringify(pausasLocalStorage))\r\n                }\r\n\r\n            } else {\r\n                throw new Error('Ordem não encontrada na localStorage.');\r\n            }\r\n\r\n        }\r\n    }\r\n\r\n    return (\r\n        <ContainerOrdens>\r\n\r\n            <OrdensUl>\r\n                {\r\n                    ordens.map((ordem, index) => (\r\n                        <OrdensLi backgroundcolor={ordem.status === 'Em Andamento' ? '#24ab92' : '#bf6b47'} key={index}>\r\n\r\n                            <ItemLista>\r\n                                <Titulo4 backgroundcolor='white' border_radius='5px 5px 0px 0px' font_size='16px'>ORDEM PRODUÇÃO:</Titulo4>\r\n                                <SpanOrdem>{ordem.ordem_producao}</SpanOrdem>\r\n                            </ItemLista>\r\n                            <ItemLista>\r\n                                <Titulo4 backgroundcolor='white' border_radius='5px 5px 0px 0px' font_size='16px'>FUNCIONARIOS:</Titulo4>\r\n\r\n                                <DivLinha>\r\n                                    {\r\n                                        ordem.matriculas.map((matricula, index) => (\r\n                                            <SpanOrdem key={index}>{matricula}</SpanOrdem>\r\n                                        ))\r\n                                    }\r\n                                </DivLinha>\r\n\r\n                            </ItemLista>\r\n                            <ItemLista>\r\n                                <Titulo4 backgroundcolor='white' border_radius='5px 5px 0px 0px' font_size='16px'>MESA:</Titulo4>\r\n                                <SpanOrdem>{ordem.mesa}</SpanOrdem>\r\n                            </ItemLista>\r\n                            <ItemLista>\r\n                                <Titulo4 backgroundcolor='white' border_radius='5px 5px 0px 0px' font_size='16px'>STATUS:</Titulo4>\r\n                                <SpanOrdem>{ordem.status}</SpanOrdem>\r\n                            </ItemLista>\r\n                            <ItemLista>\r\n                                <Titulo4 backgroundcolor='white' border_radius='5px 5px 0px 0px' font_size='16px'>TURNO:</Titulo4>\r\n                                <SpanOrdem>{ordem.turno}</SpanOrdem>\r\n                            </ItemLista>\r\n                            <ItemLista>\r\n                                <Titulo4 backgroundcolor='white' border_radius='5px 5px 0px 0px' font_size='16px'>MOTIVO DA PAUSA:</Titulo4>\r\n                                <SpanOrdem>{ordem.status === \"Pausado\" ? pegaUltimoMotivoPausa(ordem.motivos_das_pausas) : ''}</SpanOrdem>\r\n                            </ItemLista>\r\n                            <ItemLista>\r\n                                <Botao border='0.3px black solid' boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding='10px 5px' border_radius='5px' font_size='20px' backgroundcolor={ordem.status === 'Em Andamento' ? '#DAA520' : '#00FA9A'} onClick={async () => { ordem.status === 'Em Andamento' ? HandleModalPausa(ordem) : HandleRetornaPausa(ordem) }} width='80%'>{ordem.status === 'Em Andamento' ? 'PAUSAR' : 'RETORNAR'}</Botao>\r\n                            </ItemLista>\r\n                            <ItemLista>\r\n                                <Botao border='0.3px black solid' boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' padding='10px 5px' border_radius='5px' backgroundcolor='#FF6347' color='black' font_size='20px' width='80%' onClick={async () => await HandleModalQuantidadeFinalizacao(ordem)}>FINALIZAR</Botao>\r\n                            </ItemLista>\r\n                            <Botao padding='2px 2px' backgroundcolor='rgb(0,0,0,0)' color='black' font_size='20px' width='10%' onClick={() => HandleModalEdicao(ordem)}><Imagem src={ImagemEditar} width='60%'></Imagem></Botao>\r\n\r\n                        </OrdensLi>\r\n\r\n                    )\r\n                    )\r\n                }\r\n            </OrdensUl>\r\n            <ModalPausaComponent\r\n                setLocalStorage={setLocalStorage}\r\n                ModalPausa={ModalPausa}\r\n                setModalPausa={setModalPausa}\r\n                OrdemPausada={OrdemPausada}\r\n            />\r\n\r\n            <ModalFinalizar\r\n                ModalQuantidadeFinalizacao={ModalQuantidadeFinalizacao}\r\n                setModalQuantidadeFinalizacao={setModalQuantidadeFinalizacao}\r\n                setLocalStorage={setLocalStorage}\r\n                ordens={ordens}\r\n                OrdemFinalizar={OrdemFinalizar}\r\n            />\r\n\r\n            <ModalEditar\r\n                setModalEdicao={setModalEdicao}\r\n                setLocalStorage={setLocalStorage}\r\n                ModalEdicao={ModalEdicao}\r\n                ordens={ordens}\r\n                OrdemEditando={OrdemEditando}\r\n\r\n            />\r\n\r\n        </ContainerOrdens>\r\n    )\r\n}\r\n\r\nexport default OrdensLista",
@@ -2178,7 +2512,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 103,
+    "__docId__": 108,
     "kind": "variable",
     "name": "ContainerOrdens",
     "memberof": "src/Components/OrdensLista/OrdensLista.js",
@@ -2198,7 +2532,7 @@
     "ignore": true
   },
   {
-    "__docId__": 104,
+    "__docId__": 109,
     "kind": "variable",
     "name": "OrdensUl",
     "memberof": "src/Components/OrdensLista/OrdensLista.js",
@@ -2218,7 +2552,7 @@
     "ignore": true
   },
   {
-    "__docId__": 105,
+    "__docId__": 110,
     "kind": "variable",
     "name": "OrdensLi",
     "memberof": "src/Components/OrdensLista/OrdensLista.js",
@@ -2238,7 +2572,7 @@
     "ignore": true
   },
   {
-    "__docId__": 106,
+    "__docId__": 111,
     "kind": "variable",
     "name": "ItemLista",
     "memberof": "src/Components/OrdensLista/OrdensLista.js",
@@ -2258,7 +2592,7 @@
     "ignore": true
   },
   {
-    "__docId__": 107,
+    "__docId__": 112,
     "kind": "variable",
     "name": "SpanOrdem",
     "memberof": "src/Components/OrdensLista/OrdensLista.js",
@@ -2278,7 +2612,7 @@
     "ignore": true
   },
   {
-    "__docId__": 108,
+    "__docId__": 113,
     "kind": "variable",
     "name": "DivLinha",
     "memberof": "src/Components/OrdensLista/OrdensLista.js",
@@ -2298,7 +2632,7 @@
     "ignore": true
   },
   {
-    "__docId__": 109,
+    "__docId__": 114,
     "kind": "typedef",
     "name": "ModalPausa",
     "memberof": "src/Components/OrdensLista/OrdensLista.js",
@@ -2337,7 +2671,7 @@
     }
   },
   {
-    "__docId__": 110,
+    "__docId__": 115,
     "kind": "typedef",
     "name": "OrdemPausada",
     "memberof": "src/Components/OrdensLista/OrdensLista.js",
@@ -2376,7 +2710,7 @@
     }
   },
   {
-    "__docId__": 111,
+    "__docId__": 116,
     "kind": "typedef",
     "name": "ModalEdicao",
     "memberof": "src/Components/OrdensLista/OrdensLista.js",
@@ -2415,7 +2749,7 @@
     }
   },
   {
-    "__docId__": 112,
+    "__docId__": 117,
     "kind": "typedef",
     "name": "OrdemEditando",
     "memberof": "src/Components/OrdensLista/OrdensLista.js",
@@ -2454,7 +2788,7 @@
     }
   },
   {
-    "__docId__": 113,
+    "__docId__": 118,
     "kind": "typedef",
     "name": "ModalQuantidadeFinalizacao",
     "memberof": "src/Components/OrdensLista/OrdensLista.js",
@@ -2493,7 +2827,7 @@
     }
   },
   {
-    "__docId__": 114,
+    "__docId__": 119,
     "kind": "typedef",
     "name": "OrdemFinalizar",
     "memberof": "src/Components/OrdensLista/OrdensLista.js",
@@ -2532,7 +2866,7 @@
     }
   },
   {
-    "__docId__": 115,
+    "__docId__": 120,
     "kind": "function",
     "name": "OrdensLista",
     "memberof": "src/Components/OrdensLista/OrdensLista.js",
@@ -2594,7 +2928,7 @@
     }
   },
   {
-    "__docId__": 116,
+    "__docId__": 121,
     "kind": "file",
     "name": "src/Components/ProtectedRoute/ProtectedRoute.js",
     "content": "import React, { useEffect } from 'react';\r\nimport {useNavigate} from 'react-router-dom';\r\n\r\n/**\r\n * Componente de rota protegida.\r\n * Renderiza o componente fornecido somente se o usuário estiver autenticado, caso contrário, redireciona para a página de login.\r\n *\r\n * @param {Object} props - Propriedades do componente.\r\n * @param {React.ComponentType} props.component - Componente a ser renderizado se o usuário estiver autenticado.\r\n * @param {boolean} props.isAuthenticated - Indica se o usuário está autenticado.\r\n * @param {Object} props.rest - Outras propriedades passadas para o componente.\r\n * @returns {JSX.Element} O componente a ser renderizado ou o redirecionamento para a página de login.\r\n */\r\nconst ProtectedRoute = ({ component: Component, isAuthenticated, ...rest }) => {\r\n    const navigate = useNavigate();\r\n    /**\r\n     * Chamada quando o usuario não esta logado, redireciona o usuario a pagina de login.\r\n     */\r\n    function RetornaLogin(){\r\n            useEffect(() => {\r\n                            navigate('/');\r\n            }, [])\r\n\r\n    }\r\n\r\n    return (\r\n                isAuthenticated ? <Component {...rest} /> : RetornaLogin()\r\n        );\r\n        \r\n};\r\n\r\nexport default ProtectedRoute;",
@@ -2605,7 +2939,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 117,
+    "__docId__": 122,
     "kind": "function",
     "name": "ProtectedRoute",
     "memberof": "src/Components/ProtectedRoute/ProtectedRoute.js",
@@ -2677,10 +3011,10 @@
     }
   },
   {
-    "__docId__": 118,
+    "__docId__": 123,
     "kind": "file",
     "name": "src/Components/Select/Option/Option.js",
-    "content": "import styled from \"styled-components\";\r\n\r\n\r\nconst Option = styled.option`\r\n    font-size:${props => props.font_size || '16px'};\r\n    color:${props => props.color || 'black'};\r\n    padding:${props => props.padding || '0px 0px'}\r\n`\r\n\r\nexport default Option",
+    "content": "import styled from \"styled-components\";\r\n\r\n/**\r\n * Componente Option customizável.\r\n * @component\r\n * @property {string} font_size Define o tamanho da fonte. Valor padrão : '16px'\r\n * @property {string} color Define a cor da fonte. \r\n */\r\nconst Option = styled.option`\r\n    font-size:${props => props.font_size || '16px'};\r\n    color:${props => props.color || 'black'};\r\n    \r\n`\r\n\r\nexport default Option",
     "static": true,
     "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Components/Select/Option/Option.js",
     "access": "public",
@@ -2688,7 +3022,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 119,
+    "__docId__": 124,
     "kind": "variable",
     "name": "Option",
     "memberof": "src/Components/Select/Option/Option.js",
@@ -2698,9 +3032,36 @@
     "export": true,
     "importPath": "controle_montagem/src/Components/Select/Option/Option.js",
     "importStyle": "Option",
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true,
+    "description": "Componente Option customizável.",
+    "lineNumber": 9,
+    "unknown": [
+      {
+        "tagName": "@component",
+        "tagValue": ""
+      }
+    ],
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "font_size",
+        "description": "Define o tamanho da fonte. Valor padrão : '16px'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "color",
+        "description": "Define a cor da fonte."
+      }
+    ],
     "type": {
       "types": [
         "*"
@@ -2708,10 +3069,10 @@
     }
   },
   {
-    "__docId__": 120,
+    "__docId__": 125,
     "kind": "file",
     "name": "src/Components/Select/Select.js",
-    "content": "import styled from \"styled-components\";\r\n\r\n\r\nconst Select = styled.select`\r\n    width:${props=> props.width || '100%'};\r\n    margin:${props=>props.margin || '0px 0px'};\r\n    padding:${props => props.padding || '0px 0px'};\r\n    heigth:${props => props.heigth || '10px'};\r\n    font-size:${props => props.font_size || '16px'}\r\n`\r\n\r\nexport default Select",
+    "content": "import styled from \"styled-components\";\r\n\r\n/**\r\n * Componente de Select customizável.\r\n * @component\r\n * @property {string} width Define o comprimento do componente. Valor padrão : '100%'\r\n * @property {string} margin Define o espaçamento externo do componente. Valor padrão : '0px 0px'\r\n * @property {string} padding Define o espaçamento interno do componente. Valor padrão : '0px 0px'\r\n * @property {string} font_size Define o tamanho da fonte. Valor padrão : '16px'\r\n */\r\nconst Select = styled.select`\r\n    width:${props=> props.width || '100%'};\r\n    margin:${props=>props.margin || '0px 0px'};\r\n    padding:${props => props.padding || '0px 0px'};\r\n    font-size:${props => props.font_size || '16px'};\r\n`\r\n\r\nexport default Select",
     "static": true,
     "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Components/Select/Select.js",
     "access": "public",
@@ -2719,7 +3080,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 121,
+    "__docId__": 126,
     "kind": "variable",
     "name": "Select",
     "memberof": "src/Components/Select/Select.js",
@@ -2729,9 +3090,56 @@
     "export": true,
     "importPath": "controle_montagem/src/Components/Select/Select.js",
     "importStyle": "Select",
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true,
+    "description": "Componente de Select customizável.",
+    "lineNumber": 11,
+    "unknown": [
+      {
+        "tagName": "@component",
+        "tagValue": ""
+      }
+    ],
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "width",
+        "description": "Define o comprimento do componente. Valor padrão : '100%'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "margin",
+        "description": "Define o espaçamento externo do componente. Valor padrão : '0px 0px'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "padding",
+        "description": "Define o espaçamento interno do componente. Valor padrão : '0px 0px'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "font_size",
+        "description": "Define o tamanho da fonte. Valor padrão : '16px'"
+      }
+    ],
     "type": {
       "types": [
         "*"
@@ -2739,10 +3147,10 @@
     }
   },
   {
-    "__docId__": 122,
+    "__docId__": 127,
     "kind": "file",
     "name": "src/Components/Titulo1/Titulo1.js",
-    "content": "import styled from \"styled-components\";\r\n\r\n\r\nconst Titulo1 = styled.h1`\r\nwidth:${props => props.width || \"100%\"};\r\nmargin: ${props => props.margin || \"0px 0px\"};\r\nfont-size: ${props => props.font_size || \"42px\"};\r\ntext-align: ${props => props.text_align || \"center\"};\r\ncolor: ${props => props.color || \"black\"};\r\ntext-shadow: ${props => props.text_shadow || \"0px 0px 0px\"};\r\n\r\n`\r\n\r\nexport default Titulo1",
+    "content": "import styled from \"styled-components\";\r\n\r\n/**\r\n * Componente de titulo h1 customizável\r\n * @property {string} width Define o comprimento do componente. Valor padrão : '100%'\r\n * @property {string} margin Define espaçamento externo do componente. Valor padrão : '0px 0px' \r\n * @property {string} font_size Define o tamanho da fonte. Valor padrão : '42px'\r\n * @property {string} text_align Define alinhamento do texto. Valor padrão : 'center'\r\n * @property {string} color Define a cor da fonte. Valor padrão : 'black'\r\n * @property {string} text_shadow Define a sombra do texto.Valor padrão '0px 0px 0px'\r\n  */\r\nconst Titulo1 = styled.h1`\r\nwidth:${props => props.width || \"100%\"};\r\nmargin: ${props => props.margin || \"0px 0px\"};\r\nfont-size: ${props => props.font_size || \"42px\"};\r\ntext-align: ${props => props.text_align || \"center\"};\r\ncolor: ${props => props.color || \"black\"};\r\ntext-shadow: ${props => props.text_shadow || \"0px 0px 0px\"};\r\n\r\n`\r\n\r\nexport default Titulo1",
     "static": true,
     "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Components/Titulo1/Titulo1.js",
     "access": "public",
@@ -2750,7 +3158,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 123,
+    "__docId__": 128,
     "kind": "variable",
     "name": "Titulo1",
     "memberof": "src/Components/Titulo1/Titulo1.js",
@@ -2760,9 +3168,70 @@
     "export": true,
     "importPath": "controle_montagem/src/Components/Titulo1/Titulo1.js",
     "importStyle": "Titulo1",
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true,
+    "description": "Componente de titulo h1 customizável",
+    "lineNumber": 12,
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "width",
+        "description": "Define o comprimento do componente. Valor padrão : '100%'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "margin",
+        "description": "Define espaçamento externo do componente. Valor padrão : '0px 0px'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "font_size",
+        "description": "Define o tamanho da fonte. Valor padrão : '42px'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "text_align",
+        "description": "Define alinhamento do texto. Valor padrão : 'center'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "color",
+        "description": "Define a cor da fonte. Valor padrão : 'black'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "text_shadow",
+        "description": "Define a sombra do texto.Valor padrão '0px 0px 0px'"
+      }
+    ],
     "type": {
       "types": [
         "*"
@@ -2770,10 +3239,10 @@
     }
   },
   {
-    "__docId__": 124,
+    "__docId__": 129,
     "kind": "file",
     "name": "src/Components/Titulo2/Titulo2.js",
-    "content": "import styled from \"styled-components\";\r\n\r\n\r\nconst Titulo2 = styled.h2`\r\nwidth:${props => props.width || \"100%\"};\r\nmargin: ${props => props.margin || \"0px 0px\"};\r\nfont-size: ${props => props.font_size || \"32px\"};\r\ntext-align: ${props => props.text_align || \"center\"};\r\ncolor: ${props => props.color || \"black\"};\r\n`\r\n\r\nexport default Titulo2",
+    "content": "import styled from \"styled-components\";\r\n\r\n/**\r\n * Componente de titulo h2 customizável\r\n * @property {string} width Define o comprimento do componente. Valor padrão '100%'\r\n * @property {string} margin Define o espaçamento externo do componente. Valor padrão '0px 0px'\r\n * @property {string} font_size Define o tamanho da fonte. Valor padrão '32px'\r\n * @property {string} text_align Define o alinhamento do texto. Valor padrão 'center'\r\n * @property {string} color Define a cor da fonte. Valor padrão 'black'\r\n */\r\nconst Titulo2 = styled.h2`\r\nwidth:${props => props.width || \"100%\"};\r\nmargin: ${props => props.margin || \"0px 0px\"};\r\nfont-size: ${props => props.font_size || \"32px\"};\r\ntext-align: ${props => props.text_align || \"center\"};\r\ncolor: ${props => props.color || \"black\"};\r\n`\r\n\r\nexport default Titulo2",
     "static": true,
     "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Components/Titulo2/Titulo2.js",
     "access": "public",
@@ -2781,7 +3250,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 125,
+    "__docId__": 130,
     "kind": "variable",
     "name": "Titulo2",
     "memberof": "src/Components/Titulo2/Titulo2.js",
@@ -2791,9 +3260,60 @@
     "export": true,
     "importPath": "controle_montagem/src/Components/Titulo2/Titulo2.js",
     "importStyle": "Titulo2",
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true,
+    "description": "Componente de titulo h2 customizável",
+    "lineNumber": 11,
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "width",
+        "description": "Define o comprimento do componente. Valor padrão '100%'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "margin",
+        "description": "Define o espaçamento externo do componente. Valor padrão '0px 0px'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "font_size",
+        "description": "Define o tamanho da fonte. Valor padrão '32px'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "text_align",
+        "description": "Define o alinhamento do texto. Valor padrão 'center'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "color",
+        "description": "Define a cor da fonte. Valor padrão 'black'"
+      }
+    ],
     "type": {
       "types": [
         "*"
@@ -2801,10 +3321,10 @@
     }
   },
   {
-    "__docId__": 126,
+    "__docId__": 131,
     "kind": "file",
     "name": "src/Components/Titulo4/Titulo4.js",
-    "content": "import styled from \"styled-components\";\r\n\r\n\r\nconst Titulo4 = styled.h2`\r\nwidth:${props => props.width || \"100%\"};\r\nmargin: ${props => props.margin || \"0px 0px\"};\r\nfont-size: ${props => props.font_size || \"14px\"};\r\ntext-align: ${props => props.text_align || \"center\"};\r\ncolor: ${props => props.color || \"black\"};\r\nbackground-color: ${props => props.backgroundcolor || \"\"};\r\nborder-radius: ${props => props.border_radius || \"0px\"};\r\n`\r\n\r\nexport default Titulo4",
+    "content": "import styled from \"styled-components\";\r\n\r\n/**\r\n * Componente de titulo h4 customizável\r\n * @property {string} width Define o comprimento do elemento. Valor padrão '100%'\r\n * @property {string} margin Define o espaçamento externo do componentne. Valor padrão '0px 0px'\r\n * @property {string} font_size Define o tamanho da fonte. Valor padrão '14px'\r\n * @property {string} text_align Define o alinhamento do texto. Valor padrão 'center'\r\n * @property {string} color Define a cor do texto. Valor padrão 'black'\r\n * @property {string} backgroundcolor Define a cor do background do componente. Valor padrão ''.\r\n * @property {string} border_radius Define o angulo da curvatura dos cantos da borda do componente. Valor padrão '0px'\r\n */\r\nconst Titulo4 = styled.h4`\r\nwidth:${props => props.width || \"100%\"};\r\nmargin: ${props => props.margin || \"0px 0px\"};\r\nfont-size: ${props => props.font_size || \"14px\"};\r\ntext-align: ${props => props.text_align || \"center\"};\r\ncolor: ${props => props.color || \"black\"};\r\nbackground-color: ${props => props.backgroundcolor || \"\"};\r\nborder-radius: ${props => props.border_radius || \"0px\"};\r\n`\r\n\r\nexport default Titulo4",
     "static": true,
     "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Components/Titulo4/Titulo4.js",
     "access": "public",
@@ -2812,7 +3332,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 127,
+    "__docId__": 132,
     "kind": "variable",
     "name": "Titulo4",
     "memberof": "src/Components/Titulo4/Titulo4.js",
@@ -2822,9 +3342,80 @@
     "export": true,
     "importPath": "controle_montagem/src/Components/Titulo4/Titulo4.js",
     "importStyle": "Titulo4",
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true,
+    "description": "Componente de titulo h4 customizável",
+    "lineNumber": 13,
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "width",
+        "description": "Define o comprimento do elemento. Valor padrão '100%'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "margin",
+        "description": "Define o espaçamento externo do componentne. Valor padrão '0px 0px'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "font_size",
+        "description": "Define o tamanho da fonte. Valor padrão '14px'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "text_align",
+        "description": "Define o alinhamento do texto. Valor padrão 'center'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "color",
+        "description": "Define a cor do texto. Valor padrão 'black'"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "backgroundcolor",
+        "description": "Define a cor do background do componente. Valor padrão ''."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "border_radius",
+        "description": "Define o angulo da curvatura dos cantos da borda do componente. Valor padrão '0px'"
+      }
+    ],
     "type": {
       "types": [
         "*"
@@ -2832,10 +3423,10 @@
     }
   },
   {
-    "__docId__": 128,
+    "__docId__": 133,
     "kind": "file",
     "name": "src/Controller/OrdensController.js",
-    "content": "import { AtualizaRegistro } from \"../Services/AtualizaRegistro.js\"\r\nimport { CriarRegistro } from \"../Services/CriarRegistro.js\"\r\nimport { PegarRegistrosTabela } from \"../Services/PegaRegistrosTabela.js\"\r\n\r\n\r\nexport class OrdensController{\r\n    constructor(){\r\n        this._pegarRegistrosTabela = new PegarRegistrosTabela(process.env.REACT_APP_token)\r\n        this._criarRegistro = new CriarRegistro(process.env.REACT_APP_token)\r\n        this._atualizarRegistro = new AtualizaRegistro(process.env.REACT_APP_token)\r\n    }\r\n\r\n async criarRegistro(tabela,dado){\r\n   const dadoCriado = await this._criarRegistro.criarRegistro(tabela,dado)\r\n   return dadoCriado\r\n }\r\n\r\n async pegaDadoUnico(tabela,id){\r\n    const dado = await this._pegarRegistroUnico.pegaRegistroUnico(tabela,id)\r\n    return dado\r\n }\r\n\r\n async pegaDadosLista(tabela){\r\n  const dado = await this._pegarRegistrosTabela.pegarRegistrosTabela(tabela)\r\n  return dado\r\n}\r\n\r\nasync atualizarRegistro(tabela,dados){\r\n  const dado = await this._atualizarRegistro.atualizaRegistro(tabela,dados)\r\n  return dado\r\n}\r\n}",
+    "content": "import { AtualizaRegistro } from \"../Services/AtualizaRegistro.js\"\r\nimport { CriarRegistro } from \"../Services/CriarRegistro.js\"\r\nimport { PegarRegistrosTabela } from \"../Services/PegaRegistrosTabela.js\"\r\n\r\n/**\r\n * Classe Responsavel por manter os metodos que interagem com o servidor através dos services.\r\n *\r\n */\r\nexport class OrdensController{\r\n\r\n  /**\r\n   * @constructor\r\n   */\r\n  constructor(){\r\n      /**\r\n       * Instancia da classe PegarRegistrosTabela.\r\n       * @type {PegarRegistrosTabela}\r\n       * @private\r\n       */\r\n        this._pegarRegistrosTabela = new PegarRegistrosTabela(process.env.REACT_APP_token)\r\n\r\n        /**\r\n         * Instancia da classe CriarRegistro.\r\n         * @type {CriarRegistro}\r\n         * @private\r\n         */\r\n        this._criarRegistro = new CriarRegistro(process.env.REACT_APP_token)\r\n\r\n        /**\r\n         * Instancia da classe AtualizaRegistro.\r\n         * @type {AtualizaRegistro}\r\n         * @private\r\n         */\r\n        this._atualizarRegistro = new AtualizaRegistro(process.env.REACT_APP_token)\r\n    }\r\n\r\n    /**\r\n     * Utiliza a o metodo criarRegistro da classe CriarRegistro para enviar os dados para o servidor local fazer a criação do registro na tabela e com os dados especificados no parametro.\r\n     * @param {string} tabela Tabela jestor. Por exemplo em https://avioeste.jestor.com/object/9c6of6gvyn34owum60ty3 seria o '9c6of6gvyn34owum60ty3';\r\n     * @param {object} dado Dados da ordem que será criado o registro.\r\n     * @returns {Object} Retorna Objeto contendo os dados do registro criado e metadados da resposta da requisição a API do jestor.\r\n     */\r\n async criarRegistro(tabela,dado){\r\n   const dadoCriado = await this._criarRegistro.criarRegistro(tabela,dado)\r\n   return dadoCriado\r\n }\r\n\r\n    /**\r\n     * Utiliza o metodo pegarRegistrosTabela da classe PegarRegistrosTabela para pegar todos os dados de uma tabela do jestor.\r\n     * @param {string} tabela Tabela Jestor. Por exemplo em https://avioeste.jestor.com/object/9c6of6gvyn34owum60ty3 seria o '9c6of6gvyn34owum60ty3';\r\n     * @returns {Array<Object>} Array com todos os dados da tabela.\r\n     */\r\n async pegaDadosLista(tabela){\r\n  const dado = await this._pegarRegistrosTabela.pegarRegistrosTabela(tabela)\r\n  return dado\r\n}\r\n\r\n}",
     "static": true,
     "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Controller/OrdensController.js",
     "access": "public",
@@ -2843,7 +3434,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 129,
+    "__docId__": 134,
     "kind": "class",
     "name": "OrdensController",
     "memberof": "src/Controller/OrdensController.js",
@@ -2853,13 +3444,12 @@
     "export": true,
     "importPath": "controle_montagem/src/Controller/OrdensController.js",
     "importStyle": "{OrdensController}",
-    "description": null,
-    "lineNumber": 6,
-    "undocument": true,
+    "description": "Classe Responsavel por manter os metodos que interagem com o servidor através dos services.",
+    "lineNumber": 9,
     "interface": false
   },
   {
-    "__docId__": 130,
+    "__docId__": 135,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/Controller/OrdensController.js~OrdensController",
@@ -2868,63 +3458,74 @@
     "static": false,
     "longname": "src/Controller/OrdensController.js~OrdensController#constructor",
     "access": "public",
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true
+    "description": "",
+    "lineNumber": 14,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ]
   },
   {
-    "__docId__": 131,
+    "__docId__": 136,
     "kind": "member",
     "name": "_pegarRegistrosTabela",
     "memberof": "src/Controller/OrdensController.js~OrdensController",
     "static": false,
     "longname": "src/Controller/OrdensController.js~OrdensController#_pegarRegistrosTabela",
     "access": "private",
-    "description": null,
-    "lineNumber": 8,
-    "undocument": true,
+    "description": "Instancia da classe PegarRegistrosTabela.",
+    "lineNumber": 20,
     "type": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "PegarRegistrosTabela"
+      ],
+      "spread": false,
+      "description": null
     }
   },
   {
-    "__docId__": 132,
+    "__docId__": 137,
     "kind": "member",
     "name": "_criarRegistro",
     "memberof": "src/Controller/OrdensController.js~OrdensController",
     "static": false,
     "longname": "src/Controller/OrdensController.js~OrdensController#_criarRegistro",
     "access": "private",
-    "description": null,
-    "lineNumber": 9,
-    "undocument": true,
+    "description": "Instancia da classe CriarRegistro.",
+    "lineNumber": 27,
     "type": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "CriarRegistro"
+      ],
+      "spread": false,
+      "description": null
     }
   },
   {
-    "__docId__": 133,
+    "__docId__": 138,
     "kind": "member",
     "name": "_atualizarRegistro",
     "memberof": "src/Controller/OrdensController.js~OrdensController",
     "static": false,
     "longname": "src/Controller/OrdensController.js~OrdensController#_atualizarRegistro",
     "access": "private",
-    "description": null,
-    "lineNumber": 10,
-    "undocument": true,
+    "description": "Instancia da classe AtualizaRegistro.",
+    "lineNumber": 34,
     "type": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "AtualizaRegistro"
+      ],
+      "spread": false,
+      "description": null
     }
   },
   {
-    "__docId__": 134,
+    "__docId__": 139,
     "kind": "method",
     "name": "criarRegistro",
     "memberof": "src/Controller/OrdensController.js~OrdensController",
@@ -2933,64 +3534,47 @@
     "static": false,
     "longname": "src/Controller/OrdensController.js~OrdensController#criarRegistro",
     "access": "public",
-    "description": null,
-    "lineNumber": 13,
-    "undocument": true,
+    "description": "Utiliza a o metodo criarRegistro da classe CriarRegistro para enviar os dados para o servidor local fazer a criação do registro na tabela e com os dados especificados no parametro.",
+    "lineNumber": 43,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Object} Retorna Objeto contendo os dados do registro criado e metadados da resposta da requisição a API do jestor."
+      }
+    ],
     "params": [
       {
-        "name": "tabela",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "tabela",
+        "description": "Tabela jestor. Por exemplo em https://avioeste.jestor.com/object/9c6of6gvyn34owum60ty3 seria o '9c6of6gvyn34owum60ty3';"
       },
       {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
         "name": "dado",
-        "types": [
-          "*"
-        ]
+        "description": "Dados da ordem que será criado o registro."
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Object"
+      ],
+      "spread": false,
+      "description": "Retorna Objeto contendo os dados do registro criado e metadados da resposta da requisição a API do jestor."
     }
   },
   {
-    "__docId__": 135,
-    "kind": "method",
-    "name": "pegaDadoUnico",
-    "memberof": "src/Controller/OrdensController.js~OrdensController",
-    "generator": false,
-    "async": true,
-    "static": false,
-    "longname": "src/Controller/OrdensController.js~OrdensController#pegaDadoUnico",
-    "access": "public",
-    "description": null,
-    "lineNumber": 18,
-    "undocument": true,
-    "params": [
-      {
-        "name": "tabela",
-        "types": [
-          "*"
-        ]
-      },
-      {
-        "name": "id",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 136,
+    "__docId__": 140,
     "kind": "method",
     "name": "pegaDadosLista",
     "memberof": "src/Controller/OrdensController.js~OrdensController",
@@ -2999,61 +3583,40 @@
     "static": false,
     "longname": "src/Controller/OrdensController.js~OrdensController#pegaDadosLista",
     "access": "public",
-    "description": null,
-    "lineNumber": 23,
-    "undocument": true,
+    "description": "Utiliza o metodo pegarRegistrosTabela da classe PegarRegistrosTabela para pegar todos os dados de uma tabela do jestor.",
+    "lineNumber": 53,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Array<Object>} Array com todos os dados da tabela."
+      }
+    ],
     "params": [
       {
-        "name": "tabela",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "tabela",
+        "description": "Tabela Jestor. Por exemplo em https://avioeste.jestor.com/object/9c6of6gvyn34owum60ty3 seria o '9c6of6gvyn34owum60ty3';"
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Array<Object>"
+      ],
+      "spread": false,
+      "description": "Array com todos os dados da tabela."
     }
   },
   {
-    "__docId__": 137,
-    "kind": "method",
-    "name": "atualizarRegistro",
-    "memberof": "src/Controller/OrdensController.js~OrdensController",
-    "generator": false,
-    "async": true,
-    "static": false,
-    "longname": "src/Controller/OrdensController.js~OrdensController#atualizarRegistro",
-    "access": "public",
-    "description": null,
-    "lineNumber": 28,
-    "undocument": true,
-    "params": [
-      {
-        "name": "tabela",
-        "types": [
-          "*"
-        ]
-      },
-      {
-        "name": "dados",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 138,
+    "__docId__": 141,
     "kind": "file",
     "name": "src/Helpers/Delay.js",
-    "content": "export default function Delay(ms){\r\n    return new Promise(resolve =>setTimeout(resolve,ms))\r\n     }",
+    "content": "\r\n/**\r\n * Função utilizada em funções assincronas para esperar um tempo. Utilizada principalmente antes de fazer requisições a API's para evitar sobrecarga.\r\n * @param {number} ms Quantidade de milisegundos que a função rodará. \r\n * @returns Promisse vazia.\r\n */\r\nexport default function Delay(ms){\r\n    return new Promise(resolve =>setTimeout(resolve,ms))\r\n     }",
     "static": true,
     "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Helpers/Delay.js",
     "access": "public",
@@ -3061,7 +3624,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 139,
+    "__docId__": 142,
     "kind": "function",
     "name": "Delay",
     "memberof": "src/Helpers/Delay.js",
@@ -3073,28 +3636,40 @@
     "export": true,
     "importPath": "controle_montagem/src/Helpers/Delay.js",
     "importStyle": "Delay",
-    "description": null,
-    "lineNumber": 1,
-    "undocument": true,
+    "description": "Função utilizada em funções assincronas para esperar um tempo. Utilizada principalmente antes de fazer requisições a API's para evitar sobrecarga.",
+    "lineNumber": 7,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "Promisse vazia."
+      }
+    ],
     "params": [
       {
-        "name": "ms",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "ms",
+        "description": "Quantidade de milisegundos que a função rodará."
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
         "*"
-      ]
+      ],
+      "spread": false,
+      "description": "Promisse vazia."
     }
   },
   {
-    "__docId__": 140,
+    "__docId__": 143,
     "kind": "file",
     "name": "src/Helpers/tranformarDataEmString.js",
-    "content": "function tranformarDataEmString(data) {\r\n    const ano = data.getFullYear();\r\n    let mes = data.getMonth() + 1;\r\n    let dia = data.getDate();\r\n    let hora = data.getHours();\r\n    let minuto = data.getMinutes();\r\n    let segundo = data.getSeconds();\r\n\r\n    // Adicionando zero à esquerda para manter o formato consistente\r\n    if (mes < 10) {\r\n        mes = '0' + mes;\r\n    }\r\n    if (dia < 10) {\r\n        dia = '0' + dia;\r\n    }\r\n    if (hora < 10) {\r\n        hora = '0' + hora;\r\n    }\r\n    if (minuto < 10) {\r\n        minuto = '0' + minuto;\r\n    }\r\n    if (segundo < 10) {\r\n        segundo = '0' + segundo;\r\n    }\r\n\r\n    const dataFormatada = `${ano}-${mes}-${dia}T${hora}:${minuto}:${segundo}+00:00`;\r\n    return dataFormatada;\r\n}\r\n\r\nexport default tranformarDataEmString",
+    "content": "\r\n/**\r\n * Tranforma uma data em String no formato 'ano-mes-diaThora:minutos:segundos+00:00'\r\n * @param {object} data Objeto de data , new Date()\r\n * @returns Data formatada como string.\r\n */\r\nfunction tranformarDataEmString(data) {\r\n    const ano = data.getFullYear();\r\n    let mes = data.getMonth() + 1;\r\n    let dia = data.getDate();\r\n    let hora = data.getHours();\r\n    let minuto = data.getMinutes();\r\n    let segundo = data.getSeconds();\r\n\r\n    // Adicionando zero à esquerda para manter o formato consistente\r\n    if (mes < 10) {\r\n        mes = '0' + mes;\r\n    }\r\n    if (dia < 10) {\r\n        dia = '0' + dia;\r\n    }\r\n    if (hora < 10) {\r\n        hora = '0' + hora;\r\n    }\r\n    if (minuto < 10) {\r\n        minuto = '0' + minuto;\r\n    }\r\n    if (segundo < 10) {\r\n        segundo = '0' + segundo;\r\n    }\r\n\r\n    const dataFormatada = `${ano}-${mes}-${dia}T${hora}:${minuto}:${segundo}+00:00`;\r\n    return dataFormatada;\r\n}\r\n\r\nexport default tranformarDataEmString",
     "static": true,
     "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Helpers/tranformarDataEmString.js",
     "access": "public",
@@ -3102,7 +3677,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 141,
+    "__docId__": 144,
     "kind": "function",
     "name": "tranformarDataEmString",
     "memberof": "src/Helpers/tranformarDataEmString.js",
@@ -3114,28 +3689,40 @@
     "export": true,
     "importPath": "controle_montagem/src/Helpers/tranformarDataEmString.js",
     "importStyle": "tranformarDataEmString",
-    "description": null,
-    "lineNumber": 1,
-    "undocument": true,
+    "description": "Tranforma uma data em String no formato 'ano-mes-diaThora:minutos:segundos+00:00'",
+    "lineNumber": 7,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "Data formatada como string."
+      }
+    ],
     "params": [
       {
-        "name": "data",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": "Objeto de data , new Date()"
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
         "*"
-      ]
+      ],
+      "spread": false,
+      "description": "Data formatada como string."
     }
   },
   {
-    "__docId__": 142,
+    "__docId__": 145,
     "kind": "file",
     "name": "src/index.js",
-    "content": "import React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport './index.css';\nimport App from './App.js';\nimport reportWebVitals from './reportWebVitals.js';\n\nconst root = ReactDOM.createRoot(document.getElementById('root'));\nroot.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>\n);\n\n// If you want to start measuring performance in your app, pass a function\n// to log results (for example: reportWebVitals(console.log))\n// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals\nreportWebVitals();\n",
+    "content": "import React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport './index.css';\nimport App from './App.js';\nimport reportWebVitals from './reportWebVitals.js';\n\nconst root = ReactDOM.createRoot(document.getElementById('root'));\nroot.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>\n);\n\n// If you want to start measuring performance in your app, pass a function\n// to log results (for example: reportWebVitals(console.log))\n// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals\nreportWebVitals(console.log);\n",
     "static": true,
     "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/index.js",
     "access": "public",
@@ -3143,7 +3730,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 143,
+    "__docId__": 146,
     "kind": "variable",
     "name": "root",
     "memberof": "src/index.js",
@@ -3164,7 +3751,7 @@
     "ignore": true
   },
   {
-    "__docId__": 144,
+    "__docId__": 147,
     "kind": "file",
     "name": "src/Paginas/ControleProducao.js",
     "content": "import { useEffect, useState } from \"react\"\r\nimport OrdensLista from \"../Components/OrdensLista/OrdensLista.js\"\r\nimport Botao from \"../Components/Botao/Botao.js\"\r\nimport FormInputOP from \"../Components/FormInputOP/FormInputOP.js\"\r\nimport styled from \"styled-components\"\r\n\r\n/**\r\n * Style-Component simples de div para servir de container dos outros componentes de ControleProducao.\r\n */\r\nconst ControleContainer = styled.div`\r\ndisplay: flex;\r\nflex-direction: column;\r\nwidth:100%;\r\nalign-items:center;\r\n`\r\n\r\n/**\r\n * Estado que define o estado da visualização do componente FormInputOP no componente ControleProducao.\r\n * @typedef {EstadoReact} VisualizacaoForm \r\n * @property {boolean} VisualizacaoForm True o Formulario esta visivel, False não esta.\r\n */\r\n\r\n/**\r\n * Estado que define o que sera escrito no botão que oculta ou mostra o formulario.\r\n * @typedef {EstadoReact} EscritaBotaoForm \r\n * @property {string} EscritaBotaoForm O que será escrito no botão, utilizado 'ADICIONAR NOVA ORDEM DE PRODUÇÃO' ou 'CANCELAR'.\r\n */\r\n\r\n/**\r\n * Estado que guarda os dados do banco de dados 'ordensNaoFinalizadas' da localstorage.\r\n * @typedef {EstadoReact} LocalStorage\r\n * @property {Array<Object>} LocalStorage Array de objetos contendo as informações das ordensNãoFinalizadas do localstorage. \r\n */\r\n\r\n/**\r\n * Estado que guarda a informação das ordens que devem aparecer na lista, Sempre será o mesmo valor que o estado LocalStorage. Possui useEffect que define seu valor automaticamente quando alterado o estado LocalStorage.\r\n * @typedef {EstadoReact} Ordens\r\n * @property {Array<Object>} Ordens Dados do estado LocalStorage. \r\n */\r\n\r\n/**\r\n * Estado que guarda o estado da visualização do componente ordensLista.\r\n * @typedef {EstadoReact} VisualizacaoOrdens\r\n * @property {boolean} VisualizacaoOrdens true a lista de ordens esta visivel, false não esta.\r\n */\r\n\r\n/**\r\n * Estado que define o que será escrito no botão que oculta ou mostra a lista de ordens.\r\n * @typedef {EstadoReact} EscritaBotao\r\n * @property {string} EscritaBotao O que será escrito no botão, utilizado 'MOSTRAR TODAS AS ORDENS EM ANDAMENTO' ou 'ESCONDER AS ORDENS EM ANDAMENTO'.\r\n */\r\n\r\n/**\r\n * Componente de pagina principal, Engloba os componentes principais de FormInputOP e ordensLista com botões que definem suas vizualizações.\r\n * @returns {JSX.Element} Componente React de ControleProducao.\r\n */\r\nfunction ControleProducao(){\r\n    \r\n  /**\r\n   * Estado React que define se o formulario esta visivel ou não.\r\n   * @type {[boolean, React.Dispatch<React.SetStateAction<boolean>>]}\r\n   */\r\n    const [VisualizacaoForm, setVisualizacaoForm] = useState(false)\r\n\r\n    /**\r\n   * Estado que define o que sera escrito no botão que oculta ou mostra o formulario.\r\n   * @type {[string, React.Dispatch<React.SetStateAction<string>>]}\r\n   */\r\n    const [EscritaBotaoForm , setEscritaBotaoForm] = useState('ADICIONAR NOVA ORDEM DE PRODUÇÃO')\r\n    \r\n    /**\r\n   * Estado que guarda os valores da localstorage de ordensNaoFinalizadas\r\n   * @type {[Array, React.Dispatch<React.SetStateAction<Array>>]}\r\n   */\r\n    const [LocalStorage,setLocalStorage] = useState([])\r\n    \r\n    /**\r\n   * Estado que guarda as ordens que devem aparecer na lista.\r\n   * @type {[Array, React.Dispatch<React.SetStateAction<Array>>]}\r\n   */\r\n    const [Ordens, setOrdens] = useState(LocalStorage)\r\n    \r\n    /**\r\n   * Estado que define se a lista de ordens esta visivel ou não.\r\n   * @type {[boolean, React.Dispatch<React.SetStateAction<boolean>>]}\r\n   */\r\n    const [VisualizacaoOrdens,setVisualizacaoOrdens] = useState(false)\r\n   \r\n    /**\r\n   * Estado que define o que sera escrito no botão que oculta ou mostra a lista de ordens.\r\n   * @type {[string, React.Dispatch<React.SetStateAction<string>>]}\r\n   */\r\n    const [EscritaBotao, setEscritaBotao] = useState('MOSTRAR TODAS AS ORDENS EM ANDAMENTO')\r\n\r\n   /**\r\n    * Altera a visualização do formulário e o que será escrito no botão através dos estados VisualizacaoForm e EscritaBotaoForm.\r\n    */\r\n    async function ApareceEscondeFormNovaOrdem(){\r\n        if(VisualizacaoForm === false){\r\n          setVisualizacaoForm(true)\r\n          setEscritaBotaoForm('CANCELAR')\r\n        }else{\r\n          setVisualizacaoForm(false)\r\n          setEscritaBotaoForm('ADICIONAR NOVA ORDEM DE PRODUÇÃO')\r\n        }\r\n       }\r\n\r\n      /**\r\n       * Altera a visualização da lista de ordens e o que será escrito no botão através dos estados VisualizacaoOrdens e EscritaBotao.\r\n       */\r\n    async function PegarOrdens(){\r\n        setLocalStorage(JSON.parse(localStorage.getItem('ordensNaoFinalizadas') || \"[]\"))\r\n        if(VisualizacaoOrdens === false){\r\n          setVisualizacaoOrdens(true)\r\n          setEscritaBotao('ESCONDER AS ORDENS EM ANDAMENTO')\r\n        }else{\r\n          setVisualizacaoOrdens(false)\r\n          setEscritaBotao('MOSTRAR TODAS AS ORDENS EM ANDAMENTO')\r\n        }\r\n   }\r\n\r\n      /**\r\n        * Sempre que LocalStorage mudar define Ordens com o mesmo valor para manter a lista de ordens exibidas com os dados das ordens não finalizadas.\r\n        */\r\n    useEffect(() => {\r\n        setOrdens(LocalStorage); \r\n      },[LocalStorage])\r\n\r\n    return(\r\n    <ControleContainer>\r\n\r\n      <Botao \r\n      onClick={ApareceEscondeFormNovaOrdem} \r\n      width='30%' \r\n      border='solid 0.5px black' \r\n      boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' \r\n      padding='10px 5px' \r\n      border_radius='5px' \r\n      margin='5px 0px' \r\n      color='black' \r\n      backgroundcolor={VisualizacaoForm ? '#e3934d' :  '#468de3' }\r\n      font_size='24px'>\r\n      {EscritaBotaoForm}\r\n      </Botao> \r\n      {VisualizacaoForm === true ? \r\n      <FormInputOP LocalStorage={LocalStorage} setLocalStorage={setLocalStorage} ordens= {Ordens}></FormInputOP>\r\n      : \r\n      ''\r\n      }\r\n  <Botao \r\n  onClick={PegarOrdens} \r\n  width='30%' \r\n  border='solid 0.5px black' \r\n  boxshadow='2px 2px 2px 1px rgba(0, 0, 0, 0.2);' \r\n  padding='10px 5px' \r\n  border_radius='5px' \r\n  margin='5px 0px' \r\n  backgroundcolor='#468de3' \r\n  font_size='24px'>\r\n    {EscritaBotao}\r\n    </Botao>\r\n  {VisualizacaoOrdens && <OrdensLista ordens={Ordens}  setOrdens = {setOrdens} setLocalStorage={setLocalStorage}/>}\r\n    </ControleContainer>\r\n    \r\n    )\r\n}\r\n\r\nexport default ControleProducao",
@@ -3175,7 +3762,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 145,
+    "__docId__": 148,
     "kind": "variable",
     "name": "ControleContainer",
     "memberof": "src/Paginas/ControleProducao.js",
@@ -3195,7 +3782,7 @@
     "ignore": true
   },
   {
-    "__docId__": 146,
+    "__docId__": 149,
     "kind": "typedef",
     "name": "VisualizacaoForm",
     "memberof": "src/Paginas/ControleProducao.js",
@@ -3224,7 +3811,7 @@
     }
   },
   {
-    "__docId__": 147,
+    "__docId__": 150,
     "kind": "typedef",
     "name": "EscritaBotaoForm",
     "memberof": "src/Paginas/ControleProducao.js",
@@ -3253,7 +3840,7 @@
     }
   },
   {
-    "__docId__": 148,
+    "__docId__": 151,
     "kind": "typedef",
     "name": "LocalStorage",
     "memberof": "src/Paginas/ControleProducao.js",
@@ -3282,7 +3869,7 @@
     }
   },
   {
-    "__docId__": 149,
+    "__docId__": 152,
     "kind": "typedef",
     "name": "Ordens",
     "memberof": "src/Paginas/ControleProducao.js",
@@ -3311,7 +3898,7 @@
     }
   },
   {
-    "__docId__": 150,
+    "__docId__": 153,
     "kind": "typedef",
     "name": "VisualizacaoOrdens",
     "memberof": "src/Paginas/ControleProducao.js",
@@ -3340,7 +3927,7 @@
     }
   },
   {
-    "__docId__": 151,
+    "__docId__": 154,
     "kind": "typedef",
     "name": "EscritaBotao",
     "memberof": "src/Paginas/ControleProducao.js",
@@ -3369,7 +3956,7 @@
     }
   },
   {
-    "__docId__": 152,
+    "__docId__": 155,
     "kind": "function",
     "name": "ControleProducao",
     "memberof": "src/Paginas/ControleProducao.js",
@@ -3400,7 +3987,7 @@
     "params": []
   },
   {
-    "__docId__": 153,
+    "__docId__": 156,
     "kind": "file",
     "name": "src/reportWebVitals.js",
     "content": "const reportWebVitals = onPerfEntry => {\n  if (onPerfEntry && onPerfEntry instanceof Function) {\n    import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {\n      getCLS(onPerfEntry);\n      getFID(onPerfEntry);\n      getFCP(onPerfEntry);\n      getLCP(onPerfEntry);\n      getTTFB(onPerfEntry);\n    });\n  }\n};\n\nexport default reportWebVitals;\n",
@@ -3411,7 +3998,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 154,
+    "__docId__": 157,
     "kind": "function",
     "name": "reportWebVitals",
     "memberof": "src/reportWebVitals.js",
@@ -3437,10 +4024,10 @@
     "return": null
   },
   {
-    "__docId__": 155,
+    "__docId__": 158,
     "kind": "file",
     "name": "src/Services/AtualizaRegistro.js",
-    "content": "export class AtualizaRegistro{\r\n    constructor(token){\r\n        this._token = token\r\n        this._url = `${process.env.REACT_APP_API_URL}/api/jestor/atualiza`\r\n    }\r\n    \r\natualizaRegistro(tabela,dados){\r\n      \r\n      fetch(this._url, {\r\n        method: 'POST',\r\n        headers: {\r\n          accept: 'application/json',\r\n          'content-type': 'application/json',\r\n          Authorization: `Bearer ${process.env.REACT_APP_token}`\r\n        },\r\n        body: JSON.stringify({\r\n          object_type: tabela,\r\n          data: dados\r\n        })\r\n      })\r\n        .then(response => response).then(response => console.log(response))\r\n        .catch(err => console.error(err));\r\n}\r\n} ",
+    "content": "\r\n/**\r\n * Classe responsavel por fazer as requisições ao servidor que tem conexão com a API do jestor para atualizar um registro.\r\n * @deprecated Não é utilizado no momento, mantido na aplicação caso necessario uso futuro.\r\n */\r\nexport class AtualizaRegistro{\r\n  /**\r\n   * @constructor\r\n   */\r\n    constructor(){\r\n      /**\r\n       * Rota do para o servidor nodejs que interaje com o jestor para fazer atualizações nos registros. \r\n       * @type {string}\r\n       * @private\r\n       */\r\n        this._url = `${process.env.REACT_APP_API_URL}/api/jestor/atualiza`\r\n    }\r\n    \r\n    /**\r\n     * Envia os dados para o servidor atualizar um registro no jestor.\r\n     * @param {string} tabela Tabela jestor. Por exemplo em https://avioeste.jestor.com/object/9c6of6gvyn34owum60ty3 seria o '9c6of6gvyn34owum60ty3'\r\n     * @param {Object} dados Objeto contendo os dados que precisam ser atualizados, necessario entre os dados possuir o id do registro a ser atualizado.\r\n     */\r\natualizaRegistro(tabela,dados){\r\n      \r\n      fetch(this._url, {\r\n        method: 'POST',\r\n        headers: {\r\n          accept: 'application/json',\r\n          'content-type': 'application/json',\r\n          Authorization: `Bearer ${process.env.REACT_APP_token}`\r\n        },\r\n        body: JSON.stringify({\r\n          object_type: tabela,\r\n          data: dados\r\n        })\r\n      })\r\n        .then(response => response).then(response => console.log(response))\r\n        .catch(err => console.error(err));\r\n}\r\n} ",
     "static": true,
     "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Services/AtualizaRegistro.js",
     "access": "public",
@@ -3448,7 +4035,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 156,
+    "__docId__": 159,
     "kind": "class",
     "name": "AtualizaRegistro",
     "memberof": "src/Services/AtualizaRegistro.js",
@@ -3458,13 +4045,13 @@
     "export": true,
     "importPath": "controle_montagem/src/Services/AtualizaRegistro.js",
     "importStyle": "{AtualizaRegistro}",
-    "description": null,
-    "lineNumber": 1,
-    "undocument": true,
+    "description": "Classe responsavel por fazer as requisições ao servidor que tem conexão com a API do jestor para atualizar um registro.",
+    "lineNumber": 6,
+    "deprecated": "Não é utilizado no momento, mantido na aplicação caso necessario uso futuro.",
     "interface": false
   },
   {
-    "__docId__": 157,
+    "__docId__": 160,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/Services/AtualizaRegistro.js~AtualizaRegistro",
@@ -3473,46 +4060,36 @@
     "static": false,
     "longname": "src/Services/AtualizaRegistro.js~AtualizaRegistro#constructor",
     "access": "public",
-    "description": null,
-    "lineNumber": 2,
-    "undocument": true
+    "description": "",
+    "lineNumber": 10,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ]
   },
   {
-    "__docId__": 158,
-    "kind": "member",
-    "name": "_token",
-    "memberof": "src/Services/AtualizaRegistro.js~AtualizaRegistro",
-    "static": false,
-    "longname": "src/Services/AtualizaRegistro.js~AtualizaRegistro#_token",
-    "access": "private",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 159,
+    "__docId__": 161,
     "kind": "member",
     "name": "_url",
     "memberof": "src/Services/AtualizaRegistro.js~AtualizaRegistro",
     "static": false,
     "longname": "src/Services/AtualizaRegistro.js~AtualizaRegistro#_url",
     "access": "private",
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true,
+    "description": "Rota do para o servidor nodejs que interaje com o jestor para fazer atualizações nos registros. ",
+    "lineNumber": 16,
     "type": {
+      "nullable": null,
       "types": [
         "string"
-      ]
+      ],
+      "spread": false,
+      "description": null
     }
   },
   {
-    "__docId__": 160,
+    "__docId__": 162,
     "kind": "method",
     "name": "atualizaRegistro",
     "memberof": "src/Services/AtualizaRegistro.js~AtualizaRegistro",
@@ -3521,30 +4098,37 @@
     "static": false,
     "longname": "src/Services/AtualizaRegistro.js~AtualizaRegistro#atualizaRegistro",
     "access": "public",
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true,
+    "description": "Envia os dados para o servidor atualizar um registro no jestor.",
+    "lineNumber": 24,
     "params": [
       {
-        "name": "tabela",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "tabela",
+        "description": "Tabela jestor. Por exemplo em https://avioeste.jestor.com/object/9c6of6gvyn34owum60ty3 seria o '9c6of6gvyn34owum60ty3'"
       },
       {
-        "name": "dados",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "dados",
+        "description": "Objeto contendo os dados que precisam ser atualizados, necessario entre os dados possuir o id do registro a ser atualizado."
       }
     ],
     "return": null
   },
   {
-    "__docId__": 161,
+    "__docId__": 163,
     "kind": "file",
     "name": "src/Services/CriarRegistro.js",
-    "content": "export class CriarRegistro{\r\n\r\n    constructor(token){\r\n        this._token = token\r\n        this._url = `${process.env.REACT_APP_API_URL}/api/ordens/post`\r\n    }\r\n\r\n  criarRegistro(tabela,dado) {\r\nreturn new Promise((resolve,reject) => {\r\n  fetch(this._url, {\r\n    method: 'POST',\r\n    headers: {\r\n      accept: 'application/json',\r\n      'content-type': 'application/json',\r\n      Authorization: `Bearer ${process.env.REACT_APP_token}`\r\n    },\r\n    body : JSON.stringify({ \r\n      object_type: `${tabela}`,\r\n      data: dado})\r\n    }).then(response => {\r\n      // Verifica se a requisição foi bem-sucedida (status 2xx)\r\n      if (response.ok) {\r\n          // Se sim, retorna os dados da resposta como JSON\r\n          return response.json();\r\n      }\r\n      // Se não, rejeita a Promise com o status de erro\r\n      return Promise.reject(new Error(`Erro: ${response.statusText}`));\r\n  }).then(data => {\r\n      // Resolve a Promise com os dados da resposta\r\n      resolve(data);\r\n  })\r\n  .catch(err => {\r\n    resolve({error:`Ocorreu um erro ao criar o registro no jestor, possivelmente ordem ja foi lançada, erro : ${err}`})\r\n    reject('Ocorreu um erro ao criar o registro no Jestor. Possivelmente Esta ordem de produção ja existe no Jestor, contate o administrador:', err)\r\n  })\r\n  })\r\n  }\r\n\r\n                          \r\n  }\r\n",
+    "content": "\r\n/**\r\n * Classe responsavel por fazer as requisições ao servidor que tem conexão com a API do jestor para criar um registro.\r\n */\r\nexport class CriarRegistro{\r\n    /**\r\n     * @constructor\r\n     */\r\n    constructor(){\r\n    /**\r\n     * Rota do para o servidor nodejs que interaje com o jestor para fazer criação de registros.\r\n     * @type {string}\r\n     * @private\r\n     */\r\n        this._url = `${process.env.REACT_APP_API_URL}/api/ordens/post`\r\n    }\r\n\r\n    /**\r\n     * Envia os dados para o servidor criar um registro no jestor.\r\n     * @param {string} tabela Tabela jestor.  Por exemplo em https://avioeste.jestor.com/object/9c6of6gvyn34owum60ty3 seria o '9c6of6gvyn34owum60ty3'\r\n     * @param {Object} dado Dados que serão salvos no jestor.\r\n     * @returns {Object} Retorna Objeto contendo os dados do registro criado e metadados da resposta da requisição a API do jestor.\r\n     */\r\n  criarRegistro(tabela,dado) {\r\nreturn new Promise((resolve,reject) => {\r\n  fetch(this._url, {\r\n    method: 'POST',\r\n    headers: {\r\n      accept: 'application/json',\r\n      'content-type': 'application/json',\r\n      Authorization: `Bearer ${process.env.REACT_APP_token}`\r\n    },\r\n    body : JSON.stringify({ \r\n      object_type: `${tabela}`,\r\n      data: dado})\r\n    }).then(response => {\r\n      // Verifica se a requisição foi bem-sucedida (status 2xx)\r\n      if (response.ok) {\r\n          // Se sim, retorna os dados da resposta como JSON\r\n          return response.json();\r\n      }\r\n      // Se não, rejeita a Promise com o status de erro\r\n      return Promise.reject(new Error(`Erro: ${response.statusText}`));\r\n  }).then(data => {\r\n      // Resolve a Promise com os dados da resposta\r\n      resolve(data);\r\n  })\r\n  .catch(err => {\r\n    resolve({error:`Ocorreu um erro ao criar o registro no jestor, possivelmente ordem ja foi lançada, erro : ${err}`})\r\n    reject('Ocorreu um erro ao criar o registro no Jestor. Possivelmente Esta ordem de produção ja existe no Jestor, contate o administrador:', err)\r\n  })\r\n  })\r\n  }\r\n\r\n                          \r\n  }\r\n",
     "static": true,
     "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Services/CriarRegistro.js",
     "access": "public",
@@ -3552,7 +4136,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 162,
+    "__docId__": 164,
     "kind": "class",
     "name": "CriarRegistro",
     "memberof": "src/Services/CriarRegistro.js",
@@ -3562,13 +4146,12 @@
     "export": true,
     "importPath": "controle_montagem/src/Services/CriarRegistro.js",
     "importStyle": "{CriarRegistro}",
-    "description": null,
-    "lineNumber": 1,
-    "undocument": true,
+    "description": "Classe responsavel por fazer as requisições ao servidor que tem conexão com a API do jestor para criar um registro.",
+    "lineNumber": 5,
     "interface": false
   },
   {
-    "__docId__": 163,
+    "__docId__": 165,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/Services/CriarRegistro.js~CriarRegistro",
@@ -3577,46 +4160,36 @@
     "static": false,
     "longname": "src/Services/CriarRegistro.js~CriarRegistro#constructor",
     "access": "public",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true
+    "description": "",
+    "lineNumber": 9,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ]
   },
   {
-    "__docId__": 164,
-    "kind": "member",
-    "name": "_token",
-    "memberof": "src/Services/CriarRegistro.js~CriarRegistro",
-    "static": false,
-    "longname": "src/Services/CriarRegistro.js~CriarRegistro#_token",
-    "access": "private",
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 165,
+    "__docId__": 166,
     "kind": "member",
     "name": "_url",
     "memberof": "src/Services/CriarRegistro.js~CriarRegistro",
     "static": false,
     "longname": "src/Services/CriarRegistro.js~CriarRegistro#_url",
     "access": "private",
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
+    "description": "Rota do para o servidor nodejs que interaje com o jestor para fazer criação de registros.",
+    "lineNumber": 15,
     "type": {
+      "nullable": null,
       "types": [
         "string"
-      ]
+      ],
+      "spread": false,
+      "description": null
     }
   },
   {
-    "__docId__": 166,
+    "__docId__": 167,
     "kind": "method",
     "name": "criarRegistro",
     "memberof": "src/Services/CriarRegistro.js~CriarRegistro",
@@ -3625,34 +4198,50 @@
     "static": false,
     "longname": "src/Services/CriarRegistro.js~CriarRegistro#criarRegistro",
     "access": "public",
-    "description": null,
-    "lineNumber": 8,
-    "undocument": true,
+    "description": "Envia os dados para o servidor criar um registro no jestor.",
+    "lineNumber": 24,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Object} Retorna Objeto contendo os dados do registro criado e metadados da resposta da requisição a API do jestor."
+      }
+    ],
     "params": [
       {
-        "name": "tabela",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "tabela",
+        "description": "Tabela jestor.  Por exemplo em https://avioeste.jestor.com/object/9c6of6gvyn34owum60ty3 seria o '9c6of6gvyn34owum60ty3'"
       },
       {
-        "name": "dado",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "dado",
+        "description": "Dados que serão salvos no jestor."
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
-        "*"
-      ]
+        "Object"
+      ],
+      "spread": false,
+      "description": "Retorna Objeto contendo os dados do registro criado e metadados da resposta da requisição a API do jestor."
     }
   },
   {
-    "__docId__": 167,
+    "__docId__": 168,
     "kind": "file",
     "name": "src/Services/PegaRegistrosTabela.js",
-    "content": "export class PegarRegistrosTabela{\r\n    constructor(token){\r\n        this._token = token\r\n        this._url = `${process.env.REACT_APP_API_URL}/api/jestor/lista`\r\n    }\r\n    \r\n    async pegarRegistrosTabela(table){\r\n      const delay = async (ms) => {return new Promise(resolve =>setTimeout(resolve,ms))}\r\n      const maxTentativas = 30\r\n      const dadosAcumulador = []\r\n      var tentativaAtual = 0\r\n      async function pegaDadoPaginado(token, url,page=1){\r\n           try{\r\n            const response = await fetch(url, {\r\n              method: 'POST',\r\n              headers: {\r\n                accept: 'application/json',\r\n                'content-type': 'application/json',\r\n                Authorization: `Bearer ${process.env.REACT_APP_token}` \r\n               },\r\n               body: JSON.stringify({object_type: table, sort: '',page : page, size : '20000'})\r\n             })\r\n            if(!response.ok){\r\n              throw new Error (`Response not ok, status = ${response.status}`,)\r\n            }\r\n            const dados = await response.json()\r\n            dadosAcumulador.push(...dados.data.items)\r\n            if (dados.data.has_more === true) {\r\n              console.log(`Dados capturados, pagina ${page}`)\r\n             return pegaDadoPaginado(token, url, page + 1);\r\n           } else {\r\n             return dadosAcumulador;\r\n           }\r\n          }\r\n           catch(error){\r\n             if(tentativaAtual <maxTentativas){\r\n              tentativaAtual++\r\n              console.log(`Erro ${error} ao coletar os dados !!!`)\r\n              console.log(`Tentando Novamente fazer a captura dos dados, tentativa ${tentativaAtual}, maximo de ${maxTentativas}`)\r\n              await delay(10000)\r\n            return await pegaDadoPaginado(token, url, page)}\r\n            else{\r\n              console.log(error)\r\n              throw error\r\n            }\r\n             \r\n       }\r\n     }\r\n     const todosDados = await pegaDadoPaginado(this._token, this._url)\r\n     console.log(`Captura da lista de dados jestor concluida, total de ${todosDados.length} dados`)\r\n     return todosDados\r\n     }\r\n    }",
+    "content": "\r\n/**\r\n * Classe responsavel por fazer as requisições ao servidor que tem conexão com a API do jestor para pegar registros.\r\n */\r\nexport class PegarRegistrosTabela{\r\n   /**\r\n     * @constructor\r\n     */\r\n    constructor(){\r\n      /**\r\n     * Rota do para o servidor nodejs que interaje com o jestor para pegar os registros.\r\n     * @type {string}\r\n     * @private\r\n     */\r\n        this._url = `${process.env.REACT_APP_API_URL}/api/jestor/lista`\r\n    }\r\n    \r\n    /**\r\n     * Solicita ao servidor que ele retorne a lista de todos os dados dos registros de uma tabela do jestor.\r\n     * @param {string} table Tabela jestor \r\n     * @returns Array com os dados dos registros da tabela jestor.\r\n     * @throws Retorna erro caso algum erro aconteça na função após o numero maximo de tentativas.\r\n     */\r\n    async pegarRegistrosTabela(table){\r\n      const delay = async (ms) => {return new Promise(resolve =>setTimeout(resolve,ms))}\r\n      const maxTentativas = 30\r\n      const dadosAcumulador = []\r\n      var tentativaAtual = 0\r\n      // Pega os dados paginados para não dar timeout no servidor do jestor.\r\n      async function pegaDadoPaginado(url,page=1){\r\n           try{\r\n            const response = await fetch(url, {\r\n              method: 'POST',\r\n              headers: {\r\n                accept: 'application/json',\r\n                'content-type': 'application/json',\r\n                Authorization: `Bearer ${process.env.REACT_APP_token}` \r\n               },\r\n               body: JSON.stringify({object_type: table, sort: '',page : page, size : '20000'})\r\n             })\r\n            if(!response.ok){\r\n              throw new Error (`Response not ok, status = ${response.status}`,)\r\n            }\r\n            const dados = await response.json()\r\n            dadosAcumulador.push(...dados.data.items)\r\n            //Se ainda possui dados ativa denovo a função adicionando + 1 a pagina.\r\n            if (dados.data.has_more === true) {\r\n              console.log(`Dados capturados, pagina ${page}`)\r\n             return pegaDadoPaginado(url, page + 1);\r\n           } else {\r\n             return dadosAcumulador;\r\n           }\r\n          }\r\n           catch(error){\r\n            //Caso erro tenta repetir a função para tentar corrigir enquanto tentativa atual é menor que o maxTentativas.\r\n             if(tentativaAtual <maxTentativas){\r\n              tentativaAtual++\r\n              console.log(`Erro ${error} ao coletar os dados !!!`)\r\n              console.log(`Tentando Novamente fazer a captura dos dados, tentativa ${tentativaAtual}, maximo de ${maxTentativas}`)\r\n              await delay(10000)\r\n            return await pegaDadoPaginado(url, page)}\r\n            else{\r\n              console.log(error)\r\n              throw error\r\n            }\r\n             \r\n       }\r\n     }\r\n     const todosDados = await pegaDadoPaginado(this._url)\r\n     console.log(`Captura da lista de dados jestor concluida, total de ${todosDados.length} dados`)\r\n     return todosDados\r\n     }\r\n    }",
     "static": true,
     "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Services/PegaRegistrosTabela.js",
     "access": "public",
@@ -3660,7 +4249,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 168,
+    "__docId__": 169,
     "kind": "class",
     "name": "PegarRegistrosTabela",
     "memberof": "src/Services/PegaRegistrosTabela.js",
@@ -3670,13 +4259,12 @@
     "export": true,
     "importPath": "controle_montagem/src/Services/PegaRegistrosTabela.js",
     "importStyle": "{PegarRegistrosTabela}",
-    "description": null,
-    "lineNumber": 1,
-    "undocument": true,
+    "description": "Classe responsavel por fazer as requisições ao servidor que tem conexão com a API do jestor para pegar registros.",
+    "lineNumber": 5,
     "interface": false
   },
   {
-    "__docId__": 169,
+    "__docId__": 170,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela",
@@ -3685,26 +4273,14 @@
     "static": false,
     "longname": "src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela#constructor",
     "access": "public",
-    "description": null,
-    "lineNumber": 2,
-    "undocument": true
-  },
-  {
-    "__docId__": 170,
-    "kind": "member",
-    "name": "_token",
-    "memberof": "src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela",
-    "static": false,
-    "longname": "src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela#_token",
-    "access": "private",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
+    "description": "",
+    "lineNumber": 9,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ]
   },
   {
     "__docId__": 171,
@@ -3714,13 +4290,15 @@
     "static": false,
     "longname": "src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela#_url",
     "access": "private",
-    "description": null,
-    "lineNumber": 4,
-    "undocument": true,
+    "description": "Rota do para o servidor nodejs que interaje com o jestor para pegar os registros.",
+    "lineNumber": 15,
     "type": {
+      "nullable": null,
       "types": [
         "string"
-      ]
+      ],
+      "spread": false,
+      "description": null
     }
   },
   {
@@ -3733,87 +4311,45 @@
     "static": false,
     "longname": "src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela#pegarRegistrosTabela",
     "access": "public",
-    "description": null,
-    "lineNumber": 7,
-    "undocument": true,
+    "description": "Solicita ao servidor que ele retorne a lista de todos os dados dos registros de uma tabela do jestor.",
+    "lineNumber": 24,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "Array com os dados dos registros da tabela jestor."
+      }
+    ],
     "params": [
       {
-        "name": "table",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "table",
+        "description": "Tabela jestor"
       }
     ],
     "return": {
+      "nullable": null,
       "types": [
         "*"
-      ]
-    }
+      ],
+      "spread": false,
+      "description": "Array com os dados dos registros da tabela jestor."
+    },
+    "throws": [
+      {
+        "types": [
+          "*"
+        ],
+        "description": "Retorna erro caso algum erro aconteça na função após o numero maximo de tentativas."
+      }
+    ]
   },
   {
     "__docId__": 173,
-    "kind": "file",
-    "name": "src/Services/PegarOrdensNaoFinalizadas.js",
-    "content": "import { OrdensController } from \"../Controller/OrdensController.js\"\r\nconst ordensController = new OrdensController()\r\nexport async function PegarOrdensNaoFinalizadas(tabela){\r\n    const ordens = await ordensController.pegaDadosLista(tabela)\r\n        const ordensNaoFinalizadas =await ordens.filter(ordem => ordem.finalizado === false)\r\n        return ordensNaoFinalizadas\r\n}",
-    "static": true,
-    "longname": "C:/Users/ferri/Projetos/controle_montagem_mesas/src/Services/PegarOrdensNaoFinalizadas.js",
-    "access": "public",
-    "description": null,
-    "lineNumber": 1
-  },
-  {
-    "__docId__": 174,
-    "kind": "variable",
-    "name": "ordensController",
-    "memberof": "src/Services/PegarOrdensNaoFinalizadas.js",
-    "static": true,
-    "longname": "src/Services/PegarOrdensNaoFinalizadas.js~ordensController",
-    "access": "public",
-    "export": false,
-    "importPath": "controle_montagem/src/Services/PegarOrdensNaoFinalizadas.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 2,
-    "undocument": true,
-    "type": {
-      "types": [
-        "src/Controller/OrdensController.js~OrdensController"
-      ]
-    },
-    "ignore": true
-  },
-  {
-    "__docId__": 175,
-    "kind": "function",
-    "name": "PegarOrdensNaoFinalizadas",
-    "memberof": "src/Services/PegarOrdensNaoFinalizadas.js",
-    "generator": false,
-    "async": true,
-    "static": true,
-    "longname": "src/Services/PegarOrdensNaoFinalizadas.js~PegarOrdensNaoFinalizadas",
-    "access": "public",
-    "export": true,
-    "importPath": "controle_montagem/src/Services/PegarOrdensNaoFinalizadas.js",
-    "importStyle": "{PegarOrdensNaoFinalizadas}",
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
-    "params": [
-      {
-        "name": "tabela",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 176,
     "kind": "file",
     "name": "src/setupTests.js",
     "content": "// jest-dom adds custom jest matchers for asserting on DOM nodes.\n// allows you to do things like:\n// expect(element).toHaveTextContent(/react/i)\n// learn more: https://github.com/testing-library/jest-dom\nimport '@testing-library/jest-dom';\n",
@@ -3825,7 +4361,7 @@
   },
   {
     "kind": "index",
-    "content": "# Getting Started with Create React App\n\nThis project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).\n\n## Available Scripts\n\nIn the project directory, you can run:\n\n### `npm start`\n\nRuns the app in the development mode.\\\nOpen [http://localhost:3000](http://localhost:3000) to view it in your browser.\n\nThe page will reload when you make changes.\\\nYou may also see any lint errors in the console.\n\n### `npm test`\n\nLaunches the test runner in the interactive watch mode.\\\nSee the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.\n\n### `npm run build`\n\nBuilds the app for production to the `build` folder.\\\nIt correctly bundles React in production mode and optimizes the build for the best performance.\n\nThe build is minified and the filenames include the hashes.\\\nYour app is ready to be deployed!\n\nSee the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.\n\n### `npm run eject`\n\n**Note: this is a one-way operation. Once you `eject`, you can't go back!**\n\nIf you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.\n\nInstead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.\n\nYou don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.\n\n## Learn More\n\nYou can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).\n\nTo learn React, check out the [React documentation](https://reactjs.org/).\n\n### Code Splitting\n\nThis section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)\n\n### Analyzing the Bundle Size\n\nThis section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)\n\n### Making a Progressive Web App\n\nThis section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)\n\n### Advanced Configuration\n\nThis section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)\n\n### Deployment\n\nThis section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)\n\n### `npm run build` fails to minify\n\nThis section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)\n",
+    "content": "\n# Controle Produção Montagem\n\nO aplicativo de controle de montagem é utilizado no setor produtivo da avioeste para captar informações importantes das ordens de produção que estão na montagem.\n\n### Quais informações e onde são utilizadas ?\n\nQuando uma ordem é finalizada na aplicação ela irá enviar e salvar no jestor algumas informações que serão uteis como :\n\n1. Tempo em produção\n2. Tempo pausado\n3. Motivos das pausas\n4. Motivos de retrabalho quando este for motivo da pausa\n5. Matricula dos Funcionarios Responsaveis\n6. Mesa de produção\n7. Turno\n8. Horario de inicio\n9. Horario de término\n10. Quantidade produzida\n\n### Onde as informações são utilizadas ?\n\nSão utilizadas no BI que esta no caminho : 'Y:\\Documentos\\BI\\BI Controle produção' e também nos dashboards do jestor criados para os supervisores da produção.\n\n\n\n\n\n\n## Stack utilizada\n\n**Front-end:** React , Styled-Components , react-router-dom\n\n**Back-end:** Node, Express\n\n\n## Variáveis de Ambiente\n\nPara rodar esse projeto, você vai precisar adicionar as seguintes variáveis de ambiente no seu .env\n\n`PORT` representa a porta que o servidor rodara no desenvolvimento.\n\n`REACT_APP_token` token da api do jestor.\n\n`REACT_APP_TABELA` tabela jestor onde é salvo os dados.\n\n`REACT_APP_TABELA_PAUSAS` tabela jestor onde é salvo os dados das pausas.\n\n`REACT_APP_API_URL` url para o servidor, em produção 'http://srv-services:3000'. \n\n\n\n## Instalação\n\n Primeiramente é necessario que esteja instalado em seu computador o nodejs, https://nodejs.org/.\n\n - Instale as dependencias do projeto. Acesse a pasta do arquivo através do console e utilize o comando ' npm install ' para instalar.\n\n - Crie um arquivo chamado .env na raiz do projeto e nele configure as variaveis de ambiente descritas acima.\n\n## Rodando localmente para desenvolvimento\n\n- Inicie o servidor localmente na porta 3000.\n\n- Altere a variavel de ambiente `REACT_APP_API_URL` para 'http://localhost:3000'.\n\nInstale as dependencias caso ainda não tenham sido instaladas :\n\n```\nnpm install\n```\n\nInicie a aplicação localmente :\n\n```\nnpm start\n```\n\n\n## Criando build e fazendo deploy\n\nPara criar o o arquivo build que é o projeto otimizado para rodar : \n\n```\nnpm run build\n```\n\nPara iniciar o projeto e colocar ele em produção, após criar o build utilize o comando,  sendo o ' -l 3001 ' a porta que rodará :\n\n```\nserve -s build -l 3001\n```\n## Funcionamento\n\nA aplicação funciona da seguinte forma: \n- O usuario ao entrar na aplicação ira para a pagina de login http://srv-services:3001/, ao colocar usuario e senha, enviara estas informações até o servidor pelo body da requisição e caso condiz com o que esta no servidor ira retornar 'true', definir o estado react de login para true e salvar as informações de login no localstorage para logins futuros. \n\n- Ao entrar na aplicação há dois botões, um para visualizar o formulario e outro para visualizar a lista de ordens.\n\n- Formulario ao ser preenchido e enviado adiciona as informações na localstorage chamada 'ordensNaoFinalizadas' no estado react 'LocalStorage' e também ao salvar neste estado, salva as mesmas informações no estado 'Ordens'.\n\n- Sempre que atualizar o localstorage de 'ordensNaoFinalizadas' é necessario adicionar todos os dados da localstorage ao estado 'LocalStorage' e automaticamente atualizara o valor do estado 'Ordens' com todos os dados das ordens não finalizadas. \n\n- Ao pausar uma ordem pede um motivo. Para cada ordem que possui pausas, os dados destas pausas ficam salvos na localstorage de 'pausasOrdens'.\n\n- Ao finalizar alguma ordem todos os dados desta ordem da localstorage 'ordensNaoFinalizadas' e das pausas 'pausasOrdens' juntamente com os horarios de finalização e dados de finalização são enviados ao servidor para que este salve os dados nas tabelas do jestor.",
     "longname": "C:\\Users\\ferri\\Projetos\\controle_montagem_mesas\\README.md",
     "name": "./README.md",
     "static": true,

@@ -1,3 +1,9 @@
+
+/**
+ * Tranforma uma data em String no formato 'ano-mes-diaThora:minutos:segundos+00:00'
+ * @param {object} data Objeto de data , new Date()
+ * @returns Data formatada como string.
+ */
 function tranformarDataEmString(data) {
     const ano = data.getFullYear();
     let mes = data.getMonth() + 1;

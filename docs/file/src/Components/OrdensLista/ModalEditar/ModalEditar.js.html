@@ -66,6 +66,9 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-NumeroOPEdicao">NumeroOPEdicao</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-QuantidadeFuncionariosEdicao">QuantidadeFuncionariosEdicao</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TurnoEdicao">TurnoEdicao</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-ordenslista-modalfinalizar">Components/OrdensLista/ModalFinalizar</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModalFinalizar">ModalFinalizar</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-LoadingFinalizacao">LoadingFinalizacao</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-QuantidadeProduzida">QuantidadeProduzida</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-ordenslista-modalpausacomponent">Components/OrdensLista/ModalPausaComponent</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ModalPausaComponent">ModalPausaComponent</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MotivoPausa">MotivoPausa</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-MotivoRetrabalho">MotivoRetrabalho</a></span></span></li>
@@ -88,7 +91,6 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#services">Services</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/AtualizaRegistro.js~AtualizaRegistro.html">AtualizaRegistro</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/CriarRegistro.js~CriarRegistro.html">CriarRegistro</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela.html">PegarRegistrosTabela</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-PegarOrdensNaoFinalizadas">PegarOrdensNaoFinalizadas</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -245,7 +247,7 @@ function ModalEditar({ setModalEdicao, setLocalStorage, ModalEdicao, OrdemEditan
     };
 
     /**
-     * Edita os dados da ordem conforme os dados colocados no formulario.
+     * Edita os dados da ordem na localstorage conforme os dados colocados no formulario.
      * @param {Object} ordemEditando Estado OrdemEditando com os dados da ordem que esta sendo editada.
      * @param {Array&lt;Object&gt;} ordens Estado Ordens que contem as ordens que aparecem na lista.
      */
@@ -258,7 +260,7 @@ function ModalEditar({ setModalEdicao, setLocalStorage, ModalEdicao, OrdemEditan
             const pausasLocalStorage = JSON.parse(localStorage.getItem(&apos;pausasOrdens&apos;)) || []
             const pausasAtualIndex = pausasLocalStorage.findIndex(element =&gt; element.id === ordemEditando.id)
 
-            
+            // Faz as altera&#xE7;&#xF5;es na ordem.
             if (ordemAtualIndex !== -1) {
                 const ordemAtual = ordensLocalStorage[ordemAtualIndex];
                 if(ordemAtual[&apos;ordem_producao&apos;] !== NumeroOPEdicao &amp;&amp; confereRepetido){
@@ -276,6 +278,7 @@ function ModalEditar({ setModalEdicao, setLocalStorage, ModalEdicao, OrdemEditan
                         ordemAtual[&apos;quantidade_funcionarios&apos;] = QuantidadeFuncionariosEdicao
                         ordensLocalStorage[ordemAtualIndex] = ordemAtual;
 
+                        //Altera o valor de ordem_producao da localstorage de &apos;pausasOrdens&apos; caso exista pausas para esta ordem.
                         if(pausasAtualIndex !== -1){
                             const pausas = pausasLocalStorage[pausasAtualIndex].pausas
                             for(let i = 0; i&lt;pausas.length;i++ ){
@@ -285,7 +288,7 @@ function ModalEditar({ setModalEdicao, setLocalStorage, ModalEdicao, OrdemEditan
                             localStorage.setItem(&apos;pausasOrdens&apos;, JSON.stringify(pausasLocalStorage))
                         }
 
-
+                    
                     localStorage.setItem(&apos;ordensNaoFinalizadas&apos;, JSON.stringify(ordensLocalStorage));
                     setLocalStorage(ordensLocalStorage)
                     setModalEdicao(false)
@@ -297,6 +300,9 @@ function ModalEditar({ setModalEdicao, setLocalStorage, ModalEdicao, OrdemEditan
         }
         }
 
+        /**
+         * Acrescenta + 1 ao valor do estado QuantidadeFuncionariosEdicao maximo de 4 funcionarios.
+         */
         const AdicaoFuncionario = () =&gt; {
             if(QuantidadeFuncionariosEdicao &lt; 4){
             setQuantidadeFuncionariosEdicao(QuantidadeFuncionariosEdicao + 1)
@@ -305,6 +311,9 @@ function ModalEditar({ setModalEdicao, setLocalStorage, ModalEdicao, OrdemEditan
             }
         }
 
+        /**
+         * Subtrai -1 ao valor do estado QuantidadeFuncionariosEdicao e retira o ultimo valor do estado MatriculasEdicao.
+         */
         const RemoverFuncionario = () =&gt; {
             const novoValor = [...MatriculasEdicao]
             setQuantidadeFuncionariosEdicao(QuantidadeFuncionariosEdicao -1)
@@ -312,14 +321,19 @@ function ModalEditar({ setModalEdicao, setLocalStorage, ModalEdicao, OrdemEditan
             setMatriculasEdicao(novoValor)
         }
         
+        /**
+         * Adiciona mais uma matricula conforme o valor do input do formulario.
+         */
         const HandleMatricula = useCallback((index, event) =&gt; {
             const newMatriculas = [...MatriculasEdicao];
             newMatriculas[index] = event.target.value;
             setMatriculasEdicao(newMatriculas);
       }, [MatriculasEdicao, setMatriculasEdicao]);
 
+      /** 
+       * Coloca componente input no estado de InputMatriculasEdicao conforme valor do estado QuantidadeFuncionariosEdicao.
+       * */ 
         useEffect(() =&gt; {
-        
             const inputs = []
             for(let i = 0;i &lt; QuantidadeFuncionariosEdicao; i++){
                 inputs.push(
@@ -335,7 +349,12 @@ function ModalEditar({ setModalEdicao, setLocalStorage, ModalEdicao, OrdemEditan
             }
             setInputMatriculasEdicao(inputs)
         },[QuantidadeFuncionariosEdicao, HandleMatricula, MatriculasEdicao])
+        
 
+        /**
+         * Exlui a ordem da localstorage ordensNaoFinalizadas e tamb&#xE9;m seus dados de pausasOrdens.
+         * @param {Object} ordem Estado OrdemEditando com os dados da ordem que esta sendo editada. 
+         */
         const ExcluirOrdem = (ordem) =&gt; {
             const confirma&#xE7;&#xE3;o  = window.confirm(&apos;Tem certeza que deseja excluir esta Ordem de Produ&#xE7;&#xE3;o ?&apos;)
             if(confirma&#xE7;&#xE3;o){

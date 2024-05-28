@@ -78,6 +78,12 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
+    "controle_montagem/src/components/ordenslista/modalfinalizar/modalfinalizar.js~modalfinalizar",
+    "function/index.html#static-function-ModalFinalizar",
+    "<span>ModalFinalizar</span> <span class=\"search-result-import-path\">controle_montagem/src/Components/OrdensLista/ModalFinalizar/ModalFinalizar.js</span>",
+    "function"
+  ],
+  [
     "controle_montagem/src/components/ordenslista/modalpausacomponent/modalpausacomponent.js~modalpausacomponent",
     "function/index.html#static-function-ModalPausaComponent",
     "<span>ModalPausaComponent</span> <span class=\"search-result-import-path\">controle_montagem/src/Components/OrdensLista/ModalPausaComponent/ModalPausaComponent.js</span>",
@@ -99,12 +105,6 @@ window.esdocSearchIndex = [
     "controle_montagem/src/components/ordenslista/ordenslista.js~ordenslista",
     "function/index.html#static-function-OrdensLista",
     "<span>OrdensLista</span> <span class=\"search-result-import-path\">controle_montagem/src/Components/OrdensLista/OrdensLista.js</span>",
-    "function"
-  ],
-  [
-    "controle_montagem/src/services/pegarordensnaofinalizadas.js~pegarordensnaofinalizadas",
-    "function/index.html#static-function-PegarOrdensNaoFinalizadas",
-    "<span>PegarOrdensNaoFinalizadas</span> <span class=\"search-result-import-path\">controle_montagem/src/Services/PegarOrdensNaoFinalizadas.js</span>",
     "function"
   ],
   [
@@ -636,6 +636,24 @@ window.esdocSearchIndex = [
     "typedef"
   ],
   [
+    "src/components/ordenslista/modalfinalizar/modalfinalizar.js",
+    "file/src/Components/OrdensLista/ModalFinalizar/ModalFinalizar.js.html",
+    "src/Components/OrdensLista/ModalFinalizar/ModalFinalizar.js",
+    "file"
+  ],
+  [
+    "src/components/ordenslista/modalfinalizar/modalfinalizar.js~loadingfinalizacao",
+    "typedef/index.html#static-typedef-LoadingFinalizacao",
+    "src/Components/OrdensLista/ModalFinalizar/ModalFinalizar.js~LoadingFinalizacao",
+    "typedef"
+  ],
+  [
+    "src/components/ordenslista/modalfinalizar/modalfinalizar.js~quantidadeproduzida",
+    "typedef/index.html#static-typedef-QuantidadeProduzida",
+    "src/Components/OrdensLista/ModalFinalizar/ModalFinalizar.js~QuantidadeProduzida",
+    "typedef"
+  ],
+  [
     "src/components/ordenslista/modalpausacomponent/modalpausacomponent.js",
     "file/src/Components/OrdensLista/ModalPausaComponent/ModalPausaComponent.js.html",
     "src/Components/OrdensLista/ModalPausaComponent/ModalPausaComponent.js",
@@ -756,12 +774,6 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
-    "src/controller/ordenscontroller.js~ordenscontroller#atualizarregistro",
-    "class/src/Controller/OrdensController.js~OrdensController.html#instance-method-atualizarRegistro",
-    "src/Controller/OrdensController.js~OrdensController#atualizarRegistro",
-    "method"
-  ],
-  [
     "src/controller/ordenscontroller.js~ordenscontroller#constructor",
     "class/src/Controller/OrdensController.js~OrdensController.html#instance-constructor-constructor",
     "src/Controller/OrdensController.js~OrdensController#constructor",
@@ -771,12 +783,6 @@ window.esdocSearchIndex = [
     "src/controller/ordenscontroller.js~ordenscontroller#criarregistro",
     "class/src/Controller/OrdensController.js~OrdensController.html#instance-method-criarRegistro",
     "src/Controller/OrdensController.js~OrdensController#criarRegistro",
-    "method"
-  ],
-  [
-    "src/controller/ordenscontroller.js~ordenscontroller#pegadadounico",
-    "class/src/Controller/OrdensController.js~OrdensController.html#instance-method-pegaDadoUnico",
-    "src/Controller/OrdensController.js~OrdensController#pegaDadoUnico",
     "method"
   ],
   [
@@ -846,12 +852,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/services/atualizaregistro.js~atualizaregistro#_token",
-    "class/src/Services/AtualizaRegistro.js~AtualizaRegistro.html#instance-member-_token",
-    "src/Services/AtualizaRegistro.js~AtualizaRegistro#_token",
-    "member"
-  ],
-  [
     "src/services/atualizaregistro.js~atualizaregistro#_url",
     "class/src/Services/AtualizaRegistro.js~AtualizaRegistro.html#instance-member-_url",
     "src/Services/AtualizaRegistro.js~AtualizaRegistro#_url",
@@ -874,12 +874,6 @@ window.esdocSearchIndex = [
     "file/src/Services/CriarRegistro.js.html",
     "src/Services/CriarRegistro.js",
     "file"
-  ],
-  [
-    "src/services/criarregistro.js~criarregistro#_token",
-    "class/src/Services/CriarRegistro.js~CriarRegistro.html#instance-member-_token",
-    "src/Services/CriarRegistro.js~CriarRegistro#_token",
-    "member"
   ],
   [
     "src/services/criarregistro.js~criarregistro#_url",
@@ -906,12 +900,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/services/pegaregistrostabela.js~pegarregistrostabela#_token",
-    "class/src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela.html#instance-member-_token",
-    "src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela#_token",
-    "member"
-  ],
-  [
     "src/services/pegaregistrostabela.js~pegarregistrostabela#_url",
     "class/src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela.html#instance-member-_url",
     "src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela#_url",
@@ -928,12 +916,6 @@ window.esdocSearchIndex = [
     "class/src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela.html#instance-method-pegarRegistrosTabela",
     "src/Services/PegaRegistrosTabela.js~PegarRegistrosTabela#pegarRegistrosTabela",
     "method"
-  ],
-  [
-    "src/services/pegarordensnaofinalizadas.js",
-    "file/src/Services/PegarOrdensNaoFinalizadas.js.html",
-    "src/Services/PegarOrdensNaoFinalizadas.js",
-    "file"
   ],
   [
     "src/index.js",

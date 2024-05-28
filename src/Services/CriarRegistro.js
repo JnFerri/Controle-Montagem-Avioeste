@@ -1,10 +1,26 @@
-export class CriarRegistro{
 
-    constructor(token){
-        this._token = token
+/**
+ * Classe responsavel por fazer as requisições ao servidor que tem conexão com a API do jestor para criar um registro.
+ */
+export class CriarRegistro{
+    /**
+     * @constructor
+     */
+    constructor(){
+    /**
+     * Rota do para o servidor nodejs que interaje com o jestor para fazer criação de registros.
+     * @type {string}
+     * @private
+     */
         this._url = `${process.env.REACT_APP_API_URL}/api/ordens/post`
     }
 
+    /**
+     * Envia os dados para o servidor criar um registro no jestor.
+     * @param {string} tabela Tabela jestor.  Por exemplo em https://avioeste.jestor.com/object/9c6of6gvyn34owum60ty3 seria o '9c6of6gvyn34owum60ty3'
+     * @param {Object} dado Dados que serão salvos no jestor.
+     * @returns {Object} Retorna Objeto contendo os dados do registro criado e metadados da resposta da requisição a API do jestor.
+     */
   criarRegistro(tabela,dado) {
 return new Promise((resolve,reject) => {
   fetch(this._url, {
