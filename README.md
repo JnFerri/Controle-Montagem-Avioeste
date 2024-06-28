@@ -104,3 +104,67 @@ A aplicação funciona da seguinte forma:
 - Ao pausar uma ordem pede um motivo. Para cada ordem que possui pausas, os dados destas pausas ficam salvos na localstorage de 'pausasOrdens'.
 
 - Ao finalizar alguma ordem todos os dados desta ordem da localstorage 'ordensNaoFinalizadas' e das pausas 'pausasOrdens' juntamente com os horarios de finalização e dados de finalização são enviados ao servidor para que este salve os dados nas tabelas do jestor.
+
+# Informações da API
+
+## Login
+
+#### Faz a conferencia de login
+
+Apenas um usuario existe, login serve apenas para reforçar a segurança. Confere se usuario e senha são corretos e retorna true ou false.
+
+```http
+  POST /autorizacao/controleMontagem
+```
+
+| Parâmetro   | Tipo       | Descrição                                   |
+| :---------- | :--------- | :------------------------------------------ |
+| `usuario`      | `string` |  Nome usuario |
+| `senha`      | `string` |  Senha do usuario |
+
+## Controle dados Jestor
+
+#### Pega todos os dados do jestor
+
+
+```http
+  POST /api/jestor/lista
+```
+
+| Parâmetro   | Tipo       | Descrição                                   |
+| :---------- | :--------- | :------------------------------------------ |
+| `object_type`      | `string` | **Obrigatório** :  Tabela do jestor|
+
+#### Criar registro no jestor
+
+
+```http
+  POST /api/ordens/post
+```
+
+| Parâmetro   | Tipo       | Descrição                                   |
+| :---------- | :--------- | :------------------------------------------ |
+| `object_type`      | `string` | **Obrigatório** :  Tabela do jestor
+| `data`      | `string` | Dados que serão criados no jestor
+
+No objeto 'data' do body da requisição passar outros valores que serão salvos no banco de dados, estes necessitam possuir os mesmos nomes de chaves que as colunas do jestor.
+mais informações : https://docs.jestor.com/reference/create-records
+
+#### Atualizar registro no jestor
+
+
+```http
+  POST /api/jestor/atualiza
+```
+
+| Parâmetro   | Tipo       | Descrição                                   |
+| :---------- | :--------- | :------------------------------------------ |
+| `object_type`      | `string` | **Obrigatório** :  Tabela do jestor|
+| `data`      | `string` | Dados que serão atualizados no jestor
+
+No objeto 'data' do body da requisição passar o id do registro que será atualizado e o restante das informações que serão atualizadas com o mesmo nome de chave que as colunas do jestor. Para mais informações : https://docs.jestor.com/reference/update-record
+
+
+### Mais informações sobre funcionamento da api do jestor. 
+
+https://docs.jestor.com/reference/getting-started-with-your-api

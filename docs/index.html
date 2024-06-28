@@ -154,6 +154,98 @@
 <li><p>Ao finalizar alguma ordem todos os dados desta ordem da localstorage &apos;ordensNaoFinalizadas&apos; e das pausas &apos;pausasOrdens&apos; juntamente com os horarios de finaliza&#xE7;&#xE3;o e dados de finaliza&#xE7;&#xE3;o s&#xE3;o enviados ao servidor para que este salve os dados nas tabelas do jestor.</p>
 </li>
 </ul>
+<h1 id="informa&#xE7;&#xF5;es-da-api">Informa&#xE7;&#xF5;es da API</h1><h2 id="login">Login</h2><h4 id="faz-a-conferencia-de-login">Faz a conferencia de login</h4><p>Apenas um usuario existe, login serve apenas para refor&#xE7;ar a seguran&#xE7;a. Confere se usuario e senha s&#xE3;o corretos e retorna true ou false.</p>
+<pre><code class="lang-http"><code class="source-code prettyprint">  POST /autorizacao/controleMontagem</code>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Par&#xE2;metro</th>
+<th style="text-align:left">Tipo</th>
+<th style="text-align:left">Descri&#xE7;&#xE3;o</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>usuario</code></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left">Nome usuario</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>senha</code></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left">Senha do usuario</td>
+</tr>
+</tbody>
+</table>
+<h2 id="controle-dados-jestor">Controle dados Jestor</h2><h4 id="pega-todos-os-dados-do-jestor">Pega todos os dados do jestor</h4><pre><code class="lang-http"><code class="source-code prettyprint">  POST /api/jestor/lista</code>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Par&#xE2;metro</th>
+<th style="text-align:left">Tipo</th>
+<th style="text-align:left">Descri&#xE7;&#xE3;o</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>object_type</code></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left"><strong>Obrigat&#xF3;rio</strong> :  Tabela do jestor</td>
+</tr>
+</tbody>
+</table>
+<h4 id="criar-registro-no-jestor">Criar registro no jestor</h4><pre><code class="lang-http"><code class="source-code prettyprint">  POST /api/ordens/post</code>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Par&#xE2;metro</th>
+<th style="text-align:left">Tipo</th>
+<th style="text-align:left">Descri&#xE7;&#xE3;o</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>object_type</code></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left"><strong>Obrigat&#xF3;rio</strong> :  Tabela do jestor</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>data</code></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left">Dados que ser&#xE3;o criados no jestor</td>
+</tr>
+</tbody>
+</table>
+<p>No objeto &apos;data&apos; do body da requisi&#xE7;&#xE3;o passar outros valores que ser&#xE3;o salvos no banco de dados, estes necessitam possuir os mesmos nomes de chaves que as colunas do jestor.
+mais informa&#xE7;&#xF5;es : <a href="https://docs.jestor.com/reference/create-records">https://docs.jestor.com/reference/create-records</a></p>
+<h4 id="atualizar-registro-no-jestor">Atualizar registro no jestor</h4><pre><code class="lang-http"><code class="source-code prettyprint">  POST /api/jestor/atualiza</code>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Par&#xE2;metro</th>
+<th style="text-align:left">Tipo</th>
+<th style="text-align:left">Descri&#xE7;&#xE3;o</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>object_type</code></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left"><strong>Obrigat&#xF3;rio</strong> :  Tabela do jestor</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>data</code></td>
+<td style="text-align:left"><code>string</code></td>
+<td style="text-align:left">Dados que ser&#xE3;o atualizados no jestor</td>
+</tr>
+</tbody>
+</table>
+<p>No objeto &apos;data&apos; do body da requisi&#xE7;&#xE3;o passar o id do registro que ser&#xE1; atualizado e o restante das informa&#xE7;&#xF5;es que ser&#xE3;o atualizadas com o mesmo nome de chave que as colunas do jestor. Para mais informa&#xE7;&#xF5;es : <a href="https://docs.jestor.com/reference/update-record">https://docs.jestor.com/reference/update-record</a></p>
+<h3 id="mais-informa&#xE7;&#xF5;es-sobre-funcionamento-da-api-do-jestor-">Mais informa&#xE7;&#xF5;es sobre funcionamento da api do jestor.</h3><p><a href="https://docs.jestor.com/reference/getting-started-with-your-api">https://docs.jestor.com/reference/getting-started-with-your-api</a></p>
 </div>
 </div>
 
